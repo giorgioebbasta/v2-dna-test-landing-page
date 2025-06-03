@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import DropdownSection from '@/components/DropdownSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import PlatformSection from '@/components/PlatformSection';
+import FloatingCTA from '@/components/FloatingCTA';
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -55,9 +57,6 @@ const Index = () => {
                   <div className="text-4xl font-bold text-slate-900">299€</div>
                   <div className="text-lg text-slate-500 line-through">349€</div>
                 </div>
-                <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                  Ordina Ora
-                </Button>
               </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -73,24 +72,6 @@ const Index = () => {
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <ProductCarousel />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA after Hero Section */}
-      <section className="py-12 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Non aspettare, inizia oggi il tuo viaggio verso una vita più sana
-          </h3>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="text-center text-white">
-              <div className="text-3xl font-bold">299€</div>
-              <div className="text-lg text-indigo-200 line-through">349€</div>
-            </div>
-            <Button size="lg" className="bg-white text-indigo-600 hover:bg-slate-50 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Ordina il Tuo Test DNA
-            </Button>
           </div>
         </div>
       </section>
@@ -125,98 +106,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA after Features Section */}
-      <section className="py-12 px-4 bg-emerald-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">
-            Scopri cosa dice il tuo DNA sulla tua salute
-          </h3>
-          <p className="text-lg text-slate-600 mb-6">
-            Oltre 350 tratti genetici analizzati per consigli personalizzati
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900">299€</div>
-              <div className="text-lg text-slate-500 line-through">349€</div>
-            </div>
-            <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Ordina Ora
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Reviews Section */}
       <ReviewsSection />
-
-      {/* CTA after Reviews Section */}
-      <section className="py-12 px-4 bg-white border-t border-b border-slate-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">
-            Unisciti a oltre 50.000 clienti soddisfatti
-          </h3>
-          <p className="text-lg text-slate-600 mb-6">
-            Inizia il tuo percorso verso una vita più sana e consapevole
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900">299€</div>
-              <div className="text-lg text-slate-500 line-through">349€</div>
-            </div>
-            <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Ordina il Tuo Test DNA
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* How It Works Section */}
       <HowItWorksSection />
 
-      {/* CTA after How It Works Section */}
-      <section className="py-12 px-4 bg-indigo-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">
-            Semplice come 1, 2, 3. Inizia subito!
-          </h3>
-          <p className="text-lg text-slate-600 mb-6">
-            Ricevi il kit, raccogli il campione, scopri i risultati
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900">299€</div>
-              <div className="text-lg text-slate-500 line-through">349€</div>
-            </div>
-            <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Ordina Ora
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Platform Section */}
       <PlatformSection />
-
-      {/* CTA after Platform Section */}
-      <section className="py-12 px-4 bg-purple-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl font-bold text-slate-900 mb-4">
-            Accesso a vita alla tua piattaforma genetica personale
-          </h3>
-          <p className="text-lg text-slate-600 mb-6">
-            Dashboard completa, aggiornamenti continui, supporto esperto
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-slate-900">299€</div>
-              <div className="text-lg text-slate-500 line-through">349€</div>
-            </div>
-            <Button size="lg" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Ordina il Tuo Test DNA
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
@@ -227,17 +124,15 @@ const Index = () => {
           <p className="text-xl text-indigo-100 mb-8">
             Unisciti a migliaia di italiani che hanno già scoperto i segreti del loro DNA
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <div className="text-center text-white">
-              <div className="text-3xl font-bold">299€</div>
-              <div className="text-lg text-indigo-200 line-through">349€</div>
-            </div>
-            <Button size="lg" className="bg-white text-indigo-600 hover:bg-slate-50 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Ordina il Tuo Test DNA
-            </Button>
+          <div className="text-center text-white">
+            <div className="text-3xl font-bold">299€</div>
+            <div className="text-lg text-indigo-200 line-through">349€</div>
           </div>
         </div>
       </section>
+
+      {/* Floating CTA Button */}
+      <FloatingCTA />
     </div>
   );
 };
