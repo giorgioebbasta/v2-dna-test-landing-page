@@ -53,10 +53,29 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="flex items-center space-x-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-slate-900">299€</div>
-                  <div className="text-lg text-slate-500 line-through">349€</div>
+              <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100">
+                <div className="flex items-center justify-between mb-4">
+                  <Badge className="bg-red-100 text-red-800 px-3 py-1 text-sm font-semibold">
+                    OFFERTA LIMITATA -14%
+                  </Badge>
+                  <div className="text-sm text-slate-500 font-medium">
+                    Scade tra poco!
+                  </div>
+                </div>
+                <div className="flex items-baseline space-x-4 mb-3">
+                  <div className="text-5xl font-bold text-slate-900">299€</div>
+                  <div className="text-2xl text-slate-400 line-through">349€</div>
+                  <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    Risparmi 50€
+                  </div>
+                </div>
+                <div className="text-sm text-slate-600 mb-4">
+                  Prezzo più basso dell'anno • Pagamento sicuro • Garanzia soddisfatti o rimborsati
+                </div>
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-3 rounded-lg border border-green-200">
+                  <div className="text-sm font-medium text-green-800">
+                    ✓ Include spedizione gratuita (valore 15€)
+                  </div>
                 </div>
               </div>
 
