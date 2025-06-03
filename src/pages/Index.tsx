@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -74,10 +73,10 @@ const Index = () => {
                     <CardContent className="p-6 text-center">
                       <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
                       <div className="space-y-1">
-                        <div className="text-3xl font-bold text-emerald-600">{pkg.currentPrice}</div>
-                        <div className="text-lg text-slate-500 line-through">{pkg.originalPrice}</div>
+                        <div className="text-3xl font-bold text-emerald-600">€{pkg.currentPrice}</div>
+                        <div className="text-lg text-slate-500 line-through">€{pkg.originalPrice}</div>
                         <div className="text-sm font-medium text-emerald-700">
-                          Risparmi {pkg.savings}
+                          Risparmi €{pkg.savings}
                         </div>
                       </div>
                     </CardContent>
@@ -154,8 +153,8 @@ const Index = () => {
             {testPackages.map((pkg, index) => (
               <div key={index} className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-lg font-semibold mb-1">{pkg.name}</div>
-                <div className="text-2xl font-bold">{pkg.currentPrice}</div>
-                <div className="text-sm text-indigo-200 line-through">{pkg.originalPrice}</div>
+                <div className="text-2xl font-bold">€{pkg.currentPrice}</div>
+                <div className="text-sm text-indigo-200 line-through">€{pkg.originalPrice}</div>
               </div>
             ))}
           </div>
