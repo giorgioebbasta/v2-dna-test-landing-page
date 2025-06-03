@@ -31,13 +31,13 @@ const Index = () => {
 
   const testPackages = [
     {
-      name: "1 test",
+      name: "1 Test del DNA",
       currentPrice: 299,
       originalPrice: 349,
       savings: 50
     },
     {
-      name: "2 test",
+      name: "2 Test del DNA",
       currentPrice: 528,
       originalPrice: 598,
       savings: 70
