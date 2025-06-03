@@ -106,7 +106,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Cosa rende unico il nostro Test DNA
+              Cosa rende unico il nostro Test del DNA
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Il Test Completo del DNA di Holifya analizza oltre 350 tratti genetici per fornirti 
