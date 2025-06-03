@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,9 +42,9 @@ const Index = () => {
                   Test DNA Completo
                 </Badge>
                 <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  Una vita più sana,{' '}
-                  <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                    più a lungo
+                  Una vita sana,<br />
+                  <span className="italic bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Più a lungo
                   </span>
                 </h1>
                 <p className="text-xl text-slate-600 leading-relaxed">
