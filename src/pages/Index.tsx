@@ -47,11 +47,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50">
+      <section className="relative py-16 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <div className="space-y-4">
+              <div className="space-y-4 mt-4">
                 <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
                   Test DNA Completo
                 </Badge>
