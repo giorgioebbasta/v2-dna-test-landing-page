@@ -51,7 +51,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <div className="space-y-4 mt-2">
+              <div className="space-y-4">
                 <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
                   Test DNA Completo
                 </Badge>
