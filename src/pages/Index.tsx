@@ -63,7 +63,7 @@ const Index = () => {
                   </span>
                 </h1>
                 <p className="text-xl text-slate-600 leading-relaxed">
-                  Scopri i segreti del tuo DNA, con il test genetico più avanzato d'Italia.<br />
+                  Scopri i segreti del tuo DNA, con il test genetico più completo in Italia.<br />
                   <em>Ora disponibile a casa tua.</em>
                 </p>
               </div>
