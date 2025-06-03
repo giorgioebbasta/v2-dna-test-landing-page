@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -62,8 +63,8 @@ const Index = () => {
                   </span>
                 </h1>
                 <p className="text-xl text-slate-600 leading-relaxed">
-                  Scopri i segreti del tuo DNA, con il test genetico più avanzato d'Italia.
-                  Ora disponibile a casa tua.
+                  Scopri i segreti del tuo DNA, con il test genetico più avanzato d'Italia.<br />
+                  <em>Ora disponibile a casa tua.</em>
                 </p>
               </div>
               
