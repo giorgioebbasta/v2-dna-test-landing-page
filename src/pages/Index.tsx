@@ -50,7 +50,7 @@ const Index = () => {
       <section className="relative py-20 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8 animate-fade-in">
+            <div className="space-y-6 animate-fade-in">
               <div className="space-y-4">
                 <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
                   Test DNA Completo
@@ -67,7 +67,7 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 gap-4 max-w-md">
+              <div className="grid grid-cols-2 gap-4 max-w-md mt-4">
                 {testPackages.map((pkg, index) => (
                   <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
                     <CardContent className="p-6 text-center">
