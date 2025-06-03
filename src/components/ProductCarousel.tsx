@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -9,21 +8,21 @@ const ProductCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop",
       title: "Test Salivare Semplice",
       description: "Semplice campione di saliva da casa tua"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=600&h=400&fit=crop",
-      title: "Packaging Premium",
-      description: "Kit elegante e sicuro per il tuo test"
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      title: "Risultati in 15 giorni",
+      description: "Attendi solo 15 giorni per i tuoi risultati"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop",
-      title: "Tecnologia Avanzata",
-      description: "Analisi genetica di laboratorio certificato"
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      title: "Controlla sulla Piattaforma",
+      description: "Accedi ai risultati dal tuo telefono"
     }
   ];
 
