@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +9,7 @@ import ReviewsSection from '@/components/ReviewsSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import PlatformSection from '@/components/PlatformSection';
 import FloatingCTA from '@/components/FloatingCTA';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -131,8 +131,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Floating CTA Button */}
+      {/* Floating Buttons */}
       <FloatingCTA />
+      <FloatingWhatsApp />
     </div>
   );
 };
