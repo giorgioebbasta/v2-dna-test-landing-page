@@ -30,6 +30,21 @@ const Index = () => {
     "Supporto scientifico da parte del nostro team di genetisti"
   ];
 
+  const testPackages = [
+    {
+      name: "1 test",
+      currentPrice: 299,
+      originalPrice: 349,
+      savings: 50
+    },
+    {
+      name: "2 test",
+      currentPrice: 528,
+      originalPrice: 598,
+      savings: 70
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
@@ -53,11 +68,21 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="flex items-center space-x-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-slate-900">299€</div>
-                  <div className="text-lg text-slate-500 line-through">349€</div>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {testPackages.map((pkg, index) => (
+                  <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
+                      <div className="space-y-1">
+                        <div className="text-3xl font-bold text-emerald-600">{pkg.currentPrice}€</div>
+                        <div className="text-lg text-slate-500 line-through">{pkg.originalPrice}€</div>
+                        <div className="text-sm font-medium text-emerald-700">
+                          Risparmi {pkg.savings}€
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -125,9 +150,14 @@ const Index = () => {
           <p className="text-xl text-indigo-100 mb-8">
             Unisciti a migliaia di italiani che hanno già scoperto i segreti del loro DNA
           </p>
-          <div className="text-center text-white">
-            <div className="text-3xl font-bold">299€</div>
-            <div className="text-lg text-indigo-200 line-through">349€</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
+            {testPackages.map((pkg, index) => (
+              <div key={index} className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <div className="text-lg font-semibold mb-1">{pkg.name}</div>
+                <div className="text-2xl font-bold">{pkg.currentPrice}€</div>
+                <div className="text-sm text-indigo-200 line-through">{pkg.originalPrice}€</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
