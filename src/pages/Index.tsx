@@ -70,7 +70,7 @@ const Index = () => {
               <div className="grid grid-cols-2 gap-4 max-w-md mt-4">
                 {testPackages.map((pkg, index) => (
                   <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
-                    <CardContent className="p-6 text-center">
+                    <CardContent className="p-3 text-center">
                       <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
                       <div className="space-y-1">
                         <div className="text-3xl font-bold text-emerald-600">€{pkg.currentPrice}</div>
