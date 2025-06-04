@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,6 +21,9 @@ const Index = () => {
     { icon: <RotateCcw className="w-6 h-6" />, text: "Reso entro 14 giorni" },
     { icon: <Calendar className="w-6 h-6" />, text: "Risultati in 15 giorni" }
   ];
+
+  const bulletPointsTitle = "Cosa include il tuo Test del DNA";
+  const bulletPointsDescription = "Il nostro test genetico completo ti fornisce informazioni dettagliate e personalizzate per migliorare la tua salute e il tuo benessere.";
 
   const bulletPoints = [
     "Analisi completa di oltre 40 predisposizioni genetiche",
@@ -111,6 +115,15 @@ const Index = () => {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Il Test Completo del DNA di Holifya analizza oltre 350 tratti genetici per fornirti 
               insights personalizzati sulla tua salute, nutrizione e benessere.
+            </p>
+          </div>
+
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">
+              {bulletPointsTitle}
+            </h3>
+            <p className="text-lg text-slate-600 text-center mb-8 max-w-2xl mx-auto">
+              {bulletPointsDescription}
             </p>
           </div>
 
