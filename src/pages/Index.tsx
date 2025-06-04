@@ -22,11 +22,11 @@ const Index = () => {
   ];
 
   const bulletPoints = [
-    "Analisi completa del tuo DNA con oltre 350 tratti genetici",
-    "Scopri la tua predisposizione a oltre 150 condizioni di salute",
-    "Ricevi consigli personalizzati per alimentazione e fitness",
-    "Accesso a vita alla piattaforma con aggiornamenti continui",
-    "Supporto scientifico da parte del nostro team di genetisti"
+    "Analisi completa di oltre 40 predisposizioni genetiche",
+    "Scopri le tue predisposizioni, intolleranze e migliora il tuo metabolismo",
+    "Report personalizzato su salute e alimentazione",
+    "Accesso a vita alla piattaforma, per monitorare la tua salute",
+    "Supporto 24/7 da parte del nostro team di esperti"
   ];
 
   const testPackages = [
