@@ -54,10 +54,10 @@ const ReviewsSection = () => {
             <span className="text-lg font-semibold text-slate-700">4.8/5</span>
           </a>
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Oltre 50.000 clienti soddisfatti
+            Oltre 3.000 clienti soddisfatti
           </h2>
           <p className="text-xl text-slate-600">
-            Scopri cosa dicono i nostri clienti del Test DNA Holifya
+            Scopri cosa dicono i nostri utenti del Test DNA Holifya
           </p>
         </div>
 
