@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,11 +23,26 @@ const Index = () => {
   ];
 
   const bulletPoints = [
-    "Analisi completa di oltre 40 predisposizioni genetiche",
-    "Scopri le tue predisposizioni, intolleranze e cosa blocca il tuo metabolismo",
-    "Report personalizzato su salute e alimentazione",
-    "Accesso a vita alla piattaforma, per monitorare la tua salute",
-    "Supporto 24/7 da parte del nostro team di esperti"
+    {
+      title: "Analisi completa di oltre 40 predisposizioni genetiche",
+      body: "Scopri le tue predisposizioni genetiche per malattie comuni e condizioni di salute"
+    },
+    {
+      title: "Predisposizioni, intolleranze e metabolismo",
+      body: "Identifica cosa blocca il tuo metabolismo e le tue intolleranze alimentari"
+    },
+    {
+      title: "Report personalizzato su salute e alimentazione",
+      body: "Ricevi un report dettagliato con consigli specifici per il tuo profilo genetico"
+    },
+    {
+      title: "Accesso a vita alla piattaforma",
+      body: "Monitora la tua salute e accedi agli aggiornamenti per sempre"
+    },
+    {
+      title: "Supporto 24/7 da parte del nostro team di esperti",
+      body: "Il nostro team di genetisti e nutrizionisti è sempre disponibile per aiutarti"
+    }
   ];
 
   const testPackages = [
@@ -118,9 +134,9 @@ const Index = () => {
             {bulletPoints.map((point, index) => (
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <CardContent className="p-6">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-slate-700 leading-relaxed">{point}</p>
+                  <div className="space-y-3">
+                    <h3 className="font-bold text-slate-900 leading-tight">{point.title}</h3>
+                    <p className="text-slate-700 leading-relaxed">{point.body}</p>
                   </div>
                 </CardContent>
               </Card>
