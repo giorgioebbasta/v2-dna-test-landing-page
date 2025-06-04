@@ -19,8 +19,8 @@ const HowItWorksSection = () => {
     {
       id: 3,
       title: "Attendi i Risultati",
-      description: "Il laboratorio analizza il tuo DNA con tecnologie all'avanguardia",
-      image: "/lovable-uploads/f2485e40-8ce8-4984-9085-d425bb4601e6.png"
+      description: "Il laboratorio analizza il tuo DNA con tecnologie all'avanguardia entro 15 giorni",
+      image: "/lovable-uploads/0a4bcb04-f8f3-4e78-9f19-7a2336ed5c70.png"
     },
     {
       id: 4,
