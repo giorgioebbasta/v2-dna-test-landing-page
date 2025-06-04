@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,28 +23,28 @@ const Index = () => {
 
   const bulletPoints = [
     {
-      title: "Analisi completa di oltre 40 predisposizioni genetiche",
-      body: "Scopri le tue predisposizioni genetiche per malattie comuni e condizioni di salute"
+      title: "🧠 Metabolismo e nutrizione",
+      body: "Carboidrati, grassi, sovrappeso, fame emotiva, sazietà, risposta alla dieta"
     },
     {
-      title: "Predisposizioni, intolleranze e metabolismo",
-      body: "Identifica cosa blocca il tuo metabolismo e le tue intolleranze alimentari"
+      title: "🥛 Intolleranze e sensibilità",
+      body: "Lattosio, glutine (celiachia), caffeina, istamina, nichel, alcol, solfiti"
     },
     {
-      title: "Report personalizzato su salute e alimentazione",
-      body: "Ricevi un report dettagliato con consigli specifici per il tuo profilo genetico"
+      title: "❤️ Prevenzione e salute",
+      body: "Colesterolo, diabete tipo 2, infiammazione, stress ossidativo, rischio cardiovascolare"
     },
     {
-      title: "Accesso a vita alla piattaforma",
-      body: "Monitora la tua salute e accedi agli aggiornamenti per sempre"
+      title: "🧬 Anti-aging e benessere cellulare",
+      body: "Invecchiamento cutaneo, fabbisogno di vitamine, riparazione del DNA"
     },
     {
-      title: "Supporto 24/7 da parte del nostro team di esperti",
-      body: "Il nostro team di genetisti e nutrizionisti è sempre disponibile per aiutarti"
+      title: "🏃 Sport e performance",
+      body: "Resistenza vs potenza, VO₂max, risposta alla caffeina, predisposizione agli infortuni"
     },
     {
-      title: "Certificazioni internazionali e sicurezza dei dati",
-      body: "I nostri laboratori sono certificati ISO e i tuoi dati genetici sono protetti con crittografia avanzata"
+      title: "🧘 Stress e stile di vita",
+      body: "Gestione dello stress, melatonina e sonno, detossificazione, salute mentale"
     }
   ];
 
