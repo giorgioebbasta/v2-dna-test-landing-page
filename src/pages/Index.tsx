@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -135,7 +134,7 @@ const Index = () => {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-3 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-3 flex-shrink-0 animate-pulse"></div>
                     <div className="space-y-3">
                       <h3 className="font-bold text-slate-900 leading-tight">{point.title}</h3>
                       <p className="text-slate-700 leading-relaxed">{point.body}</p>
