@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -160,7 +161,7 @@ const Index = () => {
       <HowItWorksSection />
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
+      <section className="py-12 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Inizia il tuo viaggio verso una vita più sana
