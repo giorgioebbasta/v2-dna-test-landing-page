@@ -14,7 +14,7 @@ const HowItWorksSection = () => {
       id: 2,
       title: "Raccogli il Campione",
       description: "Semplice campione di saliva in 2 minuti, seguendo le istruzioni incluse",
-      image: "/lovable-uploads/841c1f1f-42d4-42a2-808e-906c21d6da64.png"
+      image: "/lovable-uploads/fc187d4f-cdd7-4f37-a0d4-82e7ccd64ae4.png"
     },
     {
       id: 3,
