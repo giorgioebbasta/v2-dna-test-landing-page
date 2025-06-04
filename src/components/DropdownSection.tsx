@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
 const DropdownSection = () => {
-  const [openSection, setOpenSection] = useState(0);
+  const [openSection, setOpenSection] = useState(-1);
 
   const sections = [
     {
