@@ -88,44 +88,6 @@ const PlatformSection = () => {
             ))}
           </div>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-            <CardContent className="p-6">
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
-                alt="Report dettagliati"
-                className="w-full h-40 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">Report Dettagliati</h3>
-              <p className="text-slate-600">Oltre 50 pagine di analisi approfondite sui tuoi tratti genetici</p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-            <CardContent className="p-6">
-              <img
-                src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=400&h=300&fit=crop"
-                alt="Aggiornamenti continui"
-                className="w-full h-40 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">Aggiornamenti Continui</h3>
-              <p className="text-slate-600">Nuove scoperte scientifiche aggiunte automaticamente al tuo profilo</p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-            <CardContent className="p-6">
-              <img
-                src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop"
-                alt="Supporto esperto"
-                className="w-full h-40 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">Supporto Esperto</h3>
-              <p className="text-slate-600">Team di genetisti e nutrizionisti a tua disposizione</p>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </section>
   );
