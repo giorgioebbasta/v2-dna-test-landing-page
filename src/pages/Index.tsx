@@ -129,8 +129,7 @@ const Index = () => {
               Cosa rende unico il nostro Test del DNA
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Il Test Completo del DNA di Holifya analizza oltre 350 tratti genetici per fornirti 
-              insights personalizzati sulla tua salute, nutrizione e benessere.
+              Il Test Completo del DNA di Holifya risponde semplicemente a tutte le domande su di te.
             </p>
           </div>
 
