@@ -39,7 +39,12 @@ const ReviewsSection = () => {
     <section className="py-20 px-4 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center space-x-2 mb-4">
+          <a 
+            href="https://it.trustpilot.com/review/holifya.com" 
+            target="_blank" 
+            rel="noopener"
+            className="inline-flex items-center justify-center space-x-2 mb-4 hover:opacity-80 transition-opacity"
+          >
             <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-white.svg" alt="Trustpilot" className="h-8" />
             <div className="flex space-x-1">
               {[...Array(5)].map((_, i) => (
@@ -47,7 +52,7 @@ const ReviewsSection = () => {
               ))}
             </div>
             <span className="text-lg font-semibold text-slate-700">4.8/5</span>
-          </div>
+          </a>
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Oltre 50.000 clienti soddisfatti
           </h2>
