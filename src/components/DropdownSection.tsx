@@ -49,11 +49,11 @@ const DropdownSection = () => {
     {
       title: "Come funziona",
       content: [
-        "Ordina il kit online in 2 minuti",
+        "Ordina il kit online",
         "Ricevi il test a casa in 72 ore",
         "Raccogli il campione di saliva (2 minuti)",
         "Spedisci gratuitamente il campione",
-        "Il laboratorio analizza il tuo DNA (10-15 giorni)",
+        "Il laboratorio analizza il tuo DNA (15 giorni)",
         "Ricevi i risultati nella tua area personale"
       ]
     },
