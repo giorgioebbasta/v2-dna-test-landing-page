@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,7 +7,6 @@ import ProductCarousel from '@/components/ProductCarousel';
 import DropdownSection from '@/components/DropdownSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
-import PlatformSection from '@/components/PlatformSection';
 import FloatingCTA from '@/components/FloatingCTA';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
@@ -160,9 +158,6 @@ const Index = () => {
 
       {/* How It Works Section */}
       <HowItWorksSection />
-
-      {/* Platform Section */}
-      <PlatformSection />
 
       {/* Final CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
