@@ -7,31 +7,31 @@ const ReviewsSection = () => {
   const reviews = [
     {
       id: 1,
-      name: "Marco Rossi",
+      name: "Giulia R.",
       rating: 5,
-      comment: "Incredibile! Ho scoperto cose sul mio DNA che non sapevo. I consigli nutrizionali hanno cambiato la mia vita.",
-      date: "2 settimane fa"
+      comment: "Finalmente ho capito perché non riuscivo a perdere peso! Il test ha rivelato che il mio metabolismo dei carboidrati è lento. Ora seguo le indicazioni e sto vedendo risultati incredibili.",
+      date: "1 settimana fa"
     },
     {
       id: 2,
-      name: "Giulia Bianchi",
+      name: "Marco T.",
       rating: 5,
-      comment: "Servizio impeccabile, risultati dettagliati e supporto clienti fantastico. Consiglio vivamente!",
-      date: "1 mese fa"
+      comment: "Ho scoperto di essere intollerante al lattosio e al nichel. Dopo aver eliminato questi alimenti dalla mia dieta, i problemi digestivi sono spariti completamente.",
+      date: "2 settimane fa"
     },
     {
       id: 3,
-      name: "Alessandro M.",
+      name: "Elena B.",
       rating: 5,
-      comment: "La piattaforma è intuitiva e i report sono molto chiari. Finalmente capisco il mio metabolismo!",
+      comment: "Il report è dettagliatissimo e molto chiaro. Ho imparato tanto sul mio DNA e ora so esattamente quali vitamine assumere e come gestire lo stress.",
       date: "3 settimane fa"
     },
     {
       id: 4,
-      name: "Francesca T.",
+      name: "Alessandro M.",
       rating: 5,
-      comment: "Ho fatto il test per curiosità e ora seguo un piano alimentare personalizzato. Risultati sorprendenti!",
-      date: "1 settimana fa"
+      comment: "Consiglio vivamente questo test! Ha cambiato completamente il mio approccio all'alimentazione e all'allenamento. I risultati parlano da soli.",
+      date: "1 mese fa"
     }
   ];
 
@@ -87,7 +87,7 @@ const ReviewsSection = () => {
               <span className="text-sm font-medium text-slate-700">Verificato da Trustpilot</span>
             </div>
             <div className="text-sm text-slate-500">
-              Basato su 12.847 recensioni
+              Basato su +100 recensioni
             </div>
           </div>
         </div>
