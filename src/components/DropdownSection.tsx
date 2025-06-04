@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
@@ -59,12 +60,10 @@ const DropdownSection = () => {
     {
       title: "Perché scegliere Holifya",
       content: [
-        "Laboratorio certificato ISO 15189 e CLIA",
-        "Privacy garantita - i tuoi dati sono tuoi",
-        "Team di genetisti italiani qualificati",
-        "Aggiornamenti gratuiti sui nuovi studi",
-        "Supporto clienti in italiano 7 giorni su 7",
-        "Oltre 50.000 test già processati in Italia"
+        "Piattaforma web interattiva dove poter tenere traccia dei propri risultati",
+        "Assistenza clienti 24/7",
+        "Supporto da parte dei nostri esperti",
+        "Comitato scientifico esperto in nutrigenetica e salute metabolica"
       ]
     }
   ];
@@ -89,6 +88,31 @@ const DropdownSection = () => {
           ))}
         </div>
       );
+    } else if (index === 1) {
+      // Special rendering for the second section with link handling
+      return (
+        <div className="space-y-3 mt-4">
+          {section.content.map((item: any, itemIndex: number) => (
+            <div key={itemIndex}>
+              {item.type === 'link' ? (
+                <a 
+                  href={item.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-slate-700 hover:text-indigo-600 transition-colors duration-200 underline block"
+                >
+                  {item.text}
+                </a>
+              ) : (
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-slate-700">{item}</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      );
     } else {
       // Regular rendering for other sections
       return (
@@ -96,18 +120,7 @@ const DropdownSection = () => {
           {section.content.map((item: any, itemIndex: number) => (
             <li key={itemIndex} className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-              {item.type === 'link' ? (
-                <a 
-                  href={item.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors duration-200 underline"
-                >
-                  {item.text}
-                </a>
-              ) : (
-                <span className="text-slate-700">{item}</span>
-              )}
+              <span className="text-slate-700">{item}</span>
             </li>
           ))}
         </ul>
