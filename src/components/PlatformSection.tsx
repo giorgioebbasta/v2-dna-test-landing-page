@@ -38,7 +38,7 @@ const PlatformSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-slate-50 to-white">
+    <section className="py-12 px-4 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
@@ -50,7 +50,7 @@ const PlatformSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-6">
