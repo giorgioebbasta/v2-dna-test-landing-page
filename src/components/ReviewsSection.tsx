@@ -7,30 +7,30 @@ const ReviewsSection = () => {
   const reviews = [
     {
       id: 1,
-      name: "Giulia R.",
+      name: "Sara M.",
       rating: 5,
-      comment: "Finalmente ho capito perché non riuscivo a perdere peso! Il test ha rivelato che il mio metabolismo dei carboidrati è lento. Ora seguo le indicazioni e sto vedendo risultati incredibili.",
-      date: "1 settimana fa"
-    },
-    {
-      id: 2,
-      name: "Marco T.",
-      rating: 5,
-      comment: "Ho scoperto di essere intollerante al lattosio e al nichel. Dopo aver eliminato questi alimenti dalla mia dieta, i problemi digestivi sono spariti completamente.",
+      comment: "Incredibile! Ho scoperto di avere un metabolismo lento per i carboidrati e ora finalmente riesco a perdere peso seguendo le indicazioni del test. In 3 mesi ho perso 8 kg!",
       date: "2 settimane fa"
     },
     {
-      id: 3,
-      name: "Elena B.",
+      id: 2,
+      name: "Luca R.",
       rating: 5,
-      comment: "Il report è dettagliatissimo e molto chiaro. Ho imparato tanto sul mio DNA e ora so esattamente quali vitamine assumere e come gestire lo stress.",
+      comment: "Il test mi ha salvato la vita. Ho scoperto di essere intollerante al nichel e questo spiegava tutti i miei problemi digestivi. Ora sto benissimo e ho più energia.",
+      date: "1 mese fa"
+    },
+    {
+      id: 3,
+      name: "Francesca T.",
+      rating: 5,
+      comment: "Fantastico! Grazie al test ho capito che devo assumere più vitamina D e acido folico. Il mio medico era sorpreso dai risultati così dettagliati.",
       date: "3 settimane fa"
     },
     {
       id: 4,
-      name: "Alessandro M.",
+      name: "Marco P.",
       rating: 5,
-      comment: "Consiglio vivamente questo test! Ha cambiato completamente il mio approccio all'alimentazione e all'allenamento. I risultati parlano da soli.",
+      comment: "Ho sempre avuto problemi con lo sport, ora so che il mio corpo risponde meglio agli allenamenti di resistenza. I risultati si vedono già!",
       date: "1 mese fa"
     }
   ];
@@ -38,25 +38,31 @@ const ReviewsSection = () => {
   return (
     <section className="py-20 px-4 bg-slate-50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <a 
             href="https://it.trustpilot.com/review/holifya.com" 
             target="_blank" 
             rel="noopener"
-            className="inline-flex items-center justify-center space-x-2 mb-4 hover:opacity-80 transition-opacity"
+            className="inline-flex flex-col items-center justify-center space-y-2 mb-4 hover:opacity-80 transition-opacity"
           >
-            <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-white.svg" alt="Trustpilot" className="h-8" />
-            <div className="flex space-x-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-green-500 text-green-500" />
-              ))}
+            <img 
+              src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-black.svg" 
+              alt="Trustpilot" 
+              className="h-8" 
+            />
+            <div className="flex items-center space-x-2">
+              <div className="flex space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-6 h-6 fill-green-500 text-green-500" />
+                ))}
+              </div>
+              <span className="text-lg font-semibold text-slate-700">4.8/5</span>
             </div>
-            <span className="text-lg font-semibold text-slate-700">4.8/5</span>
           </a>
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Oltre 3.000 utenti soddisfatti
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-slate-600 mb-8">
             Scopri cosa dicono di noi
           </p>
         </div>
