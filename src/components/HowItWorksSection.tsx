@@ -8,25 +8,25 @@ const HowItWorksSection = () => {
       id: 1,
       title: "Ricevi il Kit",
       description: "Ordina online e ricevi il kit a casa in 72 ore con spedizione gratuita",
-      image: "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/44cad416-b3b2-417c-a9a8-96dae37c450e.png"
     },
     {
       id: 2,
       title: "Raccogli il Campione",
       description: "Semplice campione di saliva in 2 minuti, seguendo le istruzioni incluse",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/841c1f1f-42d4-42a2-808e-906c21d6da64.png"
     },
     {
       id: 3,
-      title: "Attendi 15 Giorni",
+      title: "Attendi i Risultati",
       description: "Il laboratorio analizza il tuo DNA con tecnologie all'avanguardia",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/f2485e40-8ce8-4984-9085-d425bb4601e6.png"
     },
     {
       id: 4,
       title: "Scopri i Risultati",
       description: "Accedi alla tua dashboard personale e scopri insights unici sul tuo DNA",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/d4aa8a21-17c5-4f33-bb32-2c3e6e83a9cd.png"
     }
   ];
 
