@@ -36,14 +36,14 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-slate-50">
+    <section className="py-12 px-4 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <a 
             href="https://it.trustpilot.com/review/holifya.com" 
             target="_blank" 
             rel="noopener"
-            className="inline-flex flex-col items-center justify-center space-y-2 mb-4 hover:opacity-80 transition-opacity"
+            className="inline-flex flex-col items-center justify-center space-y-4 mb-4 hover:opacity-80 transition-opacity"
           >
             <img 
               src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-black.svg" 
