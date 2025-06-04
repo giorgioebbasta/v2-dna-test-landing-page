@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,12 +35,14 @@ const DropdownSection = () => {
     {
       title: "Quali risultati ottieni",
       content: [
-        "Predisposizioni genetiche per 150+ condizioni di salute",
-        "Consigli nutrizionali personalizzati basati sul DNA",
-        "Piano di allenamento ottimizzato per i tuoi geni",
-        "Informazioni su metabolismo e intolleranze",
-        "Risposta ai farmaci e dosaggi consigliati",
-        "Tratti della personalità e caratteristiche fisiche"
+        "Report nutrigenetico completo e personalizzato",
+        "Analisi completa di oltre 2000 geni",
+        "Mappa alimentare di 250+ alimenti favorevoli / sfavorevoli",
+        {
+          type: "link",
+          text: "👉 Scarica un esempio di report",
+          url: "https://cdn.shopify.com/s/files/1/0647/1909/4024/files/DNA-Complete_Facsimile_e583bb92-cf50-4a43-ac37-09ab77aee305.pdf?v=1715770533"
+        }
       ]
     },
     {
@@ -92,10 +93,21 @@ const DropdownSection = () => {
       // Regular rendering for other sections
       return (
         <ul className="space-y-3 mt-4">
-          {section.content.map((item: string, itemIndex: number) => (
+          {section.content.map((item: any, itemIndex: number) => (
             <li key={itemIndex} className="flex items-start space-x-3">
               <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-              <span className="text-slate-700">{item}</span>
+              {item.type === 'link' ? (
+                <a 
+                  href={item.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-slate-700 hover:text-indigo-600 transition-colors duration-200 underline"
+                >
+                  {item.text}
+                </a>
+              ) : (
+                <span className="text-slate-700">{item}</span>
+              )}
             </li>
           ))}
         </ul>
