@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -76,6 +77,11 @@ const Index = () => {
                     Più a lungo
                   </span>
                 </h1>
+                
+                <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                  <ProductCarousel />
+                </div>
+                
                 <p className="text-xl text-slate-600 leading-relaxed">
                   Scopri i segreti del tuo DNA, con il test genetico più completo in Italia.<br />
                   <em>Ora disponibile a casa tua.</em>
@@ -109,8 +115,8 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <ProductCarousel />
+            <div className="lg:hidden">
+              {/* Carousel is now above the text in mobile */}
             </div>
           </div>
         </div>
