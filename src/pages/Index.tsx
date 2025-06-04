@@ -129,7 +129,7 @@ const Index = () => {
               Cosa rende unico il nostro Test del DNA
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Il Test Completo del DNA di Holifya risponde semplicemente a tutte le domande su di te.
+              <em>Semplicemente</em> ti dà tutte le risposte che cercavi.
             </p>
           </div>
 
