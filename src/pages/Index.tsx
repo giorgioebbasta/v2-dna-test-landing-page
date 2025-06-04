@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -129,7 +130,7 @@ const Index = () => {
       <section className="py-4 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
-            <h2 className="text-4xl font-bold text-slate-900 mb-2">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">
               Cosa rende unico il nostro Test del DNA
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
