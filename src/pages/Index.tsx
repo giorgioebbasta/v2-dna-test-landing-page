@@ -23,7 +23,7 @@ const Index = () => {
 
   const bulletPoints = [
     "Analisi completa di oltre 40 predisposizioni genetiche",
-    "Scopri le tue predisposizioni, intolleranze e migliora il tuo metabolismo",
+    "Scopri le tue predisposizioni, intolleranze e cosa blocca il tuo metabolismo",
     "Report personalizzato su salute e alimentazione",
     "Accesso a vita alla piattaforma, per monitorare la tua salute",
     "Supporto 24/7 da parte del nostro team di esperti"
