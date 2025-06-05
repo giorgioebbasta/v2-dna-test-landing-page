@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -118,7 +117,7 @@ const Index = () => {
                 ))}
               </div>
 
-              {/* New Quantity Selector Card */}
+              {/* Updated Quantity Selector Card with CTA Button */}
               <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg max-w-md">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
@@ -149,20 +148,10 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    {/* Checkbox on the right */}
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="purchase-confirm"
-                        checked={purchaseConfirmed}
-                        onCheckedChange={handlePurchaseConfirm}
-                      />
-                      <label
-                        htmlFor="purchase-confirm"
-                        className="text-sm font-medium text-slate-700 cursor-pointer"
-                      >
-                        Conferma acquisto
-                      </label>
-                    </div>
+                    {/* CTA Button on the right */}
+                    <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2">
+                      Ordina Ora
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
