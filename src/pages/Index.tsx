@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -172,8 +173,8 @@ const Index = () => {
               {/* Test Package Cards */}
               <div className="grid grid-cols-2 gap-4">
                 {testPackages.map((pkg, index) => (
-                  <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg h-32">
-                    <CardContent className="p-3 text-center flex flex-col justify-center h-full">
+                  <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
+                    <CardContent className="p-3 text-center">
                       <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
                       <div className="space-y-1">
                         <div className="text-3xl font-bold text-emerald-600">€{pkg.currentPrice}</div>
@@ -188,9 +189,9 @@ const Index = () => {
               </div>
 
               {/* Quantity Selector Card */}
-              <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg h-20">
-                <CardContent className="p-3 flex items-center justify-center h-full">
-                  <div className="flex items-center justify-between w-full">
+              <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
+                <CardContent className="p-3">
+                  <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <span className="text-sm font-medium text-slate-700">Quantità:</span>
                       <div className="flex items-center border border-slate-300 rounded-lg">
@@ -226,8 +227,8 @@ const Index = () => {
             </div>
             
             {/* Right side - Text content */}
-            <div className="animate-fade-in">
-              <div className="space-y-4 mb-6">
+            <div className="space-y-6 animate-fade-in">
+              <div className="space-y-4">
                 <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
                   Test Completo del DNA
                 </Badge>
@@ -246,9 +247,9 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {benefits.map((benefit, index) => (
-                  <div key={index} className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 h-32 justify-center">
+                  <div key={index} className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300">
                     <div className="text-emerald-600 mb-2">{benefit.icon}</div>
                     <span className="text-sm font-medium text-slate-700">{benefit.text}</span>
                   </div>
