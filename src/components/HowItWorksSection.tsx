@@ -24,8 +24,8 @@ const HowItWorksSection = () => {
     },
     {
       id: 4,
-      title: "Scopri i Risultati",
-      description: "Accedi alla tua dashboard personale e scopri insights unici sul tuo DNA",
+      title: "Scopri il tuo Benessere",
+      description: "Accedi alla tua area personale e scopri tutti i segreti sul tuo DNA",
       image: "/lovable-uploads/d4aa8a21-17c5-4f33-bb32-2c3e6e83a9cd.png"
     }
   ];
