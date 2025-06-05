@@ -1,9 +1,9 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, ChevronDown, ChevronRight, Truck, Clock, RotateCcw, Calendar, Shield, Award, Users } from 'lucide-react';
+import { Checkbox } from "@/components/ui/checkbox";
+import { Star, ChevronDown, ChevronRight, Truck, Clock, RotateCcw, Calendar, Shield, Award, Users, Plus, Minus } from 'lucide-react';
 import ProductCarousel from '@/components/ProductCarousel';
 import DropdownSection from '@/components/DropdownSection';
 import ReviewsSection from '@/components/ReviewsSection';
@@ -13,6 +13,8 @@ import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [quantity, setQuantity] = useState(3);
+  const [purchaseConfirmed, setPurchaseConfirmed] = useState(false);
 
   const benefits = [
     { icon: <Truck className="w-6 h-6" />, text: "Spedizione gratuita" },
@@ -63,6 +65,9 @@ const Index = () => {
     }
   ];
 
+  const increaseQuantity = () => setQuantity(prev => prev + 1);
+  const decreaseQuantity = () => setQuantity(prev => Math.max(3, prev - 1));
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
@@ -107,6 +112,55 @@ const Index = () => {
                   </Card>
                 ))}
               </div>
+
+              {/* New Quantity Selector Card */}
+              <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg max-w-md">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    {/* Quantity Selector on the left */}
+                    <div className="flex items-center space-x-3">
+                      <span className="text-sm font-medium text-slate-700">Quantità:</span>
+                      <div className="flex items-center border border-slate-300 rounded-lg">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={decreaseQuantity}
+                          disabled={quantity <= 3}
+                          className="h-8 w-8 p-0 hover:bg-slate-100"
+                        >
+                          <Minus className="w-4 h-4" />
+                        </Button>
+                        <span className="px-3 py-1 text-lg font-semibold text-slate-900 min-w-[2rem] text-center">
+                          {quantity}
+                        </span>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={increaseQuantity}
+                          className="h-8 w-8 p-0 hover:bg-slate-100"
+                        >
+                          <Plus className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </div>
+                    
+                    {/* Checkbox on the right */}
+                    <div className="flex items-center space-x-2">
+                      <Checkbox
+                        id="purchase-confirm"
+                        checked={purchaseConfirmed}
+                        onCheckedChange={setPurchaseConfirmed}
+                      />
+                      <label
+                        htmlFor="purchase-confirm"
+                        className="text-sm font-medium text-slate-700 cursor-pointer"
+                      >
+                        Conferma acquisto
+                      </label>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {benefits.map((benefit, index) => (
