@@ -166,33 +166,12 @@ const Index = () => {
 
           {/* Desktop Layout */}
           <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left side - Carousel */}
-            <div className="animate-fade-in">
-              <ProductCarousel />
-            </div>
-            
-            {/* Right side - Text content */}
+            {/* Left side - Carousel and Test Cards */}
             <div className="space-y-6 animate-fade-in">
-              <div className="space-y-4">
-                <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
-                  Test Completo del DNA
-                </Badge>
-                <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  Una vita sana,<br />
-                  <span className="italic bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Più a lungo
-                  </span>
-                </h1>
-                
-                <p className="text-xl text-slate-600 leading-relaxed">
-                  Scopri i segreti del tuo DNA, con il test genetico più completo in Italia.
-                </p>
-                <p className="text-xl text-slate-600 leading-relaxed">
-                  <em>Ora disponibile a casa tua.</em>
-                </p>
-              </div>
+              <ProductCarousel />
               
-              <div className="grid grid-cols-2 gap-4 max-w-md mt-4">
+              {/* Test Package Cards */}
+              <div className="grid grid-cols-2 gap-4">
                 {testPackages.map((pkg, index) => (
                   <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
                     <CardContent className="p-3 text-center">
@@ -209,8 +188,9 @@ const Index = () => {
                 ))}
               </div>
 
-              <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg max-w-md">
-                <CardContent className="p-4">
+              {/* Quantity Selector Card */}
+              <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
+                <CardContent className="p-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <span className="text-sm font-medium text-slate-700">Quantità:</span>
@@ -244,6 +224,28 @@ const Index = () => {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+            
+            {/* Right side - Text content */}
+            <div className="space-y-6 animate-fade-in">
+              <div className="space-y-4">
+                <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
+                  Test Completo del DNA
+                </Badge>
+                <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+                  Una vita sana,<br />
+                  <span className="italic bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Più a lungo
+                  </span>
+                </h1>
+                
+                <p className="text-xl text-slate-600 leading-relaxed">
+                  Scopri i segreti del tuo DNA, con il test genetico più completo in Italia.
+                </p>
+                <p className="text-xl text-slate-600 leading-relaxed">
+                  <em>Ora disponibile a casa tua.</em>
+                </p>
+              </div>
 
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 {benefits.map((benefit, index) => (
