@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -67,6 +68,10 @@ const Index = () => {
 
   const increaseQuantity = () => setQuantity(prev => prev + 1);
   const decreaseQuantity = () => setQuantity(prev => Math.max(3, prev - 1));
+
+  const handlePurchaseConfirm = (checked: boolean | "indeterminate") => {
+    setPurchaseConfirmed(checked === true);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -149,7 +154,7 @@ const Index = () => {
                       <Checkbox
                         id="purchase-confirm"
                         checked={purchaseConfirmed}
-                        onCheckedChange={setPurchaseConfirmed}
+                        onCheckedChange={handlePurchaseConfirm}
                       />
                       <label
                         htmlFor="purchase-confirm"
