@@ -8,21 +8,21 @@ const ProductCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop",
+      image: "/lovable-uploads/f4795748-3541-454a-afb8-327d85aa63fc.png",
       title: "Test Salivare Semplice",
       description: "Semplice campione di saliva da casa tua"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      title: "Risultati in 15 giorni",
-      description: "Attendi solo 15 giorni per i tuoi risultati"
+      image: "/lovable-uploads/72f17cb3-d746-4ef7-86d6-1276abb3f65b.png",
+      title: "Kit DNA Professionale",
+      description: "Kit di raccolta campione certificato"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      title: "Controlla sulla Piattaforma",
-      description: "Accedi ai risultati dal tuo telefono"
+      image: "/lovable-uploads/0101b067-ddec-4c90-8bad-4962b0c34569.png",
+      title: "Ricevi il tuo Kit",
+      description: "Ordina e ricevi il kit a casa in 72 ore"
     }
   ];
 
