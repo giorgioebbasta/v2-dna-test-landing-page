@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -8,13 +9,13 @@ const ProductCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: "/lovable-uploads/f4795748-3541-454a-afb8-327d85aa63fc.png",
+      image: "/lovable-uploads/f69d667b-2198-4033-850c-c4626a0ad35d.png",
       title: "Test Salivare Semplice",
       description: "Semplice campione di saliva da casa tua"
     },
     {
       id: 2,
-      image: "/lovable-uploads/72f17cb3-d746-4ef7-86d6-1276abb3f65b.png",
+      image: "/lovable-uploads/f2d314d3-ab01-49c2-84e3-f6b59b117dbf.png",
       title: "Kit DNA Professionale",
       description: "Kit di raccolta campione certificato"
     },
