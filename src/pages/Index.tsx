@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -227,8 +226,8 @@ const Index = () => {
             </div>
             
             {/* Right side - Text content */}
-            <div className="space-y-6 animate-fade-in">
-              <div className="space-y-4">
+            <div className="animate-fade-in">
+              <div className="space-y-4 mb-6">
                 <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
                   Test Completo del DNA
                 </Badge>
