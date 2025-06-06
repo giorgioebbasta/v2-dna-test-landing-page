@@ -73,6 +73,10 @@ const Index = () => {
     setPurchaseConfirmed(checked === true);
   };
 
+  const getQuantityCartUrl = (qty: number) => {
+    return `https://holifya.com/cart/43782964445448:${qty}`;
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
@@ -100,7 +104,7 @@ const Index = () => {
                 <em>Ora disponibile a casa tua.</em>
               </p>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4 max-w-md mt-4">
               {testPackages.map((pkg, index) => (
                 <a 
@@ -155,9 +159,15 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2">
-                    Ordina Ora
-                  </Button>
+                  <a
+                    href={getQuantityCartUrl(quantity)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2">
+                      Ordina Ora
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
@@ -234,9 +244,15 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2">
-                      Ordina Ora
-                    </Button>
+                    <a
+                      href={getQuantityCartUrl(quantity)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2">
+                        Ordina Ora
+                      </Button>
+                    </a>
                   </div>
                 </CardContent>
               </Card>
