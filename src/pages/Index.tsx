@@ -54,13 +54,15 @@ const Index = () => {
       name: "1 Test del DNA",
       currentPrice: 299,
       originalPrice: 349,
-      savings: 50
+      savings: 50,
+      url: "https://holifya.com/cart/43782964445448:1"
     },
     {
       name: "2 Test del DNA",
       currentPrice: 528,
       originalPrice: 598,
-      savings: 70
+      savings: 70,
+      url: "https://holifya.com/cart/43782964445448:2"
     }
   ];
 
@@ -101,18 +103,26 @@ const Index = () => {
             
             <div className="grid grid-cols-2 gap-4 max-w-md mt-4">
               {testPackages.map((pkg, index) => (
-                <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
-                  <CardContent className="p-3 text-center">
-                    <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
-                    <div className="space-y-1">
-                      <div className="text-3xl font-bold text-emerald-600">€{pkg.currentPrice}</div>
-                      <div className="text-lg text-slate-500 line-through">€{pkg.originalPrice}</div>
-                      <div className="text-sm font-medium text-emerald-700">
-                        Risparmi €{pkg.savings}
+                <a 
+                  key={index} 
+                  href={pkg.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                    <CardContent className="p-3 text-center">
+                      <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
+                      <div className="space-y-1">
+                        <div className="text-3xl font-bold text-emerald-600">€{pkg.currentPrice}</div>
+                        <div className="text-lg text-slate-500 line-through">€{pkg.originalPrice}</div>
+                        <div className="text-sm font-medium text-emerald-700">
+                          Risparmi €{pkg.savings}
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </a>
               ))}
             </div>
 
@@ -171,18 +181,26 @@ const Index = () => {
               {/* Test Package Cards */}
               <div className="grid grid-cols-2 gap-4">
                 {testPackages.map((pkg, index) => (
-                  <Card key={index} className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg">
-                    <CardContent className="p-3 text-center">
-                      <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
-                      <div className="space-y-1">
-                        <div className="text-3xl font-bold text-emerald-600">€{pkg.currentPrice}</div>
-                        <div className="text-lg text-slate-500 line-through">€{pkg.originalPrice}</div>
-                        <div className="text-sm font-medium text-emerald-700">
-                          Risparmi €{pkg.savings}
+                  <a 
+                    key={index} 
+                    href={pkg.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Card className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                      <CardContent className="p-3 text-center">
+                        <h3 className="text-lg font-semibold text-slate-900 mb-3">{pkg.name}</h3>
+                        <div className="space-y-1">
+                          <div className="text-3xl font-bold text-emerald-600">€{pkg.currentPrice}</div>
+                          <div className="text-lg text-slate-500 line-through">€{pkg.originalPrice}</div>
+                          <div className="text-sm font-medium text-emerald-700">
+                            Risparmi €{pkg.savings}
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  </a>
                 ))}
               </div>
 
@@ -304,11 +322,19 @@ const Index = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
             {testPackages.map((pkg, index) => (
-              <div key={index} className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4">
-                <div className="text-lg font-semibold mb-1">{pkg.name}</div>
-                <div className="text-2xl font-bold">€{pkg.currentPrice}</div>
-                <div className="text-sm text-indigo-200 line-through">€{pkg.originalPrice}</div>
-              </div>
+              <a 
+                key={index}
+                href={pkg.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+                  <div className="text-lg font-semibold mb-1">{pkg.name}</div>
+                  <div className="text-2xl font-bold">€{pkg.currentPrice}</div>
+                  <div className="text-sm text-indigo-200 line-through">€{pkg.originalPrice}</div>
+                </div>
+              </a>
             ))}
           </div>
         </div>
