@@ -17,7 +17,7 @@ const DropdownSection = () => {
           ]
         },
         {
-          title: "Istruzioni chiare + Carta Membro personale",
+          title: "Istruzioni chiare + Members' Card personale",
           items: [
             "📖 Bastano 60 secondi per completare il prelievo grazie alle istruzioni semplici e illustrate.",
             "💳 All'interno trovi la tua Carta DNA personale, da conservare con il tuo codice identificativo."
