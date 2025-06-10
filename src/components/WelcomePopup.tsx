@@ -13,6 +13,7 @@ import { Mail, Gift } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 // Klaviyo configuration
+const KLAVIYO_COMPANY_ID = '2d11ae';
 const KLAVIYO_LIST_ID = 'Yp9bpB';
 
 // Declare Klaviyo global for TypeScript
@@ -48,85 +49,52 @@ const WelcomePopup = () => {
   const subscribeToKlaviyo = async (email: string): Promise<boolean> => {
     console.log('Starting Klaviyo subscription for email:', email);
     
-    // Method 1: Try Klaviyo's JavaScript SDK
+    // Wait for Klaviyo to load if it hasn't already
+    let attempts = 0;
+    while (!window._learnq && attempts < 10) {
+      console.log('Waiting for Klaviyo to load...');
+      await new Promise(resolve => setTimeout(resolve, 500));
+      attempts++;
+    }
+
+    if (!window._learnq) {
+      console.error('Klaviyo failed to load after waiting');
+      return false;
+    }
+
     try {
-      if (window._learnq) {
-        console.log('Using Klaviyo _learnq method');
-        window._learnq.push(['identify', { email: email }]);
-        window._learnq.push(['track', 'Newsletter Signup', { 
+      console.log('Using Klaviyo _learnq method');
+      
+      // First identify the user
+      window._learnq.push(['identify', { 
+        $email: email,
+        email: email 
+      }]);
+      
+      // Track the signup event
+      window._learnq.push(['track', 'Newsletter Signup', { 
+        $email: email,
+        email: email,
+        source: 'Welcome Popup',
+        list_id: KLAVIYO_LIST_ID 
+      }]);
+      
+      // Subscribe to the specific list
+      window._learnq.push(['subscribe', {
+        list: KLAVIYO_LIST_ID,
+        email: email,
+        $email: email,
+        properties: {
           source: 'Welcome Popup',
-          list_id: KLAVIYO_LIST_ID 
-        }]);
-        
-        // Add to specific list
-        const listData = {
-          list: KLAVIYO_LIST_ID,
-          email: email,
-          properties: {
-            source: 'Welcome Popup'
-          }
-        };
-        window._learnq.push(['subscribe', listData]);
-        
-        console.log('Klaviyo subscription successful via _learnq');
-        return true;
-      }
-    } catch (error) {
-      console.warn('Klaviyo _learnq method failed:', error);
-    }
-
-    // Method 2: Try direct Klaviyo object if available
-    try {
-      if (window.klaviyo) {
-        console.log('Using direct Klaviyo object');
-        await window.klaviyo.push(['identify', { email: email }]);
-        await window.klaviyo.push(['subscribe', {
-          list: KLAVIYO_LIST_ID,
-          email: email,
-          properties: { source: 'Welcome Popup' }
-        }]);
-        
-        console.log('Klaviyo subscription successful via direct object');
-        return true;
-      }
-    } catch (error) {
-      console.warn('Direct Klaviyo method failed:', error);
-    }
-
-    // Method 3: Form-based fallback (most reliable)
-    try {
-      console.log('Using form-based fallback method');
+          $source: 'Welcome Popup'
+        }
+      }]);
       
-      // Create a hidden form and submit it to Klaviyo
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = `https://manage.kmail-lists.com/subscriptions/subscribe`;
-      form.target = '_blank';
-      form.style.display = 'none';
-      
-      const emailInput = document.createElement('input');
-      emailInput.type = 'email';
-      emailInput.name = 'email';
-      emailInput.value = email;
-      
-      const listInput = document.createElement('input');
-      listInput.type = 'hidden';
-      listInput.name = 'g';
-      listInput.value = KLAVIYO_LIST_ID;
-      
-      form.appendChild(emailInput);
-      form.appendChild(listInput);
-      document.body.appendChild(form);
-      
-      // Submit form in new tab/window
-      form.submit();
-      document.body.removeChild(form);
-      
-      console.log('Form-based subscription initiated');
+      console.log('Klaviyo subscription commands sent successfully');
       return true;
       
     } catch (error) {
-      console.error('Form-based fallback failed:', error);
+      console.error('Klaviyo subscription failed:', error);
       return false;
     }
   };
@@ -155,7 +123,7 @@ const WelcomePopup = () => {
         });
         handleClose();
       } else {
-        throw new Error('Tutti i metodi di iscrizione hanno fallito');
+        throw new Error('Klaviyo subscription failed');
       }
       
     } catch (error) {
