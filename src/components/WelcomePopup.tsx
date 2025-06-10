@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -37,49 +38,191 @@ const WelcomePopup = () => {
     localStorage.setItem('hasSeenWelcomePopup', 'true');
   };
 
-  const subscribeToKlaviyo = async (email: string) => {
-    try {
-      console.log('Subscribing to Klaviyo list:', KLAVIYO_LIST_ID);
-      console.log('Email:', email);
-      
-      // Use Klaviyo's v2 subscription API which has better CORS support
-      const response = await fetch(`https://a.klaviyo.com/api/v2/list/${KLAVIYO_LIST_ID}/subscribe`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          api_key: KLAVIYO_API_KEY,
-          profiles: [
-            {
-              email: email,
-              properties: {
-                source: 'Welcome Popup',
-                language: 'it',
-                subscription_date: new Date().toISOString()
+  // Method 1: Try Klaviyo's newer REST API with better CORS handling
+  const subscribeMethod1 = async (email: string) => {
+    console.log('Trying Method 1: REST API v2024-06-15');
+    
+    const response = await fetch(`https://a.klaviyo.com/api/profiles/`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
+        'Content-Type': 'application/json',
+        'revision': '2024-06-15'
+      },
+      body: JSON.stringify({
+        data: {
+          type: 'profile',
+          attributes: {
+            email: email,
+            properties: {
+              source: 'Welcome Popup',
+              language: 'it',
+              subscription_date: new Date().toISOString()
+            }
+          }
+        }
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Method 1 failed: ${response.status}`);
+    }
+
+    // Now subscribe to list
+    const profileData = await response.json();
+    const profileId = profileData.data.id;
+
+    const subscribeResponse = await fetch(`https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
+        'Content-Type': 'application/json',
+        'revision': '2024-06-15'
+      },
+      body: JSON.stringify({
+        data: {
+          type: 'profile-subscription-bulk-create-job',
+          attributes: {
+            profiles: {
+              data: [
+                {
+                  type: 'profile',
+                  id: profileId
+                }
+              ]
+            }
+          },
+          relationships: {
+            list: {
+              data: {
+                type: 'list',
+                id: KLAVIYO_LIST_ID
               }
             }
-          ]
-        })
-      });
+          }
+        }
+      })
+    });
 
-      console.log('Response status:', response.status);
-      console.log('Response headers:', response.headers);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Klaviyo API error response:', errorText);
-        throw new Error(`Klaviyo subscription failed: ${response.status} - ${errorText}`);
-      }
-
-      const result = await response.json();
-      console.log('Successfully subscribed to Klaviyo:', result);
-      
-      return result;
-    } catch (error) {
-      console.error('Klaviyo subscription error:', error);
-      throw error;
+    if (!subscribeResponse.ok) {
+      throw new Error(`Subscription failed: ${subscribeResponse.status}`);
     }
+
+    return await subscribeResponse.json();
+  };
+
+  // Method 2: Try legacy v2 API
+  const subscribeMethod2 = async (email: string) => {
+    console.log('Trying Method 2: Legacy v2 API');
+    
+    const response = await fetch(`https://a.klaviyo.com/api/v2/list/${KLAVIYO_LIST_ID}/subscribe`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        api_key: KLAVIYO_API_KEY,
+        profiles: [
+          {
+            email: email,
+            properties: {
+              source: 'Welcome Popup',
+              language: 'it',
+              subscription_date: new Date().toISOString()
+            }
+          }
+        ]
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Method 2 failed: ${response.status} - ${errorText}`);
+    }
+
+    return await response.json();
+  };
+
+  // Method 3: Simple form submission approach
+  const subscribeMethod3 = async (email: string) => {
+    console.log('Trying Method 3: Form submission');
+    
+    // Create a hidden form and submit it
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = `https://manage.kmail-lists.com/subscriptions/subscribe`;
+    form.target = '_blank';
+    form.style.display = 'none';
+
+    const inputs = {
+      'email': email,
+      'list': KLAVIYO_LIST_ID,
+      'source': 'Welcome Popup'
+    };
+
+    Object.entries(inputs).forEach(([name, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    return { success: true, method: 'form_submission' };
+  };
+
+  // Method 4: Klaviyo's client-side SDK approach
+  const subscribeMethod4 = async (email: string) => {
+    console.log('Trying Method 4: Client-side tracking');
+    
+    // Use Klaviyo's client-side tracking if available
+    if (typeof window !== 'undefined' && (window as any)._learnq) {
+      (window as any)._learnq.push(['identify', {
+        '$email': email,
+        'source': 'Welcome Popup',
+        'language': 'it',
+        'subscription_date': new Date().toISOString()
+      }]);
+      
+      return { success: true, method: 'client_tracking' };
+    }
+    
+    throw new Error('Klaviyo client tracking not available');
+  };
+
+  const subscribeToKlaviyo = async (email: string) => {
+    const methods = [
+      subscribeMethod1,
+      subscribeMethod2,
+      subscribeMethod3,
+      subscribeMethod4
+    ];
+
+    let lastError = null;
+
+    for (let i = 0; i < methods.length; i++) {
+      try {
+        console.log(`Attempting subscription method ${i + 1}...`);
+        const result = await methods[i](email);
+        console.log(`Method ${i + 1} successful:`, result);
+        return result;
+      } catch (error) {
+        console.error(`Method ${i + 1} failed:`, error);
+        lastError = error;
+        
+        // If it's a CORS error and we're not on the last method, continue
+        if (i < methods.length - 1) {
+          continue;
+        }
+      }
+    }
+
+    // If all methods failed, throw the last error
+    throw lastError || new Error('All subscription methods failed');
   };
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -98,13 +241,24 @@ const WelcomePopup = () => {
       
       handleClose();
     } catch (error) {
-      console.error('Subscription failed:', error);
+      console.error('All subscription methods failed:', error);
       
-      toast({
-        title: "Errore nell'iscrizione",
-        description: "Si è verificato un problema. Riprova più tardi o contattaci.",
-        variant: "destructive"
-      });
+      // Show a more helpful error message
+      const errorMessage = error instanceof Error ? error.message : 'Errore sconosciuto';
+      
+      if (errorMessage.includes('CORS') || errorMessage.includes('blocked')) {
+        toast({
+          title: "Problema di connessione",
+          description: "Per favore disabilita temporaneamente l'ad blocker e riprova, oppure contattaci direttamente.",
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Errore nell'iscrizione",
+          description: "Si è verificato un problema. Riprova più tardi o contattaci direttamente.",
+          variant: "destructive"
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
