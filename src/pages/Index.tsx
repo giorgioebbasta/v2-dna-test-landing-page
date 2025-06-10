@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -362,7 +363,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-8 px-4 bg-slate-50">
+      <section className="py-8 px-2 md:px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Hai ancora dei dubbi?
@@ -380,7 +381,7 @@ const Index = () => {
                 <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 md:mb-3">Email</h3>
                 <a 
                   href="mailto:support@holifya.com"
-                  className="text-sm md:text-lg text-indigo-600 hover:text-indigo-700 transition-colors duration-300 break-all"
+                  className="text-sm md:text-lg text-indigo-600 hover:text-indigo-700 transition-colors duration-300"
                 >
                   support@holifya.com
                 </a>
