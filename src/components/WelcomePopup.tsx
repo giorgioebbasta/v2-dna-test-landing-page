@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -19,12 +18,12 @@ const WelcomePopup = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Show popup after 2 seconds if user hasn't seen it before
+    // Show popup after 5 seconds if user hasn't seen it before
     const hasSeenWelcome = localStorage.getItem('hasSeenWelcomePopup');
     if (!hasSeenWelcome) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 2000);
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, []);
