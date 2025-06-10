@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -363,7 +362,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-slate-50">
+      <section className="py-8 px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Hai ancora dei dubbi?
