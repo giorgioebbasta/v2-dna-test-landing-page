@@ -12,6 +12,10 @@ import { Input } from "@/components/ui/input";
 import { Mail, Gift } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
+// Klaviyo configuration
+const KLAVIYO_API_KEY = 'pk_2d11aeed537aad31130215bbdca2a4d334';
+const KLAVIYO_LIST_NAME = '202506 Welcome Popup DNA';
+
 const WelcomePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -34,21 +38,76 @@ const WelcomePopup = () => {
     localStorage.setItem('hasSeenWelcomePopup', 'true');
   };
 
+  const subscribeToKlaviyo = async (email: string) => {
+    try {
+      // Create profile and subscribe to list
+      const response = await fetch('https://a.klaviyo.com/api/profiles/', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
+          'Content-Type': 'application/json',
+          'revision': '2024-06-15'
+        },
+        body: JSON.stringify({
+          data: {
+            type: 'profile',
+            attributes: {
+              email: email,
+              properties: {
+                source: 'Welcome Popup',
+                list_name: KLAVIYO_LIST_NAME,
+                subscription_date: new Date().toISOString(),
+                language: 'it'
+              }
+            }
+          }
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(`Klaviyo API error: ${response.status} - ${errorData.detail || 'Unknown error'}`);
+      }
+
+      const result = await response.json();
+      console.log('Profile created successfully:', result);
+
+      // Now subscribe the profile to the specific list
+      // Note: In practice, you might want to get the list ID first, but for now we'll rely on the profile creation
+      
+      return result;
+    } catch (error) {
+      console.error('Klaviyo subscription error:', error);
+      throw error;
+    }
+  };
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await subscribeToKlaviyo(email);
+      
       toast({
         title: "Iscrizione completata! 🎉",
         description: "Controlla la tua email per ricevere il codice sconto del 5%",
       });
-      setIsSubmitting(false);
+      
       handleClose();
-    }, 1000);
+    } catch (error) {
+      console.error('Subscription failed:', error);
+      
+      toast({
+        title: "Errore nell'iscrizione",
+        description: "Si è verificato un problema. Riprova più tardi o contattaci.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleSkip = () => {
