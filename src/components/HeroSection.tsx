@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -41,7 +40,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 pt-24">
+    <section className="relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 pt-16">
       <div className="max-w-7xl mx-auto">
         {/* Mobile Layout */}
         <div className="lg:hidden space-y-6 animate-fade-in">
