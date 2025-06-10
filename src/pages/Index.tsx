@@ -9,6 +9,7 @@ import DropdownSection from '@/components/DropdownSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import HowItWorksSection from '@/components/HowItWorksSection';
 import FloatingCTA from '@/components/FloatingCTA';
+import WelcomePopup from '@/components/WelcomePopup';
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,6 +80,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <WelcomePopup />
+      
       {/* Hero Section */}
       <section className="relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50">
         <div className="max-w-7xl mx-auto">
