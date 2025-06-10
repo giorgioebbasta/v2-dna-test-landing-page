@@ -3,26 +3,10 @@ import React, { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Mail, Gift } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
-
-// Klaviyo configuration
-const KLAVIYO_COMPANY_ID = '2d11ae';
-const KLAVIYO_LIST_ID = 'Yp9bpB';
-
-// Declare Klaviyo global for TypeScript
-declare global {
-  interface Window {
-    _learnq: any[];
-    klaviyo?: any;
-  }
-}
+import { subscribeToKlaviyo } from '@/services/klaviyoService';
+import WelcomePopupContent from './WelcomePopupContent';
 
 const WelcomePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,59 +28,6 @@ const WelcomePopup = () => {
   const handleClose = () => {
     setIsOpen(false);
     localStorage.setItem('hasSeenWelcomePopup', 'true');
-  };
-
-  const subscribeToKlaviyo = async (email: string): Promise<boolean> => {
-    console.log('Starting Klaviyo subscription for email:', email);
-    
-    // Wait for Klaviyo to load if it hasn't already
-    let attempts = 0;
-    while (!window._learnq && attempts < 10) {
-      console.log('Waiting for Klaviyo to load...');
-      await new Promise(resolve => setTimeout(resolve, 500));
-      attempts++;
-    }
-
-    if (!window._learnq) {
-      console.error('Klaviyo failed to load after waiting');
-      return false;
-    }
-
-    try {
-      console.log('Using Klaviyo _learnq method');
-      
-      // First identify the user
-      window._learnq.push(['identify', { 
-        $email: email,
-        email: email 
-      }]);
-      
-      // Track the signup event
-      window._learnq.push(['track', 'Newsletter Signup', { 
-        $email: email,
-        email: email,
-        source: 'Welcome Popup',
-        list_id: KLAVIYO_LIST_ID 
-      }]);
-      
-      // Subscribe to the specific list
-      window._learnq.push(['subscribe', {
-        list: KLAVIYO_LIST_ID,
-        email: email,
-        $email: email,
-        properties: {
-          source: 'Welcome Popup',
-          $source: 'Welcome Popup'
-        }
-      }]);
-      
-      console.log('Klaviyo subscription commands sent successfully');
-      return true;
-      
-    } catch (error) {
-      console.error('Klaviyo subscription failed:', error);
-      return false;
-    }
   };
 
   const handleSubscribe = async (e: React.FormEvent) => {
@@ -147,57 +78,13 @@ const WelcomePopup = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="w-[95vw] max-w-md mx-auto rounded-lg p-6 sm:p-6 max-h-[90vh] overflow-y-auto">
-        <DialogHeader className="text-center space-y-3 sm:space-y-4">
-          <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full flex items-center justify-center">
-            <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-          </div>
-          
-          <DialogTitle className="text-xl sm:text-2xl font-bold text-slate-900 px-2">
-            Benvenuto! 🎉
-          </DialogTitle>
-          
-          <DialogDescription className="text-base sm:text-lg text-slate-600 px-2">
-            Iscriviti alla nostra newsletter e ricevi uno <strong className="text-emerald-600">sconto del 5%</strong> sul tuo primo ordine!
-          </DialogDescription>
-        </DialogHeader>
-
-        <form onSubmit={handleSubscribe} className="space-y-4 mt-4 sm:mt-6">
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
-            <Input
-              type="email"
-              placeholder="Inserisci la tua email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="pl-10 h-11 sm:h-10"
-              required
-            />
-          </div>
-          
-          <div className="flex space-x-2">
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white h-11 sm:h-10 text-sm sm:text-base"
-            >
-              {isSubmitting ? "Iscrizione..." : "Ottieni il 5% di sconto"}
-            </Button>
-          </div>
-          
-          <button
-            type="button"
-            onClick={handleSkip}
-            className="w-full text-sm text-slate-500 hover:text-slate-700 transition-colors py-2"
-          >
-            No grazie, continua senza sconto
-          </button>
-        </form>
-
-        <div className="mt-3 sm:mt-4 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
-          <p className="text-xs text-emerald-800 text-center leading-relaxed">
-            📧 Riceverai email occasionali su offerte esclusive e consigli sulla salute. Puoi annullare l'iscrizione in qualsiasi momento.
-          </p>
-        </div>
+        <WelcomePopupContent
+          email={email}
+          setEmail={setEmail}
+          onSubmit={handleSubscribe}
+          onSkip={handleSkip}
+          isSubmitting={isSubmitting}
+        />
       </DialogContent>
     </Dialog>
   );
