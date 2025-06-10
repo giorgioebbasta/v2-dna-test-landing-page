@@ -14,7 +14,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // Klaviyo configuration
 const KLAVIYO_API_KEY = 'pk_2d11aeed537aad31130215bbdca2a4d334';
-const KLAVIYO_LIST_NAME = '202506 Welcome Popup DNA';
+const KLAVIYO_LIST_ID = 'XvqVvT'; // You'll need to get your actual list ID from Klaviyo
 
 const WelcomePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,10 +40,11 @@ const WelcomePopup = () => {
 
   const subscribeToKlaviyo = async (email: string) => {
     try {
-      // Create profile and subscribe to list
-      const response = await fetch('https://a.klaviyo.com/api/profiles/', {
+      console.log('Subscribing to Klaviyo list:', KLAVIYO_LIST_ID);
+      
+      // Use Klaviyo's public subscription endpoint
+      const response = await fetch(`https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/`, {
         method: 'POST',
-        mode: 'no-cors', // Add this to handle CORS
         headers: {
           'Authorization': `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
           'Content-Type': 'application/json',
@@ -51,25 +52,48 @@ const WelcomePopup = () => {
         },
         body: JSON.stringify({
           data: {
-            type: 'profile',
+            type: 'profile-subscription-bulk-create-job',
             attributes: {
-              email: email,
-              properties: {
-                source: 'Welcome Popup',
-                list_name: KLAVIYO_LIST_NAME,
-                subscription_date: new Date().toISOString(),
-                language: 'it'
+              profiles: {
+                data: [
+                  {
+                    type: 'profile',
+                    attributes: {
+                      email: email,
+                      properties: {
+                        source: 'Welcome Popup',
+                        language: 'it',
+                        subscription_date: new Date().toISOString()
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            relationships: {
+              list: {
+                data: {
+                  type: 'list',
+                  id: KLAVIYO_LIST_ID
+                }
               }
             }
           }
         })
       });
 
-      console.log('Request sent to Klaviyo');
+      console.log('Response status:', response.status);
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('Klaviyo API error:', errorData);
+        throw new Error(`Klaviyo subscription failed: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log('Successfully subscribed to Klaviyo:', result);
       
-      // With no-cors mode, we can't read the response, so we'll assume success
-      // if no error was thrown
-      return { success: true };
+      return result;
     } catch (error) {
       console.error('Klaviyo subscription error:', error);
       throw error;
