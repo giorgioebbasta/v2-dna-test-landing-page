@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Star, ChevronDown, ChevronRight, Truck, Clock, RotateCcw, Calendar, Shield, Award, Users, Plus, Minus } from 'lucide-react';
+import { Star, ChevronDown, ChevronRight, Truck, Clock, RotateCcw, Calendar, Shield, Award, Users, Plus, Minus, Mail, MessageCircle } from 'lucide-react';
 import ProductCarousel from '@/components/ProductCarousel';
 import DropdownSection from '@/components/DropdownSection';
 import ReviewsSection from '@/components/ReviewsSection';
@@ -357,6 +357,52 @@ const Index = () => {
                 </div>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 px-4 bg-slate-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">
+            Hai ancora dei dubbi?
+          </h2>
+          <p className="text-2xl text-slate-700 mb-12">
+            Contattaci
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">Email</h3>
+                <a 
+                  href="mailto:support@holifya.com"
+                  className="text-lg text-indigo-600 hover:text-indigo-700 transition-colors duration-300"
+                >
+                  support@holifya.com
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MessageCircle className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">WhatsApp</h3>
+                <a 
+                  href="https://wa.me/393332022743?text=Ciao%2C%20vorrei%20più%20informazioni%20sul%20Test%20del%20DNA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg text-green-600 hover:text-green-700 transition-colors duration-300"
+                >
+                  +39 333 202 2743
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
