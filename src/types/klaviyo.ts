@@ -1,6 +1,6 @@
 
 // Klaviyo configuration
-export const KLAVIYO_COMPANY_ID = 'UKq26T';
+export const KLAVIYO_COMPANY_ID = '2d11ae';
 export const KLAVIYO_LIST_ID = 'Yp9bpB'; // Verify this is correct in your Klaviyo dashboard
 
 // Debug information

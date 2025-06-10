@@ -26,21 +26,21 @@ const WelcomePopupContent = ({
 }: WelcomePopupContentProps) => {
   return (
     <>
-      <DialogHeader className="text-center space-y-2">
-        <div className="mx-auto w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center">
-          <Gift className="w-8 h-8 text-white" />
+      <DialogHeader className="text-center space-y-3 sm:space-y-4">
+        <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full flex items-center justify-center">
+          <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
         </div>
         
-        <DialogTitle className="text-2xl font-bold text-slate-900">
+        <DialogTitle className="text-xl sm:text-2xl font-bold text-slate-900 px-2">
           Benvenuto! 🎉
         </DialogTitle>
         
-        <DialogDescription className="text-lg text-slate-600">
-          Iscriviti alla nostra newsletter e ricevi uno <strong className="text-teal-600">sconto del 5%</strong> sul tuo primo ordine!
+        <DialogDescription className="text-base sm:text-lg text-slate-600 px-2">
+          Iscriviti alla nostra newsletter e ricevi uno <strong className="text-emerald-600">sconto del 5%</strong> sul tuo primo ordine!
         </DialogDescription>
       </DialogHeader>
 
-      <form onSubmit={onSubmit} className="space-y-4 mt-6">
+      <form onSubmit={onSubmit} className="space-y-4 mt-4 sm:mt-6">
         <div className="relative">
           <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
           <Input
@@ -48,18 +48,20 @@ const WelcomePopupContent = ({
             placeholder="Inserisci la tua email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="pl-10 h-10"
+            className="pl-10 h-11 sm:h-10"
             required
           />
         </div>
         
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-teal-600 hover:bg-teal-700 text-white h-10"
-        >
-          {isSubmitting ? "Iscrizione..." : "Ottieni il 5% di sconto"}
-        </Button>
+        <div className="flex space-x-2">
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white h-11 sm:h-10 text-sm sm:text-base"
+          >
+            {isSubmitting ? "Iscrizione..." : "Ottieni il 5% di sconto"}
+          </Button>
+        </div>
         
         <button
           type="button"
@@ -70,8 +72,8 @@ const WelcomePopupContent = ({
         </button>
       </form>
 
-      <div className="mt-4 p-3 bg-teal-50 rounded-lg border border-teal-200">
-        <p className="text-xs text-teal-800 text-center leading-relaxed">
+      <div className="mt-3 sm:mt-4 p-3 bg-emerald-50 rounded-lg border border-emerald-200">
+        <p className="text-xs text-emerald-800 text-center leading-relaxed">
           📧 Riceverai email occasionali su offerte esclusive e consigli sulla salute. Puoi annullare l'iscrizione in qualsiasi momento.
         </p>
       </div>
