@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -371,16 +372,16 @@ const Index = () => {
             Contattaci
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 md:gap-8 max-w-2xl mx-auto">
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Mail className="w-8 h-8 text-white" />
+              <CardContent className="p-4 md:p-8 text-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                  <Mail className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">Email</h3>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 md:mb-3">Email</h3>
                 <a 
                   href="mailto:support@holifya.com"
-                  className="text-lg text-indigo-600 hover:text-indigo-700 transition-colors duration-300"
+                  className="text-sm md:text-lg text-indigo-600 hover:text-indigo-700 transition-colors duration-300 break-all"
                 >
                   support@holifya.com
                 </a>
@@ -388,16 +389,16 @@ const Index = () => {
             </Card>
 
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MessageCircle className="w-8 h-8 text-white" />
+              <CardContent className="p-4 md:p-8 text-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                  <MessageCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">WhatsApp</h3>
+                <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 md:mb-3">WhatsApp</h3>
                 <a 
                   href="https://wa.me/393332022743?text=Ciao%2C%20vorrei%20più%20informazioni%20sul%20Test%20del%20DNA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg text-green-600 hover:text-green-700 transition-colors duration-300"
+                  className="text-sm md:text-lg text-green-600 hover:text-green-700 transition-colors duration-300"
                 >
                   +39 333 202 2743
                 </a>
