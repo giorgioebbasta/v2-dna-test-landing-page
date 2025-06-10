@@ -368,7 +368,7 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Hai ancora dei dubbi?
           </h2>
-          <p className="text-2xl text-slate-700 mb-12">
+          <p className="text-2xl text-slate-700 mb-8">
             Contattaci
           </p>
           
