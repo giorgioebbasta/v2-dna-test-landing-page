@@ -13,7 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // Klaviyo configuration
 const KLAVIYO_API_KEY = 'pk_2d11aeed537aad31130215bbdca2a4d334';
-const KLAVIYO_LIST_ID = '202506 Welcome Popup DNA';
+const KLAVIYO_LIST_ID = 'Yp9bpB';
 
 const WelcomePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,53 +40,36 @@ const WelcomePopup = () => {
   const subscribeToKlaviyo = async (email: string) => {
     try {
       console.log('Subscribing to Klaviyo list:', KLAVIYO_LIST_ID);
+      console.log('Email:', email);
       
-      // Use Klaviyo's public subscription endpoint
-      const response = await fetch(`https://a.klaviyo.com/api/profile-subscription-bulk-create-jobs/`, {
+      // Use Klaviyo's v2 subscription API which has better CORS support
+      const response = await fetch(`https://a.klaviyo.com/api/v2/list/${KLAVIYO_LIST_ID}/subscribe`, {
         method: 'POST',
         headers: {
-          'Authorization': `Klaviyo-API-Key ${KLAVIYO_API_KEY}`,
           'Content-Type': 'application/json',
-          'revision': '2024-06-15'
         },
         body: JSON.stringify({
-          data: {
-            type: 'profile-subscription-bulk-create-job',
-            attributes: {
-              profiles: {
-                data: [
-                  {
-                    type: 'profile',
-                    attributes: {
-                      email: email,
-                      properties: {
-                        source: 'Welcome Popup',
-                        language: 'it',
-                        subscription_date: new Date().toISOString()
-                      }
-                    }
-                  }
-                ]
-              }
-            },
-            relationships: {
-              list: {
-                data: {
-                  type: 'list',
-                  id: KLAVIYO_LIST_ID
-                }
+          api_key: KLAVIYO_API_KEY,
+          profiles: [
+            {
+              email: email,
+              properties: {
+                source: 'Welcome Popup',
+                language: 'it',
+                subscription_date: new Date().toISOString()
               }
             }
-          }
+          ]
         })
       });
 
       console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        console.error('Klaviyo API error:', errorData);
-        throw new Error(`Klaviyo subscription failed: ${response.status}`);
+        const errorText = await response.text();
+        console.error('Klaviyo API error response:', errorText);
+        throw new Error(`Klaviyo subscription failed: ${response.status} - ${errorText}`);
       }
 
       const result = await response.json();
