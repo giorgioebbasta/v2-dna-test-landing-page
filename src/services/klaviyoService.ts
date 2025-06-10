@@ -1,5 +1,5 @@
 
-import { KLAVIYO_LIST_ID } from '@/types/klaviyo';
+import { KLAVIYO_LIST_ID, KLAVIYO_POPUP_FORM_ID } from '@/types/klaviyo';
 
 export const subscribeToKlaviyo = async (email: string): Promise<boolean> => {
   console.log('Starting Klaviyo subscription for email:', email);
@@ -27,8 +27,9 @@ export const subscribeToKlaviyo = async (email: string): Promise<boolean> => {
       list: KLAVIYO_LIST_ID,
       email: email,
       properties: {
-        '$source': 'Welcome Popup',
-        'source': 'Welcome Popup'
+        '$source': 'Welcome Popup DNA',
+        'source': 'Welcome Popup DNA',
+        'popup_form_id': KLAVIYO_POPUP_FORM_ID
       }
     }]);
 
@@ -44,8 +45,9 @@ export const subscribeToKlaviyo = async (email: string): Promise<boolean> => {
     window._learnq.push(['track', 'Newsletter Signup', { 
       '$email': email,
       'email': email,
-      'source': 'Welcome Popup',
-      'list_id': KLAVIYO_LIST_ID 
+      'source': 'Welcome Popup DNA',
+      'list_id': KLAVIYO_LIST_ID,
+      'popup_form_id': KLAVIYO_POPUP_FORM_ID
     }]);
 
     // Method 4: Fallback - try the subscribe method as well
@@ -55,8 +57,9 @@ export const subscribeToKlaviyo = async (email: string): Promise<boolean> => {
       email: email,
       '$email': email,
       properties: {
-        source: 'Welcome Popup',
-        $source: 'Welcome Popup'
+        source: 'Welcome Popup DNA',
+        $source: 'Welcome Popup DNA',
+        popup_form_id: KLAVIYO_POPUP_FORM_ID
       }
     }]);
     
@@ -79,7 +82,8 @@ export const subscribeToKlaviyoForm = async (email: string): Promise<boolean> =>
     const formData = new FormData();
     formData.append('g', KLAVIYO_LIST_ID);
     formData.append('email', email);
-    formData.append('$source', 'Welcome Popup');
+    formData.append('$source', 'Welcome Popup DNA');
+    formData.append('popup_form_id', KLAVIYO_POPUP_FORM_ID);
 
     const response = await fetch(`https://manage.kmail-lists.com/ajax/subscriptions/subscribe`, {
       method: 'POST',
@@ -93,5 +97,17 @@ export const subscribeToKlaviyoForm = async (email: string): Promise<boolean> =>
   } catch (error) {
     console.error('Klaviyo form submission failed:', error);
     return false;
+  }
+};
+
+// Function to manually trigger Klaviyo popup
+export const showKlaviyoPopup = () => {
+  if (window._learnq) {
+    console.log('Manually triggering Klaviyo popup:', KLAVIYO_POPUP_FORM_ID);
+    window._learnq.push(['show', { 
+      '$popup_id': KLAVIYO_POPUP_FORM_ID 
+    }]);
+  } else {
+    console.error('Klaviyo not available, cannot show popup');
   }
 };
