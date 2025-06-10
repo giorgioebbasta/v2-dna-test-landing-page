@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { X, Mail, Gift } from 'lucide-react';
+import { Mail, Gift } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 const WelcomePopup = () => {
@@ -58,14 +58,6 @@ const WelcomePopup = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="w-[95vw] max-w-md mx-auto rounded-lg p-6 sm:p-6 max-h-[90vh] overflow-y-auto">
-        <button
-          onClick={handleClose}
-          className="absolute right-3 top-3 sm:right-4 sm:top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 z-10"
-        >
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </button>
-        
         <DialogHeader className="text-center space-y-3 sm:space-y-4">
           <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-emerald-400 to-blue-500 rounded-full flex items-center justify-center">
             <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
