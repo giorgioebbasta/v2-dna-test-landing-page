@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -14,7 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 
 // Klaviyo configuration
 const KLAVIYO_API_KEY = 'pk_2d11aeed537aad31130215bbdca2a4d334';
-const KLAVIYO_LIST_ID = 'XvqVvT'; // You'll need to get your actual list ID from Klaviyo
+const KLAVIYO_LIST_ID = '202506 Welcome Popup DNA';
 
 const WelcomePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
