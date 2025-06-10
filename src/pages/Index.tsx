@@ -362,7 +362,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-8 px-4 bg-slate-50 border-t-4 border-emerald-200 mt-8">
+      <section className="py-8 px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             Hai ancora dei dubbi?
