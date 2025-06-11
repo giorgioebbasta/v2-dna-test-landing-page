@@ -6,7 +6,7 @@ import { Truck, Clock, RotateCcw, Calendar, Plus, Minus } from 'lucide-react';
 import ProductCarousel from '@/components/ProductCarousel';
 
 const HeroSection = () => {
-  const [quantity, setQuantity] = useState(3);
+  const [quantity, setQuantity] = useState(1);
 
   const benefits = [
     { icon: <Truck className="w-6 h-6" />, text: "Spedizione gratuita" },
@@ -33,7 +33,7 @@ const HeroSection = () => {
   ];
 
   const increaseQuantity = () => setQuantity(prev => prev + 1);
-  const decreaseQuantity = () => setQuantity(prev => Math.max(3, prev - 1));
+  const decreaseQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
 
   const getQuantityCartUrl = (qty: number) => {
     return `https://holifya.com/cart/43782964445448:${qty}`;
@@ -100,7 +100,7 @@ const HeroSection = () => {
                       variant="ghost"
                       size="sm"
                       onClick={decreaseQuantity}
-                      disabled={quantity <= 3}
+                      disabled={quantity <= 1}
                       className="h-8 w-8 p-0 hover:bg-slate-100"
                     >
                       <Minus className="w-4 h-4" />
@@ -185,7 +185,7 @@ const HeroSection = () => {
                         variant="ghost"
                         size="sm"
                         onClick={decreaseQuantity}
-                        disabled={quantity <= 3}
+                        disabled={quantity <= 1}
                         className="h-8 w-8 p-0 hover:bg-slate-100"
                       >
                         <Minus className="w-4 h-4" />
