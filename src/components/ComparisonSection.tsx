@@ -38,14 +38,14 @@ const ComparisonSection = () => {
           </TabsList>
           
           <TabsContent value="comparison" className="mt-6">
-            <Card className="overflow-hidden ml-4">
+            <Card className="overflow-hidden ml-2">
               <CardHeader className="bg-slate-50 p-6">
                 <div className="grid grid-cols-3 gap-4 items-center">
                   <div className="text-left">
                     <CardTitle className="text-lg text-slate-900">Area di analisi</CardTitle>
                   </div>
                   <div className="text-center">
-                    <CardTitle className="text-lg text-red-600">Altri Competitor</CardTitle>
+                    <CardTitle className="text-lg text-slate-600">Altri Competitor</CardTitle>
                     <p className="text-xs text-slate-600 mt-1">Test separati</p>
                   </div>
                   <div className="text-center">
@@ -63,7 +63,7 @@ const ComparisonSection = () => {
                         <span className="text-sm font-medium text-slate-700">{area.name}</span>
                       </div>
                       <div className="text-center">
-                        <span className="font-semibold text-red-600">
+                        <span className="font-semibold text-slate-600">
                           {area.competitorPrice}
                         </span>
                       </div>
@@ -81,7 +81,7 @@ const ComparisonSection = () => {
                       Totale:
                     </div>
                     <div className="text-center">
-                      <span className="text-2xl text-red-600">€{totalCompetitorPrice}</span>
+                      <span className="text-2xl text-slate-600">€{totalCompetitorPrice}</span>
                     </div>
                     <div className="text-center">
                       <span className="text-2xl text-emerald-600">€{holifyaPrice}</span>
@@ -100,8 +100,10 @@ const ComparisonSection = () => {
               <div className="space-y-2">
                 <p className="text-lg font-medium">Risparmia con Holifya</p>
                 <p className="text-4xl font-bold">oltre €{savings}</p>
-                <p className="text-emerald-100">Un solo test. Un'analisi completa.
-                  Il miglior prezzo.</p>
+                <div className="text-emerald-100 leading-relaxed">
+                  <p>Un solo test. Un'analisi completa.</p>
+                  <p>Il miglior prezzo.</p>
+                </div>
               </div>
             </CardContent>
           </Card>
