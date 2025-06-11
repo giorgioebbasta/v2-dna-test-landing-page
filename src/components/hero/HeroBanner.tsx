@@ -16,7 +16,7 @@ const HeroBanner = React.memo(() => {
       </h1>
       
       <p className="text-xl text-slate-600 leading-relaxed">
-        Scopri i segreti del tuo DNA, con il test genetico più completo in Italia.
+        Scopri i segreti del tuo DNA, con il test genetico più completo in Italia*.
       </p>
       <p className="text-xl text-slate-600 leading-relaxed">
         <em>Ora disponibile a casa tua.</em>
