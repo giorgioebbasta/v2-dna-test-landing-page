@@ -3,6 +3,7 @@ import React from 'react';
 import HeroBanner from '@/components/hero/HeroBanner';
 import BenefitsList from '@/components/hero/BenefitsList';
 import ProductPricing from '@/components/hero/ProductPricing';
+import PaymentMethods from '@/components/hero/PaymentMethods';
 import QuantitySelector from '@/components/shared/QuantitySelector';
 import LazyProductCarousel from '@/components/optimized/LazyProductCarousel';
 import { useQuantity } from '@/hooks/useQuantity';
@@ -33,6 +34,8 @@ const HeroSection = () => {
           </div>
 
           <BenefitsList />
+          
+          <PaymentMethods />
         </div>
 
         {/* Desktop Layout */}
