@@ -8,7 +8,8 @@ const HeroBanner = React.memo(() => {
     if (comparisonSection) {
       comparisonSection.scrollIntoView({ 
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
+        inline: 'nearest'
       });
     }
   };
@@ -26,8 +27,16 @@ const HeroBanner = React.memo(() => {
       </h1>
       
       <p 
-        className="text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 hover:scale-105 transition-all duration-200"
+        className="text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 active:text-emerald-700 active:scale-95 hover:scale-105 transition-all duration-200 touch-manipulation select-none"
         onClick={scrollToComparison}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            scrollToComparison();
+          }
+        }}
       >
         Scopri i segreti del tuo DNA, con il test genetico più completo in Italia*.
       </p>
