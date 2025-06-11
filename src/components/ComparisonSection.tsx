@@ -1,6 +1,6 @@
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check } from 'lucide-react';
@@ -37,7 +37,7 @@ const ComparisonSection = () => {
           </TabsList>
           
           <TabsContent value="comparison" className="mt-6">
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden ml-4">
               <CardHeader className="bg-slate-50 p-6">
                 <div className="grid grid-cols-3 gap-4 items-center">
                   <div className="text-left">
@@ -47,10 +47,7 @@ const ComparisonSection = () => {
                     <CardTitle className="text-lg text-red-600">Altri Competitor</CardTitle>
                     <p className="text-xs text-slate-600 mt-1">Test separati</p>
                   </div>
-                  <div className="text-center relative">
-                    <Badge className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-3 py-1 text-xs">
-                      MIGLIORE OFFERTA
-                    </Badge>
+                  <div className="text-center">
                     <CardTitle className="text-lg text-emerald-600">Holifya</CardTitle>
                     <p className="text-xs text-slate-600 mt-1">Un test completo</p>
                   </div>
@@ -65,7 +62,7 @@ const ComparisonSection = () => {
                         <span className="text-sm font-medium text-slate-700">{area.name}</span>
                       </div>
                       <div className="text-center">
-                        <span className="font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                        <span className="font-semibold text-red-600">
                           {area.competitorPrice}
                         </span>
                       </div>
@@ -83,7 +80,7 @@ const ComparisonSection = () => {
                       Totale:
                     </div>
                     <div className="text-center">
-                      <span className="text-2xl text-red-600">€{totalCompetitorPrice}+</span>
+                      <span className="text-2xl text-red-600">€{totalCompetitorPrice}</span>
                     </div>
                     <div className="text-center">
                       <span className="text-2xl text-emerald-600">€{holifyaPrice}</span>
@@ -101,8 +98,8 @@ const ComparisonSection = () => {
             <CardContent className="p-6">
               <div className="space-y-2">
                 <p className="text-lg font-medium">Risparmia con Holifya</p>
-                <p className="text-4xl font-bold">€{savings}+</p>
-                <p className="text-emerald-100">Stessa analisi completa, prezzo imbattibile</p>
+                <p className="text-4xl font-bold">oltre €{savings}</p>
+                <p className="text-emerald-100">Un solo test. Un'analisi completa. Il miglior prezzo.</p>
               </div>
             </CardContent>
           </Card>
@@ -113,7 +110,7 @@ const ComparisonSection = () => {
             size="lg" 
             className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
           >
-            Ordina ora il tuo test completo
+            Ordina ora
           </Button>
         </div>
       </div>
