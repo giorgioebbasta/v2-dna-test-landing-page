@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Check, X } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const ComparisonSection = () => {
   const testAreas = [
@@ -38,75 +38,66 @@ const ComparisonSection = () => {
           </TabsList>
           
           <TabsContent value="comparison" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              {/* Competitors Column */}
-              <Card className="border-2 border-red-200 relative">
-                <CardHeader className="text-center bg-red-50 rounded-t-lg p-4">
-                  <CardTitle className="text-lg text-slate-900 flex items-center justify-center gap-2">
-                    <X className="w-5 h-5 text-red-500" />
-                    Altri Competitor
-                  </CardTitle>
-                  <p className="text-xs text-slate-600">Test separati per ogni area</p>
-                </CardHeader>
-                <CardContent className="p-4">
-                  <div className="space-y-3">
-                    {testAreas.map((area, index) => (
-                      <div key={index} className="flex items-center justify-between py-1 text-sm border-b border-slate-100">
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">{area.icon}</span>
-                          <span className="text-xs text-slate-700">{area.name}</span>
-                        </div>
-                        <span className="font-semibold text-sm text-slate-900">{area.competitorPrice}</span>
+            <Card className="overflow-hidden">
+              <CardHeader className="bg-slate-50 p-6">
+                <div className="grid grid-cols-3 gap-4 items-center">
+                  <div className="text-left">
+                    <CardTitle className="text-lg text-slate-900">Area di analisi</CardTitle>
+                  </div>
+                  <div className="text-center">
+                    <CardTitle className="text-lg text-red-600">Altri Competitor</CardTitle>
+                    <p className="text-xs text-slate-600 mt-1">Test separati</p>
+                  </div>
+                  <div className="text-center relative">
+                    <Badge className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-3 py-1 text-xs">
+                      MIGLIORE OFFERTA
+                    </Badge>
+                    <CardTitle className="text-lg text-emerald-600">Holifya</CardTitle>
+                    <p className="text-xs text-slate-600 mt-1">Un test completo</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="p-0">
+                <div className="divide-y divide-slate-100">
+                  {testAreas.map((area, index) => (
+                    <div key={index} className="grid grid-cols-3 gap-4 items-center py-4 px-6 hover:bg-slate-50 transition-colors">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">{area.icon}</span>
+                        <span className="text-sm font-medium text-slate-700">{area.name}</span>
                       </div>
-                    ))}
-                    <div className="pt-3 border-t-2 border-red-200">
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-base">Totale:</span>
-                        <span className="font-bold text-xl text-red-600">€{totalCompetitorPrice}+</span>
+                      <div className="text-center">
+                        <span className="font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
+                          {area.competitorPrice}
+                        </span>
+                      </div>
+                      <div className="text-center">
+                        <div className="inline-flex items-center justify-center w-8 h-8 bg-emerald-100 rounded-full">
+                          <Check className="w-5 h-5 text-emerald-600" />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Holifya Column */}
-              <Card className="border-2 border-emerald-200 relative">
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white px-3 py-1 text-xs">
-                  MIGLIORE OFFERTA
-                </Badge>
-                <CardHeader className="text-center bg-emerald-50 rounded-t-lg p-4">
-                  <CardTitle className="text-lg text-slate-900 flex items-center justify-center gap-2">
-                    <Check className="w-5 h-5 text-emerald-500" />
-                    Holifya
-                  </CardTitle>
-                  <p className="text-xs text-slate-600">Un test completo per tutto</p>
-                </CardHeader>
-                <CardContent className="p-4">
-                  <div className="space-y-3">
-                    {testAreas.map((area, index) => (
-                      <div key={index} className="flex items-center justify-between py-1 text-sm border-b border-slate-100">
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">{area.icon}</span>
-                          <span className="text-xs text-slate-700">{area.name}</span>
-                        </div>
-                        <Check className="w-4 h-4 text-emerald-500" />
-                      </div>
-                    ))}
-                    <div className="pt-3 border-t-2 border-emerald-200">
-                      <div className="flex items-center justify-between">
-                        <span className="font-bold text-base">Totale:</span>
-                        <span className="font-bold text-2xl text-emerald-600">€{holifyaPrice}</span>
-                      </div>
+                  ))}
+                  
+                  {/* Total row */}
+                  <div className="grid grid-cols-3 gap-4 items-center py-6 px-6 bg-slate-100 font-bold">
+                    <div className="text-slate-900 text-lg">
+                      Totale:
+                    </div>
+                    <div className="text-center">
+                      <span className="text-2xl text-red-600">€{totalCompetitorPrice}+</span>
+                    </div>
+                    <div className="text-center">
+                      <span className="text-2xl text-emerald-600">€{holifyaPrice}</span>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </CardContent>
+            </Card>
           </TabsContent>
         </Tabs>
 
         {/* Savings Highlight */}
-        <div className="text-center">
+        <div className="text-center mt-8">
           <Card className="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 text-white border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="space-y-2">
