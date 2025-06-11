@@ -1,29 +1,34 @@
 
 import React from 'react';
-import ReviewsSection from '@/components/ReviewsSection';
-import HowItWorksSection from '@/components/HowItWorksSection';
+import LazyReviewsSection from '@/components/optimized/LazyReviewsSection';
+import LazyHowItWorksSection from '@/components/optimized/LazyHowItWorksSection';
+import LazyComparisonSection from '@/components/optimized/LazyComparisonSection';
+import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
+import LazyContactSection from '@/components/optimized/LazyContactSection';
+import DeferredScripts from '@/components/optimized/DeferredScripts';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
-import ComparisonSection from '@/components/ComparisonSection';
-import FinalCTASection from '@/components/FinalCTASection';
-import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
       
+      {/* Above the fold - load immediately */}
       <HeroSection />
       <FeaturesSection />
-      <ComparisonSection />
-      <ReviewsSection />
-      <HowItWorksSection />
-      <FinalCTASection />
-      <ContactSection />
+      
+      {/* Below the fold - lazy loaded */}
+      <LazyComparisonSection />
+      <LazyReviewsSection />
+      <LazyHowItWorksSection />
+      <LazyFinalCTASection />
+      <LazyContactSection />
       
       <FloatingCTA />
+      <DeferredScripts />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const ProductCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState<Set<number>>(new Set());
 
   const slides = [
     {
@@ -43,6 +44,10 @@ const ProductCarousel = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const handleImageLoad = (slideId: number) => {
+    setImagesLoaded(prev => new Set(prev).add(slideId));
+  };
+
   return (
     <div className="relative w-full max-w-lg mx-auto">
       <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -50,13 +55,22 @@ const ProductCarousel = () => {
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
-          {slides.map((slide) => (
+          {slides.map((slide, index) => (
             <div key={slide.id} className="w-full flex-shrink-0 relative">
               <img
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-80 object-cover"
+                loading={index === 0 ? "eager" : "lazy"}
+                onLoad={() => handleImageLoad(slide.id)}
+                style={{
+                  opacity: imagesLoaded.has(slide.id) ? 1 : 0,
+                  transition: 'opacity 0.3s ease-in-out'
+                }}
               />
+              {!imagesLoaded.has(slide.id) && (
+                <div className="absolute inset-0 bg-slate-200 animate-pulse" />
+              )}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <h3 className="text-white text-xl font-bold mb-2">{slide.title}</h3>
                 <p className="text-white/90 text-sm">{slide.description}</p>
