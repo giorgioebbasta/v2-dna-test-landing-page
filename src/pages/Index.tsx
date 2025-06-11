@@ -6,6 +6,7 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import ComparisonSection from '@/components/ComparisonSection';
 import FinalCTASection from '@/components/FinalCTASection';
 import ContactSection from '@/components/ContactSection';
 
@@ -16,6 +17,7 @@ const Index = () => {
       
       <HeroSection />
       <FeaturesSection />
+      <ComparisonSection />
       <ReviewsSection />
       <HowItWorksSection />
       <FinalCTASection />
