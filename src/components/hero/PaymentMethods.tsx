@@ -17,7 +17,7 @@ const PaymentMethods = React.memo(() => {
           </div>
           
           {/* Apple Pay */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center bg-white rounded">
             <img 
               src="/lovable-uploads/db94bdeb-5dc2-44dd-b6ae-b308d09050c6.png" 
               alt="Apple Pay" 
@@ -26,7 +26,7 @@ const PaymentMethods = React.memo(() => {
           </div>
           
           {/* Google Pay */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center bg-white rounded">
             <img 
               src="/lovable-uploads/96bd72f4-a0d0-48d5-84e5-71c10cfb7633.png" 
               alt="Google Pay" 
