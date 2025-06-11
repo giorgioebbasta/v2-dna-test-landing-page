@@ -12,25 +12,25 @@ const PaymentMethods = React.memo(() => {
             <img 
               src="/lovable-uploads/96f9f2ef-7261-4da8-a18f-89922dae3f97.png" 
               alt="PayPal" 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </div>
           
           {/* Apple Pay */}
-          <div className="flex items-center justify-center bg-white rounded">
+          <div className="flex items-center justify-center">
             <img 
-              src="/lovable-uploads/db94bdeb-5dc2-44dd-b6ae-b308d09050c6.png" 
+              src="/lovable-uploads/07484c08-dcd5-4617-b01f-a96ba093392c.png" 
               alt="Apple Pay" 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </div>
           
           {/* Google Pay */}
-          <div className="flex items-center justify-center bg-white rounded">
+          <div className="flex items-center justify-center">
             <img 
-              src="/lovable-uploads/96bd72f4-a0d0-48d5-84e5-71c10cfb7633.png" 
+              src="/lovable-uploads/b80d2d67-3761-424f-a231-6dbbecb45d6f.png" 
               alt="Google Pay" 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </div>
           
