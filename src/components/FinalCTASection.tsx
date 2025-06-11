@@ -1,17 +1,11 @@
 
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Plus, Minus } from 'lucide-react';
+import React from 'react';
+import PriceCard from '@/components/shared/PriceCard';
+import QuantitySelector from '@/components/shared/QuantitySelector';
+import { useQuantity } from '@/hooks/useQuantity';
 
 const FinalCTASection = () => {
-  const [quantity, setQuantity] = useState(1);
-
-  const increaseQuantity = () => setQuantity(prev => prev + 1);
-  const decreaseQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
-
-  const getQuantityCartUrl = (qty: number) => {
-    return `https://holifya.com/cart/43782964445448:${qty}`;
-  };
+  const { quantity, increaseQuantity, decreaseQuantity, handleOrder } = useQuantity(1);
 
   const testPackage = {
     name: "Test del DNA",
@@ -31,55 +25,22 @@ const FinalCTASection = () => {
           Unisciti a migliaia di italiani che hanno già scoperto i segreti del loro DNA
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
-          <a 
-            href={testPackage.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block"
-          >
-            <div className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer">
+          <div className="block">
+            <div className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer"
+                 onClick={() => window.open(testPackage.url, '_blank', 'noopener,noreferrer')}>
               <div className="text-lg font-semibold mb-1">{testPackage.name}</div>
               <div className="text-2xl font-bold">€{testPackage.currentPrice}</div>
               <div className="text-sm text-indigo-200 line-through">€{testPackage.originalPrice}</div>
             </div>
-          </a>
-          
-          <div className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4">
-            <div className="flex items-center justify-center space-x-3 mb-3">
-              <span className="text-sm font-medium">Quantità:</span>
-              <div className="flex items-center bg-white/20 rounded-lg">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={decreaseQuantity}
-                  disabled={quantity <= 1}
-                  className="h-8 w-8 p-0 hover:bg-white/20 text-white"
-                >
-                  <Minus className="w-4 h-4" />
-                </Button>
-                <span className="px-3 py-1 text-lg font-semibold text-white min-w-[2rem] text-center">
-                  {quantity}
-                </span>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={increaseQuantity}
-                  className="h-8 w-8 p-0 hover:bg-white/20 text-white"
-                >
-                  <Plus className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-            <a
-              href={getQuantityCartUrl(quantity)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className="bg-white text-indigo-600 hover:bg-white/90 px-4 py-2 w-full">
-                Ordina ora
-              </Button>
-            </a>
           </div>
+          
+          <QuantitySelector
+            quantity={quantity}
+            onIncrease={increaseQuantity}
+            onDecrease={decreaseQuantity}
+            onOrder={handleOrder}
+            variant="white"
+          />
         </div>
       </div>
     </section>
