@@ -49,8 +49,8 @@ const ComparisonSection = () => {
                     <p className="text-xs text-slate-600 mt-1">Test separati</p>
                   </div>
                   <div className="text-center">
-                    <CardTitle className="text-lg text-emerald-600">Holifya</CardTitle>
-                    <p className="text-xs text-slate-600 mt-1">Un test completo</p>
+                    <CardTitle className="text-xl text-emerald-600">Holifya</CardTitle>
+                    <p className="text-sm text-slate-600 mt-1">Un test completo</p>
                   </div>
                 </div>
               </CardHeader>
@@ -84,7 +84,7 @@ const ComparisonSection = () => {
                       <span className="text-2xl text-red-600">€{totalCompetitorPrice}</span>
                     </div>
                     <div className="text-center">
-                      <span className="text-2xl text-emerald-600">€{holifyaPrice}</span>
+                      <span className="text-3xl text-emerald-600">€{holifyaPrice}</span>
                     </div>
                   </div>
                 </div>
