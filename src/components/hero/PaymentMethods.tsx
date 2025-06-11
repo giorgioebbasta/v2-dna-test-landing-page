@@ -8,18 +8,30 @@ const PaymentMethods = React.memo(() => {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
           {/* PayPal */}
-          <div className="flex items-center justify-center w-12 h-8 bg-blue-600 rounded text-white text-xs font-bold">
-            PayPal
+          <div className="flex items-center justify-center w-12 h-8">
+            <img 
+              src="/lovable-uploads/96f9f2ef-7261-4da8-a18f-89922dae3f97.png" 
+              alt="PayPal" 
+              className="h-6 w-auto object-contain"
+            />
           </div>
           
           {/* Apple Pay */}
-          <div className="flex items-center justify-center w-12 h-8 bg-black rounded text-white text-xs font-bold">
-            Pay
+          <div className="flex items-center justify-center w-12 h-8">
+            <img 
+              src="/lovable-uploads/db94bdeb-5dc2-44dd-b6ae-b308d09050c6.png" 
+              alt="Apple Pay" 
+              className="h-5 w-auto object-contain"
+            />
           </div>
           
           {/* Google Pay */}
-          <div className="flex items-center justify-center w-12 h-8 bg-gray-800 rounded text-white text-xs font-bold">
-            GPay
+          <div className="flex items-center justify-center w-12 h-8">
+            <img 
+              src="/lovable-uploads/96bd72f4-a0d0-48d5-84e5-71c10cfb7633.png" 
+              alt="Google Pay" 
+              className="h-5 w-auto object-contain"
+            />
           </div>
           
           {/* Contrassegno */}
