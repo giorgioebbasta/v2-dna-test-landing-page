@@ -9,6 +9,7 @@ import FeaturesSection from '@/components/FeaturesSection';
 import ComparisonSection from '@/components/ComparisonSection';
 import FinalCTASection from '@/components/FinalCTASection';
 import ContactSection from '@/components/ContactSection';
+import { Separator } from '@/components/ui/separator';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <HeroSection />
       <FeaturesSection />
       <ComparisonSection />
+      <Separator className="my-8" />
       <ReviewsSection />
       <HowItWorksSection />
       <FinalCTASection />
