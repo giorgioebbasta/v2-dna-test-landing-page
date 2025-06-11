@@ -3,7 +3,7 @@ import { CreditCard } from 'lucide-react';
 
 const PaymentMethods = React.memo(() => {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-3">
+    <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-2">
       <div className="flex items-center justify-center">
         <div className="flex items-center space-x-4">
           {/* PayPal */}
