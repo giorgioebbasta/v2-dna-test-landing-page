@@ -106,12 +106,18 @@ const ComparisonSection = () => {
         </div>
 
         <div className="text-center mt-8">
-          <Button 
-            size="lg" 
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
+          <a 
+            href="https://holifya.com/cart/43782964445448:1"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Ordina ora
-          </Button>
+            <Button 
+              size="lg" 
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
+            >
+              Ordina ora
+            </Button>
+          </a>
         </div>
       </div>
     </section>
