@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -21,7 +20,7 @@ const ComparisonSection = () => {
   const savings = totalCompetitorPrice - holifyaPrice;
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-white to-slate-50">
+    <section id="comparison-section" className="py-16 px-4 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">

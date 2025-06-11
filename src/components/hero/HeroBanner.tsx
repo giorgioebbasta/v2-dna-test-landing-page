@@ -3,6 +3,16 @@ import React from 'react';
 import { Badge } from "@/components/ui/badge";
 
 const HeroBanner = React.memo(() => {
+  const scrollToComparison = () => {
+    const comparisonSection = document.getElementById('comparison-section');
+    if (comparisonSection) {
+      comparisonSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="space-y-4">
       <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
@@ -15,7 +25,10 @@ const HeroBanner = React.memo(() => {
         </span>
       </h1>
       
-      <p className="text-xl text-slate-600 leading-relaxed">
+      <p 
+        className="text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 transition-colors underline decoration-emerald-600 decoration-2 underline-offset-4"
+        onClick={scrollToComparison}
+      >
         Scopri i segreti del tuo DNA, con il test genetico più completo in Italia*.
       </p>
       <p className="text-xl text-slate-600 leading-relaxed">
