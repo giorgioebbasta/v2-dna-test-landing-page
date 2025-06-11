@@ -34,13 +34,15 @@ const FinalCTASection = () => {
             </div>
           </div>
           
-          <QuantitySelector
-            quantity={quantity}
-            onIncrease={increaseQuantity}
-            onDecrease={decreaseQuantity}
-            onOrder={handleOrder}
-            variant="white"
-          />
+          <div className="px-2">
+            <QuantitySelector
+              quantity={quantity}
+              onIncrease={increaseQuantity}
+              onDecrease={decreaseQuantity}
+              onOrder={handleOrder}
+              variant="white"
+            />
+          </div>
         </div>
       </div>
     </section>
