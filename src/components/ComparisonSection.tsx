@@ -117,7 +117,7 @@ const ComparisonSection = () => {
           >
             <Button 
               size="lg" 
-              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 text-lg font-semibold shadow-lg"
+              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0"
             >
               Ordina ora
             </Button>
