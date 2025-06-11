@@ -24,10 +24,11 @@ const ComparisonSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Perché pagare di più per meno?
+            *Perché pagare di più per meno?
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Altri competitor ti vendono test separati per ogni area. Con Holifya ottieni tutto in un unico test completo.
+            Altri competitor ti vendono test separati per ogni area.
+            Con Holifya ottieni tutto in un unico test completo.
           </p>
         </div>
 
@@ -99,7 +100,8 @@ const ComparisonSection = () => {
               <div className="space-y-2">
                 <p className="text-lg font-medium">Risparmia con Holifya</p>
                 <p className="text-4xl font-bold">oltre €{savings}</p>
-                <p className="text-emerald-100">Un solo test. Un'analisi completa. Il miglior prezzo.</p>
+                <p className="text-emerald-100">Un solo test. Un'analisi completa.
+                  Il miglior prezzo.</p>
               </div>
             </CardContent>
           </Card>
