@@ -14,7 +14,7 @@ const FinalCTASection = () => {
   };
 
   const testPackage = {
-    name: "1 Test del DNA",
+    name: "Test del DNA",
     currentPrice: 299,
     originalPrice: 349,
     savings: 50,
