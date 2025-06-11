@@ -1,39 +1,77 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
-        <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P9DJPS6B');</script>
-    <!-- EEnd Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>holifya-visual-bloom</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-
-    <meta property="og:title" content="holifya-visual-bloom" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://static.klaviyo.com" crossorigin>
+    <link rel="dns-prefetch" href="https://manage.kmail-lists.com">
+    <link rel="dns-prefetch" href="https://it.trustpilot.com">
+    
+    <!-- SEO and Meta -->
+    <title>Test DNA Holifya - Analisi Genetica Completa per Benessere e Salute</title>
+    <meta name="description" content="Scopri i segreti del tuo DNA con Holifya. Test genetico completo per metabolismo, intolleranze, prevenzione e benessere. Risultati in 15 giorni. €299 invece di €1244." />
+    <meta name="keywords" content="test DNA, analisi genetica, metabolismo, intolleranze, benessere, salute, prevenzione" />
+    <meta name="author" content="Holifya" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Test DNA Holifya - Analisi Genetica Completa" />
+    <meta property="og:description" content="Scopri i segreti del tuo DNA con il test genetico più completo. Metabolismo, intolleranze, prevenzione e benessere in un unico test." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://holifya.com" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:locale" content="it_IT" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:title" content="Test DNA Holifya - Analisi Genetica Completa" />
+    <meta name="twitter:description" content="Scopri i segreti del tuo DNA con il test genetico più completo" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
-    <!-- Klaviyo Official JavaScript Snippet -->
-    <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UKq26T"></script>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/lovable-uploads/f2d314d3-ab01-49c2-84e3-f6b59b117dbf.png" as="image" type="image/png">
+    
+    <!-- Critical CSS will be inlined here by Vite -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .loading-skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loading 1.5s infinite; }
+      @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    </style>
   </head>
 
   <body>
-        <!-- Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) - moved for better performance -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9DJPS6B"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Defer third-party scripts after main content loads -->
+    <script>
+      window.addEventListener('load', function() {
+        // Defer GTM
+        setTimeout(function() {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-P9DJPS6B');
+        }, 1000);
+        
+        // Defer Klaviyo
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UKq26T';
+          document.head.appendChild(script);
+        }, 1500);
+      });
+    </script>
   </body>
 </html>
