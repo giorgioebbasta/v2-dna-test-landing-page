@@ -24,7 +24,7 @@ const FinalCTASection = () => {
         <p className="text-xl text-indigo-100 mb-8">
           Unisciti a migliaia di italiani che hanno già scoperto i segreti del loro DNA
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-md mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-md mx-auto">
           <div className="block">
             <div className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer"
                  onClick={() => window.open(testPackage.url, '_blank', 'noopener,noreferrer')}>
