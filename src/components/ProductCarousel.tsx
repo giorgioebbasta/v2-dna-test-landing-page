@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import OptimizedImage from '@/components/optimized/OptimizedImage';
 
 const ProductCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -58,14 +57,20 @@ const ProductCarousel = () => {
         >
           {slides.map((slide, index) => (
             <div key={slide.id} className="w-full flex-shrink-0 relative">
-              <OptimizedImage
+              <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-80"
-                priority={index === 0}
-                sizes="(max-width: 768px) 100vw, 512px"
+                className="w-full h-80 object-cover"
+                loading={index === 0 ? "eager" : "lazy"}
                 onLoad={() => handleImageLoad(slide.id)}
+                style={{
+                  opacity: imagesLoaded.has(slide.id) ? 1 : 0,
+                  transition: 'opacity 0.3s ease-in-out'
+                }}
               />
+              {!imagesLoaded.has(slide.id) && (
+                <div className="absolute inset-0 bg-slate-200 animate-pulse" />
+              )}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <h3 className="text-white text-xl font-bold mb-2">{slide.title}</h3>
                 <p className="text-white/90 text-sm">{slide.description}</p>

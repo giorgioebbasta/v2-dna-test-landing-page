@@ -6,7 +6,6 @@ import LazyComparisonSection from '@/components/optimized/LazyComparisonSection'
 import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
 import LazyContactSection from '@/components/optimized/LazyContactSection';
 import DeferredScripts from '@/components/optimized/DeferredScripts';
-import PerformanceMonitor from '@/components/optimized/PerformanceMonitor';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -30,7 +29,6 @@ const Index = () => {
       
       <FloatingCTA />
       <DeferredScripts />
-      <PerformanceMonitor />
     </div>
   );
 };
