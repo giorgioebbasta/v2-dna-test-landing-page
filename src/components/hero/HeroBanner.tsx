@@ -26,7 +26,7 @@ const HeroBanner = React.memo(() => {
       </h1>
       
       <p 
-        className="text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 transition-colors underline decoration-emerald-600 decoration-2 underline-offset-4"
+        className="text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 hover:scale-105 transition-all duration-200"
         onClick={scrollToComparison}
       >
         Scopri i segreti del tuo DNA, con il test genetico più completo in Italia*.
