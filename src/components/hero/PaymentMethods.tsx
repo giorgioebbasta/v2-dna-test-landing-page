@@ -30,7 +30,7 @@ const PaymentMethods = React.memo(() => {
             <img 
               src="/lovable-uploads/b80d2d67-3761-424f-a231-6dbbecb45d6f.png" 
               alt="Google Pay" 
-              className="h-12 w-auto object-contain"
+              className="h-14 w-auto object-contain"
             />
           </div>
           
