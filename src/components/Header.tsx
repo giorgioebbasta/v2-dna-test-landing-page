@@ -16,7 +16,7 @@ const Header = () => {
       {/* Promo banner */}
       <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 px-4">
         <div className="text-sm sm:text-base font-semibold">
-          🔥 ESTATE40: -40% fino a fine estate!
+          🔥 ESTATE40: -40% fino a fine giugno!
         </div>
         <div className="text-sm sm:text-base font-semibold">
           €209 invece di €349
