@@ -10,6 +10,7 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       <LazyContactSection />
       
       <FloatingCTA />
+      <ExitIntentPopup />
       <DeferredScripts />
     </div>
   );
