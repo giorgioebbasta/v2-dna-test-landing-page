@@ -5,9 +5,12 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
       {/* Promo banner */}
-      <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-1 px-4">
+      <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 px-4">
         <div className="text-xs sm:text-sm font-semibold">
-          🔥 ESTATE40: -40% fino a fine estate! €209 invece di €349
+          🔥 ESTATE40: -40% fino a fine estate!
+        </div>
+        <div className="text-xs sm:text-sm font-semibold">
+          €209 invece di €349
         </div>
       </div>
       
