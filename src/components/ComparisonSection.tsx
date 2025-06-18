@@ -16,8 +16,9 @@ const ComparisonSection = () => {
   ];
 
   const totalCompetitorPrice = 1244;
-  const holifyaPrice = 299;
-  const savings = totalCompetitorPrice - holifyaPrice;
+  const holifyaOriginalPrice = 349;
+  const holifyaDiscountedPrice = 209;
+  const totalSavings = totalCompetitorPrice - holifyaDiscountedPrice;
 
   return (
     <section id="comparison-section" className="py-16 px-4 bg-gradient-to-b from-white to-slate-50">
@@ -30,11 +31,14 @@ const ComparisonSection = () => {
             Altri competitor ti vendono test separati per ogni area.
             Con Holifya ottieni tutto in un unico test completo.
           </p>
+          <div className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+            🔥 ESTATE40: -40% fino a fine estate!
+          </div>
         </div>
 
         <Tabs defaultValue="comparison" className="w-full">
           <TabsList className="grid w-full grid-cols-1">
-            <TabsTrigger value="comparison">Confronto Prezzi</TabsTrigger>
+            <TabsTrigger value="comparison">Confronto Prezzi con ESTATE40</TabsTrigger>
           </TabsList>
           
           <TabsContent value="comparison" className="mt-6">
@@ -49,8 +53,11 @@ const ComparisonSection = () => {
                     <p className="text-xs text-slate-600 mt-1">Test separati</p>
                   </div>
                   <div className="text-center">
-                    <CardTitle className="text-xl text-emerald-600">Holifya</CardTitle>
+                    <CardTitle className="text-xl text-emerald-600">Holifya con ESTATE40</CardTitle>
                     <p className="text-sm text-slate-600 mt-1">Un test completo</p>
+                    <div className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded mt-1 font-semibold">
+                      -40% con codice ESTATE40
+                    </div>
                   </div>
                 </div>
               </CardHeader>
@@ -84,7 +91,13 @@ const ComparisonSection = () => {
                       <span className="text-2xl text-red-600">€{totalCompetitorPrice}</span>
                     </div>
                     <div className="text-center">
-                      <span className="text-3xl text-emerald-600">€{holifyaPrice}</span>
+                      <div className="space-y-1">
+                        <div className="text-sm text-slate-500 line-through">€{holifyaOriginalPrice}</div>
+                        <div className="text-3xl text-emerald-600">€{holifyaDiscountedPrice}</div>
+                        <div className="text-xs text-orange-600 font-semibold">
+                          con ESTATE40
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -98,11 +111,14 @@ const ComparisonSection = () => {
           <Card className="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 text-white border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="space-y-2">
-                <p className="text-lg font-medium">Risparmia con Holifya</p>
-                <p className="text-4xl font-bold">oltre €{savings}</p>
+                <p className="text-lg font-medium">Risparmia con Holifya + ESTATE40</p>
+                <p className="text-4xl font-bold">oltre €{totalSavings}</p>
                 <div className="text-emerald-100 leading-relaxed">
                   <p>Un solo test. Un'analisi completa.</p>
-                  <p>Il miglior prezzo.</p>
+                  <p>Il miglior prezzo dell'estate.</p>
+                  <div className="text-sm bg-white/20 rounded px-2 py-1 mt-2 font-semibold">
+                    🏖️ Offerta valida fino a fine estate
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -117,9 +133,9 @@ const ComparisonSection = () => {
           >
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0"
+              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]"
             >
-              Ordina ora
+              Ordina ora con ESTATE40 (-40%)
             </Button>
           </a>
         </div>
