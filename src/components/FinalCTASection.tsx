@@ -9,28 +9,36 @@ const FinalCTASection = () => {
 
   const testPackage = {
     name: "Test del DNA",
-    currentPrice: 299,
+    currentPrice: 209,
     originalPrice: 349,
-    savings: 50,
+    savings: 140,
+    promoCode: "ESTATE40",
     url: "https://holifya.com/cart/43782964445448:1"
   };
 
   return (
-    <section className="py-12 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
+    <section className="py-12 px-4 bg-gradient-to-r from-orange-500 to-red-500">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-white mb-6">
+        <div className="bg-yellow-400 text-orange-900 px-4 py-2 rounded-full inline-block mb-4 font-bold text-sm sm:text-base">
+          🔥 PROMO ESTATE40 - SCONTO 40% 🔥
+        </div>
+        <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">
           Inizia il tuo viaggio verso una vita più sana
         </h2>
-        <p className="text-xl text-indigo-100 mb-8">
+        <p className="text-lg sm:text-xl text-orange-100 mb-6 sm:mb-8">
           Unisciti a migliaia di italiani che hanno già scoperto i segreti del loro DNA
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-md mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-lg mx-auto">
           <div className="block">
-            <div className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer"
+            <div className="text-center text-white bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 cursor-pointer relative"
                  onClick={() => window.open(testPackage.url, '_blank', 'noopener,noreferrer')}>
-              <div className="text-lg font-semibold mb-1">{testPackage.name}</div>
-              <div className="text-2xl font-bold">€{testPackage.currentPrice}</div>
-              <div className="text-sm text-indigo-200 line-through">€{testPackage.originalPrice}</div>
+              <div className="absolute top-2 right-2 bg-yellow-400 text-orange-900 px-2 py-1 text-xs font-bold rounded">
+                ESTATE40
+              </div>
+              <div className="text-base sm:text-lg font-semibold mb-1">{testPackage.name}</div>
+              <div className="text-xl sm:text-2xl font-bold">€{testPackage.currentPrice}</div>
+              <div className="text-sm text-orange-200 line-through">€{testPackage.originalPrice}</div>
+              <div className="text-xs text-yellow-300 font-semibold">-40% di sconto!</div>
             </div>
           </div>
           
