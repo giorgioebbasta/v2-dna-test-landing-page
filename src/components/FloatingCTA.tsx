@@ -12,13 +12,15 @@ const FloatingCTA = () => {
       >
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 rounded-full relative overflow-hidden animate-[pulse_3s_ease-in-out_infinite]"
+          className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-semibold shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 rounded-full relative overflow-hidden animate-[pulse_4s_ease-in-out_infinite]"
+          style={{
+            animation: 'gentlePulse 3s ease-in-out infinite'
+          }}
         >
           <div className="relative z-10">
             <div className="text-xs sm:text-sm opacity-90">ESTATE40 -40%</div>
             <div className="font-bold">€209 invece di €349</div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-300/20 animate-[pulse_2s_ease-in-out_infinite]"></div>
         </Button>
       </a>
     </div>
