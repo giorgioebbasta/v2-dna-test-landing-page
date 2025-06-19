@@ -54,7 +54,7 @@ const ComparisonSection = () => {
                 <p className="text-xs text-slate-600 mt-1">Test separati</p>
               </div>
               <div className="text-center">
-                <CardTitle className="text-xl text-emerald-600">Holifya con ESTATE40</CardTitle>
+                <CardTitle className="text-xl text-emerald-600">Holifya</CardTitle>
                 <p className="text-sm text-slate-600 mt-1">Un test completo</p>
                 <div className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded mt-1 font-semibold">
                   -40% con codice ESTATE40
