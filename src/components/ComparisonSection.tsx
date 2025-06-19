@@ -117,7 +117,7 @@ const ComparisonSection = () => {
                   <p>Un solo test. Un'analisi completa.</p>
                   <p>Il miglior prezzo dell'estate.</p>
                   <div className="text-sm bg-white/20 rounded px-2 py-1 mt-2 font-semibold">
-                    🏖️ Offerta valida fino a fine estate
+                    🏖️ Offerta valida fino a fine giugno
                   </div>
                 </div>
               </div>
