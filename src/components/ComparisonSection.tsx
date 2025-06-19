@@ -2,7 +2,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check } from 'lucide-react';
 
 const ComparisonSection = () => {
@@ -23,7 +22,7 @@ const ComparisonSection = () => {
   return (
     <section id="comparison-section" className="py-16 px-4 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             *Perché pagare di più, per meno?
           </h2>
@@ -31,80 +30,75 @@ const ComparisonSection = () => {
             Altri competitor ti vendono test separati per ogni area.
             Con Holifya ottieni tutto in un unico test completo.
           </p>
-          <div className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+        </div>
+
+        <div className="mb-4 text-center">
+          <div className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold">
             🔥 ESTATE40: -40% fino a fine giugno!
           </div>
         </div>
 
-        <Tabs defaultValue="comparison" className="w-full">
-          <TabsList className="grid w-full grid-cols-1">
-            <TabsTrigger value="comparison">Confronto Prezzi</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="comparison" className="mt-6">
-            <Card className="overflow-hidden ml-2">
-              <CardHeader className="bg-slate-50 p-6">
-                <div className="grid grid-cols-3 gap-4 items-center">
-                  <div className="text-left">
-                    <CardTitle className="text-lg text-slate-900">Area di analisi</CardTitle>
+        <Card className="overflow-hidden ml-2">
+          <CardHeader className="bg-slate-50 p-6">
+            <div className="grid grid-cols-3 gap-4 items-center">
+              <div className="text-left">
+                <CardTitle className="text-lg text-slate-900">Area di analisi</CardTitle>
+              </div>
+              <div className="text-center">
+                <CardTitle className="text-lg text-red-600">Altri Competitor</CardTitle>
+                <p className="text-xs text-slate-600 mt-1">Test separati</p>
+              </div>
+              <div className="text-center">
+                <CardTitle className="text-xl text-emerald-600">Holifya con ESTATE40</CardTitle>
+                <p className="text-sm text-slate-600 mt-1">Un test completo</p>
+                <div className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded mt-1 font-semibold">
+                  -40% con codice ESTATE40
+                </div>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="p-0">
+            <div className="divide-y divide-slate-100">
+              {testAreas.map((area, index) => (
+                <div key={index} className="grid grid-cols-3 gap-4 items-center py-4 px-6 hover:bg-slate-50 transition-colors">
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">{area.icon}</span>
+                    <span className="text-sm font-medium text-slate-700">{area.name}</span>
                   </div>
                   <div className="text-center">
-                    <CardTitle className="text-lg text-red-600">Altri Competitor</CardTitle>
-                    <p className="text-xs text-slate-600 mt-1">Test separati</p>
+                    <span className="font-semibold text-red-600">
+                      {area.competitorPrice}
+                    </span>
                   </div>
                   <div className="text-center">
-                    <CardTitle className="text-xl text-emerald-600">Holifya con ESTATE40</CardTitle>
-                    <p className="text-sm text-slate-600 mt-1">Un test completo</p>
-                    <div className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded mt-1 font-semibold">
-                      -40% con codice ESTATE40
+                    <div className="inline-flex items-center justify-center w-8 h-8 bg-emerald-100 rounded-full">
+                      <Check className="w-5 h-5 text-emerald-600" />
                     </div>
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent className="p-0">
-                <div className="divide-y divide-slate-100">
-                  {testAreas.map((area, index) => (
-                    <div key={index} className="grid grid-cols-3 gap-4 items-center py-4 px-6 hover:bg-slate-50 transition-colors">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xl">{area.icon}</span>
-                        <span className="text-sm font-medium text-slate-700">{area.name}</span>
-                      </div>
-                      <div className="text-center">
-                        <span className="font-semibold text-red-600">
-                          {area.competitorPrice}
-                        </span>
-                      </div>
-                      <div className="text-center">
-                        <div className="inline-flex items-center justify-center w-8 h-8 bg-emerald-100 rounded-full">
-                          <Check className="w-5 h-5 text-emerald-600" />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  
-                  {/* Total row */}
-                  <div className="grid grid-cols-3 gap-4 items-center py-6 px-6 bg-slate-100 font-bold">
-                    <div className="text-slate-900 text-lg">
-                      Totale:
-                    </div>
-                    <div className="text-center">
-                      <span className="text-2xl text-red-600">€{totalCompetitorPrice}</span>
-                    </div>
-                    <div className="text-center">
-                      <div className="space-y-1">
-                        <div className="text-sm text-slate-500 line-through">€{holifyaOriginalPrice}</div>
-                        <div className="text-3xl text-emerald-600">€{holifyaDiscountedPrice}</div>
-                        <div className="text-xs text-orange-600 font-semibold">
-                          con ESTATE40
-                        </div>
-                      </div>
+              ))}
+              
+              {/* Total row */}
+              <div className="grid grid-cols-3 gap-4 items-center py-6 px-6 bg-slate-100 font-bold">
+                <div className="text-slate-900 text-lg">
+                  Totale:
+                </div>
+                <div className="text-center">
+                  <span className="text-2xl text-red-600">€{totalCompetitorPrice}</span>
+                </div>
+                <div className="text-center">
+                  <div className="space-y-1">
+                    <div className="text-sm text-slate-500 line-through">€{holifyaOriginalPrice}</div>
+                    <div className="text-3xl text-emerald-600">€{holifyaDiscountedPrice}</div>
+                    <div className="text-xs text-orange-600 font-semibold">
+                      con ESTATE40
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Savings Highlight */}
         <div className="text-center mt-8">
