@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -26,10 +25,16 @@ const ComparisonSection = () => {
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
             *Perché pagare di più, per meno?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          {/* Mobile version - single paragraph */}
+          <p className="md:hidden text-xl text-slate-600 max-w-3xl mx-auto">
             Altri competitor ti vendono test separati per ogni area.
             Con Holifya ottieni tutto in un unico test completo.
           </p>
+          {/* Desktop version - two separate lines */}
+          <div className="hidden md:block text-xl text-slate-600 max-w-3xl mx-auto">
+            <p>Altri competitor ti vendono test separati per ogni area.</p>
+            <p>Con Holifya ottieni tutto in un unico test completo.</p>
+          </div>
         </div>
 
         <div className="mb-4 text-center">
