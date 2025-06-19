@@ -32,13 +32,13 @@ const ComparisonSection = () => {
             Con Holifya ottieni tutto in un unico test completo.
           </p>
           <div className="mt-4 inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold">
-            🔥 ESTATE40: -40% fino a fine estate!
+            🔥 ESTATE40: -40% fino a fine giugno!
           </div>
         </div>
 
         <Tabs defaultValue="comparison" className="w-full">
           <TabsList className="grid w-full grid-cols-1">
-            <TabsTrigger value="comparison">Confronto Prezzi con ESTATE40</TabsTrigger>
+            <TabsTrigger value="comparison">Confronto Prezzi</TabsTrigger>
           </TabsList>
           
           <TabsContent value="comparison" className="mt-6">
