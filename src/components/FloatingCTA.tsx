@@ -19,7 +19,15 @@ const FloatingCTA = () => {
         >
           <div className="relative z-10 text-center">
             <div className="text-xs sm:text-sm opacity-90">ESTATE40 -40%</div>
-            <div className="flex items-center justify-center gap-2 font-bold">
+            {/* Mobile: vertical layout */}
+            <div className="flex flex-col sm:hidden items-center justify-center font-bold">
+              <div className="flex items-center gap-2">
+                <span className="text-xs line-through opacity-70">€349</span>
+                <span>€209</span>
+              </div>
+            </div>
+            {/* Desktop: horizontal rolling news style */}
+            <div className="hidden sm:flex items-center justify-center gap-2 font-bold whitespace-nowrap overflow-hidden">
               <span className="text-xs line-through opacity-70">€349</span>
               <span>€209</span>
             </div>
