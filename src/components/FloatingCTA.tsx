@@ -17,9 +17,9 @@ const FloatingCTA = () => {
             animation: 'gentlePulse 3s ease-in-out infinite'
           }}
         >
-          <div className="relative z-10">
+          <div className="relative z-10 text-center">
             <div className="text-xs sm:text-sm opacity-90">ESTATE40 -40%</div>
-            <div className="font-bold">€209 invece di €349</div>
+            <div className="font-bold">€209</div>
           </div>
         </Button>
       </a>
