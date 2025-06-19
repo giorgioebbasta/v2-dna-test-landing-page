@@ -46,7 +46,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/2b3fd25b-1ca6-4335-a493-38d9a74cd75f.png" 
               alt="Holifya Logo" 
-              className="h-10 hover:opacity-80 transition-opacity cursor-pointer brightness-0 invert"
+              className="h-10 hover:opacity-80 transition-opacity cursor-pointer"
             />
           </a>
         </div>
