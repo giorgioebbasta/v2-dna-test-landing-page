@@ -46,7 +46,7 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
             </div>
           )}
           {extraDiscount && (
-            <div className="text-xs text-blue-600 font-semibold mt-1">
+            <div className="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-1 rounded mt-2">
               {extraDiscount}
             </div>
           )}
