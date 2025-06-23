@@ -18,7 +18,7 @@ const testPackages = [
     savings: 299,
     promoCode: "ESTATE40",
     url: "https://holifya.com/cart/43782964445448:2",
-    extraDiscount: "Per te e per chi ami, -€20"
+    extraDiscount: "Per te e per chi ami (-€20)"
   }
 ];
 
