@@ -10,9 +10,10 @@ interface PriceCardProps {
   promoCode?: string;
   url: string;
   onClick?: () => void;
+  extraDiscount?: string;
 }
 
-const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, promoCode, url, onClick }: PriceCardProps) => {
+const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, promoCode, url, onClick, extraDiscount }: PriceCardProps) => {
   const handleClick = () => {
     if (onClick) {
       onClick();
@@ -42,6 +43,11 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
           {promoCode && (
             <div className="text-xs text-orange-600 font-semibold bg-orange-50 px-2 py-1 rounded mt-2">
               Codice: {promoCode} (-40%)
+            </div>
+          )}
+          {extraDiscount && (
+            <div className="text-xs text-blue-600 font-semibold mt-1">
+              {extraDiscount}
             </div>
           )}
         </div>
