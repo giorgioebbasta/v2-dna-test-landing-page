@@ -1,6 +1,7 @@
 
 import React from 'react';
 import LazyReviewsSection from '@/components/optimized/LazyReviewsSection';
+import LazyTestimonialsSection from '@/components/optimized/LazyTestimonialsSection';
 import LazyHowItWorksSection from '@/components/optimized/LazyHowItWorksSection';
 import LazyComparisonSection from '@/components/optimized/LazyComparisonSection';
 import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
@@ -23,6 +24,7 @@ const Index = () => {
       {/* Below the fold - lazy loaded */}
       <LazyComparisonSection />
       <LazyReviewsSection />
+      <LazyTestimonialsSection />
       <LazyHowItWorksSection />
       <LazyFinalCTASection />
       <LazyContactSection />
