@@ -21,7 +21,7 @@ const CTASection = () => {
             size="lg" 
             className="bg-white text-indigo-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
-            Inizia il tuo test DNA
+            Fai il tuo test del DNA
           </Button>
         </a>
       </div>
