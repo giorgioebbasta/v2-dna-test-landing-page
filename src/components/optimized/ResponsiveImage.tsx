@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 interface ResponsiveImageProps {
@@ -33,28 +33,14 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
 
   const shouldLoad = priority || isIntersecting;
 
-  console.log('ResponsiveImage render:', { src: src.split('/').pop(), priority, isIntersecting, shouldLoad, isLoaded, hasError });
-
   const handleLoad = () => {
-    console.log('Image loaded:', src.split('/').pop());
     setIsLoaded(true);
     onLoad?.();
   };
 
   const handleError = () => {
-    console.log('Image error:', src.split('/').pop());
     setHasError(true);
   };
-
-  // Generate WebP URL if possible
-  const getWebPUrl = (originalSrc: string) => {
-    if (originalSrc.includes('lovable-uploads')) {
-      return originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    }
-    return null;
-  };
-
-  const webpSrc = getWebPUrl(src);
 
   return (
     <div ref={elementRef} className={`relative overflow-hidden ${className}`}>
@@ -66,27 +52,22 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       )}
       
       {shouldLoad && !hasError && (
-        <picture>
-          {webpSrc && (
-            <source srcSet={webpSrc} type="image/webp" sizes={sizes} />
-          )}
-          <img
-            src={src}
-            alt={alt}
-            className={`transition-opacity duration-500 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            } ${className}`}
-            loading={priority ? "eager" : "lazy"}
-            width={width}
-            height={height}
-            sizes={sizes}
-            onLoad={handleLoad}
-            onError={handleError}
-            style={{
-              aspectRatio: width && height ? `${width}/${height}` : undefined
-            }}
-          />
-        </picture>
+        <img
+          src={src}
+          alt={alt}
+          className={`transition-opacity duration-500 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          } ${className}`}
+          loading={priority ? "eager" : "lazy"}
+          width={width}
+          height={height}
+          sizes={sizes}
+          onLoad={handleLoad}
+          onError={handleError}
+          style={{
+            aspectRatio: width && height ? `${width}/${height}` : undefined
+          }}
+        />
       )}
       
       {hasError && (

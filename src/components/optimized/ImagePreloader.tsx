@@ -8,22 +8,23 @@ interface ImagePreloaderProps {
 
 const ImagePreloader: React.FC<ImagePreloaderProps> = ({ images, priority = false }) => {
   useEffect(() => {
-    // Create preload links for critical images
     const preloadLinks: HTMLLinkElement[] = [];
 
-    images.forEach((src) => {
+    images.forEach((src, index) => {
       const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
       link.href = src;
-      if (priority) {
-        link.fetchPriority = 'high';
+      
+      // Only set high priority for first few images
+      if (priority && index < 2) {
+        link.setAttribute('fetchpriority', 'high');
       }
+      
       document.head.appendChild(link);
       preloadLinks.push(link);
     });
 
-    // Cleanup function to remove preload links
     return () => {
       preloadLinks.forEach(link => {
         if (document.head.contains(link)) {
@@ -33,7 +34,7 @@ const ImagePreloader: React.FC<ImagePreloaderProps> = ({ images, priority = fals
     };
   }, [images, priority]);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default ImagePreloader;

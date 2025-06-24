@@ -1,3 +1,4 @@
+
 import React from 'react';
 import HeroBanner from '@/components/hero/HeroBanner';
 import BenefitsList from '@/components/hero/BenefitsList';
@@ -11,8 +12,11 @@ import { useQuantity } from '@/hooks/useQuantity';
 const HeroSection = () => {
   const { quantity, increaseQuantity, decreaseQuantity, handleOrder } = useQuantity(1);
 
-  // Preload the first carousel image for faster initial load
-  const priorityImages = ['/lovable-uploads/f2d314d3-ab01-49c2-84e3-f6b59b117dbf.png'];
+  // Preload critical images for faster initial load
+  const priorityImages = [
+    '/lovable-uploads/f2d314d3-ab01-49c2-84e3-f6b59b117dbf.png',
+    '/lovable-uploads/e0638d78-febc-4e6c-b542-7a925922877a.png'
+  ];
 
   return (
     <section className="relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 pt-16">

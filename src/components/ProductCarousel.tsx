@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
@@ -28,25 +28,22 @@ const ProductCarousel = () => {
     }
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
-
-    return () => clearInterval(timer);
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
   }, [slides.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  }, [slides.length]);
 
-  const handleImageLoad = (slideId: number) => {
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 4000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
+
+  const handleImageLoad = useCallback((slideId: number) => {
     setImagesLoaded(prev => new Set(prev).add(slideId));
-  };
+  }, []);
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
@@ -62,6 +59,8 @@ const ProductCarousel = () => {
                 alt={slide.title}
                 className="w-full h-80 object-cover"
                 loading={index === 0 ? "eager" : "lazy"}
+                width={400}
+                height={320}
                 onLoad={() => handleImageLoad(slide.id)}
                 style={{
                   opacity: imagesLoaded.has(slide.id) ? 1 : 0,
@@ -84,6 +83,7 @@ const ProductCarousel = () => {
           size="icon"
           className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700 shadow-lg"
           onClick={prevSlide}
+          aria-label="Previous slide"
         >
           <ChevronLeft className="w-5 h-5" />
         </Button>
@@ -93,6 +93,7 @@ const ProductCarousel = () => {
           size="icon"
           className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-slate-700 shadow-lg"
           onClick={nextSlide}
+          aria-label="Next slide"
         >
           <ChevronRight className="w-5 h-5" />
         </Button>
@@ -108,6 +109,7 @@ const ProductCarousel = () => {
                 : 'bg-slate-300 hover:bg-slate-400'
             }`}
             onClick={() => setCurrentSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
