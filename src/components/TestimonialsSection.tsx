@@ -7,20 +7,20 @@ const TestimonialsSection = () => {
     {
       id: 1,
       embedUrl: "https://www.youtube.com/embed/zFzfl18iKIg",
-      name: "Maria G.",
-      description: "Grazie al test DNA ho scoperto le mie intolleranze alimentari"
+      name: "Francesco V.",
+      description: "Grazie al test DNA ho scoperto perchè il mio peso non scendesse"
     },
     {
       id: 2,
       embedUrl: "https://www.youtube.com/embed/28IhrnDW1p4",
-      name: "Luca S.",
-      description: "Il test mi ha aiutato a capire il mio metabolismo"
+      name: "Luciana C.",
+      description: "Non dormivo bene perchè ero sensibile alla caffeina"
     },
     {
       id: 3,
       embedUrl: "https://www.youtube.com/embed/2m6h_YbsJbI",
-      name: "Francesca T.",
-      description: "Una scoperta che ha cambiato la mia vita"
+      name: "Elisa Z.",
+      description: "Dopo il test ho dato una spiegazione a tutta quella stanchezza"
     }
   ];
 
