@@ -23,10 +23,14 @@ export const useIntersectionObserver = ({
     const observer = new IntersectionObserver(
       ([entry]) => {
         const isVisible = entry.isIntersecting;
-        setIsIntersecting(isVisible);
         
-        if (isVisible && triggerOnce && !hasTriggered) {
-          setHasTriggered(true);
+        if (triggerOnce) {
+          if (isVisible && !hasTriggered) {
+            setIsIntersecting(true);
+            setHasTriggered(true);
+          }
+        } else {
+          setIsIntersecting(isVisible);
         }
       },
       { threshold, rootMargin }

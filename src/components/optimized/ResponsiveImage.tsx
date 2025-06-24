@@ -33,12 +33,16 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
 
   const shouldLoad = priority || isIntersecting;
 
+  console.log('ResponsiveImage render:', { src: src.split('/').pop(), priority, isIntersecting, shouldLoad, isLoaded, hasError });
+
   const handleLoad = () => {
+    console.log('Image loaded:', src.split('/').pop());
     setIsLoaded(true);
     onLoad?.();
   };
 
   const handleError = () => {
+    console.log('Image error:', src.split('/').pop());
     setHasError(true);
   };
 
