@@ -2,6 +2,7 @@
 import React from 'react';
 import LazyReviewsSection from '@/components/optimized/LazyReviewsSection';
 import LazyTestimonialsSection from '@/components/optimized/LazyTestimonialsSection';
+import LazyCTASection from '@/components/optimized/LazyCTASection';
 import LazyHowItWorksSection from '@/components/optimized/LazyHowItWorksSection';
 import LazyComparisonSection from '@/components/optimized/LazyComparisonSection';
 import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
@@ -25,6 +26,7 @@ const Index = () => {
       <LazyComparisonSection />
       <LazyReviewsSection />
       <LazyTestimonialsSection />
+      <LazyCTASection />
       <LazyHowItWorksSection />
       <LazyFinalCTASection />
       <LazyContactSection />
