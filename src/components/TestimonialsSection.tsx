@@ -6,19 +6,19 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       id: 1,
-      embedUrl: "https://www.youtube.com/embed/zFzfl18iKIg",
+      embedUrl: "https://www.youtube.com/embed/zFzfl18iKIg?modestbranding=1&rel=0&showinfo=0&controls=1&autoplay=0&mute=0",
       name: "Francesco V.",
       description: "Grazie al test DNA ho scoperto perchè il mio peso non scendesse"
     },
     {
       id: 2,
-      embedUrl: "https://www.youtube.com/embed/28IhrnDW1p4",
+      embedUrl: "https://www.youtube.com/embed/28IhrnDW1p4?modestbranding=1&rel=0&showinfo=0&controls=1&autoplay=0&mute=0",
       name: "Luciana C.",
       description: "Non dormivo bene perchè ero sensibile alla caffeina"
     },
     {
       id: 3,
-      embedUrl: "https://www.youtube.com/embed/2m6h_YbsJbI",
+      embedUrl: "https://www.youtube.com/embed/2m6h_YbsJbI?modestbranding=1&rel=0&showinfo=0&controls=1&autoplay=0&mute=0",
       name: "Elisa Z.",
       description: "Dopo il test ho dato una spiegazione a tutta quella stanchezza"
     }
@@ -40,22 +40,29 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <Card 
               key={testimonial.id} 
-              className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
+              className={`border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
                 index === 2 ? 'hidden lg:block' : ''
               }`}
             >
               <CardContent className="p-0">
-                <div className="relative overflow-hidden rounded-lg">
+                <div className="relative overflow-hidden rounded-lg bg-black">
+                  <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-2 rounded-t-lg">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                  </div>
                   <iframe
                     src={testimonial.embedUrl}
                     title={`Testimonianza ${testimonial.name}`}
-                    className="w-full aspect-[9/16] md:aspect-video"
+                    className="w-full aspect-[9/16] md:aspect-video border-0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     loading="lazy"
                   />
                 </div>
-                <div className="p-4 text-center">
+                <div className="p-4 text-center bg-slate-50 rounded-b-lg">
                   <h3 className="font-semibold text-slate-900 mb-2">{testimonial.name}</h3>
                   <p className="text-sm text-slate-600">{testimonial.description}</p>
                 </div>
