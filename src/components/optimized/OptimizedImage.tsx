@@ -48,7 +48,6 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
           alt={alt}
           className={`transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'} ${className}`}
           loading={priority ? "eager" : "lazy"}
-          fetchPriority={priority ? "high" : "auto"}
           width={width}
           height={height}
           style={{
