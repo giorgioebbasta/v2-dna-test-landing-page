@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import ResponsiveImage from '@/components/optimized/ResponsiveImage';
 
 const HowItWorksSection = () => {
   const [imagesLoaded, setImagesLoaded] = useState<Set<number>>(new Set());
@@ -54,21 +55,15 @@ const HowItWorksSection = () => {
             <div key={step.id} className="relative">
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <div className="relative">
-                  <div className="relative h-48 bg-slate-200">
-                    <img
-                      src={step.image}
-                      alt={step.title}
-                      className="w-full h-48 object-cover transition-opacity duration-300"
-                      loading="lazy"
-                      onLoad={() => handleImageLoad(step.id)}
-                      style={{
-                        opacity: imagesLoaded.has(step.id) ? 1 : 0
-                      }}
-                    />
-                    {!imagesLoaded.has(step.id) && (
-                      <div className="absolute inset-0 bg-slate-200 animate-pulse" />
-                    )}
-                  </div>
+                  <ResponsiveImage
+                    src={step.image}
+                    alt={step.title}
+                    className="w-full h-48 object-cover"
+                    width={400}
+                    height={192}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    onLoad={() => handleImageLoad(step.id)}
+                  />
                   <div className="absolute top-4 left-4 w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                     {step.id}
                   </div>

@@ -1,30 +1,42 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import OptimizedVideo from '@/components/optimized/OptimizedVideo';
 
 const TestimonialsSection = () => {
+  const { elementRef, isIntersecting } = useIntersectionObserver({
+    threshold: 0.1,
+    rootMargin: '200px',
+    triggerOnce: true
+  });
+
   const testimonials = [
     {
       id: 1,
       embedUrl: "https://www.youtube.com/embed/zFzfl18iKIg",
       name: "Francesco V.",
-      description: "Grazie al test DNA ho scoperto perchè il mio peso non scendesse"
+      description: "Grazie al test DNA ho scoperto perchè il mio peso non scendesse",
+      thumbnailUrl: "https://img.youtube.com/vi/zFzfl18iKIg/maxresdefault.jpg"
     },
     {
       id: 2,
       embedUrl: "https://www.youtube.com/embed/28IhrnDW1p4",
       name: "Luciana C.",
-      description: "Non dormivo bene perchè ero sensibile alla caffeina"
+      description: "Non dormivo bene perchè ero sensibile alla caffeina",
+      thumbnailUrl: "https://img.youtube.com/vi/28IhrnDW1p4/maxresdefault.jpg"
     },
     {
       id: 3,
       embedUrl: "https://www.youtube.com/embed/2m6h_YbsJbI",
       name: "Elisa Z.",
-      description: "Dopo il test ho dato una spiegazione a tutta quella stanchezza"
+      description: "Dopo il test ho dato una spiegazione a tutta quella stanchezza",
+      thumbnailUrl: "https://img.youtube.com/vi/2m6h_YbsJbI/maxresdefault.jpg"
     }
   ];
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section ref={elementRef} className="py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
@@ -45,14 +57,15 @@ const TestimonialsSection = () => {
             >
               <CardContent className="p-0">
                 <div className="relative overflow-hidden rounded-lg">
-                  <iframe
-                    src={testimonial.embedUrl}
-                    title={`Testimonianza ${testimonial.name}`}
-                    className="w-full aspect-[9/16] md:aspect-video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                  {isIntersecting ? (
+                    <OptimizedVideo
+                      embedUrl={testimonial.embedUrl}
+                      title={`Testimonianza ${testimonial.name}`}
+                      thumbnailUrl={testimonial.thumbnailUrl}
+                    />
+                  ) : (
+                    <div className="w-full aspect-[9/16] md:aspect-video bg-slate-200 animate-pulse" />
+                  )}
                 </div>
                 <div className="p-4 text-center">
                   <h3 className="font-semibold text-slate-900 mb-2">{testimonial.name}</h3>
