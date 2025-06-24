@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
             Testimonianze di chi ha cambiato vita
           </h2>
           <p className="text-xl text-slate-600">
-            Ascolta le storie di trasformazione dei nostri clienti
+            Ascolta le storie di chi ha scelto di stare meglio
           </p>
         </div>
 
@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
 
         <div className="text-center mt-8">
           <p className="text-sm text-slate-500">
-            Storie vere di persone che hanno trasformato la loro salute
+            Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya
           </p>
         </div>
       </div>
