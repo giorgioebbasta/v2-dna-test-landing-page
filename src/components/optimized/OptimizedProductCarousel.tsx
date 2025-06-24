@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import OptimizedImage from './OptimizedImage';
+import ResponsiveImage from './ResponsiveImage';
 
 const OptimizedProductCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -79,7 +79,7 @@ const OptimizedProductCarousel = () => {
         >
           {slides.map((slide, index) => (
             <div key={slide.id} className="w-full flex-shrink-0 relative">
-              <OptimizedImage
+              <ResponsiveImage
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-80 object-cover"
