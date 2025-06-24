@@ -7,7 +7,7 @@ const HowItWorksSection = React.lazy(() => import('@/components/HowItWorksSectio
 const LazyHowItWorksSection = () => {
   return (
     <Suspense fallback={
-      <section className="py-20 px-4 bg-white">
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <Skeleton className="h-12 w-80 mx-auto mb-6" />
