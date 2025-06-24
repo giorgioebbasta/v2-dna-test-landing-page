@@ -20,7 +20,7 @@ const HeroBanner = React.memo(() => {
         Test Completo del DNA
       </Badge>
       <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-        Test del DNA.<br />
+        <span className="text-3xl lg:text-4xl">Test del DNA.</span><br />
         <span className="italic bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
           Una vita sana, più a lungo
         </span>
