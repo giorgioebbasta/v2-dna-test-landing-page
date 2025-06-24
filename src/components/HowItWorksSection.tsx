@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import ResponsiveImage from '@/components/optimized/ResponsiveImage';
@@ -11,25 +10,25 @@ const HowItWorksSection = () => {
       id: 1,
       title: "Ricevi il Kit",
       description: "Ordina online e ricevi il kit a casa in 72 ore con spedizione gratuita",
-      image: "/lovable-uploads/44cad416-b3b2-417c-a9a8-96dae37c450e.png"
+      image: "/lovable-uploads/fc3f5485-b98e-4b9e-8a88-9f3de07ef3e8.png"
     },
     {
       id: 2,
       title: "Raccogli il Campione",
       description: "Semplice campione di saliva in 2 minuti, seguendo le istruzioni incluse",
-      image: "/lovable-uploads/fc187d4f-cdd7-4f37-a0d4-82e7ccd64ae4.png"
+      image: "/lovable-uploads/eaf8527f-d980-4f4d-824f-7127fc45095f.png"
     },
     {
       id: 3,
       title: "Attendi i Risultati",
       description: "Il laboratorio analizza il tuo DNA con tecnologie all'avanguardia entro 15 giorni",
-      image: "/lovable-uploads/0a4bcb04-f8f3-4e78-9f19-7a2336ed5c70.png"
+      image: "/lovable-uploads/60a7e2ef-a1b0-40a7-817a-635353f4a26c.png"
     },
     {
       id: 4,
       title: "Scopri il tuo Benessere",
       description: "Accedi alla tua area personale e scopri tutti i segreti sul tuo DNA",
-      image: "/lovable-uploads/d4aa8a21-17c5-4f33-bb32-2c3e6e83a9cd.png"
+      image: "/lovable-uploads/7c39ab6b-1e6d-4601-b28a-62b0195ba3af.png"
     }
   ];
 
