@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <section className="py-3 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
+    <section className="py-2 px-4 bg-gradient-to-r from-indigo-600 to-purple-600">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
           Scegli di stare meglio
