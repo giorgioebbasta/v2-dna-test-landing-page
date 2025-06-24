@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
@@ -17,21 +16,21 @@ const TestimonialsSection = () => {
       embedUrl: "https://www.youtube.com/embed/zFzfl18iKIg",
       name: "Francesco V.",
       description: "Grazie al test DNA ho scoperto perchè il mio peso non scendesse",
-      thumbnailUrl: "https://img.youtube.com/vi/zFzfl18iKIg/maxresdefault.jpg"
+      thumbnailUrl: `https://img.youtube.com/vi/zFzfl18iKIg/maxresdefault.jpg?v=${Date.now()}`
     },
     {
       id: 2,
       embedUrl: "https://www.youtube.com/embed/28IhrnDW1p4",
       name: "Luciana C.",
       description: "Non dormivo bene perchè ero sensibile alla caffeina",
-      thumbnailUrl: "https://img.youtube.com/vi/28IhrnDW1p4/maxresdefault.jpg"
+      thumbnailUrl: `https://img.youtube.com/vi/28IhrnDW1p4/maxresdefault.jpg?v=${Date.now()}`
     },
     {
       id: 3,
       embedUrl: "https://www.youtube.com/embed/2m6h_YbsJbI",
       name: "Elisa Z.",
       description: "Dopo il test ho dato una spiegazione a tutta quella stanchezza",
-      thumbnailUrl: "https://img.youtube.com/vi/2m6h_YbsJbI/maxresdefault.jpg"
+      thumbnailUrl: `https://img.youtube.com/vi/2m6h_YbsJbI/maxresdefault.jpg?v=${Date.now()}`
     }
   ];
 
