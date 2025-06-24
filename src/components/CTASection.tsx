@@ -10,7 +10,7 @@ const CTASection = () => {
           Scegli di stare meglio
         </h2>
         <p className="text-lg sm:text-xl text-indigo-100 mb-8">
-          Non aspettare oltre. Il tuo benessere inizia con una scelta consapevole.
+          Non aspettare oltre. Inizia ora.
         </p>
         <a 
           href="https://holifya.com/cart/43782964445448:1"
