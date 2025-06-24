@@ -15,7 +15,7 @@ const HeroBanner = React.memo(() => {
   };
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-16">
       <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
         Test Completo del DNA
       </Badge>
