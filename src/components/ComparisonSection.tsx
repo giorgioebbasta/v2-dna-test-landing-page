@@ -39,7 +39,7 @@ const ComparisonSection = () => {
 
         <div className="mb-4 text-center">
           <div className="inline-block bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold">
-            🔥 ESTATE40: -40% fino a fine giugno!
+            🔥 ESTATE40: -40% fino a fine luglio!
           </div>
         </div>
 
@@ -116,7 +116,7 @@ const ComparisonSection = () => {
                   <p>Un solo test. Un'analisi completa.</p>
                   <p>Il miglior prezzo dell'estate.</p>
                   <div className="text-sm bg-white/20 rounded px-2 py-1 mt-2 font-semibold">
-                    🏖️ Offerta valida fino a fine giugno
+                    🏖️ Offerta valida fino a fine luglio
                   </div>
                 </div>
               </div>
