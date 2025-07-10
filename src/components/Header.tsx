@@ -4,9 +4,19 @@ import React from 'react';
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
-      {/* Mobile version - stacked layout */}
+      {/* Mobile version - stacked layout with switched order */}
       <div className="md:hidden">
-        {/* Logo section */}
+        {/* Promo banner - now first */}
+        <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 px-4">
+          <div className="text-sm sm:text-base font-semibold">
+            🔥 ESTATE40: -40% continua anche a luglio!
+          </div>
+          <div className="text-sm sm:text-base font-semibold">
+            €209 invece di €349
+          </div>
+        </div>
+        
+        {/* Logo section - now second */}
         <div className="max-w-7xl mx-auto px-4 py-2 flex justify-center">
           <a 
             href="https://www.holifya.com/"
@@ -20,16 +30,6 @@ const Header = () => {
               className="h-8 hover:opacity-80 transition-opacity cursor-pointer"
             />
           </a>
-        </div>
-        
-        {/* Promo banner */}
-        <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 px-4">
-          <div className="text-sm sm:text-base font-semibold">
-            🔥 ESTATE40: -40% continua anche a luglio!
-          </div>
-          <div className="text-sm sm:text-base font-semibold">
-            €209 invece di €349
-          </div>
         </div>
       </div>
 
