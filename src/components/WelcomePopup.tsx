@@ -25,18 +25,6 @@ const WelcomePopup = () => {
     }
   }, []);
 
-  // Global function to reset welcome popup
-  useEffect(() => {
-    (window as any).resetWelcomePopup = () => {
-      localStorage.removeItem('hasSeenWelcomePopup');
-      console.log('Welcome popup cache cleared. Refresh the page to see the popup again.');
-    };
-    
-    return () => {
-      delete (window as any).resetWelcomePopup;
-    };
-  }, []);
-
   const handleClose = () => {
     setIsOpen(false);
     localStorage.setItem('hasSeenWelcomePopup', 'true');
