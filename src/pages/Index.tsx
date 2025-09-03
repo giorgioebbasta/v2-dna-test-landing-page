@@ -10,7 +10,6 @@ import LazyContactSection from '@/components/optimized/LazyContactSection';
 import DeferredScripts from '@/components/optimized/DeferredScripts';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
-import NewsBanner from '@/components/NewsBanner';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
 
@@ -18,12 +17,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
-      <NewsBanner />
       
-      {/* Content with top padding to account for fixed header */}
-      <div className="pt-[60px]">
-        {/* Above the fold - load immediately */}
-        <HeroSection />
+      {/* Above the fold - load immediately */}
+      <HeroSection />
       <FeaturesSection />
       
       {/* Below the fold - lazy loaded */}
@@ -35,9 +31,8 @@ const Index = () => {
       <LazyFinalCTASection />
       <LazyContactSection />
       
-        <FloatingCTA />
-        <DeferredScripts />
-      </div>
+      <FloatingCTA />
+      <DeferredScripts />
     </div>
   );
 };
