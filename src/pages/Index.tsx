@@ -21,7 +21,7 @@ const Index = () => {
       <NewsBanner />
       
       {/* Content with top padding to account for fixed header */}
-      <div className="pt-[60px]">
+      <div className="pt-[120px]">
         {/* Above the fold - load immediately */}
         <HeroSection />
       <FeaturesSection />
