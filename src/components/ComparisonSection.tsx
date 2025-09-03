@@ -2,24 +2,37 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from 'lucide-react';
-
 const ComparisonSection = () => {
-  const testAreas = [
-    { icon: "🧠", name: "Metabolismo e nutrizione", competitorPrice: "€199" },
-    { icon: "🥛", name: "Intolleranze e sensibilità", competitorPrice: "€229" },
-    { icon: "❤️", name: "Prevenzione e salute", competitorPrice: "€219" },
-    { icon: "🧬", name: "Anti-aging e benessere cellulare", competitorPrice: "€189" },
-    { icon: "🏃", name: "Sport e performance", competitorPrice: "€199" },
-    { icon: "🧘", name: "Stress e stile di vita", competitorPrice: "€209" }
-  ];
-
+  const testAreas = [{
+    icon: "🧠",
+    name: "Metabolismo e nutrizione",
+    competitorPrice: "€199"
+  }, {
+    icon: "🥛",
+    name: "Intolleranze e sensibilità",
+    competitorPrice: "€229"
+  }, {
+    icon: "❤️",
+    name: "Prevenzione e salute",
+    competitorPrice: "€219"
+  }, {
+    icon: "🧬",
+    name: "Anti-aging e benessere cellulare",
+    competitorPrice: "€189"
+  }, {
+    icon: "🏃",
+    name: "Sport e performance",
+    competitorPrice: "€199"
+  }, {
+    icon: "🧘",
+    name: "Stress e stile di vita",
+    competitorPrice: "€209"
+  }];
   const totalCompetitorPrice = 1244;
   const holifyaOriginalPrice = 349;
   const holifyaDiscountedPrice = 289;
   const totalSavings = totalCompetitorPrice - holifyaDiscountedPrice;
-
-  return (
-    <section id="comparison-section" className="py-16 px-4 bg-gradient-to-b from-white to-slate-50">
+  return <section id="comparison-section" className="px-4 bg-gradient-to-b from-white to-slate-50 py-[30px]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
@@ -56,8 +69,7 @@ const ComparisonSection = () => {
           </CardHeader>
           <CardContent className="p-0">
             <div className="divide-y divide-slate-100">
-              {testAreas.map((area, index) => (
-                <div key={index} className="grid grid-cols-3 gap-4 items-center py-4 px-6 hover:bg-slate-50 transition-colors">
+              {testAreas.map((area, index) => <div key={index} className="grid grid-cols-3 gap-4 items-center py-4 px-6 hover:bg-slate-50 transition-colors">
                   <div className="flex items-center gap-3">
                     <span className="text-xl">{area.icon}</span>
                     <span className="text-sm font-medium text-slate-700">{area.name}</span>
@@ -72,8 +84,7 @@ const ComparisonSection = () => {
                       <Check className="w-5 h-5 text-emerald-600" />
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
               
               {/* Total row */}
               <div className="grid grid-cols-3 gap-4 items-center py-6 px-6 bg-slate-100 font-bold">
@@ -114,22 +125,13 @@ const ComparisonSection = () => {
         </div>
 
         <div className="text-center mt-8">
-          <a 
-            href="https://holifya.com/cart/43782964445448:1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]"
-            >
+          <a href="https://holifya.com/cart/43782964445448:1" target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]">
               Ordina ora (-20%)
             </Button>
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ComparisonSection;
