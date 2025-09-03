@@ -19,7 +19,7 @@ const Index = () => {
       <Header />
       
       {/* Desktop spacing adjustment */}
-      <div className="hidden md:block h-6"></div>
+      <div className="hidden md:block h-10"></div>
       
       {/* Above the fold - load immediately */}
       <HeroSection />
