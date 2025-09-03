@@ -16,7 +16,7 @@ const testPackages = [
     originalPrice: 698,
     savings: 199,
     url: "https://holifya.com/cart/43782964445448:2",
-    extraDiscount: "Per te e per chi ami (-€20)"
+    extraDiscount: "Per te e per chi ami (-€80)"
   }
 ];
 
