@@ -13,6 +13,8 @@ interface ResponsiveImageProps {
   onLoad?: () => void;
   displayWidth?: number;
   displayHeight?: number;
+  maxDisplayWidth?: number;
+  maxDisplayHeight?: number;
 }
 
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
@@ -25,7 +27,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   sizes = '100vw',
   onLoad,
   displayWidth,
-  displayHeight
+  displayHeight,
+  maxDisplayWidth,
+  maxDisplayHeight
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -36,6 +40,10 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   });
 
   const shouldLoad = priority || isIntersecting;
+
+  // Calculate optimal display dimensions
+  const optimalWidth = maxDisplayWidth || displayWidth || width || 400;
+  const optimalHeight = maxDisplayHeight || displayHeight || height || 320;
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -67,16 +75,17 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           loading={priority ? "eager" : "lazy"}
-          width={displayWidth || width}
-          height={displayHeight || height}
+          width={optimalWidth}
+          height={optimalHeight}
           sizes={sizes}
           onLoad={handleLoad}
           onError={handleError}
           style={{
-            aspectRatio: width && height ? `${width}/${height}` : undefined,
-            maxWidth: displayWidth ? `${displayWidth}px` : undefined,
-            maxHeight: displayHeight ? `${displayHeight}px` : undefined
+            aspectRatio: optimalWidth && optimalHeight ? `${optimalWidth}/${optimalHeight}` : undefined,
+            maxWidth: `${optimalWidth}px`,
+            maxHeight: `${optimalHeight}px`
           }}
+          decoding="async"
         />
       )}
       

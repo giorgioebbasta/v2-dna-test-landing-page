@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import ResponsiveImage from '@/components/optimized/ResponsiveImage';
 
 const ProductCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -54,21 +55,15 @@ const ProductCarousel = () => {
         >
           {slides.map((slide, index) => (
             <div key={slide.id} className="w-full flex-shrink-0 relative">
-              <img
+              <ResponsiveImage
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-80 object-cover"
-                loading={index === 0 ? "eager" : "lazy"}
-                width={400}
-                height={320}
+                priority={index === 0}
+                maxDisplayWidth={400}
+                maxDisplayHeight={320}
                 sizes="(max-width: 768px) 100vw, 400px"
                 onLoad={() => handleImageLoad(slide.id)}
-                style={{
-                  opacity: imagesLoaded.has(slide.id) ? 1 : 0,
-                  transition: 'opacity 0.3s ease-in-out',
-                  maxWidth: '400px',
-                  maxHeight: '320px'
-                }}
               />
               {!imagesLoaded.has(slide.id) && (
                 <div className="absolute inset-0 bg-slate-200 animate-pulse" />
