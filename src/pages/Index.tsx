@@ -21,6 +21,9 @@ const Index = () => {
       {/* Desktop spacing adjustment */}
       <div className="hidden md:block h-10"></div>
       
+      {/* Duplicate header */}
+      <Header />
+      
       {/* Above the fold - load immediately */}
       <HeroSection />
       <FeaturesSection />
