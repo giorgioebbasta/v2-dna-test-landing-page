@@ -18,6 +18,9 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
       
+      {/* Desktop spacing adjustment */}
+      <div className="hidden md:block h-6"></div>
+      
       {/* Above the fold - load immediately */}
       <HeroSection />
       <FeaturesSection />
