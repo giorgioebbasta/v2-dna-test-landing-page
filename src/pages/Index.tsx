@@ -10,6 +10,7 @@ import LazyContactSection from '@/components/optimized/LazyContactSection';
 import DeferredScripts from '@/components/optimized/DeferredScripts';
 import ThirdPartyManager from '@/components/optimized/ThirdPartyManager';
 import CriticalCSS from '@/components/optimized/CriticalCSS';
+import SpeedOptimizer from '@/components/optimized/SpeedOptimizer';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -19,6 +20,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <CriticalCSS />
+      <SpeedOptimizer />
       <Header />
       
       {/* Above the fold - load immediately */}
