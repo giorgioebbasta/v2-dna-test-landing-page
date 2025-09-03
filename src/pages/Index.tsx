@@ -12,32 +12,27 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
-import PromoBanner from '@/components/PromoBanner';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
       
-      <div className="pt-[60px]"> {/* Add padding for fixed header */}
-        <PromoBanner />
-        
-        {/* Above the fold - load immediately */}
-        <HeroSection />
-        <FeaturesSection />
+      {/* Above the fold - load immediately */}
+      <HeroSection />
+      <FeaturesSection />
       
-        {/* Below the fold - lazy loaded */}
-        <LazyComparisonSection />
-        <LazyReviewsSection />
-        <LazyTestimonialsSection />
-        <LazyCTASection />
-        <LazyHowItWorksSection />
-        <LazyFinalCTASection />
-        <LazyContactSection />
+      {/* Below the fold - lazy loaded */}
+      <LazyComparisonSection />
+      <LazyReviewsSection />
+      <LazyTestimonialsSection />
+      <LazyCTASection />
+      <LazyHowItWorksSection />
+      <LazyFinalCTASection />
+      <LazyContactSection />
       
-        <FloatingCTA />
-        <DeferredScripts />
-      </div>
+      <FloatingCTA />
+      <DeferredScripts />
     </div>
   );
 };
