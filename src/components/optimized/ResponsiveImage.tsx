@@ -15,11 +15,6 @@ interface ResponsiveImageProps {
   displayHeight?: number;
 }
 
-// Helper function to convert PNG path to WebP path
-const getWebPPath = (pngPath: string): string => {
-  return pngPath.replace(/\.png$/, '.webp');
-};
-
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   src,
   alt,
@@ -41,7 +36,6 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   });
 
   const shouldLoad = priority || isIntersecting;
-  const webpSrc = getWebPPath(src);
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -66,31 +60,24 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       )}
       
       {shouldLoad && !hasError && (
-        <picture>
-          <source 
-            srcSet={webpSrc} 
-            type="image/webp"
-            sizes={sizes}
-          />
-          <img
-            src={src}
-            alt={alt}
-            className={`w-full h-full object-cover transition-opacity duration-500 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
-            loading={priority ? "eager" : "lazy"}
-            width={displayWidth || width}
-            height={displayHeight || height}
-            sizes={sizes}
-            onLoad={handleLoad}
-            onError={handleError}
-            style={{
-              aspectRatio: width && height ? `${width}/${height}` : undefined,
-              maxWidth: displayWidth ? `${displayWidth}px` : undefined,
-              maxHeight: displayHeight ? `${displayHeight}px` : undefined
-            }}
-          />
-        </picture>
+        <img
+          src={src}
+          alt={alt}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          loading={priority ? "eager" : "lazy"}
+          width={displayWidth || width}
+          height={displayHeight || height}
+          sizes={sizes}
+          onLoad={handleLoad}
+          onError={handleError}
+          style={{
+            aspectRatio: width && height ? `${width}/${height}` : undefined,
+            maxWidth: displayWidth ? `${displayWidth}px` : undefined,
+            maxHeight: displayHeight ? `${displayHeight}px` : undefined
+          }}
+        />
       )}
       
       {hasError && (
