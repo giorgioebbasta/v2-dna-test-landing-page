@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
@@ -41,7 +40,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
 
   const shouldLoad = priority || isIntersecting;
 
-  // Calculate optimal display dimensions
+  // Calculate optimal display dimensions to reduce image waste
   const optimalWidth = maxDisplayWidth || displayWidth || width || 400;
   const optimalHeight = maxDisplayHeight || displayHeight || height || 320;
 
@@ -60,9 +59,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         <div 
           className="absolute inset-0 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 animate-pulse"
           style={{ 
-            width: width || '100%', 
-            height: height || 'auto',
-            aspectRatio: width && height ? `${width}/${height}` : undefined
+            width: optimalWidth || '100%', 
+            height: optimalHeight || 'auto',
+            aspectRatio: optimalWidth && optimalHeight ? `${optimalWidth}/${optimalHeight}` : undefined
           }}
         />
       )}
