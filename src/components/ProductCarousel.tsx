@@ -61,10 +61,13 @@ const ProductCarousel = () => {
                 loading={index === 0 ? "eager" : "lazy"}
                 width={400}
                 height={320}
+                sizes="(max-width: 768px) 100vw, 400px"
                 onLoad={() => handleImageLoad(slide.id)}
                 style={{
                   opacity: imagesLoaded.has(slide.id) ? 1 : 0,
-                  transition: 'opacity 0.3s ease-in-out'
+                  transition: 'opacity 0.3s ease-in-out',
+                  maxWidth: '400px',
+                  maxHeight: '320px'
                 }}
               />
               {!imagesLoaded.has(slide.id) && (

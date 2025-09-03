@@ -18,6 +18,10 @@ const Header = () => {
               src="/lovable-uploads/2b3fd25b-1ca6-4335-a493-38d9a74cd75f.png" 
               alt="Holifya Logo" 
               className="h-8 hover:opacity-80 transition-opacity cursor-pointer"
+              width={154}
+              height={40}
+              sizes="154px"
+              style={{ maxWidth: '154px', maxHeight: '40px' }}
             />
           </a>
         </div>
@@ -47,6 +51,10 @@ const Header = () => {
               src="/lovable-uploads/2b3fd25b-1ca6-4335-a493-38d9a74cd75f.png" 
               alt="Holifya Logo" 
               className="h-10 hover:opacity-80 transition-opacity cursor-pointer"
+              width={193}
+              height={50}
+              sizes="193px"
+              style={{ maxWidth: '193px', maxHeight: '50px' }}
             />
           </a>
         </div>

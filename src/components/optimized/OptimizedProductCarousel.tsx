@@ -85,8 +85,11 @@ const OptimizedProductCarousel = () => {
                 className="w-full h-80 object-cover"
                 priority={index === 0}
                 onLoad={() => handleImageLoad(slide.id)}
-                width={400}
-                height={320}
+                width={1670}
+                height={1045}
+                displayWidth={400}
+                displayHeight={320}
+                sizes="(max-width: 768px) 100vw, 400px"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <h3 className="text-white text-xl font-bold mb-2">{slide.title}</h3>
