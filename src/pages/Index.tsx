@@ -18,10 +18,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
+      <NewsBanner />
       
       {/* Content with top padding to account for fixed header */}
       <div className="pt-[60px]">
-        <NewsBanner />
         {/* Above the fold - load immediately */}
         <HeroSection />
       <FeaturesSection />
