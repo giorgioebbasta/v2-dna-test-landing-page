@@ -12,11 +12,13 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import NewsBanner from '@/components/NewsBanner';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
+      <NewsBanner />
       
       {/* Above the fold - load immediately */}
       <HeroSection />
