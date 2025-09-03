@@ -34,16 +34,121 @@
         --muted-foreground: 215.4 16.3% 46.9%;
         --border: 214.3 31.8% 91.4%;
         --radius: 0.5rem;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+      }
+      
+      * {
+        border-width: 0;
+        border-style: solid;
+        border-color: hsl(var(--border));
       }
       
       body {
         margin: 0;
         background: hsl(var(--background));
         color: hsl(var(--foreground));
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       
+      #root { 
+        min-height: 100vh; 
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Critical layout utilities */
+      .flex { display: flex; }
+      .inline-flex { display: inline-flex; }
+      .grid { display: grid; }
+      .hidden { display: none; }
+      .relative { position: relative; }
+      .absolute { position: absolute; }
+      .fixed { position: fixed; }
+      .block { display: block; }
+      .inline-block { display: inline-block; }
+      
+      /* Critical spacing */
+      .p-4 { padding: 1rem; }
+      .px-4 { padding-left: 1rem; padding-right: 1rem; }
+      .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+      .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+      .pt-16 { padding-top: 4rem; }
+      .mb-4 { margin-bottom: 1rem; }
+      .mb-6 { margin-bottom: 1.5rem; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      
+      /* Critical sizing */
+      .w-full { width: 100%; }
+      .h-8 { height: 2rem; }
+      .h-10 { height: 2.5rem; }
+      .min-h-screen { min-height: 100vh; }
+      .max-w-7xl { max-width: 80rem; }
+      .max-w-4xl { max-width: 56rem; }
+      
+      /* Critical text */
+      .text-center { text-align: center; }
+      .text-white { color: rgb(255 255 255); }
+      .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+      .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+      .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+      .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+      .text-5xl { font-size: 3rem; line-height: 1; }
+      .font-bold { font-weight: 700; }
+      .font-medium { font-weight: 500; }
+      
+      /* Critical gradients */
+      .bg-gradient-to-br {
+        background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+      }
+      .bg-gradient-to-b {
+        background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+      }
+      .bg-gradient-to-r {
+        background-image: linear-gradient(to right, var(--tw-gradient-stops));
+      }
+      
+      .from-indigo-50 {
+        --tw-gradient-from: 238 94% 97% / 1;
+        --tw-gradient-to: 238 94% 97% / 0;
+        --tw-gradient-stops: hsl(var(--tw-gradient-from)), hsl(var(--tw-gradient-to));
+      }
+      .via-purple-50 {
+        --tw-gradient-to: 270 100% 98% / 0;
+        --tw-gradient-stops: hsl(var(--tw-gradient-from)), hsl(270 100% 98% / 1), hsl(var(--tw-gradient-to));
+      }
+      .to-emerald-50 {
+        --tw-gradient-to: 138 76% 97% / 1;
+      }
+      .from-slate-50 {
+        --tw-gradient-from: 210 40% 98% / 1;
+        --tw-gradient-to: 210 40% 98% / 0;
+        --tw-gradient-stops: hsl(var(--tw-gradient-from)), hsl(var(--tw-gradient-to));
+      }
+      .to-white {
+        --tw-gradient-to: 0 0% 100% / 1;
+      }
+      .from-indigo-600 {
+        --tw-gradient-from: 238 75% 59% / 1;
+        --tw-gradient-to: 238 75% 59% / 0;
+        --tw-gradient-stops: hsl(var(--tw-gradient-from)), hsl(var(--tw-gradient-to));
+      }
+      .to-purple-600 {
+        --tw-gradient-to: 271 81% 56% / 1;
+      }
+      
+      /* Critical animations */
       .animate-fade-in {
         animation: fadeIn 0.6s ease-out forwards;
         opacity: 0;
@@ -53,29 +158,48 @@
         to { opacity: 1; }
       }
       
-      /* Critical gradient backgrounds */
-      .bg-gradient-to-br {
-        background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+      /* Critical buttons */
+      .btn-primary {
+        background: hsl(var(--primary));
+        color: hsl(var(--primary-foreground));
+        border-radius: calc(var(--radius) - 2px);
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
       }
       
-      .from-indigo-50 {
-        --tw-gradient-from: 238 94% 95%;
-        --tw-gradient-stops: hsl(var(--tw-gradient-from)), hsl(var(--tw-gradient-to));
+      .btn-primary:hover {
+        opacity: 0.9;
       }
       
-      .via-purple-50 {
-        --tw-gradient-to: 270 100% 97%;
+      /* Critical responsive grid */
+      @media (min-width: 1024px) {
+        .lg\\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .lg\\:hidden {
+          display: none;
+        }
       }
       
-      .to-emerald-50 {
-        --tw-gradient-to: 138 76% 97%;
+      @media (max-width: 1023px) {
+        .lg\\:hidden {
+          display: block;
+        }
       }
       
-      /* Hide skeleton on first paint */
-      .skeleton { display: none; }
-      
-      #root { min-height: 100vh; }
+      /* Hide non-critical until full CSS loads */
+      .skeleton, 
+      [class*="animate-"]:not(.animate-fade-in),
+      .transition-all,
+      .hover\\:scale-105:hover {
+        display: none !important;
+      }
     </style>
+    
+    <!-- Load main CSS asynchronously -->
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/src/index.css" /></noscript>
     
     <!-- Favicon -->
     <link rel="icon" href="/lovable-uploads/a6cae691-3560-4b6a-b4a9-1d4529b6fd42.png" type="image/png">
