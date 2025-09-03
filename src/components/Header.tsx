@@ -25,10 +25,10 @@ const Header = () => {
         {/* Promo banner */}
         <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 px-4">
           <div className="text-sm sm:text-base font-semibold">
-            🔥 Test del DNA Holifya: -40%
+            🔥 Test del DNA Holifya: -20%
           </div>
           <div className="text-sm sm:text-base font-semibold">
-            €209 invece di €349
+            €289 invece di €349
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@ const Header = () => {
         {/* Rolling ticker container */}
         <div className="flex-1 mx-8 overflow-hidden">
           <div className="animate-[scroll_20s_linear_infinite] whitespace-nowrap text-white font-semibold text-lg">
-            🔥 Test del DNA Holifya: -40%! €209 invece di €349 • 🔥 Test del DNA Holifya: -40%! €209 invece di €349 • 🔥 Test del DNA Holifya: -40%! €209 invece di €349 • 
+            🔥 Test del DNA Holifya: -20%! €289 invece di €349 • 🔥 Test del DNA Holifya: -20%! €289 invece di €349 • 🔥 Test del DNA Holifya: -20%! €289 invece di €349 • 
           </div>
         </div>
         

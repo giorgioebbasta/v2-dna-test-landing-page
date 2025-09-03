@@ -9,9 +9,9 @@ const FinalCTASection = () => {
 
   const testPackage = {
     name: "Test del DNA",
-    currentPrice: 209,
+    currentPrice: 289,
     originalPrice: 349,
-    savings: 140,
+    savings: 60,
     url: "https://holifya.com/cart/43782964445448:1"
   };
 
@@ -31,7 +31,7 @@ const FinalCTASection = () => {
               <div className="text-base sm:text-lg font-semibold mb-1">{testPackage.name}</div>
               <div className="text-xl sm:text-2xl font-bold">€{testPackage.currentPrice}</div>
               <div className="text-sm text-orange-200 line-through">€{testPackage.originalPrice}</div>
-              <div className="text-xs text-yellow-300 font-semibold">-40% di sconto!</div>
+              <div className="text-xs text-yellow-300 font-semibold">-20% di sconto!</div>
             </div>
           </div>
           

@@ -5,16 +5,16 @@ import PriceCard from '@/components/shared/PriceCard';
 const testPackages = [
   {
     name: "1 Test del DNA",
-    currentPrice: 209,
+    currentPrice: 289,
     originalPrice: 349,
-    savings: 140,
+    savings: 60,
     url: "https://holifya.com/cart/43782964445448:1"
   },
   {
     name: "2 Test del DNA",
-    currentPrice: 399,
+    currentPrice: 549,
     originalPrice: 698,
-    savings: 299,
+    savings: 149,
     url: "https://holifya.com/cart/43782964445448:2",
     extraDiscount: "Per te e per chi ami (-€20)"
   }

@@ -15,7 +15,7 @@ const ComparisonSection = () => {
 
   const totalCompetitorPrice = 1244;
   const holifyaOriginalPrice = 349;
-  const holifyaDiscountedPrice = 209;
+  const holifyaDiscountedPrice = 289;
   const totalSavings = totalCompetitorPrice - holifyaDiscountedPrice;
 
   return (
@@ -123,7 +123,7 @@ const ComparisonSection = () => {
               size="lg" 
               className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]"
             >
-              Ordina ora (-40%)
+              Ordina ora (-20%)
             </Button>
           </a>
         </div>

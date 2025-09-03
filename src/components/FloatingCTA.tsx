@@ -18,10 +18,10 @@ const FloatingCTA = () => {
           }}
         >
           <div className="relative z-10 text-center">
-            <div className="text-xs sm:text-sm opacity-90">-40%</div>
+            <div className="text-xs sm:text-sm opacity-90">-20%</div>
             <div className="flex items-center justify-center gap-2 font-bold">
               <span className="text-xs line-through opacity-70">€349</span>
-              <span>€209</span>
+              <span>€289</span>
             </div>
           </div>
         </Button>
