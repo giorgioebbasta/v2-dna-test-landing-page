@@ -17,7 +17,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
-      <Header />
       
       {/* Desktop spacing adjustment */}
       <div className="hidden md:block h-10"></div>
