@@ -18,23 +18,26 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
-      <PromoBanner />
       
-      {/* Above the fold - load immediately */}
-      <HeroSection />
-      <FeaturesSection />
+      <div className="pt-[60px]"> {/* Add padding for fixed header */}
+        <PromoBanner />
+        
+        {/* Above the fold - load immediately */}
+        <HeroSection />
+        <FeaturesSection />
       
-      {/* Below the fold - lazy loaded */}
-      <LazyComparisonSection />
-      <LazyReviewsSection />
-      <LazyTestimonialsSection />
-      <LazyCTASection />
-      <LazyHowItWorksSection />
-      <LazyFinalCTASection />
-      <LazyContactSection />
+        {/* Below the fold - lazy loaded */}
+        <LazyComparisonSection />
+        <LazyReviewsSection />
+        <LazyTestimonialsSection />
+        <LazyCTASection />
+        <LazyHowItWorksSection />
+        <LazyFinalCTASection />
+        <LazyContactSection />
       
-      <FloatingCTA />
-      <DeferredScripts />
+        <FloatingCTA />
+        <DeferredScripts />
+      </div>
     </div>
   );
 };

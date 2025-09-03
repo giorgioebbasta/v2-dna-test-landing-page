@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="fixed top-10 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
       {/* Mobile version - logo only */}
       <div className="md:hidden">
         {/* Logo section */}

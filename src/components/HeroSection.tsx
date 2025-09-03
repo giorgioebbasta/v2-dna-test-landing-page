@@ -19,7 +19,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 pt-24">
+    <section className="relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 pt-8">
       <ImagePreloader images={priorityImages} priority />
       
       <div className="max-w-7xl mx-auto">
