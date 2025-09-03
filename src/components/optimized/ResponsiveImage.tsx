@@ -47,7 +47,11 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       {!isLoaded && !hasError && (
         <div 
           className="absolute inset-0 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 animate-pulse"
-          style={{ width, height }}
+          style={{ 
+            width: width || '100%', 
+            height: height || 'auto',
+            aspectRatio: width && height ? `${width}/${height}` : undefined
+          }}
         />
       )}
       
@@ -55,9 +59,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         <img
           src={src}
           alt={alt}
-          className={`transition-opacity duration-500 ${
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
-          } ${className}`}
+          }`}
           loading={priority ? "eager" : "lazy"}
           width={width}
           height={height}
