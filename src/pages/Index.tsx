@@ -8,6 +8,7 @@ import LazyComparisonSection from '@/components/optimized/LazyComparisonSection'
 import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
 import LazyContactSection from '@/components/optimized/LazyContactSection';
 import DeferredScripts from '@/components/optimized/DeferredScripts';
+import ThirdPartyManager from '@/components/optimized/ThirdPartyManager';
 import CriticalCSS from '@/components/optimized/CriticalCSS';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
@@ -34,6 +35,7 @@ const Index = () => {
       <LazyContactSection />
       
       <FloatingCTA />
+      <ThirdPartyManager />
       <DeferredScripts />
     </div>
   );

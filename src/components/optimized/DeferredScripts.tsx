@@ -5,53 +5,69 @@ const DeferredScripts = () => {
   useEffect(() => {
     let scriptsLoaded = false;
     
-    const loadDeferredScripts = () => {
+    // Utility to break up heavy operations
+    const scheduleWork = (callback: () => void, delay = 0) => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(callback, { timeout: 1000 });
+      } else {
+        setTimeout(callback, delay);
+      }
+    };
+    
+    const loadScriptsGradually = () => {
       if (scriptsLoaded) return;
       scriptsLoaded = true;
       
-      // Load GTM with minimal configuration first
-      const gtmScript = document.createElement('script');
-      gtmScript.innerHTML = `
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-P9DJPS6B');
-      `;
-      document.head.appendChild(gtmScript);
+      // Stage 1: Load minimal GTM (most delayed)
+      scheduleWork(() => {
+        const gtmScript = document.createElement('script');
+        gtmScript.innerHTML = `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-P9DJPS6B');
+        `;
+        document.head.appendChild(gtmScript);
+      }, 100);
 
-      // Load Klaviyo even later to reduce initial bundle impact
-      setTimeout(() => {
+      // Stage 2: Load Klaviyo much later and in idle time
+      scheduleWork(() => {
         const klaviyoScript = document.createElement('script');
         klaviyoScript.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=UKq26T';
         klaviyoScript.async = true;
+        klaviyoScript.defer = true;
         klaviyoScript.type = 'text/javascript';
         document.head.appendChild(klaviyoScript);
-      }, 2000);
+      }, 4000);
     };
 
-    // Load scripts only after user interaction or after significant delay
-    const interactionEvents = ['scroll', 'click', 'touchstart', 'mousemove', 'keydown'];
+    // More conservative interaction triggers - only scroll and click
+    const interactionEvents = ['scroll', 'click'];
     
     const handleUserInteraction = () => {
-      loadDeferredScripts();
+      // Add small delay even after interaction to avoid blocking initial user action
+      setTimeout(loadScriptsGradually, 300);
       interactionEvents.forEach(event => {
         document.removeEventListener(event, handleUserInteraction);
       });
     };
 
-    // Add interaction listeners
+    // Add interaction listeners with passive flag
     interactionEvents.forEach(event => {
-      document.addEventListener(event, handleUserInteraction, { passive: true } as AddEventListenerOptions);
+      document.addEventListener(event, handleUserInteraction, { 
+        passive: true, 
+        once: true 
+      } as AddEventListenerOptions);
     });
 
-    // Fallback: load after longer delay if no interaction
+    // Much longer fallback delay - prioritize page performance
     const fallbackTimer = setTimeout(() => {
-      loadDeferredScripts();
+      loadScriptsGradually();
       interactionEvents.forEach(event => {
         document.removeEventListener(event, handleUserInteraction);
       });
-    }, 5000);
+    }, 8000); // Increased from 5000 to 8000
 
     return () => {
       clearTimeout(fallbackTimer);
