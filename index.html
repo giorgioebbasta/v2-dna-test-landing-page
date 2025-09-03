@@ -251,6 +251,11 @@
         border-color: rgb(226 232 240) !important;
       }
       
+      /* Critical hover effects for header */
+      .hover\\:opacity-80:hover { opacity: 0.8; }
+      .cursor-pointer { cursor: pointer; }
+      .transition-opacity { transition-property: opacity; transition-duration: 0.15s; }
+      
       /* Hide non-critical until full CSS loads */
       .skeleton, 
       [class*="animate-"]:not(.animate-fade-in),
@@ -260,8 +265,42 @@
       }
     </style>
     
-    <!-- Load main CSS asynchronously -->
-    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <!-- Load main CSS asynchronously with fallback -->
+    <script>
+      // Async CSS loading function
+      function loadCSS(href) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.media = 'print';
+        link.onload = function() {
+          this.media = 'all';
+          // Re-enable full styling after CSS loads
+          const style = document.createElement('style');
+          style.textContent = `
+            .skeleton, 
+            [class*="animate-"]:not(.animate-fade-in),
+            .transition-all,
+            .hover\\:scale-105:hover,
+            .hover\\:opacity-80:hover,
+            .cursor-pointer {
+              display: revert !important;
+            }
+          `;
+          document.head.appendChild(style);
+        };
+        document.head.appendChild(link);
+      }
+      
+      // Load CSS after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          loadCSS('/src/index.css');
+        });
+      } else {
+        loadCSS('/src/index.css');
+      }
+    </script>
     <noscript><link rel="stylesheet" href="/src/index.css" /></noscript>
     
     <!-- Favicon -->

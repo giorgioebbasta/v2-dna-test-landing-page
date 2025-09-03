@@ -2,41 +2,40 @@ import { useEffect } from 'react';
 
 const CriticalCSS = () => {
   useEffect(() => {
-    // Re-enable animations and transitions after full CSS loads
-    const enableFullStyling = () => {
-      // Remove the critical CSS restrictions
-      const style = document.createElement('style');
-      style.textContent = `
-        .skeleton, 
-        [class*="animate-"]:not(.animate-fade-in),
-        .transition-all,
-        .hover\\:scale-105:hover {
-          display: revert !important;
-        }
-      `;
-      document.head.appendChild(style);
-    };
-
-    // Wait for main CSS to load, then enable full styling
+    // Monitor for CSS loading completion
     const checkCSSLoaded = () => {
+      // Check if any stylesheet contains our CSS rules
       const cssLoaded = Array.from(document.styleSheets).some(sheet => {
         try {
-          return sheet.href && (sheet.href.includes('index.css') || sheet.href.includes('index-'));
+          // Check if the sheet has rules and contains our application styles
+          return sheet.cssRules && sheet.cssRules.length > 50;
         } catch (e) {
-          return false;
+          // Cross-origin or other access issues
+          return sheet.href && (sheet.href.includes('index.css') || sheet.href.includes('index-'));
         }
       });
       
       if (cssLoaded) {
-        enableFullStyling();
-      } else if ('requestIdleCallback' in window) {
-        requestIdleCallback(checkCSSLoaded, { timeout: 2000 });
+        // CSS is loaded, enable all features
+        const style = document.createElement('style');
+        style.textContent = `
+          .skeleton, 
+          [class*="animate-"]:not(.animate-fade-in),
+          .transition-all,
+          .hover\\:scale-105:hover,
+          .hover\\:opacity-80:hover,
+          .cursor-pointer {
+            display: revert !important;
+          }
+        `;
+        document.head.appendChild(style);
       } else {
+        // Keep checking
         setTimeout(checkCSSLoaded, 100);
       }
     };
 
-    // Start checking after a brief delay
+    // Start monitoring after a brief delay
     setTimeout(checkCSSLoaded, 100);
   }, []);
 
