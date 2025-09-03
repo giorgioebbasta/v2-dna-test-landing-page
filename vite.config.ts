@@ -25,10 +25,8 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-toast'],
-          utils: ['clsx', 'tailwind-merge', 'class-variance-authority'],
-          analytics: ['@tanstack/react-query'],
-          carousel: ['embla-carousel-react'],
+          ui: ['@radix-ui/react-accordion', '@radix-ui/react-dialog'],
+          utils: ['clsx', 'tailwind-merge', 'class-variance-authority']
         }
       }
     },

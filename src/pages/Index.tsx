@@ -8,9 +8,6 @@ import LazyComparisonSection from '@/components/optimized/LazyComparisonSection'
 import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
 import LazyContactSection from '@/components/optimized/LazyContactSection';
 import DeferredScripts from '@/components/optimized/DeferredScripts';
-import ThirdPartyManager from '@/components/optimized/ThirdPartyManager';
-import CriticalCSS from '@/components/optimized/CriticalCSS';
-import SpeedOptimizer from '@/components/optimized/SpeedOptimizer';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -19,8 +16,6 @@ import FeaturesSection from '@/components/FeaturesSection';
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <CriticalCSS />
-      <SpeedOptimizer />
       <Header />
       
       {/* Above the fold - load immediately */}
@@ -37,7 +32,6 @@ const Index = () => {
       <LazyContactSection />
       
       <FloatingCTA />
-      <ThirdPartyManager />
       <DeferredScripts />
     </div>
   );

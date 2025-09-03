@@ -18,16 +18,19 @@ const Header = () => {
               src="/lovable-uploads/2b3fd25b-1ca6-4335-a493-38d9a74cd75f.png" 
               alt="Holifya Logo" 
               className="h-8 hover:opacity-80 transition-opacity cursor-pointer"
-              width={154}
-              height={40}
-              sizes="154px"
-              style={{ maxWidth: '154px', maxHeight: '40px' }}
             />
           </a>
         </div>
         
         {/* Promo banner */}
-        {/* ESTATE40 promotion banner deactivated */}
+        <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-2 px-4">
+          <div className="text-sm sm:text-base font-semibold">
+            🔥 ESTATE40: -40% continua anche a luglio!
+          </div>
+          <div className="text-sm sm:text-base font-semibold">
+            €209 invece di €349
+          </div>
+        </div>
       </div>
 
       {/* Desktop version - single row with rolling ticker */}
@@ -44,17 +47,15 @@ const Header = () => {
               src="/lovable-uploads/2b3fd25b-1ca6-4335-a493-38d9a74cd75f.png" 
               alt="Holifya Logo" 
               className="h-10 hover:opacity-80 transition-opacity cursor-pointer"
-              width={193}
-              height={50}
-              sizes="193px"
-              style={{ maxWidth: '193px', maxHeight: '50px' }}
             />
           </a>
         </div>
         
         {/* Rolling ticker container */}
         <div className="flex-1 mx-8 overflow-hidden">
-          {/* ESTATE40 scrolling banner deactivated */}
+          <div className="animate-[scroll_20s_linear_infinite] whitespace-nowrap text-white font-semibold text-lg">
+            🔥 ESTATE40: -40% continua anche a luglio! €209 invece di €349 • 🔥 ESTATE40: -40% continua anche a luglio! €209 invece di €349 • 🔥 ESTATE40: -40% continua anche a luglio! €209 invece di €349 • 
+          </div>
         </div>
         
         {/* Right spacer to balance the logo */}

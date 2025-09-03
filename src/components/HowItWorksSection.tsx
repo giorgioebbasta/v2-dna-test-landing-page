@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import ResponsiveImage from '@/components/optimized/ResponsiveImage';
 
 const HowItWorksSection = () => {
   const steps = [
@@ -49,14 +48,13 @@ const HowItWorksSection = () => {
             <div key={step.id} className="relative">
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
                 <div className="relative">
-                  <ResponsiveImage
+                  <img
                     src={step.image}
                     alt={step.title}
                     className="w-full h-48 object-cover"
-                    priority={index < 2}
-                    maxDisplayWidth={400}
-                    maxDisplayHeight={192}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    width={400}
+                    height={192}
                   />
                   <div className="absolute top-4 left-4 w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                     {step.id}

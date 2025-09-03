@@ -8,7 +8,7 @@ const testPackages = [
     currentPrice: 209,
     originalPrice: 349,
     savings: 140,
-    promoCode: "", // ESTATE40 deactivated
+    promoCode: "ESTATE40",
     url: "https://holifya.com/cart/43782964445448:1"
   },
   {
@@ -16,7 +16,7 @@ const testPackages = [
     currentPrice: 399,
     originalPrice: 698,
     savings: 299,
-    promoCode: "", // ESTATE40 deactivated
+    promoCode: "ESTATE40",
     url: "https://holifya.com/cart/43782964445448:2",
     extraDiscount: "Per te e per chi ami (-€20)"
   }

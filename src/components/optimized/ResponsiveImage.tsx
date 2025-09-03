@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
@@ -10,10 +11,6 @@ interface ResponsiveImageProps {
   priority?: boolean;
   sizes?: string;
   onLoad?: () => void;
-  displayWidth?: number;
-  displayHeight?: number;
-  maxDisplayWidth?: number;
-  maxDisplayHeight?: number;
 }
 
 const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
@@ -24,11 +21,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   height,
   priority = false,
   sizes = '100vw',
-  onLoad,
-  displayWidth,
-  displayHeight,
-  maxDisplayWidth,
-  maxDisplayHeight
+  onLoad
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -39,10 +32,6 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   });
 
   const shouldLoad = priority || isIntersecting;
-
-  // Calculate optimal display dimensions to reduce image waste
-  const optimalWidth = maxDisplayWidth || displayWidth || width || 400;
-  const optimalHeight = maxDisplayHeight || displayHeight || height || 320;
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -58,11 +47,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       {!isLoaded && !hasError && (
         <div 
           className="absolute inset-0 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 animate-pulse"
-          style={{ 
-            width: optimalWidth || '100%', 
-            height: optimalHeight || 'auto',
-            aspectRatio: optimalWidth && optimalHeight ? `${optimalWidth}/${optimalHeight}` : undefined
-          }}
+          style={{ width, height }}
         />
       )}
       
@@ -70,21 +55,18 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         <img
           src={src}
           alt={alt}
-          className={`w-full h-full object-cover transition-opacity duration-500 ${
+          className={`transition-opacity duration-500 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
+          } ${className}`}
           loading={priority ? "eager" : "lazy"}
-          width={optimalWidth}
-          height={optimalHeight}
+          width={width}
+          height={height}
           sizes={sizes}
           onLoad={handleLoad}
           onError={handleError}
           style={{
-            aspectRatio: optimalWidth && optimalHeight ? `${optimalWidth}/${optimalHeight}` : undefined,
-            maxWidth: `${optimalWidth}px`,
-            maxHeight: `${optimalHeight}px`
+            aspectRatio: width && height ? `${width}/${height}` : undefined
           }}
-          decoding="async"
         />
       )}
       
