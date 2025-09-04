@@ -12,12 +12,13 @@ const FloatingCTA = () => {
       >
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+          className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex flex-col items-center"
           style={{
             animation: 'gentlePulse 3s ease-in-out infinite'
           }}
         >
-          Ordina ora - €289
+          <span className="text-lg">Ordina ora - €289</span>
+          <span className="text-xs">€60 di sconto</span>
         </Button>
       </a>
     </div>
