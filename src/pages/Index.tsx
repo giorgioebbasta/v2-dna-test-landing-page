@@ -18,11 +18,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
-      <PromoBanner />
       
-      {/* Desktop spacing adjustment - increased for promo banner */}
-      <div className="hidden md:block h-16"></div>
-      <div className="md:hidden h-14"></div>
+      {/* Spacing for fixed header */}
+      <div className="h-[72px] md:h-[76px]"></div>
+      
+      <PromoBanner />
       
       {/* Above the fold - load immediately */}
       <HeroSection />
