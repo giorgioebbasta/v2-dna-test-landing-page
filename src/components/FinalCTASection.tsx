@@ -30,7 +30,7 @@ const FinalCTASection = () => {
               <div className="text-base sm:text-lg font-semibold mb-1">{testPackage.name}</div>
               <div className="text-xl sm:text-2xl font-bold">€{testPackage.currentPrice}</div>
               <div className="text-sm text-green-200 line-through">€{testPackage.originalPrice}</div>
-              <div className="text-xs text-yellow-300 font-semibold">-20% di sconto!</div>
+              <div className="text-xs text-yellow-300 font-semibold">€60 di sconto!</div>
             </div>
           </div>
           
