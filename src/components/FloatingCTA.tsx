@@ -18,7 +18,7 @@ const FloatingCTA = () => {
           }}
         >
           <span className="text-lg leading-tight">Ordina ora - €289</span>
-          <span className="text-xs leading-tight -mt-1">€60 di sconto</span>
+          <span className="text-[10px] leading-tight -mt-1">€60 di sconto</span>
         </Button>
       </a>
     </div>
