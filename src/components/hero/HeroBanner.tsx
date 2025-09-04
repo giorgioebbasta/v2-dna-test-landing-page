@@ -12,7 +12,7 @@ const HeroBanner = React.memo(() => {
     }
   };
   return <div className="space-y-2 pt-2">
-      <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium">
+      <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200 px-4 py-2 text-sm font-medium mt-4">
         Test Completo del DNA
       </Badge>
       <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
