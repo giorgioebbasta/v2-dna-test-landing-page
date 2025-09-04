@@ -49,10 +49,13 @@ const HeroSection = () => {
 
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left side - Carousel and Pricing */}
+          {/* Left side - Carousel, Pricing with Benefits, and Quantity Selector */}
           <div className="space-y-6 animate-fade-in">
             <LazyProductCarousel />
-            <ProductPricing />
+            <div className="grid grid-cols-2 gap-6">
+              <ProductPricing />
+              <BenefitsList />
+            </div>
             <QuantitySelector
               quantity={quantity}
               onIncrease={increaseQuantity}
@@ -61,10 +64,9 @@ const HeroSection = () => {
             />
           </div>
           
-          {/* Right side - Text content and benefits */}
+          {/* Right side - Text content only */}
           <div className="space-y-6 animate-fade-in">
             <HeroBanner />
-            <BenefitsList />
           </div>
         </div>
       </div>
