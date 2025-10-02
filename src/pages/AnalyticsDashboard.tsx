@@ -5,8 +5,10 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
-import { CalendarIcon, Users, Eye, MousePointer } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { CalendarIcon, Users, Eye, MousePointer, Activity } from 'lucide-react';
 import { format, subDays } from 'date-fns';
+import { toast } from 'sonner';
 
 interface DailySummary {
   date: string;
@@ -33,9 +35,63 @@ const AnalyticsDashboard = () => {
     to: new Date(),
   });
   const [loading, setLoading] = useState(true);
+  const [realtimePageviews, setRealtimePageviews] = useState(0);
+  const [activeSessions, setActiveSessions] = useState(0);
 
   useEffect(() => {
     fetchAnalytics();
+    
+    // Subscribe to real-time pageview inserts
+    const pageviewChannel = supabase
+      .channel('realtime-pageviews')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'analytics_pageviews'
+        },
+        (payload) => {
+          console.log('New pageview:', payload);
+          setRealtimePageviews(prev => prev + 1);
+          setTotalStats(prev => ({
+            ...prev,
+            totalPageviews: prev.totalPageviews + 1
+          }));
+          toast.success('New visitor on your site!', {
+            description: `Page: ${payload.new.page_path}`,
+            duration: 3000,
+          });
+        }
+      )
+      .subscribe();
+
+    // Subscribe to real-time session inserts
+    const sessionChannel = supabase
+      .channel('realtime-sessions')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'analytics_sessions'
+        },
+        (payload) => {
+          console.log('New session:', payload);
+          setActiveSessions(prev => prev + 1);
+          setTotalStats(prev => ({
+            ...prev,
+            totalVisitors: prev.totalVisitors + 1,
+            totalSessions: prev.totalSessions + 1
+          }));
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(pageviewChannel);
+      supabase.removeChannel(sessionChannel);
+    };
   }, [dateRange]);
 
   const fetchAnalytics = async () => {
@@ -105,8 +161,14 @@ const AnalyticsDashboard = () => {
       <div className="max-w-7xl mx-auto space-y-8">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-4xl font-bold">Analytics Dashboard</h1>
-            <p className="text-muted-foreground mt-2">Track your website's performance</p>
+            <div className="flex items-center gap-3">
+              <h1 className="text-4xl font-bold">Analytics Dashboard</h1>
+              <Badge variant="outline" className="gap-2 animate-pulse">
+                <Activity className="h-3 w-3 text-green-500" />
+                Live
+              </Badge>
+            </div>
+            <p className="text-muted-foreground mt-2">Real-time website performance tracking</p>
           </div>
           
           <Popover>
