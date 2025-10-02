@@ -30,70 +30,86 @@ Deno.serve(async (req) => {
     let totalSessions = 0;
     let totalPageviewRecords = 0;
 
-    // Insert data day by day
+    // Prepare bulk data
+    const allSessions: any[] = [];
+    const allPageviews: any[] = [];
+    const dailySummaries: any[] = [];
+
+    // Collect all data from the batch
     for (const day of historicalData) {
-      // Insert daily summary
-      const { error: summaryError } = await supabase
-        .from('analytics_daily_summary')
-        .upsert({
-          date: day.date,
-          total_visitors: day.total_visitors || 0,
-          total_pageviews: day.total_pageviews || 0,
-          unique_sessions: day.unique_sessions || 0,
-        }, {
-          onConflict: 'date'
-        });
+      dailySummaries.push({
+        date: day.date,
+        total_visitors: day.total_visitors || 0,
+        total_pageviews: day.total_pageviews || 0,
+        unique_sessions: day.unique_sessions || 0,
+      });
 
-      if (summaryError) {
-        console.error(`Error inserting summary for ${day.date}:`, summaryError);
-        continue;
-      }
-
-      // Insert sessions if provided
       if (day.sessions && Array.isArray(day.sessions)) {
-        for (const session of day.sessions) {
-          const { error: sessionError } = await supabase
-            .from('analytics_sessions')
-            .upsert({
-              id: session.id,
-              started_at: session.started_at,
-              ended_at: session.ended_at,
-              page_count: session.page_count,
-              device_type: session.device_type,
-              browser: session.browser,
-              country: session.country,
-            }, {
-              onConflict: 'id'
-            });
-
-          if (!sessionError) {
-            totalSessions++;
-          }
-        }
+        allSessions.push(...day.sessions.map(session => ({
+          id: session.id,
+          started_at: session.started_at,
+          ended_at: session.ended_at,
+          page_count: session.page_count,
+          device_type: session.device_type,
+          browser: session.browser,
+          country: session.country,
+        })));
       }
 
-      // Insert pageviews if provided
       if (day.pageviews && Array.isArray(day.pageviews)) {
-        for (const pageview of day.pageviews) {
-          const { error: pageviewError } = await supabase
-            .from('analytics_pageviews')
-            .insert({
-              session_id: pageview.session_id,
-              page_path: pageview.page_path,
-              referrer: pageview.referrer,
-              user_agent: pageview.user_agent,
-              timestamp: pageview.timestamp,
-            });
-
-          if (!pageviewError) {
-            totalPageviewRecords++;
-          }
-        }
+        allPageviews.push(...day.pageviews.map(pageview => ({
+          session_id: pageview.session_id,
+          page_path: pageview.page_path,
+          referrer: pageview.referrer,
+          user_agent: pageview.user_agent,
+          timestamp: pageview.timestamp,
+        })));
       }
 
       migratedDays++;
       totalVisitors += day.total_visitors || 0;
       totalPageviews += day.total_pageviews || 0;
+    }
+
+    // Bulk insert daily summaries
+    if (dailySummaries.length > 0) {
+      const { error: summaryError } = await supabase
+        .from('analytics_daily_summary')
+        .upsert(dailySummaries, { onConflict: 'date' });
+
+      if (summaryError) {
+        console.error('Error inserting summaries:', summaryError);
+      }
+    }
+
+    // Bulk insert sessions in chunks of 500
+    const SESSION_CHUNK_SIZE = 500;
+    for (let i = 0; i < allSessions.length; i += SESSION_CHUNK_SIZE) {
+      const chunk = allSessions.slice(i, i + SESSION_CHUNK_SIZE);
+      const { error: sessionError } = await supabase
+        .from('analytics_sessions')
+        .upsert(chunk, { onConflict: 'id' });
+
+      if (!sessionError) {
+        totalSessions += chunk.length;
+      } else {
+        console.error(`Error inserting session chunk ${i / SESSION_CHUNK_SIZE + 1}:`, sessionError);
+      }
+    }
+
+    // Bulk insert pageviews in chunks of 1000
+    const PAGEVIEW_CHUNK_SIZE = 1000;
+    for (let i = 0; i < allPageviews.length; i += PAGEVIEW_CHUNK_SIZE) {
+      const chunk = allPageviews.slice(i, i + PAGEVIEW_CHUNK_SIZE);
+      const { error: pageviewError } = await supabase
+        .from('analytics_pageviews')
+        .insert(chunk);
+
+      if (!pageviewError) {
+        totalPageviewRecords += chunk.length;
+      } else {
+        console.error(`Error inserting pageview chunk ${i / PAGEVIEW_CHUNK_SIZE + 1}:`, pageviewError);
+      }
     }
 
     console.log(`Migration complete: ${migratedDays} days, ${totalVisitors} visitors, ${totalSessions} sessions, ${totalPageviewRecords} pageview records`);
