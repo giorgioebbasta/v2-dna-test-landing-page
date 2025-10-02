@@ -32,6 +32,27 @@ const getBrowser = (): string => {
   return 'Other';
 };
 
+// Get country from timezone (simple approximation)
+const getCountryFromTimezone = (): string => {
+  try {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // Map common timezones to countries (simplified)
+    if (timezone.includes('America/New_York') || timezone.includes('America/Chicago')) return 'United States';
+    if (timezone.includes('America/Los_Angeles')) return 'United States';
+    if (timezone.includes('Europe/London')) return 'United Kingdom';
+    if (timezone.includes('Europe/Paris')) return 'France';
+    if (timezone.includes('Europe/Berlin')) return 'Germany';
+    if (timezone.includes('Asia/Tokyo')) return 'Japan';
+    if (timezone.includes('Asia/Shanghai')) return 'China';
+    if (timezone.includes('Australia')) return 'Australia';
+    // Extract region from timezone as fallback
+    const parts = timezone.split('/');
+    return parts[0] || 'Unknown';
+  } catch {
+    return 'Unknown';
+  }
+};
+
 // Create session in database
 const createSession = async (sessionId: string) => {
   try {
@@ -39,6 +60,7 @@ const createSession = async (sessionId: string) => {
       id: sessionId,
       device_type: getDeviceType(),
       browser: getBrowser(),
+      country: getCountryFromTimezone(),
       started_at: new Date().toISOString(),
     });
   } catch (error) {

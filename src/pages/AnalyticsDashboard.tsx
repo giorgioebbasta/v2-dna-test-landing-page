@@ -9,10 +9,13 @@ import {
   MousePointer, 
   Activity,
   TrendingUp,
+  TrendingDown,
   Clock,
   Monitor,
   Smartphone,
-  Chrome
+  Chrome,
+  Globe,
+  ExternalLink
 } from 'lucide-react';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 import { toast } from 'sonner';
@@ -34,6 +37,16 @@ interface DeviceStats {
   value: number;
 }
 
+interface CountryStats {
+  country: string;
+  count: number;
+}
+
+interface SourceStats {
+  source: string;
+  count: number;
+}
+
 type TimePeriod = 'today' | '7d' | '30d' | '90d';
 
 const COLORS = ['hsl(var(--primary))', 'hsl(var(--secondary))', 'hsl(var(--accent))', '#94a3b8', '#cbd5e1'];
@@ -51,6 +64,10 @@ const AnalyticsDashboard = () => {
   const [topPages, setTopPages] = useState<TopPage[]>([]);
   const [deviceStats, setDeviceStats] = useState<DeviceStats[]>([]);
   const [browserStats, setBrowserStats] = useState<DeviceStats[]>([]);
+  const [countryStats, setCountryStats] = useState<CountryStats[]>([]);
+  const [sourceStats, setSourceStats] = useState<SourceStats[]>([]);
+  const [avgViewsPerVisit, setAvgViewsPerVisit] = useState<number>(0);
+  const [bounceRate, setBounceRate] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [realtimeCount, setRealtimeCount] = useState(0);
 
@@ -191,7 +208,7 @@ const AnalyticsDashboard = () => {
       // Fetch device stats
       const { data: sessions } = await supabase
         .from('analytics_sessions')
-        .select('device_type, browser')
+        .select('device_type, browser, country')
         .gte('started_at', dateRange.from.toISOString())
         .lte('started_at', dateRange.to.toISOString());
 
@@ -219,18 +236,74 @@ const AnalyticsDashboard = () => {
           .sort((a, b) => b.value - a.value)
       );
 
-      // Calculate average session duration
-      const { data: completedSessions } = await supabase
-        .from('analytics_sessions')
-        .select('started_at, ended_at')
-        .gte('started_at', dateRange.from.toISOString())
-        .lte('started_at', dateRange.to.toISOString())
-        .not('ended_at', 'is', null);
+      // Fetch country stats
+      const countryCounts = (sessions || []).reduce((acc: Record<string, number>, item) => {
+        const country = item.country || 'Unknown';
+        acc[country] = (acc[country] || 0) + 1;
+        return acc;
+      }, {});
 
-      const avgDuration = (completedSessions || []).reduce((acc, session) => {
+      setCountryStats(
+        Object.entries(countryCounts)
+          .map(([country, count]) => ({ country, count: count as number }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 10)
+      );
+
+      // Fetch source/referrer stats
+      const { data: allPageviews } = await supabase
+        .from('analytics_pageviews')
+        .select('referrer')
+        .gte('timestamp', dateRange.from.toISOString())
+        .lte('timestamp', dateRange.to.toISOString());
+
+      const sourceCounts = (allPageviews || []).reduce((acc: Record<string, number>, item) => {
+        let source = 'Direct';
+        if (item.referrer) {
+          try {
+            const url = new URL(item.referrer);
+            source = url.hostname.replace('www.', '');
+          } catch {
+            source = 'Referrer';
+          }
+        }
+        acc[source] = (acc[source] || 0) + 1;
+        return acc;
+      }, {});
+
+      setSourceStats(
+        Object.entries(sourceCounts)
+          .map(([source, count]) => ({ source, count: count as number }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 10)
+      );
+
+      // Calculate session metrics
+      const { data: allSessions } = await supabase
+        .from('analytics_sessions')
+        .select('started_at, ended_at, page_count')
+        .gte('started_at', dateRange.from.toISOString())
+        .lte('started_at', dateRange.to.toISOString());
+
+      const completedSessions = (allSessions || []).filter(s => s.ended_at);
+      
+      const avgDuration = completedSessions.reduce((acc, session) => {
         const duration = new Date(session.ended_at).getTime() - new Date(session.started_at).getTime();
         return acc + duration;
-      }, 0) / (completedSessions?.length || 1);
+      }, 0) / (completedSessions.length || 1);
+
+      const totalPageViews = (allSessions || []).reduce((sum, s) => sum + (s.page_count || 0), 0);
+      const avgViews = allSessions && allSessions.length > 0
+        ? totalPageViews / allSessions.length
+        : 0;
+
+      const bouncedSessions = (allSessions || []).filter(s => (s.page_count || 0) <= 1).length;
+      const bounceRateCalc = allSessions && allSessions.length > 0
+        ? (bouncedSessions / allSessions.length) * 100
+        : 0;
+
+      setAvgViewsPerVisit(avgViews);
+      setBounceRate(bounceRateCalc);
 
       setStats({
         ...totals,
@@ -345,6 +418,25 @@ const AnalyticsDashboard = () => {
             title="Avg. Session"
             value={formatDuration(stats.avgSessionDuration)}
             icon={Clock}
+          />
+        </div>
+
+        {/* Additional Metrics */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <MetricCard
+            title="Views per Visit"
+            value={avgViewsPerVisit.toFixed(1)}
+            icon={Eye}
+          />
+          <MetricCard
+            title="Bounce Rate"
+            value={`${bounceRate.toFixed(1)}%`}
+            icon={TrendingDown}
+          />
+          <MetricCard
+            title="Countries"
+            value={countryStats.length}
+            icon={Globe}
           />
         </div>
 
@@ -508,6 +600,62 @@ const AnalyticsDashboard = () => {
                       </div>
                     );
                   })}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Top Countries */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Top Countries</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {countryStats.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  No country data yet
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {countryStats.map((stat, index) => (
+                    <div key={stat.country} className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-xs font-semibold">
+                          {index + 1}
+                        </div>
+                        <span className="text-sm font-medium">{stat.country}</span>
+                      </div>
+                      <Badge variant="secondary">{stat.count}</Badge>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Traffic Sources */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Traffic Sources</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {sourceStats.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  No source data yet
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {sourceStats.map((stat, index) => (
+                    <div key={stat.source} className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                        <span className="text-sm font-medium truncate max-w-[200px]">
+                          {stat.source}
+                        </span>
+                      </div>
+                      <Badge variant="secondary">{stat.count}</Badge>
+                    </div>
+                  ))}
                 </div>
               )}
             </CardContent>
