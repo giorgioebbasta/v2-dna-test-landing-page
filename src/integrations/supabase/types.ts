@@ -14,13 +14,105 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      analytics_daily_summary: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          total_pageviews: number | null
+          total_visitors: number | null
+          unique_sessions: number | null
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          id?: string
+          total_pageviews?: number | null
+          total_visitors?: number | null
+          unique_sessions?: number | null
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          total_pageviews?: number | null
+          total_visitors?: number | null
+          unique_sessions?: number | null
+        }
+        Relationships: []
+      }
+      analytics_pageviews: {
+        Row: {
+          created_at: string
+          id: string
+          page_path: string
+          referrer: string | null
+          session_id: string
+          timestamp: string
+          user_agent: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          page_path: string
+          referrer?: string | null
+          session_id: string
+          timestamp?: string
+          user_agent?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          page_path?: string
+          referrer?: string | null
+          session_id?: string
+          timestamp?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      analytics_sessions: {
+        Row: {
+          browser: string | null
+          country: string | null
+          created_at: string
+          device_type: string | null
+          ended_at: string | null
+          id: string
+          page_count: number | null
+          started_at: string
+        }
+        Insert: {
+          browser?: string | null
+          country?: string | null
+          created_at?: string
+          device_type?: string | null
+          ended_at?: string | null
+          id?: string
+          page_count?: number | null
+          started_at?: string
+        }
+        Update: {
+          browser?: string | null
+          country?: string | null
+          created_at?: string
+          device_type?: string | null
+          ended_at?: string | null
+          id?: string
+          page_count?: number | null
+          started_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      aggregate_daily_analytics: {
+        Args: { target_date: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
