@@ -108,12 +108,25 @@ const MigrateAnalytics = () => {
     try {
       const allHistoricalData = generateHistoricalData();
       
-      // Split into batches of 10 days
-      const BATCH_SIZE = 10;
+      // Split into batches by visitor count (max 1000 visitors per batch)
+      const MAX_VISITORS_PER_BATCH = 1000;
       const batches: typeof allHistoricalData[] = [];
+      let currentBatch: typeof allHistoricalData = [];
+      let currentBatchVisitors = 0;
       
-      for (let i = 0; i < allHistoricalData.length; i += BATCH_SIZE) {
-        batches.push(allHistoricalData.slice(i, i + BATCH_SIZE));
+      for (const day of allHistoricalData) {
+        if (currentBatchVisitors + day.total_visitors > MAX_VISITORS_PER_BATCH && currentBatch.length > 0) {
+          batches.push(currentBatch);
+          currentBatch = [];
+          currentBatchVisitors = 0;
+        }
+        currentBatch.push(day);
+        currentBatchVisitors += day.total_visitors;
+      }
+      
+      // Add remaining days
+      if (currentBatch.length > 0) {
+        batches.push(currentBatch);
       }
       
       setProgress({ current: 0, total: batches.length, message: 'Starting migration...' });
