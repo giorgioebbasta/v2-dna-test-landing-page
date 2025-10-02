@@ -7,6 +7,7 @@ import { Loader2, Upload, CheckCircle } from 'lucide-react';
 
 const MigrateAnalytics = () => {
   const [loading, setLoading] = useState(false);
+  const [clearing, setClearing] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState({ current: 0, total: 0, message: '' });
@@ -98,6 +99,25 @@ const MigrateAnalytics = () => {
         pageviews,
       };
     });
+  };
+
+  const handleClearData = async () => {
+    setClearing(true);
+    setError(null);
+    
+    try {
+      const { data, error: functionError } = await supabase.functions.invoke('clear-analytics');
+      
+      if (functionError) throw functionError;
+      
+      setResult(null);
+      alert('All analytics data cleared successfully! You can now run a fresh migration.');
+    } catch (err: any) {
+      console.error('Clear error:', err);
+      setError(err.message || 'Failed to clear analytics data');
+    } finally {
+      setClearing(false);
+    }
   };
 
   const handleMigration = async () => {
@@ -242,29 +262,48 @@ const MigrateAnalytics = () => {
               </Alert>
             )}
 
-            <Button
-              onClick={handleMigration}
-              disabled={loading || !!result}
-              className="w-full"
-              size="lg"
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Migrating...
-                </>
-              ) : result ? (
-                <>
-                  <CheckCircle className="mr-2 h-4 w-4" />
-                  Migration Complete
-                </>
-              ) : (
-                <>
-                  <Upload className="mr-2 h-4 w-4" />
-                  Start Migration
-                </>
-              )}
-            </Button>
+            <div className="space-y-3">
+              <Button
+                onClick={handleClearData}
+                disabled={loading || clearing}
+                variant="destructive"
+                className="w-full"
+                size="lg"
+              >
+                {clearing ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Clearing Data...
+                  </>
+                ) : (
+                  'Clear All Analytics Data'
+                )}
+              </Button>
+
+              <Button
+                onClick={handleMigration}
+                disabled={loading || clearing || !!result}
+                className="w-full"
+                size="lg"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Migrating...
+                  </>
+                ) : result ? (
+                  <>
+                    <CheckCircle className="mr-2 h-4 w-4" />
+                    Migration Complete
+                  </>
+                ) : (
+                  <>
+                    <Upload className="mr-2 h-4 w-4" />
+                    Start Migration
+                  </>
+                )}
+              </Button>
+            </div>
 
             <div className="text-sm text-muted-foreground space-y-2">
               <p><strong>What this imports:</strong></p>
