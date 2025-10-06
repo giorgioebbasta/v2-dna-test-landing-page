@@ -45,7 +45,7 @@ const AdminSignup = () => {
     setLoading(true);
 
     try {
-      const redirectUrl = `${window.location.origin}/admin/login`;
+      const redirectUrl = `${window.location.origin}/portal-a8f3b2e9/login`;
       
       const { data, error } = await supabase.auth.signUp({
         email,
@@ -85,7 +85,7 @@ const AdminSignup = () => {
             title: 'Account Created!',
             description: 'Your admin account has been created successfully. You can now sign in.',
           });
-          navigate('/admin/login');
+          navigate('/portal-a8f3b2e9/login');
         }
       }
     } catch (error) {
@@ -169,7 +169,7 @@ const AdminSignup = () => {
           </form>
           <div className="mt-4 text-center text-sm text-muted-foreground">
             Already have an account?{' '}
-            <Link to="/admin/login" className="text-primary hover:underline">
+            <Link to="/portal-a8f3b2e9/login" className="text-primary hover:underline">
               Sign in
             </Link>
           </div>

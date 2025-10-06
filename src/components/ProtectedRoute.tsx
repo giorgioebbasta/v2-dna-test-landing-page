@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children, requireAdmin = false }: ProtectedRouteProps)
   useEffect(() => {
     if (!loading) {
       if (!user) {
-        navigate('/admin/login');
+        navigate('/portal-a8f3b2e9/login');
       } else if (requireAdmin && !isAdmin) {
         navigate('/');
       }

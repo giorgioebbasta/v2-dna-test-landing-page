@@ -19,7 +19,7 @@ const AdminLogin = () => {
 
   useEffect(() => {
     if (user && isAdmin) {
-      navigate('/admin/dashboard');
+      navigate('/portal-a8f3b2e9/dashboard');
     }
   }, [user, isAdmin, navigate]);
 
@@ -65,7 +65,7 @@ const AdminLogin = () => {
         description: 'Welcome back, admin!',
       });
 
-      navigate('/admin/dashboard');
+      navigate('/portal-a8f3b2e9/dashboard');
     } catch (error) {
       toast({
         title: 'Error',
@@ -128,7 +128,7 @@ const AdminLogin = () => {
           </form>
           <div className="mt-4 text-center text-sm text-muted-foreground">
             Don't have an account?{' '}
-            <Link to="/admin/signup" className="text-primary hover:underline">
+            <Link to="/portal-a8f3b2e9/signup" className="text-primary hover:underline">
               Create admin account
             </Link>
           </div>

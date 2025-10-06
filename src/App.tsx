@@ -27,10 +27,10 @@ const App = () => {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/admin/login" element={<AdminLogin />} />
-              <Route path="/admin/signup" element={<AdminSignup />} />
+              <Route path="/portal-a8f3b2e9/login" element={<AdminLogin />} />
+              <Route path="/portal-a8f3b2e9/signup" element={<AdminSignup />} />
               <Route 
-                path="/admin/dashboard" 
+                path="/portal-a8f3b2e9/dashboard" 
                 element={
                   <ProtectedRoute requireAdmin>
                     <AnalyticsDashboard />
@@ -38,7 +38,7 @@ const App = () => {
                 } 
               />
               <Route 
-                path="/admin/migrate-analytics" 
+                path="/portal-a8f3b2e9/migrate-analytics" 
                 element={
                   <ProtectedRoute requireAdmin>
                     <MigrateAnalytics />

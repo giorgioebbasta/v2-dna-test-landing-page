@@ -67,13 +67,13 @@ const Header = () => {
                 <span>Admin</span>
               </div>
               <Link 
-                to="/admin/migrate-analytics" 
+                to="/portal-a8f3b2e9/migrate-analytics" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Import Analytics
               </Link>
               <Link 
-                to="/admin/dashboard" 
+                to="/portal-a8f3b2e9/dashboard" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Dashboard
@@ -89,7 +89,7 @@ const Header = () => {
               </Button>
             </>
           ) : (
-            <Link to="/admin/login">
+            <Link to="/portal-a8f3b2e9/login">
               <Button variant="outline" size="sm" className="gap-2">
                 <Shield className="h-4 w-4" />
                 Admin Login
