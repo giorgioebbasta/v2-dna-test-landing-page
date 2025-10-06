@@ -18,8 +18,8 @@ Deno.serve(async (req) => {
 
     console.log('Clearing all analytics data in batches...');
 
-    // Delete in batches to avoid statement timeout
-    const batchSize = 5000;
+    // Delete in batches to avoid statement timeout and URI length limits
+    const batchSize = 500; // Reduced to avoid 414 Request-URI Too Large error
     let totalDeleted = 0;
 
     console.log('Batch deleting pageviews...');
