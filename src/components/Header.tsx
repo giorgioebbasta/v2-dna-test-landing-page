@@ -88,14 +88,7 @@ const Header = () => {
                 Sign Out
               </Button>
             </>
-          ) : (
-            <Link to="/portal-a8f3b2e9/login">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Shield className="h-4 w-4" />
-                Admin Login
-              </Button>
-            </Link>
-          )}
+          ) : null}
         </nav>
       </div>
     </header>
