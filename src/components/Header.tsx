@@ -1,5 +1,5 @@
+
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -23,8 +23,8 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Desktop version - logo and nav */}
-      <div className="hidden md:flex items-center justify-between px-4 py-2">
+      {/* Desktop version - logo only */}
+      <div className="hidden md:flex items-center justify-center px-4 py-2">
         {/* Logo */}
         <div>
           <a 
@@ -40,22 +40,6 @@ const Header = () => {
             />
           </a>
         </div>
-
-        {/* Navigation */}
-        <nav className="flex gap-4 text-sm">
-          <Link 
-            to="/migrate-analytics" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Import Analytics
-          </Link>
-          <Link 
-            to="/analytics-dashboard" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Dashboard
-          </Link>
-        </nav>
       </div>
     </header>
   );
