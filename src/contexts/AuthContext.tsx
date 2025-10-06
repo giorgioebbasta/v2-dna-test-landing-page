@@ -1,6 +1,7 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState, ReactNode, useRef } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 interface AuthContextType {
   user: User | null;
@@ -17,6 +18,55 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [session, setSession] = useState<Session | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
+  const { toast } = useToast();
+  const sessionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const SESSION_TIMEOUT = 30 * 60 * 1000; // 30 minutes in milliseconds
+
+  const startSessionTimeout = () => {
+    // Clear any existing timeout
+    if (sessionTimeoutRef.current) {
+      clearTimeout(sessionTimeoutRef.current);
+    }
+
+    // Set new timeout
+    sessionTimeoutRef.current = setTimeout(async () => {
+      await signOut();
+      toast({
+        title: 'Session Expired',
+        description: 'Your session has expired due to inactivity. Please sign in again.',
+        variant: 'destructive',
+      });
+    }, SESSION_TIMEOUT);
+  };
+
+  const resetSessionTimeout = () => {
+    if (user && isAdmin) {
+      startSessionTimeout();
+    }
+  };
+
+  // Reset timeout on user activity
+  useEffect(() => {
+    if (!user || !isAdmin) return;
+
+    const events = ['mousedown', 'keydown', 'scroll', 'touchstart'];
+    
+    events.forEach(event => {
+      document.addEventListener(event, resetSessionTimeout);
+    });
+
+    // Start initial timeout
+    startSessionTimeout();
+
+    return () => {
+      events.forEach(event => {
+        document.removeEventListener(event, resetSessionTimeout);
+      });
+      if (sessionTimeoutRef.current) {
+        clearTimeout(sessionTimeoutRef.current);
+      }
+    };
+  }, [user, isAdmin]);
 
   useEffect(() => {
     // Set up auth state listener FIRST
@@ -33,6 +83,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         } else {
           setIsAdmin(false);
           setLoading(false);
+          if (sessionTimeoutRef.current) {
+            clearTimeout(sessionTimeoutRef.current);
+          }
         }
       }
     );
@@ -71,6 +124,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const signOut = async () => {
+    if (sessionTimeoutRef.current) {
+      clearTimeout(sessionTimeoutRef.current);
+    }
     await supabase.auth.signOut();
     setUser(null);
     setSession(null);

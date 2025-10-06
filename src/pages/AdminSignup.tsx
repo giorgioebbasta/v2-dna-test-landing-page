@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -6,7 +6,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Shield } from 'lucide-react';
+import { Loader2, Shield, AlertCircle } from 'lucide-react';
+import { validateAdminPassword } from '@/utils/passwordValidation';
+import PasswordStrengthIndicator from '@/components/PasswordStrengthIndicator';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
 const AdminSignup = () => {
   const [email, setEmail] = useState('');
@@ -16,22 +19,24 @@ const AdminSignup = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const passwordStrength = useMemo(() => validateAdminPassword(password), [password]);
+
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (password !== confirmPassword) {
+    if (!passwordStrength.isValid) {
       toast({
-        title: 'Password Mismatch',
-        description: 'Passwords do not match. Please try again.',
+        title: 'Weak Password',
+        description: 'Password must be at least 12 characters with mixed case, numbers, and symbols.',
         variant: 'destructive',
       });
       return;
     }
 
-    if (password.length < 6) {
+    if (password !== confirmPassword) {
       toast({
-        title: 'Weak Password',
-        description: 'Password must be at least 6 characters long.',
+        title: 'Password Mismatch',
+        description: 'Passwords do not match. Please try again.',
         variant: 'destructive',
       });
       return;
@@ -103,10 +108,16 @@ const AdminSignup = () => {
           </div>
           <CardTitle className="text-2xl font-bold">Create Admin Account</CardTitle>
           <CardDescription>
-            Set up your administrator credentials
+            Secure admin access requires strong authentication
           </CardDescription>
         </CardHeader>
         <CardContent>
+          <Alert className="mb-4">
+            <AlertCircle className="h-4 w-4" />
+            <AlertDescription className="text-sm">
+              Password must be at least 12 characters and include uppercase, lowercase, numbers, and symbols.
+            </AlertDescription>
+          </Alert>
           <form onSubmit={handleSignup} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -125,12 +136,13 @@ const AdminSignup = () => {
               <Input
                 id="password"
                 type="password"
-                placeholder="••••••••"
+                placeholder="Min 12 chars with uppercase, numbers & symbols"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 disabled={loading}
               />
+              {password && <PasswordStrengthIndicator strength={passwordStrength} />}
             </div>
             <div className="space-y-2">
               <Label htmlFor="confirmPassword">Confirm Password</Label>
