@@ -92,7 +92,9 @@ const AnalyticsDashboard = () => {
     fetchAnalytics();
     fetchActiveUsers();
 
-    // Real-time subscriptions
+    // Real-time subscriptions (throttled to reduce load)
+    let updateThrottle: NodeJS.Timeout | null = null;
+    
     const pageviewChannel = supabase
       .channel('realtime-pageviews')
       .on(
@@ -103,18 +105,26 @@ const AnalyticsDashboard = () => {
           table: 'analytics_pageviews'
         },
         (payload) => {
-          setRealtimeCount(prev => prev + 1);
-          setStats(prev => ({
-            ...prev,
-            totalPageviews: prev.totalPageviews + 1,
-            activeNow: prev.activeNow + 1
-          }));
+          // Throttle updates to max once per 3 seconds to reduce re-renders
+          if (updateThrottle) return;
           
-          // Show toast for new visitors
-          toast.success('New visitor!', {
-            description: `Viewing: ${payload.new.page_path}`,
-            duration: 2000,
-          });
+          updateThrottle = setTimeout(() => {
+            setRealtimeCount(prev => prev + 1);
+            setStats(prev => ({
+              ...prev,
+              totalPageviews: prev.totalPageviews + 1,
+              activeNow: prev.activeNow + 1
+            }));
+            updateThrottle = null;
+          }, 3000);
+          
+          // Only show toast occasionally (10% of time) to avoid spam
+          if (Math.random() < 0.1) {
+            toast.success('New visitor!', {
+              description: `Viewing: ${payload.new.page_path}`,
+              duration: 2000,
+            });
+          }
         }
       )
       .subscribe();
@@ -138,13 +148,14 @@ const AnalyticsDashboard = () => {
       )
       .subscribe();
 
-    // Refresh active users every 30 seconds
-    const interval = setInterval(fetchActiveUsers, 30000);
+    // Reduced frequency: Refresh active users every 60 seconds instead of 30
+    const interval = setInterval(fetchActiveUsers, 60000);
 
     return () => {
       supabase.removeChannel(pageviewChannel);
       supabase.removeChannel(sessionChannel);
       clearInterval(interval);
+      if (updateThrottle) clearTimeout(updateThrottle);
     };
   }, [dateRange]);
 

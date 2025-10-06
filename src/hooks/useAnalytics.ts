@@ -83,18 +83,51 @@ const updateSessionEnd = async (sessionId: string, pageCount: number) => {
   }
 };
 
-// Track page view
-const trackPageView = async (path: string, sessionId: string) => {
+// Batch queue for pageviews to reduce database writes
+let pageviewQueue: Array<{
+  page_path: string;
+  referrer: string | null;
+  user_agent: string;
+  session_id: string;
+  timestamp: string;
+}> = [];
+let flushTimer: NodeJS.Timeout | null = null;
+
+// Flush pageview queue to database
+const flushPageviews = async () => {
+  if (pageviewQueue.length === 0) return;
+  
+  const toInsert = [...pageviewQueue];
+  pageviewQueue = [];
+  
   try {
-    await supabase.from('analytics_pageviews').insert({
-      page_path: path,
-      referrer: document.referrer || null,
-      user_agent: navigator.userAgent,
-      session_id: sessionId,
-      timestamp: new Date().toISOString(),
-    });
+    // Batch insert all queued pageviews at once
+    await supabase.from('analytics_pageviews').insert(toInsert);
   } catch (error) {
-    console.error('Failed to track page view:', error);
+    console.error('Failed to track page views:', error);
+    // On error, don't retry to avoid infinite loops on small instances
+  }
+};
+
+// Track page view with batching (reduces DB writes by ~90%)
+const trackPageView = async (path: string, sessionId: string) => {
+  // Add to queue instead of immediate insert
+  pageviewQueue.push({
+    page_path: path,
+    referrer: document.referrer || null,
+    user_agent: navigator.userAgent,
+    session_id: sessionId,
+    timestamp: new Date().toISOString(),
+  });
+  
+  // Clear existing timer
+  if (flushTimer) clearTimeout(flushTimer);
+  
+  // Batch inserts every 5 seconds or when queue reaches 10 items
+  if (pageviewQueue.length >= 10) {
+    await flushPageviews();
+  } else {
+    flushTimer = setTimeout(flushPageviews, 5000);
   }
 };
 
@@ -109,13 +142,19 @@ export const useAnalytics = () => {
 
     // Update session on page unload
     const handleUnload = () => {
+      // Flush any pending pageviews before leaving
+      flushPageviews();
       updateSessionEnd(sessionId.current, pageCount.current);
     };
 
     window.addEventListener('beforeunload', handleUnload);
+    window.addEventListener('pagehide', handleUnload); // For mobile browsers
 
     return () => {
       window.removeEventListener('beforeunload', handleUnload);
+      window.removeEventListener('pagehide', handleUnload);
+      // Cleanup timer
+      if (flushTimer) clearTimeout(flushTimer);
     };
   }, []);
 
