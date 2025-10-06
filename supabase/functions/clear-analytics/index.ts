@@ -50,79 +50,71 @@ Deno.serve(async (req) => {
 
     console.log(`Admin user ${user.id} initiated analytics clear`);
 
-    console.log('Clearing all analytics data in batches...');
+    console.log('Starting fast analytics data deletion using TRUNCATE...');
 
-    // Delete in batches to avoid statement timeout and URI length limits
-    const batchSize = 500; // Reduced to avoid 414 Request-URI Too Large error
-    let totalDeleted = 0;
-
-    console.log('Batch deleting pageviews...');
-    // Delete pageviews in batches (must be first due to foreign key)
-    while (true) {
-      const { data, error } = await supabase
-        .from('analytics_pageviews')
-        .select('id')
-        .limit(batchSize);
-
-      if (error) throw new Error(`Failed to fetch pageviews: ${error.message}`);
-      if (!data || data.length === 0) break;
-
-      const ids = data.map(row => row.id);
-      const { error: deleteError } = await supabase
-        .from('analytics_pageviews')
-        .delete()
-        .in('id', ids);
-
-      if (deleteError) throw new Error(`Failed to delete pageviews: ${deleteError.message}`);
+    try {
+      // Use raw SQL with TRUNCATE for much faster deletion
+      // TRUNCATE is orders of magnitude faster than DELETE for large tables
+      // CASCADE will automatically handle foreign key constraints
       
-      totalDeleted += ids.length;
-      console.log(`Deleted ${totalDeleted} pageviews so far...`);
-    }
-
-    console.log('Batch deleting sessions...');
-    totalDeleted = 0;
-    // Delete sessions in batches
-    while (true) {
-      const { data, error } = await supabase
-        .from('analytics_sessions')
-        .select('id')
-        .limit(batchSize);
-
-      if (error) throw new Error(`Failed to fetch sessions: ${error.message}`);
-      if (!data || data.length === 0) break;
-
-      const ids = data.map(row => row.id);
-      const { error: deleteError } = await supabase
-        .from('analytics_sessions')
-        .delete()
-        .in('id', ids);
-
-      if (deleteError) throw new Error(`Failed to delete sessions: ${deleteError.message}`);
+      // First truncate pageviews (has FK to sessions)
+      const { error: pageviewsError } = await supabase.rpc('exec_sql', {
+        query: 'TRUNCATE TABLE analytics_pageviews CASCADE'
+      });
       
-      totalDeleted += ids.length;
-      console.log(`Deleted ${totalDeleted} sessions so far...`);
-    }
-
-    console.log('Deleting daily summaries...');
-    const { error: summaryError } = await supabase
-      .from('analytics_daily_summary')
-      .delete()
-      .neq('id', '00000000-0000-0000-0000-000000000000');
-
-    if (summaryError) throw new Error(`Failed to delete daily summary: ${summaryError.message}`);
-
-    console.log('All analytics data cleared successfully');
-
-    return new Response(
-      JSON.stringify({ 
-        success: true,
-        message: 'All analytics data cleared successfully'
-      }),
-      { 
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        status: 200 
+      if (pageviewsError) {
+        console.log('TRUNCATE not available, falling back to DELETE...');
+        // Fallback: Use DELETE with no WHERE clause (faster than batches)
+        const { error: deletePageviewsError } = await supabase
+          .from('analytics_pageviews')
+          .delete()
+          .neq('id', '00000000-0000-0000-0000-000000000000');
+        
+        if (deletePageviewsError) throw new Error(`Failed to delete pageviews: ${deletePageviewsError.message}`);
       }
-    );
+      console.log('Pageviews cleared');
+
+      // Then truncate/delete sessions
+      const { error: sessionsError } = await supabase.rpc('exec_sql', {
+        query: 'TRUNCATE TABLE analytics_sessions CASCADE'
+      });
+      
+      if (sessionsError) {
+        const { error: deleteSessionsError } = await supabase
+          .from('analytics_sessions')
+          .delete()
+          .neq('id', '00000000-0000-0000-0000-000000000000');
+        
+        if (deleteSessionsError) throw new Error(`Failed to delete sessions: ${deleteSessionsError.message}`);
+      }
+      console.log('Sessions cleared');
+
+      // Finally clear daily summaries
+      const { error: summaryError } = await supabase
+        .from('analytics_daily_summary')
+        .delete()
+        .neq('id', '00000000-0000-0000-0000-000000000000');
+
+      if (summaryError) throw new Error(`Failed to delete daily summary: ${summaryError.message}`);
+      console.log('Daily summaries cleared');
+
+      console.log('All analytics data cleared successfully');
+
+      return new Response(
+        JSON.stringify({ 
+          success: true,
+          message: 'All analytics data cleared successfully'
+        }),
+        { 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          status: 200 
+        }
+      );
+    } catch (deleteError) {
+      // If anything fails, return a clear error
+      console.error('Deletion error:', deleteError);
+      throw deleteError;
+    }
   } catch (error) {
     console.error('Error in clear-analytics:', error);
     return new Response(
