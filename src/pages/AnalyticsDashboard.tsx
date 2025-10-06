@@ -3,6 +3,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { 
   Users, 
   Eye, 
@@ -15,8 +17,10 @@ import {
   Smartphone,
   Chrome,
   Globe,
-  ExternalLink
+  ExternalLink,
+  Download
 } from 'lucide-react';
+import * as XLSX from 'xlsx';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 import { toast } from 'sonner';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
@@ -324,6 +328,176 @@ const AnalyticsDashboard = () => {
     return `${minutes}m ${secs}s`;
   };
 
+  const exportToCSV = () => {
+    const csvData: string[] = [];
+    
+    csvData.push('Analytics Export');
+    csvData.push(`Date Range: ${format(dateRange.from, 'MMM dd, yyyy')} - ${format(dateRange.to, 'MMM dd, yyyy')}`);
+    csvData.push(`Export Date: ${format(new Date(), 'MMM dd, yyyy HH:mm')}`);
+    csvData.push('');
+    
+    csvData.push('Summary Statistics');
+    csvData.push('Metric,Value');
+    csvData.push(`Total Visitors,${stats.totalVisitors}`);
+    csvData.push(`Total Pageviews,${stats.totalPageviews}`);
+    csvData.push(`Total Sessions,${stats.totalSessions}`);
+    csvData.push(`Avg Views Per Visit,${avgViewsPerVisit.toFixed(1)}`);
+    csvData.push(`Bounce Rate,${bounceRate.toFixed(1)}%`);
+    csvData.push(`Avg Session Duration,${formatDuration(stats.avgSessionDuration)}`);
+    csvData.push('');
+    
+    csvData.push('Daily Visitor Trend');
+    csvData.push('Date,Visitors,Pageviews');
+    chartData.forEach(row => {
+      csvData.push(`${row.date},${row.visitors},${row.pageviews}`);
+    });
+    csvData.push('');
+    
+    csvData.push('Top Pages');
+    csvData.push('Page,Views');
+    topPages.forEach(page => {
+      csvData.push(`"${page.page}",${page.views}`);
+    });
+    csvData.push('');
+    
+    csvData.push('Device Breakdown');
+    csvData.push('Device,Count');
+    deviceStats.forEach(device => {
+      csvData.push(`${device.name},${device.value}`);
+    });
+    csvData.push('');
+    
+    csvData.push('Browser Distribution');
+    csvData.push('Browser,Count');
+    browserStats.forEach(browser => {
+      csvData.push(`${browser.name},${browser.value}`);
+    });
+    csvData.push('');
+    
+    csvData.push('Top Countries');
+    csvData.push('Country,Visitors');
+    countryStats.forEach(country => {
+      csvData.push(`${country.country},${country.count}`);
+    });
+    csvData.push('');
+    
+    csvData.push('Traffic Sources');
+    csvData.push('Source,Visitors');
+    sourceStats.forEach(source => {
+      csvData.push(`"${source.source}",${source.count}`);
+    });
+    
+    const blob = new Blob([csvData.join('\n')], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `analytics-export-${format(new Date(), 'yyyy-MM-dd')}.csv`;
+    a.click();
+    window.URL.revokeObjectURL(url);
+    toast.success('Analytics exported as CSV');
+  };
+
+  const exportToJSON = () => {
+    const jsonData = {
+      metadata: {
+        exportDate: new Date().toISOString(),
+        dateRange: {
+          start: dateRange.from.toISOString(),
+          end: dateRange.to.toISOString(),
+          period: period
+        }
+      },
+      summary: {
+        totalVisitors: stats.totalVisitors,
+        totalPageviews: stats.totalPageviews,
+        totalSessions: stats.totalSessions,
+        avgViewsPerVisit: parseFloat(avgViewsPerVisit.toFixed(1)),
+        bounceRate: parseFloat(bounceRate.toFixed(1)),
+        avgSessionDuration: stats.avgSessionDuration
+      },
+      dailyData: chartData,
+      topPages: topPages,
+      deviceStats: deviceStats,
+      browserStats: browserStats,
+      countryStats: countryStats,
+      trafficSources: sourceStats
+    };
+    
+    const blob = new Blob([JSON.stringify(jsonData, null, 2)], { type: 'application/json' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `analytics-export-${format(new Date(), 'yyyy-MM-dd')}.json`;
+    a.click();
+    window.URL.revokeObjectURL(url);
+    toast.success('Analytics exported as JSON');
+  };
+
+  const exportToExcel = () => {
+    const workbook = XLSX.utils.book_new();
+    
+    const summaryData: any[] = [
+      ['Analytics Export'],
+      [`Date Range: ${format(dateRange.from, 'MMM dd, yyyy')} - ${format(dateRange.to, 'MMM dd, yyyy')}`],
+      [`Export Date: ${format(new Date(), 'MMM dd, yyyy HH:mm')}`],
+      [],
+      ['Metric', 'Value'],
+      ['Total Visitors', stats.totalVisitors],
+      ['Total Pageviews', stats.totalPageviews],
+      ['Total Sessions', stats.totalSessions],
+      ['Avg Views Per Visit', avgViewsPerVisit.toFixed(1)],
+      ['Bounce Rate', `${bounceRate.toFixed(1)}%`],
+      ['Avg Session Duration', formatDuration(stats.avgSessionDuration)]
+    ];
+    const summarySheet = XLSX.utils.aoa_to_sheet(summaryData);
+    XLSX.utils.book_append_sheet(workbook, summarySheet, 'Summary');
+    
+    const dailyData: any[] = [['Date', 'Visitors', 'Pageviews']];
+    chartData.forEach(row => {
+      dailyData.push([row.date, row.visitors, row.pageviews]);
+    });
+    const dailySheet = XLSX.utils.aoa_to_sheet(dailyData);
+    XLSX.utils.book_append_sheet(workbook, dailySheet, 'Daily Data');
+    
+    const pagesData: any[] = [['Page', 'Views']];
+    topPages.forEach(page => {
+      pagesData.push([page.page, page.views]);
+    });
+    const pagesSheet = XLSX.utils.aoa_to_sheet(pagesData);
+    XLSX.utils.book_append_sheet(workbook, pagesSheet, 'Top Pages');
+    
+    const deviceData: any[] = [['Device', 'Count']];
+    deviceStats.forEach(device => {
+      deviceData.push([device.name, device.value]);
+    });
+    const deviceSheet = XLSX.utils.aoa_to_sheet(deviceData);
+    XLSX.utils.book_append_sheet(workbook, deviceSheet, 'Devices');
+    
+    const browserData: any[] = [['Browser', 'Count']];
+    browserStats.forEach(browser => {
+      browserData.push([browser.name, browser.value]);
+    });
+    const browserSheet = XLSX.utils.aoa_to_sheet(browserData);
+    XLSX.utils.book_append_sheet(workbook, browserSheet, 'Browsers');
+    
+    const countryData: any[] = [['Country', 'Visitors']];
+    countryStats.forEach(country => {
+      countryData.push([country.country, country.count]);
+    });
+    const countrySheet = XLSX.utils.aoa_to_sheet(countryData);
+    XLSX.utils.book_append_sheet(workbook, countrySheet, 'Countries');
+    
+    const sourceData: any[] = [['Source', 'Visitors']];
+    sourceStats.forEach(source => {
+      sourceData.push([source.source, source.count]);
+    });
+    const sourceSheet = XLSX.utils.aoa_to_sheet(sourceData);
+    XLSX.utils.book_append_sheet(workbook, sourceSheet, 'Traffic Sources');
+    
+    XLSX.writeFile(workbook, `analytics-export-${format(new Date(), 'yyyy-MM-dd')}.xlsx`);
+    toast.success('Analytics exported as Excel');
+  };
+
   const MetricCard = ({ 
     title, 
     value, 
@@ -380,6 +554,25 @@ const AnalyticsDashboard = () => {
                 Real-time insights and performance metrics
               </p>
             </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="default">
+                  <Download className="h-4 w-4 mr-2" />
+                  Export Data
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={exportToCSV}>
+                  Export as CSV
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={exportToJSON}>
+                  Export as JSON
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={exportToExcel}>
+                  Export as Excel
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Time Period Selector */}
