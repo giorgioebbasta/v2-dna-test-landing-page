@@ -449,44 +449,28 @@ const AnalyticsDashboard = () => {
   const exportToExcel = () => {
     const workbook = XLSX.utils.book_new();
     
-    const summaryData: any[] = [
-      ['Analytics Export'],
-      [`Date Range: ${format(dateRange.from, 'MMM dd, yyyy')} - ${format(dateRange.to, 'MMM dd, yyyy')}`],
-      [`Export Date: ${format(new Date(), 'MMM dd, yyyy HH:mm')}`],
-      [],
-      ['Metric', 'Value'],
-      ['Total Visitors', stats.totalVisitors],
-      ['Total Pageviews', stats.totalPageviews],
-      ['Total Sessions', stats.totalSessions],
-      ['Avg Views Per Visit', avgViewsPerVisit.toFixed(1)],
-      ['Bounce Rate', `${bounceRate.toFixed(1)}%`],
-      ['Avg Session Duration', formatDuration(stats.avgSessionDuration)]
-    ];
-    const summarySheet = XLSX.utils.aoa_to_sheet(summaryData);
-    XLSX.utils.book_append_sheet(workbook, summarySheet, 'Summary');
-    
     const dailyData: any[] = [['Date', 'Visitors', 'Pageviews']];
-    chartData.forEach(row => {
-      dailyData.push([row.date, row.visitors, row.pageviews]);
+    chartData.forEach(day => {
+      dailyData.push([day.date, day.visitors, day.pageviews]);
     });
     const dailySheet = XLSX.utils.aoa_to_sheet(dailyData);
-    XLSX.utils.book_append_sheet(workbook, dailySheet, 'Daily Data');
+    XLSX.utils.book_append_sheet(workbook, dailySheet, 'Daily Stats');
     
-    const pagesData: any[] = [['Page', 'Views']];
+    const pageData: any[] = [['Page', 'Views']];
     topPages.forEach(page => {
-      pagesData.push([page.page, page.views]);
+      pageData.push([page.page, page.views]);
     });
-    const pagesSheet = XLSX.utils.aoa_to_sheet(pagesData);
-    XLSX.utils.book_append_sheet(workbook, pagesSheet, 'Top Pages');
+    const pageSheet = XLSX.utils.aoa_to_sheet(pageData);
+    XLSX.utils.book_append_sheet(workbook, pageSheet, 'Top Pages');
     
-    const deviceData: any[] = [['Device', 'Count']];
+    const deviceData: any[] = [['Device', 'Visitors']];
     deviceStats.forEach(device => {
       deviceData.push([device.name, device.value]);
     });
     const deviceSheet = XLSX.utils.aoa_to_sheet(deviceData);
     XLSX.utils.book_append_sheet(workbook, deviceSheet, 'Devices');
     
-    const browserData: any[] = [['Browser', 'Count']];
+    const browserData: any[] = [['Browser', 'Visitors']];
     browserStats.forEach(browser => {
       browserData.push([browser.name, browser.value]);
     });
@@ -511,7 +495,7 @@ const AnalyticsDashboard = () => {
     toast.success('Analytics exported as Excel');
   };
 
-  const MetricCard = ({ 
+  const MetricCard = ({
     title, 
     value, 
     icon: Icon, 
@@ -572,10 +556,10 @@ const AnalyticsDashboard = () => {
               <Button 
                 variant="outline" 
                 size="default"
-                onClick={() => window.location.href = '/migrate-analytics'}
+                onClick={() => window.location.href = '/portal-a8f3b2e9/import-analytics'}
               >
-                <Settings className="h-4 w-4 mr-2" />
-                Manage Data
+                <Download className="h-4 w-4 mr-2" />
+                Import Lovable Data
               </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

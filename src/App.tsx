@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AnalyticsDashboard from "./pages/AnalyticsDashboard";
-import MigrateAnalytics from "./pages/MigrateAnalytics";
+import ImportAnalytics from "./pages/ImportAnalytics";
 import AdminLogin from "./pages/AdminLogin";
 import AdminSignup from "./pages/AdminSignup";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -38,10 +38,10 @@ const App = () => {
                 } 
               />
               <Route 
-                path="/portal-a8f3b2e9/migrate-analytics" 
+                path="/portal-a8f3b2e9/import-analytics" 
                 element={
                   <ProtectedRoute requireAdmin>
-                    <MigrateAnalytics />
+                    <ImportAnalytics />
                   </ProtectedRoute>
                 } 
               />
