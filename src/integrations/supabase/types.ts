@@ -169,6 +169,10 @@ export type Database = {
         Args: { target_date: string }
         Returns: undefined
       }
+      clear_analytics_data: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
