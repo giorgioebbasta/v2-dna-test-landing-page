@@ -18,7 +18,8 @@ import {
   Chrome,
   Globe,
   ExternalLink,
-  Download
+  Download,
+  Settings
 } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
@@ -554,25 +555,35 @@ const AnalyticsDashboard = () => {
                 Real-time insights and performance metrics
               </p>
             </div>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="default">
-                  <Download className="h-4 w-4 mr-2" />
-                  Export Data
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={exportToCSV}>
-                  Export as CSV
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={exportToJSON}>
-                  Export as JSON
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={exportToExcel}>
-                  Export as Excel
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="flex gap-2">
+              <Button 
+                variant="outline" 
+                size="default"
+                onClick={() => window.location.href = '/migrate-analytics'}
+              >
+                <Settings className="h-4 w-4 mr-2" />
+                Manage Data
+              </Button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="default">
+                    <Download className="h-4 w-4 mr-2" />
+                    Export Data
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={exportToCSV}>
+                    Export as CSV
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={exportToJSON}>
+                    Export as JSON
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={exportToExcel}>
+                    Export as Excel
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
 
           {/* Time Period Selector */}
