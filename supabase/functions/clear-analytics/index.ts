@@ -16,38 +16,66 @@ Deno.serve(async (req) => {
     
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    console.log('Clearing all analytics data...');
+    console.log('Clearing all analytics data in batches...');
 
-    // Delete in correct order (pageviews first due to foreign key)
-    const { error: pageviewsError } = await supabase
-      .from('analytics_pageviews')
-      .delete()
-      .neq('id', '00000000-0000-0000-0000-000000000000'); // Delete all
+    // Delete in batches to avoid statement timeout
+    const batchSize = 5000;
+    let totalDeleted = 0;
 
-    if (pageviewsError) {
-      console.error('Error deleting pageviews:', pageviewsError);
-      throw new Error(`Failed to delete pageviews: ${pageviewsError.message}`);
+    console.log('Batch deleting pageviews...');
+    // Delete pageviews in batches (must be first due to foreign key)
+    while (true) {
+      const { data, error } = await supabase
+        .from('analytics_pageviews')
+        .select('id')
+        .limit(batchSize);
+
+      if (error) throw new Error(`Failed to fetch pageviews: ${error.message}`);
+      if (!data || data.length === 0) break;
+
+      const ids = data.map(row => row.id);
+      const { error: deleteError } = await supabase
+        .from('analytics_pageviews')
+        .delete()
+        .in('id', ids);
+
+      if (deleteError) throw new Error(`Failed to delete pageviews: ${deleteError.message}`);
+      
+      totalDeleted += ids.length;
+      console.log(`Deleted ${totalDeleted} pageviews so far...`);
     }
 
-    const { error: sessionsError } = await supabase
-      .from('analytics_sessions')
-      .delete()
-      .neq('id', '00000000-0000-0000-0000-000000000000'); // Delete all
+    console.log('Batch deleting sessions...');
+    totalDeleted = 0;
+    // Delete sessions in batches
+    while (true) {
+      const { data, error } = await supabase
+        .from('analytics_sessions')
+        .select('id')
+        .limit(batchSize);
 
-    if (sessionsError) {
-      console.error('Error deleting sessions:', sessionsError);
-      throw new Error(`Failed to delete sessions: ${sessionsError.message}`);
+      if (error) throw new Error(`Failed to fetch sessions: ${error.message}`);
+      if (!data || data.length === 0) break;
+
+      const ids = data.map(row => row.id);
+      const { error: deleteError } = await supabase
+        .from('analytics_sessions')
+        .delete()
+        .in('id', ids);
+
+      if (deleteError) throw new Error(`Failed to delete sessions: ${deleteError.message}`);
+      
+      totalDeleted += ids.length;
+      console.log(`Deleted ${totalDeleted} sessions so far...`);
     }
 
+    console.log('Deleting daily summaries...');
     const { error: summaryError } = await supabase
       .from('analytics_daily_summary')
       .delete()
-      .neq('id', '00000000-0000-0000-0000-000000000000'); // Delete all
+      .neq('id', '00000000-0000-0000-0000-000000000000');
 
-    if (summaryError) {
-      console.error('Error deleting daily summary:', summaryError);
-      throw new Error(`Failed to delete daily summary: ${summaryError.message}`);
-    }
+    if (summaryError) throw new Error(`Failed to delete daily summary: ${summaryError.message}`);
 
     console.log('All analytics data cleared successfully');
 
