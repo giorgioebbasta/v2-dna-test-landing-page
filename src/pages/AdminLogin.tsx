@@ -19,7 +19,7 @@ const AdminLogin = () => {
 
   useEffect(() => {
     if (user && isAdmin) {
-      navigate('/analytics-dashboard');
+      navigate('/admin/dashboard');
     }
   }, [user, isAdmin, navigate]);
 
@@ -65,7 +65,7 @@ const AdminLogin = () => {
         description: 'Welcome back, admin!',
       });
 
-      navigate('/analytics-dashboard');
+      navigate('/admin/dashboard');
     } catch (error) {
       toast({
         title: 'Error',

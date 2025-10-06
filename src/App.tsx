@@ -30,7 +30,7 @@ const App = () => {
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin/signup" element={<AdminSignup />} />
               <Route 
-                path="/analytics-dashboard" 
+                path="/admin/dashboard" 
                 element={
                   <ProtectedRoute requireAdmin>
                     <AnalyticsDashboard />
@@ -38,7 +38,7 @@ const App = () => {
                 } 
               />
               <Route 
-                path="/migrate-analytics" 
+                path="/admin/migrate-analytics" 
                 element={
                   <ProtectedRoute requireAdmin>
                     <MigrateAnalytics />

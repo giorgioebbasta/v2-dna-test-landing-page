@@ -67,13 +67,13 @@ const Header = () => {
                 <span>Admin</span>
               </div>
               <Link 
-                to="/migrate-analytics" 
+                to="/admin/migrate-analytics" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Import Analytics
               </Link>
               <Link 
-                to="/analytics-dashboard" 
+                to="/admin/dashboard" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Dashboard
