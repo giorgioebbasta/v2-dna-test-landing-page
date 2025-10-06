@@ -6,6 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
 import Header from '@/components/Header';
 import { 
   Users, 
@@ -23,12 +25,14 @@ import {
   Download,
   Settings,
   Info,
-  CalendarClock
+  CalendarClock,
+  Calendar as CalendarIcon
 } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
 import { toast } from 'sonner';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+import { cn } from '@/lib/utils';
 
 interface DailySummary {
   date: string;
@@ -56,12 +60,16 @@ interface SourceStats {
   count: number;
 }
 
-type TimePeriod = 'today' | '7d' | '30d' | '90d';
+type TimePeriod = 'today' | '7d' | '30d' | '90d' | 'custom';
 
 const COLORS = ['hsl(var(--primary))', 'hsl(var(--secondary))', 'hsl(var(--accent))', '#94a3b8', '#cbd5e1'];
 
 const AnalyticsDashboard = () => {
   const [period, setPeriod] = useState<TimePeriod>('30d');
+  const [customDateRange, setCustomDateRange] = useState<{ from: Date | undefined; to: Date | undefined }>({
+    from: undefined,
+    to: undefined,
+  });
   const [stats, setStats] = useState({
     totalVisitors: 0,
     totalPageviews: 0,
@@ -82,15 +90,20 @@ const AnalyticsDashboard = () => {
   const [trackingSince, setTrackingSince] = useState<Date | null>(null);
 
   const dateRange = useMemo(() => {
+    if (period === 'custom' && customDateRange.from && customDateRange.to) {
+      return { from: startOfDay(customDateRange.from), to: endOfDay(customDateRange.to) };
+    }
+    
     const now = new Date();
     const ranges = {
       today: { from: startOfDay(now), to: endOfDay(now) },
       '7d': { from: subDays(now, 7), to: now },
       '30d': { from: subDays(now, 30), to: now },
       '90d': { from: subDays(now, 90), to: now },
+      'custom': { from: startOfDay(now), to: endOfDay(now) }, // fallback
     };
     return ranges[period];
-  }, [period]);
+  }, [period, customDateRange]);
 
   useEffect(() => {
     fetchAnalytics();
@@ -604,14 +617,59 @@ const AnalyticsDashboard = () => {
           </div>
 
           {/* Time Period Selector */}
-          <Tabs value={period} onValueChange={(v) => setPeriod(v as TimePeriod)} className="mt-6">
-            <TabsList>
-              <TabsTrigger value="today">Today</TabsTrigger>
-              <TabsTrigger value="7d">7 days</TabsTrigger>
-              <TabsTrigger value="30d">30 days</TabsTrigger>
-              <TabsTrigger value="90d">90 days</TabsTrigger>
-            </TabsList>
-          </Tabs>
+          <div className="flex items-center gap-3 mt-6">
+            <Tabs value={period} onValueChange={(v) => setPeriod(v as TimePeriod)}>
+              <TabsList>
+                <TabsTrigger value="today">Today</TabsTrigger>
+                <TabsTrigger value="7d">7 days</TabsTrigger>
+                <TabsTrigger value="30d">30 days</TabsTrigger>
+                <TabsTrigger value="90d">90 days</TabsTrigger>
+                <TabsTrigger value="custom">Custom Range</TabsTrigger>
+              </TabsList>
+            </Tabs>
+            
+            {period === 'custom' && (
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "justify-start text-left font-normal",
+                      !customDateRange.from && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {customDateRange.from ? (
+                      customDateRange.to ? (
+                        <>
+                          {format(customDateRange.from, "MMM dd, yyyy")} - {format(customDateRange.to, "MMM dd, yyyy")}
+                        </>
+                      ) : (
+                        format(customDateRange.from, "MMM dd, yyyy")
+                      )
+                    ) : (
+                      <span>Pick a date range</span>
+                    )}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="range"
+                    selected={{ from: customDateRange.from, to: customDateRange.to }}
+                    onSelect={(range) => {
+                      setCustomDateRange({
+                        from: range?.from,
+                        to: range?.to,
+                      });
+                    }}
+                    numberOfMonths={2}
+                    initialFocus
+                    className={cn("p-3 pointer-events-auto")}
+                  />
+                </PopoverContent>
+              </Popover>
+            )}
+          </div>
         </div>
       </div>
 
@@ -688,13 +746,7 @@ const AnalyticsDashboard = () => {
               </div>
             ) : (
               <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={chartData}>
-                  <defs>
-                    <linearGradient id="colorVisitors" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3}/>
-                      <stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0}/>
-                    </linearGradient>
-                  </defs>
+                <LineChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                   <XAxis 
                     dataKey="date" 
@@ -712,15 +764,15 @@ const AnalyticsDashboard = () => {
                       borderRadius: '8px',
                     }}
                   />
-                  <Area 
+                  <Line 
                     type="monotone" 
                     dataKey="visitors" 
                     stroke="hsl(var(--primary))" 
-                    strokeWidth={2}
-                    fillOpacity={1}
-                    fill="url(#colorVisitors)"
+                    strokeWidth={3}
+                    dot={{ fill: 'hsl(var(--primary))', strokeWidth: 2, r: 4 }}
+                    activeDot={{ r: 6 }}
                   />
-                </AreaChart>
+                </LineChart>
               </ResponsiveContainer>
             )}
           </CardContent>
