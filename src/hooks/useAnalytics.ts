@@ -123,11 +123,11 @@ const trackPageView = async (path: string, sessionId: string) => {
   // Clear existing timer
   if (flushTimer) clearTimeout(flushTimer);
   
-  // Batch inserts every 5 seconds or when queue reaches 10 items
+  // Batch inserts every 2 seconds or when queue reaches 10 items
   if (pageviewQueue.length >= 10) {
     await flushPageviews();
   } else {
-    flushTimer = setTimeout(flushPageviews, 5000);
+    flushTimer = setTimeout(flushPageviews, 2000);
   }
 };
 

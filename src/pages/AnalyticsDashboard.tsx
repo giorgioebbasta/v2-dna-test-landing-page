@@ -5,6 +5,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import Header from '@/components/Header';
 import { 
   Users, 
@@ -20,7 +21,9 @@ import {
   Globe,
   ExternalLink,
   Download,
-  Settings
+  Settings,
+  Info,
+  CalendarClock
 } from 'lucide-react';
 import * as XLSX from 'xlsx';
 import { format, subDays, startOfDay, endOfDay } from 'date-fns';
@@ -76,6 +79,7 @@ const AnalyticsDashboard = () => {
   const [bounceRate, setBounceRate] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [realtimeCount, setRealtimeCount] = useState(0);
+  const [trackingSince, setTrackingSince] = useState<Date | null>(null);
 
   const dateRange = useMemo(() => {
     const now = new Date();
@@ -91,6 +95,7 @@ const AnalyticsDashboard = () => {
   useEffect(() => {
     fetchAnalytics();
     fetchActiveUsers();
+    fetchTrackingSince();
 
     // Real-time subscriptions (throttled to reduce load)
     let updateThrottle: NodeJS.Timeout | null = null;
@@ -171,6 +176,23 @@ const AnalyticsDashboard = () => {
       setStats(prev => ({ ...prev, activeNow: count || 0 }));
     } catch (error) {
       console.error('Error fetching active users:', error);
+    }
+  };
+
+  const fetchTrackingSince = async () => {
+    try {
+      const { data } = await supabase
+        .from('analytics_sessions')
+        .select('started_at')
+        .order('started_at', { ascending: true })
+        .limit(1)
+        .single();
+
+      if (data) {
+        setTrackingSince(new Date(data.started_at));
+      }
+    } catch (error) {
+      console.error('Error fetching tracking start date:', error);
     }
   };
 
@@ -547,20 +569,18 @@ const AnalyticsDashboard = () => {
                   <Activity className="h-3 w-3 text-green-500 animate-pulse" />
                   {stats.activeNow} active now
                 </Badge>
+                {trackingSince && (
+                  <Badge variant="outline" className="gap-2">
+                    <CalendarClock className="h-3 w-3" />
+                    Tracking since {format(trackingSince, 'MMM dd, yyyy')}
+                  </Badge>
+                )}
               </div>
               <p className="text-sm text-muted-foreground mt-1">
                 Real-time insights and performance metrics
               </p>
             </div>
             <div className="flex gap-2">
-              <Button 
-                variant="outline" 
-                size="default"
-                onClick={() => window.location.href = '/portal-a8f3b2e9/import-analytics'}
-              >
-                <Download className="h-4 w-4 mr-2" />
-                Import Lovable Data
-              </Button>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" size="default">
@@ -597,6 +617,17 @@ const AnalyticsDashboard = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-8 py-8 space-y-8">
+        {/* Historical Data Context Banner */}
+        <Alert className="border-blue-200 bg-blue-50/50">
+          <Info className="h-4 w-4 text-blue-600" />
+          <AlertTitle className="text-blue-900 font-semibold">Dual Analytics System</AlertTitle>
+          <AlertDescription className="text-blue-800">
+            <div className="space-y-1">
+              <p><strong>Historical Data (July 7 - Oct 6, 2025):</strong> Available in Lovable's built-in analytics</p>
+              <p><strong>Real-Time Tracking (Oct 6 onwards):</strong> Shown in this dashboard with live updates every 2 seconds</p>
+            </div>
+          </AlertDescription>
+        </Alert>
         {/* Key Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <MetricCard
