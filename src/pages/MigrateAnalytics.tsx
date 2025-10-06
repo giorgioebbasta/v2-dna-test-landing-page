@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, Upload, CheckCircle } from 'lucide-react';
+import Header from '@/components/Header';
 
 const MigrateAnalytics = () => {
   const [loading, setLoading] = useState(false);
@@ -197,8 +198,10 @@ const MigrateAnalytics = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white p-8">
-      <div className="max-w-4xl mx-auto space-y-8">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Header />
+      <div className="pt-20 p-8">
+        <div className="max-w-4xl mx-auto space-y-8">
         <div>
           <h1 className="text-4xl font-bold">Migrate Historical Analytics</h1>
           <p className="text-muted-foreground mt-2">
@@ -347,6 +350,7 @@ const MigrateAnalytics = () => {
             </Button>
           </CardContent>
         </Card>
+      </div>
       </div>
     </div>
   );

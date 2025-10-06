@@ -1,7 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
+import { Button } from '@/components/ui/button';
+import { LogOut, Shield } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const Header = () => {
+  const { user, isAdmin, signOut } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleSignOut = async () => {
+    await signOut();
+    toast({
+      title: 'Signed Out',
+      description: 'You have been signed out successfully.',
+    });
+    navigate('/');
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
       {/* Mobile version - logo only */}
@@ -42,19 +59,43 @@ const Header = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="flex gap-4 text-sm">
-          <Link 
-            to="/migrate-analytics" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Import Analytics
-          </Link>
-          <Link 
-            to="/analytics-dashboard" 
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Dashboard
-          </Link>
+        <nav className="flex items-center gap-4">
+          {user && isAdmin ? (
+            <>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Shield className="h-4 w-4 text-primary" />
+                <span>Admin</span>
+              </div>
+              <Link 
+                to="/migrate-analytics" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Import Analytics
+              </Link>
+              <Link 
+                to="/analytics-dashboard" 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Dashboard
+              </Link>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleSignOut}
+                className="gap-2"
+              >
+                <LogOut className="h-4 w-4" />
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <Link to="/admin/login">
+              <Button variant="outline" size="sm" className="gap-2">
+                <Shield className="h-4 w-4" />
+                Admin Login
+              </Button>
+            </Link>
+          )}
         </nav>
       </div>
     </header>

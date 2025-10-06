@@ -5,6 +5,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import Header from '@/components/Header';
 import { 
   Users, 
   Eye, 
@@ -539,8 +540,9 @@ const AnalyticsDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      <Header />
       {/* Header */}
-      <div className="border-b bg-white/50 backdrop-blur-sm sticky top-0 z-10">
+      <div className="border-b bg-white/50 backdrop-blur-sm sticky top-0 z-10" style={{ marginTop: '64px' }}>
         <div className="max-w-7xl mx-auto px-8 py-6">
           <div className="flex items-center justify-between">
             <div>
