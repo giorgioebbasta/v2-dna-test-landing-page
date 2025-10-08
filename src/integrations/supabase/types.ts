@@ -14,175 +14,16 @@ export type Database = {
   }
   public: {
     Tables: {
-      analytics_daily_summary: {
-        Row: {
-          created_at: string
-          date: string
-          id: string
-          total_pageviews: number | null
-          total_visitors: number | null
-          unique_sessions: number | null
-        }
-        Insert: {
-          created_at?: string
-          date: string
-          id?: string
-          total_pageviews?: number | null
-          total_visitors?: number | null
-          unique_sessions?: number | null
-        }
-        Update: {
-          created_at?: string
-          date?: string
-          id?: string
-          total_pageviews?: number | null
-          total_visitors?: number | null
-          unique_sessions?: number | null
-        }
-        Relationships: []
-      }
-      analytics_pageviews: {
-        Row: {
-          created_at: string
-          id: string
-          page_path: string
-          referrer: string | null
-          session_id: string
-          timestamp: string
-          user_agent: string | null
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          page_path: string
-          referrer?: string | null
-          session_id: string
-          timestamp?: string
-          user_agent?: string | null
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          page_path?: string
-          referrer?: string | null
-          session_id?: string
-          timestamp?: string
-          user_agent?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "fk_analytics_pageviews_session"
-            columns: ["session_id"]
-            isOneToOne: false
-            referencedRelation: "analytics_sessions"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      analytics_sessions: {
-        Row: {
-          browser: string | null
-          country: string | null
-          created_at: string
-          device_type: string | null
-          ended_at: string | null
-          id: string
-          page_count: number | null
-          started_at: string
-        }
-        Insert: {
-          browser?: string | null
-          country?: string | null
-          created_at?: string
-          device_type?: string | null
-          ended_at?: string | null
-          id?: string
-          page_count?: number | null
-          started_at?: string
-        }
-        Update: {
-          browser?: string | null
-          country?: string | null
-          created_at?: string
-          device_type?: string | null
-          ended_at?: string | null
-          id?: string
-          page_count?: number | null
-          started_at?: string
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          avatar_url: string | null
-          created_at: string
-          email: string | null
-          full_name: string | null
-          id: string
-          updated_at: string
-        }
-        Insert: {
-          avatar_url?: string | null
-          created_at?: string
-          email?: string | null
-          full_name?: string | null
-          id: string
-          updated_at?: string
-        }
-        Update: {
-          avatar_url?: string | null
-          created_at?: string
-          email?: string | null
-          full_name?: string | null
-          id?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      aggregate_daily_analytics: {
-        Args: { target_date: string }
-        Returns: undefined
-      }
-      clear_analytics_data: {
-        Args: Record<PropertyKey, never>
-        Returns: undefined
-      }
-      has_role: {
-        Args: {
-          _role: Database["public"]["Enums"]["app_role"]
-          _user_id: string
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -309,8 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "user"],
-    },
+    Enums: {},
   },
 } as const
