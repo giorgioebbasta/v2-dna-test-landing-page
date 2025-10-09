@@ -114,10 +114,8 @@ const ComparisonSection = () => {
                 <p className="text-4xl font-bold">oltre €{totalSavings}</p>
                 <div className="text-emerald-100 leading-relaxed">
                   <p>Un solo test. Un'analisi completa.</p>
-                  <p>Il miglior prezzo dell'estate.</p>
-                  <div className="text-sm bg-white/20 rounded px-2 py-1 mt-2 font-semibold">
-                    🏖️ Offerta valida fino a fine luglio
-                  </div>
+                  
+                  <div className="text-sm bg-white/20 rounded px-2 py-1 mt-2 font-semibold">Offerta valida fino a fine ottobre</div>
                 </div>
               </div>
             </CardContent>
@@ -126,9 +124,7 @@ const ComparisonSection = () => {
 
         <div className="text-center mt-8">
           <a href="https://holifya.com/cart/43782964445448:1" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]">
-              Ordina ora (-20%)
-            </Button>
+            <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]">Ordina ora (-€60)</Button>
           </a>
         </div>
       </div>
