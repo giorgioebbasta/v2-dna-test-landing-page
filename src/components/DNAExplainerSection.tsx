@@ -1,19 +1,23 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Coffee, Apple } from 'lucide-react';
 
 const DNAExplainerSection = () => {
   const examples = [
     {
       gene: "CYP1A2",
       effect: "Metabolizzazione lenta della caffeina",
-      action: "Niente caffè dopo le 14:00, preferisci tè leggero"
+      action: "Niente caffè dopo le 14:00, preferisci tè leggero",
+      icon: Coffee,
+      color: "from-amber-500 to-orange-500"
     },
     {
       gene: "FTO",
       effect: "Tendenza al sovrappeso",
-      action: "Mangia in questo ordine: verdure a inizio pasto, poi piatto proteico e carboidrati alla fine (per evitare picco glicemico)"
+      action: "Mangia in questo ordine: verdure a inizio pasto, poi piatto proteico e carboidrati alla fine (per evitare picco glicemico)",
+      icon: Apple,
+      color: "from-green-500 to-emerald-500"
     }
   ];
 
@@ -108,53 +112,66 @@ const DNAExplainerSection = () => {
           </div>
 
           {/* Examples */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <h3 className="text-xl font-bold text-center text-slate-900 mb-6">
               Esempi pratici
             </h3>
             
-            {examples.map((example, index) => (
-              <Card key={index} className="border-l-4 border-l-emerald-500 shadow-md">
-                <CardContent className="p-6">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div>
-                      <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-1">
-                        Gene
+            {examples.map((example, index) => {
+              const IconComponent = example.icon;
+              return (
+                <Card key={index} className="overflow-hidden border-2 border-slate-100 hover:border-emerald-200 transition-all hover:shadow-xl">
+                  <CardContent className="p-0">
+                    <div className="grid md:grid-cols-[auto,1fr,auto,1fr,auto,1fr] gap-0 items-stretch">
+                      {/* Icon Section */}
+                      <div className={`bg-gradient-to-br ${example.color} p-6 flex items-center justify-center min-h-[120px]`}>
+                        <IconComponent className="w-12 h-12 text-white" />
                       </div>
-                      <div className="font-bold text-slate-900 text-lg">
-                        {example.gene}
+                      
+                      {/* Gene */}
+                      <div className="p-6 bg-slate-50 flex flex-col justify-center">
+                        <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-2">
+                          Gene
+                        </div>
+                        <div className="font-bold text-slate-900 text-xl">
+                          {example.gene}
+                        </div>
+                      </div>
+                      
+                      {/* Arrow */}
+                      <div className="hidden md:flex items-center justify-center px-4 bg-gradient-to-r from-slate-50 to-white">
+                        <ArrowRight className="w-6 h-6 text-slate-400" />
+                      </div>
+                      
+                      {/* Effect */}
+                      <div className="p-6 bg-white flex flex-col justify-center border-t md:border-t-0 md:border-l border-slate-100">
+                        <div className="text-xs font-semibold text-cyan-600 uppercase tracking-wide mb-2">
+                          Effetto
+                        </div>
+                        <div className="text-slate-700 font-medium">
+                          {example.effect}
+                        </div>
+                      </div>
+                      
+                      {/* Arrow */}
+                      <div className="hidden md:flex items-center justify-center px-4 bg-gradient-to-r from-white to-emerald-50">
+                        <ArrowRight className="w-6 h-6 text-emerald-500" />
+                      </div>
+                      
+                      {/* Action */}
+                      <div className="p-6 bg-emerald-50 flex flex-col justify-center border-t md:border-t-0 md:border-l border-emerald-100">
+                        <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">
+                          Azione
+                        </div>
+                        <div className="text-slate-900 font-semibold">
+                          {example.action}
+                        </div>
                       </div>
                     </div>
-                    
-                    <div className="hidden md:flex items-center justify-center">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
-                    </div>
-                    
-                    <div>
-                      <div className="text-xs font-semibold text-cyan-600 uppercase tracking-wide mb-1">
-                        Effetto
-                      </div>
-                      <div className="text-slate-700">
-                        {example.effect}
-                      </div>
-                    </div>
-                    
-                    <div className="hidden md:flex items-center justify-center">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
-                    </div>
-                    
-                    <div className="md:col-span-1">
-                      <div className="text-xs font-semibold text-purple-600 uppercase tracking-wide mb-1">
-                        Azione
-                      </div>
-                      <div className="text-slate-900 font-medium">
-                        {example.action}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
 
