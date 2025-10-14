@@ -7,13 +7,13 @@ const DNAExplainerSection = () => {
   const examples = [
     {
       gene: "CYP1A2",
-      effect: "metabolizzazione lenta della caffeina",
-      action: "niente caffè dopo le 14:00, preferisci tè leggero"
+      effect: "Metabolizzazione lenta della caffeina",
+      action: "Niente caffè dopo le 14:00, preferisci tè leggero"
     },
     {
       gene: "FTO",
-      effect: "predisposizione a fame e snack dolci",
-      action: "più proteine a colazione, tieni frutta secca come snack"
+      effect: "Tendenza al sovrappeso",
+      action: "Mangia in questo ordine: verdure a inizio pasto, poi piatto proteico e carboidrati alla fine (per evitare picco glicemico)"
     }
   ];
 
