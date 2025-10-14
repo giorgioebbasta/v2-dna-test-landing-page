@@ -48,14 +48,21 @@ const HeroSection = ({ className }: { className?: string }) => {
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start">
           {/* Left side - Carousel and Pricing */}
-          <div className="space-y-6 animate-fade-in">
+          <div className="animate-fade-in">
             <LazyProductCarousel />
-            <QuantitySelector
-              quantity={quantity}
-              onIncrease={increaseQuantity}
-              onDecrease={decreaseQuantity}
-              onOrder={handleOrder}
-            />
+            <div className="mt-6 flex gap-4 items-stretch">
+              <div className="w-[45%]">
+                <QuantitySelector
+                  quantity={quantity}
+                  onIncrease={increaseQuantity}
+                  onDecrease={decreaseQuantity}
+                  onOrder={handleOrder}
+                />
+              </div>
+              <div className="flex-1">
+                <ProductPricing />
+              </div>
+            </div>
           </div>
           
           {/* Right side - Text content and benefits */}
