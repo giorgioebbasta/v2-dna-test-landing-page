@@ -62,8 +62,8 @@ const HeroSection = ({ className }: { className?: string }) => {
             </div>
           </div>
 
-          {/* Bottom section - Full width container with 3 boxes */}
-          <div className="grid grid-cols-3 gap-4 animate-fade-in">
+          {/* Bottom section - Full width container with 3 boxes - all same height */}
+          <div className="grid grid-cols-3 gap-4 animate-fade-in items-stretch">
             {/* Box 1: Quantity Selector */}
             <div>
               <QuantitySelector
