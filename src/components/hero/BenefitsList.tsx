@@ -4,7 +4,7 @@ import { Star, ShieldCheck } from 'lucide-react';
 
 const BenefitsList = React.memo(() => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Trustpilot Box */}
       <div className="flex items-center justify-center gap-3">
         <div className="flex items-center gap-2">
