@@ -10,7 +10,7 @@ const BenefitsList = React.memo(() => {
         href="https://it.trustpilot.com/review/holifya.com" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+        className="flex flex-nowrap items-center justify-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
       >
         <div className="flex items-center gap-2">
           <div className="flex gap-0.5">
