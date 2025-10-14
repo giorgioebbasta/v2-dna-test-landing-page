@@ -10,7 +10,7 @@ const BenefitsList = React.memo(() => {
         href="https://it.trustpilot.com/review/holifya.com" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+        className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity cursor-pointer flex-wrap lg:flex-nowrap"
       >
         <div className="flex items-center gap-2">
           <div className="flex gap-0.5">
@@ -18,10 +18,10 @@ const BenefitsList = React.memo(() => {
               <Star key={i} className="w-5 h-5 fill-[#00B67A] text-[#00B67A]" />
             ))}
           </div>
-          <span className="text-sm font-semibold text-slate-700">4.8/5</span>
+          <span className="text-sm font-semibold text-slate-700">4.7/5</span>
         </div>
         <span className="text-sm text-slate-600">|</span>
-        <span className="text-sm font-medium text-slate-700">1,200+ recensioni</span>
+        <span className="text-sm font-medium text-slate-700 whitespace-nowrap">3,000+ utenti</span>
       </a>
 
       {/* Certifications Box */}
