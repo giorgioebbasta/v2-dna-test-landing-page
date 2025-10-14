@@ -36,10 +36,13 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
             <h3 className="text-sm font-semibold text-slate-900">{name}</h3>
           </div>
           
-          {/* Right side - Price info (horizontal layout) */}
-          <div className="flex items-center gap-2">
-            <div className="text-xs text-slate-500 line-through">€{originalPrice}</div>
-            <div className="text-lg font-bold text-[#0B4650]">€{currentPrice}</div>
+          {/* Right side - Price info */}
+          <div className="text-right">
+            <div className="flex items-center gap-2 justify-end">
+              <div className="text-xs text-slate-500 line-through">€{originalPrice}</div>
+              <div className="text-lg font-bold text-[#0B4650]">€{currentPrice}</div>
+            </div>
+            <div className="text-xs font-medium text-[#0B4650] mt-1">Risparmi €{savings}</div>
           </div>
         </CardContent>
       </Card>
