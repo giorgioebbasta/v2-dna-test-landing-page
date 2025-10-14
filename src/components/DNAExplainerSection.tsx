@@ -126,44 +126,9 @@ const DNAExplainerSection = () => {
             </h3>
             
             {examples.map((example, index) => (
-              <Card key={index} className="border-l-4 border-l-emerald-500 shadow-md">
+              <Card key={index} className={`border-l-4 shadow-md ${index === 0 ? 'border-l-[#E8FFC9]' : 'border-l-[#FCE8E6]'}`}>
                 <CardContent className="p-6">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div>
-                      <div className="text-xs font-semibold text-[#0B4650] uppercase tracking-wide mb-1">
-                        Gene
-                      </div>
-                      <div className="font-bold text-slate-900 text-lg">
-                        {example.gene}
-                      </div>
-                    </div>
-                    
-                    <div className="hidden md:flex items-center justify-center">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
-                    </div>
-                    
-                    <div>
-                      <div className="text-xs font-semibold text-[#DCFE54] uppercase tracking-wide mb-1">
-                        Effetto
-                      </div>
-                      <div className="text-slate-700">
-                        {example.effect}
-                      </div>
-                    </div>
-                    
-                    <div className="hidden md:flex items-center justify-center">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
-                    </div>
-                    
-                    <div className="md:col-span-1">
-                      <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-1">
-                        Azione
-                      </div>
-                      <div className="text-slate-900 font-medium">
-                        {example.action}
-                      </div>
-                    </div>
-                  </div>
+...
                 </CardContent>
               </Card>
             ))}
