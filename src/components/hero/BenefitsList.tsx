@@ -11,7 +11,7 @@ const BenefitsList = React.memo(() => {
           <span className="text-sm font-semibold text-slate-700">4.8/5</span>
         </div>
         <span className="text-sm text-slate-600">|</span>
-        <span className="text-sm font-medium text-slate-700 px-0">3,000+ utenti</span>
+        <span className="text-sm font-medium text-slate-700 pr-4">3,000+ utenti</span>
       </a>
 
       {/* Certifications Box */}
