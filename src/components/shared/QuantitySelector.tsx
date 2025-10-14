@@ -36,7 +36,7 @@ const QuantitySelector = React.memo(({
     : "bg-[#FCE8E6] hover:bg-[#FCE8E6]/90 text-[#1A1A31] px-4 py-2 font-bold";
 
   const content = (
-    <div className="flex items-center justify-between gap-4">
+    <div className="flex items-center justify-between gap-4 w-full">
       <div className="flex items-center space-x-3">
         <span className={`text-sm font-medium ${isWhiteVariant ? 'text-white' : 'text-slate-700'}`}>
           Quantità:
@@ -67,7 +67,7 @@ const QuantitySelector = React.memo(({
       </div>
       
       <Button 
-        className={orderButtonClasses}
+        className={`${orderButtonClasses} flex-shrink-0`}
         onClick={onOrder}
         disabled={disabled}
       >
