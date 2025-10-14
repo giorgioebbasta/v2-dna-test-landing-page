@@ -12,20 +12,17 @@ const OptimizedProductCarousel = () => {
     {
       id: 1,
       image: "/lovable-uploads/quadrato.webp",
-      title: "Kit a casa in 48h",
-      description: "Kit di raccolta campione certificato"
+      title: "Kit a casa in 48h"
     },
     {
       id: 2,
       image: "/lovable-uploads/group-41.webp",
-      title: "Supporto umano 7/7",
-      description: "Semplice campione di saliva da casa tua"
+      title: "Supporto umano 7/7"
     },
     {
       id: 3,
       image: "/lovable-uploads/group-45.webp",
-      title: "Laboratori CE-IVD / ISO 9001",
-      description: "Ordina e ricevi il kit a casa in 72 ore"
+      title: "Laboratori CE-IVD / ISO 9001"
     }
   ];
 
@@ -88,9 +85,8 @@ const OptimizedProductCarousel = () => {
                 width={400}
                 height={320}
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h3 className="text-white text-xl font-bold mb-2">{slide.title}</h3>
-                <p className="text-white/90 text-sm">{slide.description}</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 pb-12">
+                <h3 className="text-white text-xl font-bold">{slide.title}</h3>
               </div>
             </div>
           ))}
