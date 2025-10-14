@@ -20,9 +20,9 @@ const Index = () => {
       <Header />
       <PromoBanner />
       
-      {/* Desktop spacing adjustment - increased for promo banner */}
-      <div className="hidden md:block h-16"></div>
-      <div className="md:hidden h-14"></div>
+      {/* Spacing for fixed header and promo banner */}
+      <div className="hidden md:block h-[108px]"></div>
+      <div className="md:hidden h-[97px]"></div>
       
       {/* Above the fold - load immediately */}
       <HeroSection />
