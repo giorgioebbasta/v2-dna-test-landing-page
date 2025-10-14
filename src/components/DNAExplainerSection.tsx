@@ -63,7 +63,7 @@ const DNAExplainerSection = () => {
             {/* Step 1 */}
             <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
               <CardContent className="p-6">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">🧬</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Gene</h4>
                 <p className="text-slate-600">
@@ -80,7 +80,7 @@ const DNAExplainerSection = () => {
             {/* Step 2 */}
             <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
               <CardContent className="p-6">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">⚡</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Effetto</h4>
                 <p className="text-slate-600">
@@ -97,7 +97,7 @@ const DNAExplainerSection = () => {
             {/* Step 3 */}
             <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
               <CardContent className="p-6">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">✅</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Azione</h4>
                 <p className="text-slate-600">
