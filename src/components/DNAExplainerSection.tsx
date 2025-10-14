@@ -124,7 +124,7 @@ const DNAExplainerSection = () => {
             </h3>
             
             {examples.map((example, index) => (
-              <Card key={index} className={`border-l-4 shadow-md ${index === 0 ? 'border-l-[#E8FFC9]' : 'border-l-[#FCE8E6]'}`}>
+              <Card key={index} className="border-l-4 shadow-md border-l-[#FCE8E6]">
                 <CardContent className="p-6">
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
