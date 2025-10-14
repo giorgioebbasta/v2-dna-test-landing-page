@@ -15,7 +15,7 @@ const Header = () => {
         <a href="https://www.holifya.com/" target="_blank" rel="noopener noreferrer" className="block">
           <img src="/lovable-uploads/logo-holifya.jpeg" alt="Holifya Logo" className="h-12 hover:opacity-80 transition-opacity cursor-pointer" />
         </a>
-        <img src="/lovable-uploads/payoff-nero.jpeg" alt="Care at its core" className="h-4 mt-2" />
+        <img src="/lovable-uploads/payoff-nero.jpeg" alt="Care at its core" className="h-4" />
       </div>
     </header>;
 };
