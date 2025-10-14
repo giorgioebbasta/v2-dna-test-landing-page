@@ -9,7 +9,7 @@ import LazyProductCarousel from '@/components/optimized/LazyProductCarousel';
 import ImagePreloader from '@/components/optimized/ImagePreloader';
 import { useQuantity } from '@/hooks/useQuantity';
 
-const HeroSection = () => {
+const HeroSection = ({ className }: { className?: string }) => {
   const { quantity, increaseQuantity, decreaseQuantity, handleOrder } = useQuantity(1);
 
   // Preload critical images for faster initial load
@@ -19,7 +19,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 -mt-6 lg:mt-0 lg:pt-2">
+    <section className={`relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 -mt-6 lg:mt-0 lg:pt-2 ${className || ''}`}>
       <ImagePreloader images={priorityImages} priority />
       
       <div className="max-w-7xl mx-auto">
