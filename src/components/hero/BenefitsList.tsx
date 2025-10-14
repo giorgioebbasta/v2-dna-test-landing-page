@@ -6,7 +6,12 @@ const BenefitsList = React.memo(() => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* Trustpilot Box */}
-      <div className="flex items-center justify-center gap-3">
+      <a 
+        href="https://it.trustpilot.com/review/holifya.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center justify-center gap-3 hover:opacity-80 transition-opacity cursor-pointer"
+      >
         <div className="flex items-center gap-2">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
@@ -17,7 +22,7 @@ const BenefitsList = React.memo(() => {
         </div>
         <span className="text-sm text-slate-600">|</span>
         <span className="text-sm font-medium text-slate-700">1,200+ recensioni</span>
-      </div>
+      </a>
 
       {/* Certifications Box */}
       <div className="flex items-center justify-center gap-3">
