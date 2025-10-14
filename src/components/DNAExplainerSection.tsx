@@ -131,7 +131,7 @@ const DNAExplainerSection = () => {
                       <div className="text-xs font-semibold text-[#0B4650] uppercase tracking-wide mb-1">
                         Gene
                       </div>
-                      <div className="font-bold text-slate-900 text-lg">
+                      <div className="text-slate-900">
                         {example.gene}
                       </div>
                     </div>
