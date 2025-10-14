@@ -12,7 +12,7 @@ const FloatingCTA = () => {
       >
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+          className="bg-gradient-to-r from-[#E8FFC9] to-[#d4f5b1] hover:from-[#d4f5b1] hover:to-[#E8FFC9] text-[#0B4650] font-semibold text-lg px-8 py-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
           style={{
             animation: 'gentlePulse 3s ease-in-out infinite'
           }}
