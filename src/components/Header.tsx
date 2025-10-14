@@ -15,7 +15,7 @@ const Header = () => {
             className="block"
           >
             <img 
-              src="/lovable-uploads/2b3fd25b-1ca6-4335-a493-38d9a74cd75f.png" 
+              src="/lovable-uploads/logo-holifya.jpeg" 
               alt="Holifya Logo" 
               className="h-8 hover:opacity-80 transition-opacity cursor-pointer"
             />
@@ -32,7 +32,7 @@ const Header = () => {
           className="block"
         >
           <img 
-            src="/lovable-uploads/2b3fd25b-1ca6-4335-a493-38d9a74cd75f.png" 
+            src="/lovable-uploads/logo-holifya.jpeg" 
             alt="Holifya Logo" 
             className="h-10 hover:opacity-80 transition-opacity cursor-pointer"
           />
