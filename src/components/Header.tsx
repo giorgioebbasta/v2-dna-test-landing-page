@@ -11,7 +11,7 @@ const Header = () => {
       </div>
 
       {/* Desktop version - split layout */}
-      <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-4 py-1">
+      <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-4 py-0.5">
         <a href="https://www.holifya.com/" target="_blank" rel="noopener noreferrer" className="block">
           <img src="/lovable-uploads/logo-holifya.jpeg" alt="Holifya Logo" className="h-12 hover:opacity-80 transition-opacity cursor-pointer" />
         </a>
