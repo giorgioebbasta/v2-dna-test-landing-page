@@ -6,6 +6,7 @@ import LazyHowItWorksSection from '@/components/optimized/LazyHowItWorksSection'
 import LazyComparisonSection from '@/components/optimized/LazyComparisonSection';
 import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
 import LazyContactSection from '@/components/optimized/LazyContactSection';
+import LazyDNAExplainerSection from '@/components/optimized/LazyDNAExplainerSection';
 import DeferredScripts from '@/components/optimized/DeferredScripts';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
@@ -31,6 +32,7 @@ const Index = () => {
       <LazyTestimonialsSection />
       <LazyCTASection />
       <LazyHowItWorksSection />
+      <LazyDNAExplainerSection />
       <LazyFinalCTASection />
       <LazyContactSection />
       
