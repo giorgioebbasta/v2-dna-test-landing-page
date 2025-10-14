@@ -11,19 +11,19 @@ const OptimizedProductCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: "/lovable-uploads/f2d314d3-ab01-49c2-84e3-f6b59b117dbf.png",
+      image: "/lovable-uploads/quadrato.webp",
       title: "Kit DNA Professionale",
       description: "Kit di raccolta campione certificato"
     },
     {
       id: 2,
-      image: "/lovable-uploads/f69d667b-2198-4033-850c-c4626a0ad35d.png",
+      image: "/lovable-uploads/group-41.webp",
       title: "Test Salivare Semplice",
       description: "Semplice campione di saliva da casa tua"
     },
     {
       id: 3,
-      image: "/lovable-uploads/0101b067-ddec-4c90-8bad-4962b0c34569.png",
+      image: "/lovable-uploads/group-45.webp",
       title: "Ricevi il tuo Kit",
       description: "Ordina e ricevi il kit a casa in 72 ore"
     }
