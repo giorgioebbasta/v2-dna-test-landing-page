@@ -24,7 +24,7 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
 
   return (
     <Card 
-      className="border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden"
+      className="border-2 border-[#0B4650] hover:border-[#0B4650]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden"
       onClick={handleClick}
     >
       {promoCode && (
@@ -35,9 +35,9 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
       <CardContent className="p-3 sm:p-4 text-center">
         <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-3">{name}</h3>
         <div className="space-y-1">
-          <div className="text-2xl sm:text-3xl font-bold text-emerald-600">€{currentPrice}</div>
+          <div className="text-2xl sm:text-3xl font-bold text-[#0B4650]">€{currentPrice}</div>
           <div className="text-base sm:text-lg text-slate-500 line-through">€{originalPrice}</div>
-          <div className="text-sm font-medium text-emerald-700">
+          <div className="text-sm font-medium text-[#0B4650]">
             Risparmi €{savings}
           </div>
           {promoCode && (

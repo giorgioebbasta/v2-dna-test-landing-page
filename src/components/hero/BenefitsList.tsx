@@ -16,7 +16,7 @@ const BenefitsList = React.memo(() => {
         const IconComponent = benefit.icon;
         return (
           <div key={index} className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300">
-            <div className="text-emerald-600 mb-2">
+            <div className="text-[#0B4650] mb-2">
               <IconComponent className="w-6 h-6" />
             </div>
             <span className="text-sm font-medium text-slate-700">{benefit.text}</span>

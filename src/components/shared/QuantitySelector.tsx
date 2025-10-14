@@ -25,7 +25,7 @@ const QuantitySelector = React.memo(({
   
   const containerClasses = isWhiteVariant 
     ? "text-white bg-white/10 backdrop-blur-sm rounded-lg p-2"
-    : "border-2 border-emerald-200 hover:border-emerald-300 transition-all duration-300 hover:shadow-lg";
+    : "border-2 border-[#0B4650] hover:border-[#0B4650]/80 transition-all duration-300 hover:shadow-lg";
 
   const buttonClasses = isWhiteVariant
     ? "h-8 w-8 p-0 hover:bg-white/20 text-white"
