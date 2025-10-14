@@ -67,7 +67,7 @@ const DNAExplainerSection = () => {
                 <div className="text-4xl mb-4">🧬</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Gene</h4>
                 <p className="text-slate-600">
-                  Analizziamo il tuo DNA per identificare varianti genetiche specifiche
+                  Analizziamo il tuo DNA per identificare varianti genetiche specifiche.
                 </p>
               </CardContent>
             </Card>
@@ -84,7 +84,7 @@ const DNAExplainerSection = () => {
                 <div className="text-4xl mb-4">⚡</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Effetto</h4>
                 <p className="text-slate-600">
-                  Comprendiamo come influenzano il tuo metabolismo e benessere
+                  Comprendiamo come influenzano il tuo metabolismo e benessere.
                 </p>
               </CardContent>
             </Card>
@@ -101,7 +101,7 @@ const DNAExplainerSection = () => {
                 <div className="text-4xl mb-4">✅</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Azione</h4>
                 <p className="text-slate-600">
-                  Ti forniamo strategie concrete e personalizzate da applicare subito
+                  Ti forniamo strategie concrete e personalizzate da applicare subito.
                 </p>
               </CardContent>
             </Card>
