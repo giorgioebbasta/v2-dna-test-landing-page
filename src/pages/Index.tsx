@@ -1,4 +1,3 @@
-
 import React from 'react';
 import LazyReviewsSection from '@/components/optimized/LazyReviewsSection';
 import LazyTestimonialsSection from '@/components/optimized/LazyTestimonialsSection';
@@ -13,10 +12,8 @@ import Header from '@/components/Header';
 import PromoBanner from '@/components/PromoBanner';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+  return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
       <PromoBanner />
       
@@ -25,7 +22,7 @@ const Index = () => {
       <div className="md:hidden h-[97px]"></div>
       
       {/* Above the fold - load immediately */}
-      <HeroSection />
+      <HeroSection className="py-[5px]" />
       <FeaturesSection />
       
       {/* Below the fold - lazy loaded */}
@@ -39,8 +36,6 @@ const Index = () => {
       
       <FloatingCTA />
       <DeferredScripts />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
