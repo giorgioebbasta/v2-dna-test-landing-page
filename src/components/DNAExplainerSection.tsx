@@ -38,7 +38,7 @@ const DNAExplainerSection = () => {
           </h2>
           
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-slate-600">
-            <p className="italic text-xl text-slate-900">
+            <p className="italic text-base md:text-xl text-slate-900">
               Il tuo DNA è il manuale d'uso del tuo corpo.
             </p>
             <p>
