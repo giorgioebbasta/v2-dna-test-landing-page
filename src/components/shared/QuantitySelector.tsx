@@ -32,8 +32,8 @@ const QuantitySelector = React.memo(({
     : "h-8 w-8 p-0 hover:bg-slate-100";
 
   const orderButtonClasses = isWhiteVariant
-    ? "bg-white text-indigo-600 hover:bg-white/90 px-4 py-2 w-full"
-    : "bg-[#FCE8E6] hover:bg-[#FCE8E6]/90 text-[#1A1A31] px-4 py-2";
+    ? "bg-white text-indigo-600 hover:bg-white/90 px-4 py-2 w-full font-bold"
+    : "bg-[#FCE8E6] hover:bg-[#FCE8E6]/90 text-[#1A1A31] px-4 py-2 font-bold";
 
   const content = (
     <div className="flex items-center justify-between gap-4">
