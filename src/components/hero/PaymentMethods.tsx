@@ -1,5 +1,4 @@
 import React from 'react';
-import { CreditCard } from 'lucide-react';
 
 const PaymentMethods = React.memo(() => {
   return (
@@ -35,10 +34,11 @@ const PaymentMethods = React.memo(() => {
           
           {/* Contrassegno */}
           <div className="flex items-center justify-center">
-            <div className="flex items-center space-x-1">
-              <CreditCard className="w-6 h-6 text-slate-600" />
-              <span className="text-sm font-medium text-slate-700">Contrassegno</span>
-            </div>
+            <img 
+              src="/contrassegno.svg" 
+              alt="Contrassegno" 
+              className="h-8 w-auto object-contain"
+            />
           </div>
         </div>
       </div>
