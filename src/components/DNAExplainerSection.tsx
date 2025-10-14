@@ -17,10 +17,10 @@ const DNAExplainerSection = () => {
     }
   ];
 
-  const scrollToComparison = () => {
-    const comparisonSection = document.getElementById('comparison-section');
-    if (comparisonSection) {
-      comparisonSection.scrollIntoView({
+  const scrollToExamples = () => {
+    const examplesSection = document.getElementById('esempi-pratici');
+    if (examplesSection) {
+      examplesSection.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest'
@@ -110,7 +110,7 @@ const DNAExplainerSection = () => {
           {/* CTA */}
           <div className="text-center mb-12">
             <Button 
-              onClick={scrollToComparison}
+              onClick={scrollToExamples}
               size="lg"
               className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200"
             >
@@ -120,7 +120,7 @@ const DNAExplainerSection = () => {
           </div>
 
           {/* Examples */}
-          <div className="space-y-6">
+          <div id="esempi-pratici" className="space-y-6">
             <h3 className="text-xl font-bold text-center text-slate-900 mb-6">
               Esempi pratici
             </h3>
