@@ -21,7 +21,7 @@ const BenefitsList = React.memo(() => {
 
       {/* Certifications Box */}
       <div className="flex items-center justify-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300">
-        <span className="text-sm font-medium text-slate-700">CE-IVD / ISO / GDPR / Spedizione 48h</span>
+        <span className="text-sm font-medium text-slate-700">🛡️ CE-IVD / ISO / GDPR</span>
       </div>
     </div>
   );
