@@ -15,16 +15,16 @@ const HeroBanner = React.memo(() => {
       <Badge className="text-[#E8FFC9] px-4 py-2 text-sm font-medium mt-4 bg-[#0b4650]">
         Test Completo del DNA
       </Badge>
-      <h1 className="text-[41px] md:text-[47px] lg:text-6xl font-bold text-slate-900 leading-tight">
+      <h1 className="text-[41px] md:text-[47px] lg:text-6xl font-bold text-slate-900 leading-tight py-px">
         Il <span className="bg-gradient-to-r from-[#0B4650] via-[#0d6875] to-[#0f8a9a] bg-clip-text text-transparent">DNA</span> ti dice cosa funziona per te.
       </h1>
       
-      <p className="text-[15px] md:text-[17px] lg:text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 active:text-emerald-700 active:scale-95 hover:scale-105 transition-all duration-200 touch-manipulation select-none" onClick={scrollToComparison} role="button" tabIndex={0} onKeyDown={e => {
+      <p onClick={scrollToComparison} role="button" tabIndex={0} onKeyDown={e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         scrollToComparison();
       }
-    }}>
+    }} className="text-[15px] md:text-[17px] lg:text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 active:text-emerald-700 active:scale-95 hover:scale-105 transition-all duration-200 touch-manipulation select-none py-px">
         +2000 analisi genetiche certificate per scoprire cosa mangiare, come allenarti e dormire meglio.
       </p>
     </div>;
