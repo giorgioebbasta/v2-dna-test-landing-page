@@ -16,10 +16,7 @@ const HeroBanner = React.memo(() => {
         Test Completo del DNA
       </Badge>
       <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-        Una vita sana,<br />
-        <span className="italic bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-          Più a lungo
-        </span>
+        Il DNA ti dice cosa funziona per te.
       </h1>
       
       <p className="text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 active:text-emerald-700 active:scale-95 hover:scale-105 transition-all duration-200 touch-manipulation select-none" onClick={scrollToComparison} role="button" tabIndex={0} onKeyDown={e => {
@@ -28,10 +25,7 @@ const HeroBanner = React.memo(() => {
         scrollToComparison();
       }
     }}>
-        Scopri i segreti del tuo DNA, con il test genetico più completo in Italia*.
-      </p>
-      <p className="text-xl text-slate-600 leading-relaxed">
-        <em>Ora disponibile a casa tua.</em>
+        +2000 analisi genetiche certificate per scoprire cosa mangiare, come allenarti e dormire meglio.
       </p>
     </div>;
 });
