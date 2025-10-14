@@ -46,28 +46,22 @@ const HeroSection = ({ className }: { className?: string }) => {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:block animate-fade-in space-y-6">
-          <div className="grid grid-cols-2 gap-12 items-start">
-            {/* Left side - Carousel */}
-            <div className="animate-fade-in">
-              <LazyProductCarousel />
-            </div>
-            
-            {/* Right side - Text content and benefits */}
-            <div className="space-y-6 animate-fade-in">
-              <HeroBanner />
-              <BenefitsList />
-            </div>
-          </div>
-          
-          {/* Full width quantity selector */}
-          <div className="w-[70%] mx-auto">
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left side - Carousel and Pricing */}
+          <div className="space-y-6 animate-fade-in">
+            <LazyProductCarousel />
             <QuantitySelector
               quantity={quantity}
               onIncrease={increaseQuantity}
               onDecrease={decreaseQuantity}
               onOrder={handleOrder}
             />
+          </div>
+          
+          {/* Right side - Text content and benefits */}
+          <div className="space-y-6 animate-fade-in">
+            <HeroBanner />
+            <BenefitsList />
           </div>
         </div>
       </div>
