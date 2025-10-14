@@ -11,9 +11,10 @@ interface PriceCardProps {
   url: string;
   onClick?: () => void;
   extraDiscount?: string;
+  compact?: boolean;
 }
 
-const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, promoCode, url, onClick, extraDiscount }: PriceCardProps) => {
+const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, promoCode, url, onClick, extraDiscount, compact = false }: PriceCardProps) => {
   const handleClick = () => {
     if (onClick) {
       onClick();
@@ -24,7 +25,7 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
 
   return (
     <Card 
-      className="border-2 border-[#0B4650] hover:border-[#0B4650]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden"
+      className="border-2 border-[#0B4650] hover:border-[#0B4650]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden h-full"
       onClick={handleClick}
     >
       {promoCode && (
@@ -32,12 +33,12 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
           {promoCode}
         </div>
       )}
-      <CardContent className="p-3 sm:p-4 text-center">
-        <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-3">{name}</h3>
+      <CardContent className={compact ? "p-3 text-center flex flex-col justify-center h-full" : "p-3 sm:p-4 text-center"}>
+        <h3 className={compact ? "text-sm font-semibold text-slate-900 mb-2" : "text-base sm:text-lg font-semibold text-slate-900 mb-3"}>{name}</h3>
         <div className="space-y-1">
-          <div className="text-2xl sm:text-3xl font-bold text-[#0B4650]">€{currentPrice}</div>
-          <div className="text-base sm:text-lg text-slate-500 line-through">€{originalPrice}</div>
-          <div className="text-sm font-medium text-[#0B4650]">
+          <div className={compact ? "text-xl font-bold text-[#0B4650]" : "text-2xl sm:text-3xl font-bold text-[#0B4650]"}>€{currentPrice}</div>
+          <div className={compact ? "text-sm text-slate-500 line-through" : "text-base sm:text-lg text-slate-500 line-through"}>€{originalPrice}</div>
+          <div className={compact ? "text-xs font-medium text-[#0B4650]" : "text-sm font-medium text-[#0B4650]"}>
             Risparmi €{savings}
           </div>
           {promoCode && (
@@ -45,7 +46,7 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
               Codice: {promoCode} (-40%)
             </div>
           )}
-          {extraDiscount && (
+          {extraDiscount && !compact && (
             <div className="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-1 rounded mt-2">
               {extraDiscount}
             </div>

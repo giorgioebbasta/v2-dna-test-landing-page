@@ -81,6 +81,7 @@ const HeroSection = ({ className }: { className?: string }) => {
               originalPrice={349}
               savings={60}
               url="https://holifya.com/cart/43782964445448:1"
+              compact
             />
 
             {/* Box 3: 2 Tests Package */}
@@ -90,7 +91,7 @@ const HeroSection = ({ className }: { className?: string }) => {
               originalPrice={698}
               savings={199}
               url="https://holifya.com/cart/43782964445448:2"
-              extraDiscount="Per te e per chi ami (-€80)"
+              compact
             />
           </div>
         </div>
