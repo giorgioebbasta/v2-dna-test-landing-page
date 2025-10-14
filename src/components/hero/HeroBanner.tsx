@@ -16,7 +16,7 @@ const HeroBanner = React.memo(() => {
         Test Completo del DNA
       </Badge>
       <h1 className="text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-        Il <span className="bg-gradient-to-r from-[#E8FFC9] via-[#d4f5b1] to-[#c0eb99] bg-clip-text text-transparent">DNA</span> ti dice cosa funziona per te.
+        Il <span className="bg-gradient-to-r from-[#FCE8E6] via-[#f5d4d1] to-[#efc0bc] bg-clip-text text-transparent">DNA</span> ti dice cosa funziona per te.
       </h1>
       
       <p className="text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 active:text-emerald-700 active:scale-95 hover:scale-105 transition-all duration-200 touch-manipulation select-none" onClick={scrollToComparison} role="button" tabIndex={0} onKeyDown={e => {
