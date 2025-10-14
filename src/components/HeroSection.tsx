@@ -50,18 +50,12 @@ const HeroSection = ({ className }: { className?: string }) => {
           {/* Left side - Carousel and Pricing */}
           <div className="space-y-6 animate-fade-in">
             <LazyProductCarousel />
-            <div className="flex gap-4 items-stretch">
-              <div className="w-[35%]">
-                <QuantitySelector
-                  quantity={quantity}
-                  onIncrease={increaseQuantity}
-                  onDecrease={decreaseQuantity}
-                  onOrder={handleOrder}
-                />
-              </div>
-              <div className="w-32 bg-card rounded-lg border shadow-sm" />
-              <div className="w-32 bg-card rounded-lg border shadow-sm" />
-            </div>
+            <QuantitySelector
+              quantity={quantity}
+              onIncrease={increaseQuantity}
+              onDecrease={decreaseQuantity}
+              onOrder={handleOrder}
+            />
           </div>
           
           {/* Right side - Text content and benefits */}
