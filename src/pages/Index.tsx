@@ -25,6 +25,7 @@ const Index = () => {
       {/* Above the fold - load immediately */}
       <HeroSection className="py-[5px]" />
       <FeaturesSection />
+      <LazyDNAExplainerSection />
       
       {/* Below the fold - lazy loaded */}
       <LazyComparisonSection />
@@ -32,7 +33,6 @@ const Index = () => {
       <LazyTestimonialsSection />
       <LazyCTASection />
       <LazyHowItWorksSection />
-      <LazyDNAExplainerSection />
       <LazyFinalCTASection />
       <LazyContactSection />
       
