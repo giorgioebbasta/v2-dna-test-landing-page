@@ -108,53 +108,60 @@ const DNAExplainerSection = () => {
           </div>
 
           {/* Examples */}
-          <div className="space-y-6">
-            <h3 className="text-xl font-bold text-center text-slate-900 mb-6">
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">
               Esempi pratici
             </h3>
             
-            {examples.map((example, index) => (
-              <Card key={index} className="border-l-4 border-l-emerald-500 shadow-md">
-                <CardContent className="p-6">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div>
-                      <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-1">
-                        Gene
-                      </div>
-                      <div className="font-bold text-slate-900 text-lg">
-                        {example.gene}
+            <div className="grid md:grid-cols-2 gap-8">
+              {examples.map((example, index) => (
+                <Card key={index} className="border-0 shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                  <CardContent className="p-0">
+                    {/* Icon Header */}
+                    <div className="bg-gradient-to-br from-emerald-500 to-cyan-500 p-8 flex items-center justify-center">
+                      <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <div className="text-5xl">{index === 0 ? '☕' : '🍎'}</div>
                       </div>
                     </div>
                     
-                    <div className="hidden md:flex items-center justify-center">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
-                    </div>
-                    
-                    <div>
-                      <div className="text-xs font-semibold text-cyan-600 uppercase tracking-wide mb-1">
-                        Effetto
+                    {/* Content */}
+                    <div className="p-6 space-y-4">
+                      {/* Gene */}
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full flex-shrink-0"></div>
+                        <div>
+                          <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wide">Gene</div>
+                          <div className="font-bold text-slate-900 text-xl">{example.gene}</div>
+                        </div>
                       </div>
-                      <div className="text-slate-700">
-                        {example.effect}
+                      
+                      <div className="flex items-center justify-center py-2">
+                        <ArrowRight className="w-5 h-5 text-slate-300" />
+                      </div>
+                      
+                      {/* Effect */}
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full flex-shrink-0"></div>
+                        <div>
+                          <div className="text-xs font-semibold text-cyan-600 uppercase tracking-wide">Effetto</div>
+                          <div className="text-slate-700 font-medium">{example.effect}</div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-center py-2">
+                        <ArrowRight className="w-5 h-5 text-slate-300" />
+                      </div>
+                      
+                      {/* Action */}
+                      <div className="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-500">
+                        <div className="text-xs font-semibold text-emerald-700 uppercase tracking-wide mb-2">Azione</div>
+                        <div className="text-slate-900 font-semibold leading-relaxed">{example.action}</div>
                       </div>
                     </div>
-                    
-                    <div className="hidden md:flex items-center justify-center">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
-                    </div>
-                    
-                    <div className="md:col-span-1">
-                      <div className="text-xs font-semibold text-purple-600 uppercase tracking-wide mb-1">
-                        Azione
-                      </div>
-                      <div className="text-slate-900 font-medium">
-                        {example.action}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
 
