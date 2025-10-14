@@ -6,7 +6,7 @@ const BenefitsList = React.memo(() => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* Trustpilot Box */}
-      <div className="flex items-center justify-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300">
+      <div className="flex items-center justify-center gap-3">
         <div className="flex items-center gap-2">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
