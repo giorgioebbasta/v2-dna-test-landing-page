@@ -112,7 +112,7 @@ const DNAExplainerSection = () => {
             <Button 
               onClick={scrollToComparison}
               size="lg"
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0"
+              className="bg-[#F8FAFA] hover:bg-slate-100 text-slate-900 px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200"
             >
               Scopri come funziona
               <ArrowRight className="ml-2 w-5 h-5" />
