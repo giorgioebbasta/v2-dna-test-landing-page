@@ -20,11 +20,9 @@ const DNAExplainerSection = () => {
   const scrollToExamples = () => {
     const examplesSection = document.getElementById('esempi-pratici');
     if (examplesSection) {
-      examplesSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'nearest'
-      });
+      const yOffset = -20;
+      const y = examplesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
 
