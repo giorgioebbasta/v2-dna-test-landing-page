@@ -22,7 +22,7 @@ const DNAExplainerSection = () => {
     if (examplesSection) {
       examplesSection.scrollIntoView({
         behavior: 'smooth',
-        block: 'start',
+        block: 'center',
         inline: 'nearest'
       });
     }
