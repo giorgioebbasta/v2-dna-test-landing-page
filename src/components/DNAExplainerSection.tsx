@@ -128,7 +128,7 @@ const DNAExplainerSection = () => {
                 <CardContent className="p-6">
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <div className="text-xs font-semibold text-[#0B4650] uppercase tracking-wide mb-1">
+                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-1">
                         Gene
                       </div>
                       <div className="text-slate-900">
@@ -141,7 +141,7 @@ const DNAExplainerSection = () => {
                     </div>
                     
                     <div>
-                      <div className="text-xs font-semibold text-[#4A90B8] uppercase tracking-wide mb-1">
+                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-1">
                         Effetto
                       </div>
                       <div className="text-slate-700">
