@@ -63,9 +63,9 @@ const HeroSection = ({ className }: { className?: string }) => {
           </div>
 
           {/* Bottom section - Full width container with 3 boxes - all same height */}
-          <div className="grid grid-cols-3 gap-4 animate-fade-in items-stretch">
-            {/* Box 1: Quantity Selector */}
-            <div>
+          <div className="flex gap-4 animate-fade-in items-stretch">
+            {/* Box 1: Quantity Selector - takes more space */}
+            <div className="flex-[2]">
               <QuantitySelector
                 quantity={quantity}
                 onIncrease={increaseQuantity}
@@ -74,25 +74,29 @@ const HeroSection = ({ className }: { className?: string }) => {
               />
             </div>
 
-            {/* Box 2: 1 Test Package */}
-            <PriceCard
-              name="1 Test del DNA"
-              currentPrice={289}
-              originalPrice={349}
-              savings={60}
-              url="https://holifya.com/cart/43782964445448:1"
-              horizontal
-            />
+            {/* Box 2: 1 Test Package - narrower */}
+            <div className="flex-1">
+              <PriceCard
+                name="1 Test del DNA"
+                currentPrice={289}
+                originalPrice={349}
+                savings={60}
+                url="https://holifya.com/cart/43782964445448:1"
+                horizontal
+              />
+            </div>
 
-            {/* Box 3: 2 Tests Package */}
-            <PriceCard
-              name="2 Test del DNA"
-              currentPrice={499}
-              originalPrice={698}
-              savings={199}
-              url="https://holifya.com/cart/43782964445448:2"
-              horizontal
-            />
+            {/* Box 3: 2 Tests Package - narrower */}
+            <div className="flex-1">
+              <PriceCard
+                name="2 Test del DNA"
+                currentPrice={499}
+                originalPrice={698}
+                savings={199}
+                url="https://holifya.com/cart/43782964445448:2"
+                horizontal
+              />
+            </div>
           </div>
         </div>
       </div>

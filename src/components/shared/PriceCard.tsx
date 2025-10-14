@@ -30,17 +30,16 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
         className="border-2 border-[#0B4650] hover:border-[#0B4650]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden h-full"
         onClick={handleClick}
       >
-        <CardContent className="p-3 h-full flex items-center justify-between gap-4">
+        <CardContent className="p-3 h-full flex items-center justify-between gap-3">
           {/* Left side - Test name */}
           <div className="flex-1">
             <h3 className="text-sm font-semibold text-slate-900">{name}</h3>
           </div>
           
-          {/* Right side - Price info */}
-          <div className="text-right">
-            <div className="text-xl font-bold text-[#0B4650]">€{currentPrice}</div>
+          {/* Right side - Price info (horizontal layout) */}
+          <div className="flex items-center gap-2">
             <div className="text-xs text-slate-500 line-through">€{originalPrice}</div>
-            <div className="text-xs font-medium text-[#0B4650]">Risparmi €{savings}</div>
+            <div className="text-lg font-bold text-[#0B4650]">€{currentPrice}</div>
           </div>
         </CardContent>
       </Card>
