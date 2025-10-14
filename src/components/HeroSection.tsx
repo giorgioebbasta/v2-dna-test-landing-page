@@ -1,6 +1,7 @@
 
 import React from 'react';
 import HeroBanner from '@/components/hero/HeroBanner';
+import PriceCard from '@/components/shared/PriceCard';
 import BenefitsList from '@/components/hero/BenefitsList';
 import ProductPricing from '@/components/hero/ProductPricing';
 import PaymentMethods from '@/components/hero/PaymentMethods';
@@ -61,13 +62,35 @@ const HeroSection = ({ className }: { className?: string }) => {
             </div>
           </div>
 
-          {/* Bottom section - Full width container */}
-          <div className="animate-fade-in">
-            <QuantitySelector
-              quantity={quantity}
-              onIncrease={increaseQuantity}
-              onDecrease={decreaseQuantity}
-              onOrder={handleOrder}
+          {/* Bottom section - Full width container with 3 boxes */}
+          <div className="grid grid-cols-3 gap-4 animate-fade-in">
+            {/* Box 1: Quantity Selector */}
+            <div>
+              <QuantitySelector
+                quantity={quantity}
+                onIncrease={increaseQuantity}
+                onDecrease={decreaseQuantity}
+                onOrder={handleOrder}
+              />
+            </div>
+
+            {/* Box 2: 1 Test Package */}
+            <PriceCard
+              name="1 Test del DNA"
+              currentPrice={289}
+              originalPrice={349}
+              savings={60}
+              url="https://holifya.com/cart/43782964445448:1"
+            />
+
+            {/* Box 3: 2 Tests Package */}
+            <PriceCard
+              name="2 Test del DNA"
+              currentPrice={499}
+              originalPrice={698}
+              savings={199}
+              url="https://holifya.com/cart/43782964445448:2"
+              extraDiscount="Per te e per chi ami (-€80)"
             />
           </div>
         </div>
