@@ -34,11 +34,14 @@ const PaymentMethods = React.memo(() => {
           
           {/* Contrassegno */}
           <div className="flex items-center justify-center">
-            <img 
-              src="/contrassegno.svg" 
-              alt="Contrassegno" 
-              className="h-8 w-auto object-contain"
-            />
+            <div className="flex items-center space-x-1">
+              <img 
+                src="/contrassegno.svg" 
+                alt="Contrassegno" 
+                className="h-8 w-auto object-contain"
+              />
+              <span className="text-sm font-medium text-slate-700">Contrassegno</span>
+            </div>
           </div>
         </div>
       </div>
