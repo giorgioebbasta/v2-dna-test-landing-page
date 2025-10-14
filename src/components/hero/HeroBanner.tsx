@@ -24,7 +24,7 @@ const HeroBanner = React.memo(() => {
         e.preventDefault();
         scrollToComparison();
       }
-    }} className="text-[15px] md:text-[17px] lg:text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 active:text-emerald-700 active:scale-95 hover:scale-105 transition-all duration-200 touch-manipulation select-none text-left">
+    }} className="text-[15px] md:text-[17px] lg:text-xl text-slate-600 leading-relaxed cursor-pointer hover:text-emerald-600 active:text-emerald-700 active:scale-95 hover:scale-105 transition-all duration-200 touch-manipulation select-none !pl-0">
         +2000 analisi genetiche certificate per scoprire cosa mangiare, come allenarti e dormire meglio.
       </p>
     </div>;
