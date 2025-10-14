@@ -32,7 +32,7 @@ const HeroSection = ({ className }: { className?: string }) => {
           <LazyProductCarousel />
           </div>
           
-          <div className="max-w-md">
+          <div className="max-w-md md:mx-auto">
             <QuantitySelector
               quantity={quantity}
               onIncrease={increaseQuantity}
