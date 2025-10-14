@@ -12,19 +12,19 @@ const OptimizedProductCarousel = () => {
     {
       id: 1,
       image: "/lovable-uploads/quadrato.webp",
-      title: "Kit DNA Professionale",
+      title: "Kit a casa in 48h",
       description: "Kit di raccolta campione certificato"
     },
     {
       id: 2,
       image: "/lovable-uploads/group-41.webp",
-      title: "Test Salivare Semplice",
+      title: "Supporto umano 7/7",
       description: "Semplice campione di saliva da casa tua"
     },
     {
       id: 3,
       image: "/lovable-uploads/group-45.webp",
-      title: "Ricevi il tuo Kit",
+      title: "Laboratori CE-IVD / ISO 9001",
       description: "Ordina e ricevi il kit a casa in 72 ore"
     }
   ];
