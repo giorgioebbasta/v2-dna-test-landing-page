@@ -85,8 +85,8 @@ const OptimizedProductCarousel = () => {
                 width={400}
                 height={320}
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 pb-12">
-                <h3 className="text-white text-xl font-bold">{slide.title}</h3>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8 pb-16">
+                <h3 className="text-white text-xl font-bold text-center">{slide.title}</h3>
               </div>
             </div>
           ))}
