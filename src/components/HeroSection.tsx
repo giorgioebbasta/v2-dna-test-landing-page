@@ -19,7 +19,7 @@ const HeroSection = ({ className }: { className?: string }) => {
   ];
 
   return (
-    <section className={`relative py-8 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-emerald-50 -mt-6 lg:mt-0 lg:pt-2 ${className || ''}`}>
+    <section className={`relative py-8 px-4 -mt-6 lg:mt-0 lg:pt-2 ${className || ''}`} style={{ backgroundColor: '#F8FAFA' }}>
       <ImagePreloader images={priorityImages} priority />
       
       <div className="max-w-7xl mx-auto">
