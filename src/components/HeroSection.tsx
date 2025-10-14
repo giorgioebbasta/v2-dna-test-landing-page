@@ -61,12 +61,14 @@ const HeroSection = ({ className }: { className?: string }) => {
           </div>
           
           {/* Full width quantity selector */}
-          <QuantitySelector
-            quantity={quantity}
-            onIncrease={increaseQuantity}
-            onDecrease={decreaseQuantity}
-            onOrder={handleOrder}
-          />
+          <div className="w-[70%] mx-auto">
+            <QuantitySelector
+              quantity={quantity}
+              onIncrease={increaseQuantity}
+              onDecrease={decreaseQuantity}
+              onOrder={handleOrder}
+            />
+          </div>
         </div>
       </div>
     </section>
