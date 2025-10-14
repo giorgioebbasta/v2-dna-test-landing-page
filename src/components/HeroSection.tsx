@@ -28,10 +28,8 @@ const HeroSection = ({ className }: { className?: string }) => {
           <HeroBanner />
           
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <LazyProductCarousel />
+          <LazyProductCarousel />
           </div>
-          
-          <ProductPricing />
           
           <div className="max-w-md">
             <QuantitySelector
@@ -52,7 +50,6 @@ const HeroSection = ({ className }: { className?: string }) => {
           {/* Left side - Carousel and Pricing */}
           <div className="space-y-6 animate-fade-in">
             <LazyProductCarousel />
-            <ProductPricing />
             <QuantitySelector
               quantity={quantity}
               onIncrease={increaseQuantity}
