@@ -2,21 +2,16 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
-
 const DNAExplainerSection = () => {
-  const examples = [
-    {
-      gene: "CYP1A2",
-      effect: "Metabolizzazione lenta della caffeina",
-      action: "Niente caffè dopo le 14:00, preferisci tè leggero"
-    },
-    {
-      gene: "FTO",
-      effect: "Tendenza al sovrappeso",
-      action: "Mangia in questo ordine: verdure a inizio pasto, poi piatto proteico e carboidrati alla fine (per evitare picco glicemico)"
-    }
-  ];
-
+  const examples = [{
+    gene: "CYP1A2",
+    effect: "metabolizzazione lenta della caffeina",
+    action: "niente caffè dopo le 14:00, preferisci tè leggero"
+  }, {
+    gene: "FTO",
+    effect: "predisposizione a fame e snack dolci",
+    action: "più proteine a colazione, tieni frutta secca come snack"
+  }];
   const scrollToComparison = () => {
     const comparisonSection = document.getElementById('comparison-section');
     if (comparisonSection) {
@@ -27,9 +22,7 @@ const DNAExplainerSection = () => {
       });
     }
   };
-
-  return (
-    <section className="px-4 bg-[#F8FAFA] pt-8 pb-16">
+  return <section className="px-4 bg-gradient-to-b from-slate-50 to-white py-16">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12">
@@ -38,8 +31,8 @@ const DNAExplainerSection = () => {
           </h2>
           
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-slate-600">
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              <em>Il tuo DNA è il manuale d'uso del tuo corpo.</em>
+            <p className="font-semibold text-xl text-slate-900">
+              Il tuo DNA è il manuale d'uso del tuo corpo.
             </p>
             <p>
               Piccole varianti genetiche influenzano metabolismo, fame, sonno, sport, stress.
@@ -61,14 +54,12 @@ const DNAExplainerSection = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {/* Step 1 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-emerald-200 transition-colors">
               <CardContent className="p-6">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">🧬</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Gene</h4>
-                <p className="text-slate-600">
-                  Analizziamo il tuo DNA per identificare varianti genetiche specifiche
-                </p>
+                <p className="text-slate-600">Analizziamo il tuo DNA per identificare varianti genetiche specifiche.</p>
               </CardContent>
             </Card>
 
@@ -78,14 +69,12 @@ const DNAExplainerSection = () => {
             </div>
 
             {/* Step 2 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-emerald-200 transition-colors">
               <CardContent className="p-6">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">⚡</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Effetto</h4>
-                <p className="text-slate-600">
-                  Comprendiamo come influenzano il tuo metabolismo e benessere
-                </p>
+                <p className="text-slate-600">Comprendiamo come influenzano il tuo metabolismo e benessere.</p>
               </CardContent>
             </Card>
 
@@ -95,28 +84,14 @@ const DNAExplainerSection = () => {
             </div>
 
             {/* Step 3 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-emerald-200 transition-colors">
               <CardContent className="p-6">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">✅</div>
                 <h4 className="text-xl font-bold text-slate-900 mb-2">Azione</h4>
-                <p className="text-slate-600">
-                  Ti forniamo strategie concrete e personalizzate da applicare subito
-                </p>
+                <p className="text-slate-600">Ti forniamo strategie concrete e personalizzate da applicare subito.</p>
               </CardContent>
             </Card>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center mb-12">
-            <Button 
-              onClick={scrollToComparison}
-              size="lg"
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0"
-            >
-              Scopri come funziona
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
           </div>
 
           {/* Examples */}
@@ -125,8 +100,7 @@ const DNAExplainerSection = () => {
               Esempi pratici
             </h3>
             
-            {examples.map((example, index) => (
-              <Card key={index} className="border-l-4 border-l-emerald-500 shadow-md">
+            {examples.map((example, index) => <Card key={index} className="border-l-4 border-l-emerald-500 shadow-md">
                 <CardContent className="p-6">
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
@@ -165,13 +139,18 @@ const DNAExplainerSection = () => {
                     </div>
                   </div>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
 
+        {/* CTA */}
+        <div className="text-center">
+          <Button onClick={scrollToComparison} size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0">
+            Scopri come funziona
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </div>
+      </div>
+    </section>;
+};
 export default DNAExplainerSection;
