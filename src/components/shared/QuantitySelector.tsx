@@ -81,8 +81,8 @@ const QuantitySelector = React.memo(({
   }
 
   return (
-    <Card className={containerClasses}>
-      <CardContent className="p-3">
+    <Card className={`${containerClasses} h-full`}>
+      <CardContent className="p-3 h-full flex items-center">
         {content}
       </CardContent>
     </Card>
