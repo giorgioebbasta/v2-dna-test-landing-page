@@ -51,7 +51,7 @@ const HeroSection = ({ className }: { className?: string }) => {
           <div className="space-y-6 animate-fade-in">
             <LazyProductCarousel />
             <div className="flex gap-4 items-stretch">
-              <div className="w-[45%]">
+              <div className="w-[35%]">
                 <QuantitySelector
                   quantity={quantity}
                   onIncrease={increaseQuantity}
@@ -59,9 +59,10 @@ const HeroSection = ({ className }: { className?: string }) => {
                   onOrder={handleOrder}
                 />
               </div>
-              <div className="flex-1 grid grid-cols-2 gap-4">
-                <div className="bg-card rounded-lg border shadow-sm" />
-                <div className="bg-card rounded-lg border shadow-sm" />
+              <div className="flex-1" />
+              <div className="flex gap-4 items-stretch">
+                <div className="w-32 bg-card rounded-lg border shadow-sm" />
+                <div className="w-32 bg-card rounded-lg border shadow-sm" />
               </div>
             </div>
           </div>
