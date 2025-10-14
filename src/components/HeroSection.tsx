@@ -59,11 +59,8 @@ const HeroSection = ({ className }: { className?: string }) => {
                   onOrder={handleOrder}
                 />
               </div>
-              <div className="flex-1" />
-              <div className="flex gap-4 items-stretch">
-                <div className="w-32 bg-card rounded-lg border shadow-sm" />
-                <div className="w-32 bg-card rounded-lg border shadow-sm" />
-              </div>
+              <div className="w-32 bg-card rounded-lg border shadow-sm" />
+              <div className="w-32 bg-card rounded-lg border shadow-sm" />
             </div>
           </div>
           
