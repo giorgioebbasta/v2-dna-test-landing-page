@@ -61,7 +61,7 @@ const DNAExplainerSection = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {/* Step 1 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-emerald-200 transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
               <CardContent className="p-6">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">🧬</div>
@@ -78,7 +78,7 @@ const DNAExplainerSection = () => {
             </div>
 
             {/* Step 2 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-emerald-200 transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
               <CardContent className="p-6">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">⚡</div>
@@ -95,7 +95,7 @@ const DNAExplainerSection = () => {
             </div>
 
             {/* Step 3 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-emerald-200 transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
               <CardContent className="p-6">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-cyan-500 opacity-10 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">✅</div>
