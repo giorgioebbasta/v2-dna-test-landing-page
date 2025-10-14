@@ -107,6 +107,18 @@ const DNAExplainerSection = () => {
             </Card>
           </div>
 
+          {/* CTA */}
+          <div className="text-center mb-12">
+            <Button 
+              onClick={scrollToComparison}
+              size="lg"
+              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0"
+            >
+              Scopri come funziona
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
+
           {/* Examples */}
           <div className="space-y-6">
             <h3 className="text-xl font-bold text-center text-slate-900 mb-6">
@@ -156,18 +168,6 @@ const DNAExplainerSection = () => {
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Button 
-            onClick={scrollToComparison}
-            size="lg"
-            className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0"
-          >
-            Scopri come funziona
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
         </div>
       </div>
     </section>
