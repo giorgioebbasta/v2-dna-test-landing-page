@@ -38,8 +38,8 @@ const DNAExplainerSection = () => {
           </h2>
           
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-slate-600">
-            <p className="italic text-lg md:text-xl text-slate-900 px-2 md:px-0 whitespace-nowrap">
-              Il tuo DNA è il manuale d'uso del tuo corpo.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              <em>Il tuo DNA è il manuale d'uso del tuo corpo.</em>
             </p>
             <p>
               Piccole varianti genetiche influenzano metabolismo, fame, sonno, sport, stress.
