@@ -17,7 +17,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/logo-holifya.jpeg" 
               alt="Holifya Logo" 
-              className="h-8 hover:opacity-80 transition-opacity cursor-pointer"
+              className="h-10 hover:opacity-80 transition-opacity cursor-pointer"
             />
           </a>
         </div>
@@ -34,7 +34,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/logo-holifya.jpeg" 
             alt="Holifya Logo" 
-            className="h-10 hover:opacity-80 transition-opacity cursor-pointer"
+            className="h-12 hover:opacity-80 transition-opacity cursor-pointer"
           />
         </a>
       </div>
