@@ -70,7 +70,7 @@ const ReportPreviewSection = () => {
     </>
   );
 
-  return <section className="px-4 bg-white py-16">
+  return <section className="px-4 bg-white py-16 pb-8">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Guarda come interpretiamo i tuoi geni e cosa puoi cambiare da subito</h2>
