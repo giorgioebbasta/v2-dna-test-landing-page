@@ -33,17 +33,17 @@ const HeroSection = ({ className }: { className?: string }) => {
           </div>
           
           {/* Feature points - Mobile & Tablet only */}
-          <div className="flex flex-row gap-4 max-w-lg mx-auto px-4 justify-center flex-wrap">
+          <div className="flex flex-row gap-4 max-w-lg mx-auto px-4 justify-center flex-wrap -mt-2">
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
               <span className="text-sm text-foreground/80">Kit a casa in 48h</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
               <span className="text-sm text-foreground/80">Supporto umano 7/7</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
               <span className="text-sm text-foreground/80">Laboratori CE-IVD / ISO 9001</span>
             </div>
           </div>
