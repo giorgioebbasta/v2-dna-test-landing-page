@@ -68,7 +68,7 @@ const OptimizedProductCarousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto px-4">
+    <div className="relative w-full max-w-xl mx-auto px-4">
       <div className="relative overflow-hidden rounded-2xl shadow-2xl">
         <div 
           className="flex transition-transform duration-500 ease-out"
@@ -79,7 +79,7 @@ const OptimizedProductCarousel = () => {
               <ResponsiveImage
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-80 object-cover"
+                className="w-full h-96 object-cover"
                 priority={index === 0}
                 onLoad={() => handleImageLoad(slide.id)}
                 width={400}
