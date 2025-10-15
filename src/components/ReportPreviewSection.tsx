@@ -139,6 +139,13 @@ const ReportPreviewSection = () => {
           </div>
         </div>
 
+        {/* CTA Button */}
+        <div className="text-center mb-12">
+          <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/80">
+            Scopri come funziona
+          </Button>
+        </div>
+
       </div>
     </section>;
 };
