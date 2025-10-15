@@ -17,15 +17,6 @@ const DNAExplainerSection = () => {
     }
   ];
 
-  const scrollToExamples = () => {
-    const examplesSection = document.getElementById('esempi-pratici');
-    if (examplesSection) {
-      const yOffset = window.innerWidth < 768 ? -120 : -80;
-      const y = examplesSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="px-4 bg-[#F8FAFA] py-16">
       <div className="max-w-6xl mx-auto">
@@ -105,23 +96,6 @@ const DNAExplainerSection = () => {
             </Card>
           </div>
 
-          {/* CTA */}
-          <div className="text-center mb-12">
-            <a 
-              href="https://holifya.com/cart/43782964445448:1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200"
-              >
-                Scopri come funziona
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </a>
-          </div>
-
           {/* Examples */}
           <div id="esempi-pratici" className="space-y-6">
             <h3 className="text-xl font-bold text-center text-slate-900 mb-6">
@@ -170,6 +144,23 @@ const DNAExplainerSection = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <a 
+              href="https://holifya.com/cart/43782964445448:1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button 
+                size="lg"
+                className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200"
+              >
+                Scopri come funziona
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>
