@@ -8,25 +8,25 @@ const HowItWorksSection = () => {
       id: 1,
       title: "Ricevi il Kit",
       description: "Ti arriva a casa in 48h, già pronto per l'analisi. Spedizione gratuita e packaging sterile conforme CE-IVD.",
-      image: "/lovable-uploads/e0638d78-febc-4e6c-b542-7a925922877a.png"
+      image: "/lovable-uploads/1-1.webp"
     },
     {
       id: 2,
       title: "Raccogli il Campione",
       description: "Bastano 2 minuti per il prelievo di saliva. Il campione è stabile 7 giorni - nessuna conservazione particolare richiesta.",
-      image: "/lovable-uploads/99e5d8f0-5559-4501-a827-0c59a2c8b2a1.png"
+      image: "/lovable-uploads/1-2.webp"
     },
     {
       id: 3,
       title: "Analisi nei Laboratori Certificati",
       description: "I nostri laboratori, certificati ISO 9001, analizzano +2000 varianti genetiche con tecnologia NGS su 6 aree: Nutrizione, Sonno, Energia, Intolleranze, Sport, Anti-aging. Ogni campione è anonimo e tracciato fino al risultato.",
-      image: "/lovable-uploads/646b20c9-bdb9-4390-a2c1-cd35f97dde2b.png"
+      image: "/lovable-uploads/1-3.webp"
     },
     {
       id: 4,
       title: "Ricevi il tuo Piano d'Azione",
       description: "In 15 giorni ricevi il tuo report digitale e un piano pratico per alimentazione, sonno ed energia. Tutti i dati restano anonimi (GDPR) e consultabili nella tua area personale.",
-      image: "/lovable-uploads/140cc655-21e4-4221-a05c-0604623a8509.png"
+      image: "/lovable-uploads/1-4.webp"
     }
   ];
 
