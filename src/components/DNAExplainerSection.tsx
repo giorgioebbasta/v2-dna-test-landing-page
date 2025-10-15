@@ -153,7 +153,7 @@ const DNAExplainerSection = () => {
                       <ArrowRight className="w-5 h-5 text-slate-400" />
                     </div>
                     
-                    <div className="md:-ml-[5px]">
+                    <div className="md:-ml-[25px]">
                       <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-2">
                         Azione
                       </div>
