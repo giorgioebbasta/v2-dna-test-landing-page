@@ -12,17 +12,17 @@ const OptimizedProductCarousel = () => {
     {
       id: 1,
       image: "/lovable-uploads/quadrato.webp",
-      title: "Kit a casa in 48h"
+      title: "Ricevi il Tuo Kit"
     },
     {
       id: 2,
       image: "/lovable-uploads/group-41.webp",
-      title: "Supporto umano 7/7"
+      title: "Test Salivare Semplice"
     },
     {
       id: 3,
       image: "/lovable-uploads/group-45.webp",
-      title: "Laboratori CE-IVD / ISO 9001"
+      title: "Analisi Certificata"
     }
   ];
 
