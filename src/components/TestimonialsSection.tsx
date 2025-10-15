@@ -74,7 +74,7 @@ const TestimonialsSection = () => {
               className="px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200 text-[#1A1A31]"
               style={{ background: '#C4EDFF' }}
             >
-              Scegli di stare bene
+              Scegli anche tu di stare bene
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </a>
