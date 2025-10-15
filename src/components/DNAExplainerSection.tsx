@@ -51,57 +51,6 @@ const DNAExplainerSection = () => {
           </div>
         </div>
 
-        {/* New Section: What You Get */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-slate-900 mb-8">
-            Guarda come interpretiamo i tuoi geni e cosa puoi cambiare domattina.
-          </h3>
-          
-          {/* Image Placeholder */}
-          <div className="mb-8 bg-slate-100 rounded-lg h-64 flex items-center justify-center border-2 border-dashed border-slate-300">
-            <p className="text-slate-400 text-lg">Image placeholder - to be updated</p>
-          </div>
-
-          <p className="text-xl text-center text-slate-700 mb-8 font-medium">
-            Non è un foglio di dati. È la guida che ti mostra come funziona davvero il tuo corpo.
-          </p>
-
-          <div className="max-w-2xl mx-auto space-y-4 mb-8">
-            <div className="flex items-start gap-3">
-              <div className="text-emerald-500 text-xl mt-1">✅</div>
-              <p className="text-lg text-slate-700">
-                Quali alimenti ti aiutano e quali ti ostacolano
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="text-emerald-500 text-xl mt-1">✅</div>
-              <p className="text-lg text-slate-700">
-                Come gestire fame, energia e sonno in base alla tua genetica
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="text-emerald-500 text-xl mt-1">✅</div>
-              <p className="text-lg text-slate-700">
-                Quali integratori o abitudini possono farti davvero la differenza
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mb-8">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200"
-            >
-              Ottieni ora la tua analisi personalizzata
-            </Button>
-          </div>
-
-          {/* Media Placeholder */}
-          <div className="bg-slate-100 rounded-lg h-64 flex items-center justify-center border-2 border-dashed border-slate-300">
-            <p className="text-slate-400 text-lg">Video/Images placeholder - to be updated</p>
-          </div>
-        </div>
-
         {/* 3-Step Infographic */}
         <div className="mb-12">
           <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">
