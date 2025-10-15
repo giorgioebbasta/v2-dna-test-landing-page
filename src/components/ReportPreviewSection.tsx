@@ -123,12 +123,14 @@ const ReportPreviewSection = () => {
 
         {/* Benefits List */}
         <div className="max-w-3xl mx-auto mb-10">
-          {benefits.map((benefit, index) => <div key={index} className="flex items-start gap-3 mb-4">
-              <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center mt-0.5">
-                <Check className="w-4 h-4 text-white" />
-              </div>
-              <p className="text-lg text-slate-700">{benefit}</p>
-            </div>)}
+          <div className="flex flex-col items-start md:items-center gap-4">
+            {benefits.map((benefit, index) => <div key={index} className="flex items-start gap-3 w-full md:w-auto md:max-w-2xl">
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center mt-0.5">
+                  <Check className="w-4 h-4 text-white" />
+                </div>
+                <p className="text-lg text-slate-700">{benefit}</p>
+              </div>)}
+          </div>
         </div>
 
         {/* CTA Button */}
