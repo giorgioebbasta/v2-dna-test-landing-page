@@ -7,6 +7,7 @@ import LazyComparisonSection from '@/components/optimized/LazyComparisonSection'
 import LazyFinalCTASection from '@/components/optimized/LazyFinalCTASection';
 import LazyContactSection from '@/components/optimized/LazyContactSection';
 import LazyDNAExplainerSection from '@/components/optimized/LazyDNAExplainerSection';
+import LazyReportPreviewSection from '@/components/optimized/LazyReportPreviewSection';
 import DeferredScripts from '@/components/optimized/DeferredScripts';
 import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
@@ -26,6 +27,7 @@ const Index = () => {
       <HeroSection className="py-[5px]" />
       <FeaturesSection />
       <LazyDNAExplainerSection />
+      <LazyReportPreviewSection />
       
       {/* Below the fold - lazy loaded */}
       <LazyComparisonSection />
