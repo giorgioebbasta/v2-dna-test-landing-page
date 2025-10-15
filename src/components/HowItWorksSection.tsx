@@ -89,9 +89,10 @@ const HowItWorksSection = () => {
           >
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200"
+              className="px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200 text-[#1A1A31]"
+              style={{ background: '#C4EDFF' }}
             >
-              Ordina il tuo Test DNA
+              Scegli di stare bene
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </a>
