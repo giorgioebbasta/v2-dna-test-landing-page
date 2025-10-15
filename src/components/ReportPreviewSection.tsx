@@ -139,15 +139,6 @@ const ReportPreviewSection = () => {
           </div>
         </div>
 
-        {/* Media Placeholder */}
-        <Card className="border-2 border-dashed border-slate-300 bg-slate-50">
-          <CardContent className="p-12">
-            <div className="text-center text-slate-400">
-              <p className="text-lg font-medium">Spazio per video/media demo</p>
-              <p className="text-sm mt-2">Video 15-20s dell'interfaccia report o immagini</p>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </section>;
 };
