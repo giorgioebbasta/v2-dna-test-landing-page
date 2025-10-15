@@ -6,7 +6,7 @@ import DropdownSection from '@/components/DropdownSection';
 const FeaturesSection = () => {
   const bulletPoints = [
     {
-      title: "⚖️ Dieta dopo dieta e non dimagrisci?",
+      title: "⚖️ Dieta dopo dieta ma non dimagrisci?",
       body: ""
     },
     {
@@ -14,11 +14,11 @@ const FeaturesSection = () => {
       body: ""
     },
     {
-      title: "🤔 Hai fame costante o gonfiore cronico?",
+      title: "😞 Hai fame costante o gonfiore cronico?",
       body: ""
     },
     {
-      title: "💪 Ti alleni ma non vedi risultati?",
+      title: "🏋️ Ti alleni ma non vedi risultati?",
       body: ""
     }
   ];
