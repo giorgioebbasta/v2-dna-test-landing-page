@@ -10,7 +10,7 @@ const ProductCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: "/lovable-uploads/quadrato-photoroom.webp",
+      image: "/lovable-uploads/quadrato.webp",
       title: "Ricevi il Tuo Kit",
       description: "Kit di raccolta campione certificato"
     },

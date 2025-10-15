@@ -11,7 +11,7 @@ const OptimizedProductCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: "/lovable-uploads/quadrato-photoroom.webp",
+      image: "/lovable-uploads/quadrato.webp",
       title: "Ricevi il Tuo Kit"
     },
     {
@@ -75,7 +75,7 @@ const OptimizedProductCarousel = () => {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((slide, index) => (
-            <div key={slide.id} className={`w-full flex-shrink-0 relative ${index === 0 ? 'bg-[#F8FAFA]' : ''}`}>
+            <div key={slide.id} className="w-full flex-shrink-0 relative">
               <ResponsiveImage
                 src={slide.image}
                 alt={slide.title}
