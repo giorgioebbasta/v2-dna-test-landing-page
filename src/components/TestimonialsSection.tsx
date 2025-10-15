@@ -33,6 +33,9 @@ const TestimonialsSection = () => {
   }];
   return <section ref={elementRef} className="pt-0 pb-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-8">
+          <p className="text-sm text-slate-500 font-semibold">Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya.</p>
+        </div>
 
         <Carousel opts={{
         align: "start",
@@ -57,9 +60,6 @@ const TestimonialsSection = () => {
           <CarouselNext className="lg:hidden right-2" />
         </Carousel>
 
-        <div className="text-center mt-8">
-          <p className="text-sm text-slate-500 font-semibold">Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya.</p>
-        </div>
       </div>
     </section>;
 };
