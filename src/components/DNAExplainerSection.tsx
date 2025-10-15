@@ -126,7 +126,7 @@ const DNAExplainerSection = () => {
             {examples.map((example, index) => (
               <Card key={index} className="border-l-4 shadow-md border-l-[#FCE8E6]">
                 <CardContent className="p-6">
-                  <div className="grid md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
                     <div>
                       <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-1">
                         Gene
@@ -153,7 +153,7 @@ const DNAExplainerSection = () => {
                       <ArrowRight className="w-5 h-5 text-slate-400" />
                     </div>
                     
-                    <div className="md:col-span-1">
+                    <div>
                       <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-1">
                         Azione
                       </div>
