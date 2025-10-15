@@ -141,7 +141,7 @@ const ReportPreviewSection = () => {
 
         {/* CTA Button */}
         <div className="text-center mb-12">
-          <Button size="lg" className="w-auto inline-flex bg-secondary text-secondary-foreground hover:bg-secondary/80 px-8 py-4 text-lg font-semibold shadow-lg border border-border">
+          <Button size="lg" variant="cta" className="px-8 py-4 text-lg font-semibold">
             Ottieni ora la tua analisi personalizzata
           </Button>
         </div>
