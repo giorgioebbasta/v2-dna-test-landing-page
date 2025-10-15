@@ -34,12 +34,14 @@ const HowItWorksSection = () => {
     <section className="py-8 pt-8 px-4 bg-[#F8FAFA]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">
-            Come funziona
+          <h2 className="text-4xl font-bold text-slate-900 mb-2">
+            Come funziona Holifya
           </h2>
+          <p className="text-2xl font-semibold text-slate-700 mb-4">
+            4 step semplici e sicuri
+          </p>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            In soli 4 semplici passaggi scopri i segreti del tuo DNA e inizia 
-            il tuo percorso verso una vita più sana e consapevole.
+            Dal kit al tuo piano d&apos;azione personalizzato.
           </p>
         </div>
 
