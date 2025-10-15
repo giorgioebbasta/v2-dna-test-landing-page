@@ -29,13 +29,13 @@ const Index = () => {
       <FeaturesSection />
       <LazyDNAExplainerSection />
       <LazyReportPreviewSection />
+      <LazyHowItWorksSection />
       
       {/* Below the fold - lazy loaded */}
       <LazyComparisonSection />
       <LazyReviewsSection />
       <LazyTestimonialsSection />
       <LazyCTASection />
-      <LazyHowItWorksSection />
       <FAQsSection />
       <LazyFinalCTASection />
       <LazyContactSection />
