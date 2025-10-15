@@ -32,6 +32,11 @@ const Index = () => {
       <LazyHowItWorksSection />
       
       {/* Social proof - moved after How It Works */}
+      <div className="text-center py-12 px-4 bg-white">
+        <h2 className="text-4xl font-bold text-slate-900">
+          Cosa dicono di noi
+        </h2>
+      </div>
       <LazyReviewsSection />
       <LazyTestimonialsSection />
       
