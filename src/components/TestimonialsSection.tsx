@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import OptimizedVideo from '@/components/optimized/OptimizedVideo';
 
@@ -39,34 +40,41 @@ const TestimonialsSection = () => {
     <section ref={elementRef} className="pt-0 pb-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <Card 
-              key={testimonial.id} 
-              className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
-                index === 2 ? 'hidden lg:block' : ''
-              }`}
-            >
-              <CardContent className="p-0">
-                <div className="relative overflow-hidden rounded-lg">
-                  {isIntersecting ? (
-                    <OptimizedVideo
-                      embedUrl={testimonial.embedUrl}
-                      title={`Testimonianza ${testimonial.name}`}
-                      thumbnailUrl={testimonial.thumbnailUrl}
-                    />
-                  ) : (
-                    <div className="w-full aspect-[9/16] md:aspect-video bg-slate-200 animate-pulse" />
-                  )}
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="font-semibold text-slate-900 mb-2">{testimonial.name}</h3>
-                  <p className="text-sm text-slate-600">{testimonial.description}</p>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent>
+            {testimonials.map((testimonial) => (
+              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                  <CardContent className="p-0">
+                    <div className="relative overflow-hidden rounded-lg">
+                      {isIntersecting ? (
+                        <OptimizedVideo
+                          embedUrl={testimonial.embedUrl}
+                          title={`Testimonianza ${testimonial.name}`}
+                          thumbnailUrl={testimonial.thumbnailUrl}
+                        />
+                      ) : (
+                        <div className="w-full aspect-[9/16] md:aspect-video bg-slate-200 animate-pulse" />
+                      )}
+                    </div>
+                    <div className="p-4 text-center">
+                      <h3 className="font-semibold text-slate-900 mb-2">{testimonial.name}</h3>
+                      <p className="text-sm text-slate-600">{testimonial.description}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
 
         <div className="text-center mt-8">
           <p className="text-sm text-slate-500">
