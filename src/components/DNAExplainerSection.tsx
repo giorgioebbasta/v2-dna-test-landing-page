@@ -150,7 +150,7 @@ const DNAExplainerSection = () => {
                     </div>
                     
                     <div className="hidden md:flex items-start justify-center pt-6">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
+                      <ArrowRight className="w-5 h-5 text-black" />
                     </div>
                     
                     <div className="md:ml-[20px]">
