@@ -6,26 +6,20 @@ const ReviewsSection = () => {
     id: 1,
     name: "Sara M.",
     rating: 5,
-    comment: "Incredibile! Ho scoperto di avere un metabolismo lento per i carboidrati e ora finalmente riesco a perdere peso seguendo le indicazioni del test. In 3 mesi ho perso 8 kg!",
+    comment: "In 3 settimane ho capito perché non perdevo peso.",
     date: "2 settimane fa"
   }, {
     id: 2,
     name: "Luca R.",
     rating: 5,
-    comment: "Il test mi ha salvato la vita. Ho scoperto di essere intollerante al nichel e questo spiegava tutti i miei problemi digestivi. Ora sto benissimo e ho più energia.",
+    comment: "Ho scoperto l'intolleranza che mi causava gonfiore.",
     date: "1 mese fa"
   }, {
     id: 3,
     name: "Francesca T.",
     rating: 5,
-    comment: "Fantastico! Grazie al test ho capito che devo assumere più vitamina D e acido folico. Il mio medico era sorpreso dai risultati così dettagliati.",
+    comment: "Finalmente dormo bene ogni notte.",
     date: "3 settimane fa"
-  }, {
-    id: 4,
-    name: "Marco P.",
-    rating: 5,
-    comment: "Ho sempre avuto problemi con lo sport, ora so che il mio corpo risponde meglio agli allenamenti di resistenza. I risultati si vedono già!",
-    date: "1 mese fa"
   }];
   return <section className="px-4 bg-white pt-0 pb-12">
       <div className="max-w-6xl mx-auto">
@@ -44,7 +38,7 @@ const ReviewsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {reviews.map(review => <Card key={review.id} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
               <CardContent className="p-6">
                 <div className="flex items-center space-x-1 mb-4">
