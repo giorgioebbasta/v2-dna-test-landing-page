@@ -2,6 +2,16 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import reportPreview1 from "@/assets/report-preview-1.webp";
+import reportPreview2 from "@/assets/report-preview-2.webp";
+import reportPreview3 from "@/assets/report-preview-3.webp";
 const ReportPreviewSection = () => {
   const benefits = ["Quali alimenti ti aiutano e quali ti ostacolano", "Come gestire fame, energia e sonno in base alla tua genetica", "Quali integratori o abitudini possono farti davvero la differenza"];
   return <section className="px-4 bg-white py-16">
@@ -9,16 +19,47 @@ const ReportPreviewSection = () => {
         {/* Title */}
         <h2 className="text-4xl font-bold text-slate-900 mb-8 text-center">Guarda come interpretiamo i tuoi geni e cosa puoi cambiare da subito</h2>
 
-        {/* Image Placeholder */}
+        {/* Report Preview Carousel */}
         <div className="mb-8">
-          <Card className="border-2 border-dashed border-slate-300 bg-slate-50">
-            <CardContent className="p-12">
-              <div className="text-center text-slate-400">
-                <p className="text-lg font-medium">Spazio per immagine</p>
-                <p className="text-sm mt-2">Aggiornerai in seguito</p>
-              </div>
-            </CardContent>
-          </Card>
+          <Carousel className="w-full max-w-4xl mx-auto">
+            <CarouselContent>
+              <CarouselItem>
+                <Card className="border-slate-200">
+                  <CardContent className="p-0">
+                    <img 
+                      src={reportPreview1} 
+                      alt="Copertina report Holifya" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+              <CarouselItem>
+                <Card className="border-slate-200">
+                  <CardContent className="p-0">
+                    <img 
+                      src={reportPreview2} 
+                      alt="Contenuti del report genetico" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+              <CarouselItem>
+                <Card className="border-slate-200">
+                  <CardContent className="p-0">
+                    <img 
+                      src={reportPreview3} 
+                      alt="Esempio predisposizioni genetiche" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
 
         {/* Description */}
