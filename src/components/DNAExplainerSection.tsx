@@ -25,7 +25,7 @@ const DNAExplainerSection = () => {
   ];
 
   return (
-    <section className="px-4 bg-[#F8FAFA] py-16">
+    <section className="px-4 bg-[#F8FAFA] pt-16 pb-8">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <div className="text-center mb-12">
