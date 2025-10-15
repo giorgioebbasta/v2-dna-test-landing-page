@@ -89,18 +89,20 @@ const ReportPreviewSection = () => {
         {/* Tablet/Desktop: Small Preview with Dialog */}
         <div className="mb-8 hidden md:block">
           <div className="max-w-md mx-auto">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {carouselContent}
-              </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
-            </Carousel>
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" className="w-full mt-4 bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] font-semibold shadow-lg border border-slate-200">
-                  Visualizza report
-                </Button>
+                <div className="relative cursor-pointer group">
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {carouselContent}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-4" />
+                    <CarouselNext className="right-4" />
+                  </Carousel>
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg pointer-events-none">
+                    <span className="text-white text-xl font-semibold">Visualizza report</span>
+                  </div>
+                </div>
               </DialogTrigger>
               <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-6">
                 <Carousel className="w-full max-w-5xl mx-auto">
