@@ -90,20 +90,24 @@ const ReportPreviewSection = () => {
         <div className="mb-8 hidden md:block">
           <div className="max-w-md mx-auto">
             <Dialog>
-              <DialogTrigger asChild>
-                <div className="relative cursor-pointer group">
-                  <Carousel className="w-full">
-                    <CarouselContent>
-                      {carouselContent}
-                    </CarouselContent>
-                    <CarouselPrevious className="left-4 z-20" />
-                    <CarouselNext className="right-4 z-20" />
-                  </Carousel>
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg z-10">
-                    <span className="text-white text-xl font-semibold pointer-events-none">Visualizza report</span>
-                  </div>
-                </div>
-              </DialogTrigger>
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {React.Children.map(carouselContent.props.children, (child, index) => (
+                    <CarouselItem key={index}>
+                      <DialogTrigger asChild>
+                        <div className="relative cursor-pointer group">
+                          {child.props.children}
+                          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
+                            <span className="text-white text-xl font-semibold pointer-events-none">Visualizza report</span>
+                          </div>
+                        </div>
+                      </DialogTrigger>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
+              </Carousel>
               <DialogContent className="max-w-[95vw] max-h-[95vh] w-auto h-auto p-6">
                 <Carousel className="w-full max-w-5xl mx-auto">
                   <CarouselContent>
