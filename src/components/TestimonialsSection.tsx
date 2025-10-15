@@ -45,11 +45,11 @@ const TestimonialsSection = () => {
             align: "start",
             loop: true,
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full"
         >
-          <CarouselContent>
+          <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial) => (
-              <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-0">
                     <div className="relative overflow-hidden rounded-lg">
@@ -72,8 +72,8 @@ const TestimonialsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="lg:hidden left-2" />
+          <CarouselNext className="lg:hidden right-2" />
         </Carousel>
 
         <div className="text-center mt-8">
