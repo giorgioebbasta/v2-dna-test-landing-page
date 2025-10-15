@@ -15,7 +15,7 @@ import PromoBanner from '@/components/PromoBanner';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
 const Index = () => {
-  return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
+  return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       <Header />
       <PromoBanner />
       
