@@ -31,10 +31,12 @@ const Index = () => {
       <LazyReportPreviewSection />
       <LazyHowItWorksSection />
       
-      {/* Below the fold - lazy loaded */}
-      <LazyComparisonSection />
+      {/* Social proof - moved after How It Works */}
       <LazyReviewsSection />
       <LazyTestimonialsSection />
+      
+      {/* Below the fold - lazy loaded */}
+      <LazyComparisonSection />
       <LazyCTASection />
       <FAQsSection />
       <LazyFinalCTASection />
