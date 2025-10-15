@@ -63,7 +63,7 @@ const TestimonialsSection = () => {
         </Carousel>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <a 
             href="https://holifya.com/cart/43782964445448:1"
             target="_blank"
