@@ -1,31 +1,24 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import DropdownSection from '@/components/DropdownSection';
-import balanceIcon from '@/assets/balance-icon.png';
-import tiredFaceIcon from '@/assets/tired-face-icon.png';
-import stomachIcon from '@/assets/stomach-icon.png';
-import dumbbellIcon from '@/assets/dumbbell-icon.png';
 
 const FeaturesSection = () => {
   const bulletPoints = [
     {
-      title: "Dieta dopo dieta ma non dimagrisci?",
-      icon: balanceIcon,
+      title: "⚖️ Dieta dopo dieta ma non dimagrisci?",
       body: ""
     },
     {
-      title: "Dormi male o ti svegli spesso di notte?",
-      icon: tiredFaceIcon,
+      title: "😴 Dormi male o ti svegli spesso di notte?",
       body: ""
     },
     {
-      title: "Hai fame costante o gonfiore cronico?",
-      icon: stomachIcon,
+      title: "😞 Hai fame costante o gonfiore cronico?",
       body: ""
     },
     {
-      title: "Ti alleni ma non vedi risultati?",
-      icon: dumbbellIcon,
+      title: "🏋️ Ti alleni ma non vedi risultati?",
       body: ""
     }
   ];
@@ -42,8 +35,7 @@ const FeaturesSection = () => {
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           {bulletPoints.map((point, index) => (
             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <CardContent className="p-6 flex items-center gap-4">
-                <img src={point.icon} alt="" className="w-12 h-12 flex-shrink-0" />
+              <CardContent className="p-6">
                 <h3 className="font-bold text-slate-900 leading-tight text-lg">{point.title}</h3>
               </CardContent>
             </Card>
