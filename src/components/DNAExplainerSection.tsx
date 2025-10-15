@@ -104,13 +104,14 @@ const DNAExplainerSection = () => {
           </div>
 
           {/* Examples */}
-          <div id="esempi-pratici" className="space-y-8">
+          <div id="esempi-pratici">
             <h3 className="text-xl font-bold text-center text-slate-900 mb-6">
               Esempi pratici
             </h3>
             
-            {examples.map((example, index) => (
-              <div key={index} className="relative">
+            <div className="grid md:grid-cols-2 gap-6">
+              {examples.map((example, index) => (
+                <div key={index} className="relative">
                 <Carousel className="w-full max-w-4xl mx-auto">
                   <CarouselContent>
                     {/* Slide 1: Gene */}
@@ -183,8 +184,9 @@ const DNAExplainerSection = () => {
                   <CarouselPrevious className="left-0" />
                   <CarouselNext className="right-0" />
                 </Carousel>
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* CTA */}
