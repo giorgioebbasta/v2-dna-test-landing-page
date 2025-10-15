@@ -118,7 +118,7 @@ const ReportPreviewSection = () => {
         {/* Description */}
         <div className="text-xl text-slate-600 text-center mb-8 max-w-3xl mx-auto space-y-2">
           <p>Non è un foglio di dati.</p>
-          <p>È la guida che ti mostra come funziona davvero il tuo corpo.</p>
+          <p className="italic">È la guida che ti mostra come funziona davvero il tuo corpo.</p>
         </div>
 
         {/* Benefits List */}
