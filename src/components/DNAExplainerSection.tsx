@@ -130,7 +130,7 @@ const DNAExplainerSection = () => {
                             <div className="text-xl text-slate-900 font-semibold mb-8">
                               {example.gene}
                             </div>
-                            <p className="text-xs text-slate-600">Analizzato dal nostro test</p>
+                            <p className="text-sm text-slate-600">Analizzato dal nostro test</p>
                           </div>
                         </CardContent>
                       </Card>
@@ -152,7 +152,7 @@ const DNAExplainerSection = () => {
                             <div className="text-lg text-slate-700 mb-8">
                               {example.effect}
                             </div>
-                            <p className="text-xs text-slate-600">Studiato dai nostri medici</p>
+                            <p className="text-sm text-slate-600">Studiato dai nostri medici</p>
                           </div>
                         </CardContent>
                       </Card>
@@ -174,7 +174,7 @@ const DNAExplainerSection = () => {
                             <div className="text-lg text-slate-900 font-medium mb-8">
                               {example.action}
                             </div>
-                            <p className="text-xs text-slate-600">Scoperto con il nostro report</p>
+                            <p className="text-sm text-slate-600">Scoperto con il nostro report</p>
                           </div>
                         </CardContent>
                       </Card>
