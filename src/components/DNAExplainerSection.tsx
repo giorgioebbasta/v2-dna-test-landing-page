@@ -117,19 +117,19 @@ const DNAExplainerSection = () => {
                     <CarouselItem>
                       <Card className="border-l-4 shadow-md border-l-[#FCE8E6] relative">
                         <div className="absolute top-4 left-4">
-                          <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center mb-2">
+                          <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center">
                             <span className="text-sm font-bold text-[#1A1A31]">1</span>
                           </div>
-                          <p className="text-xs text-slate-600">Analizzato dal nostro test</p>
                         </div>
                         <CardContent className="p-8 pt-16 min-h-[200px] flex flex-col justify-center">
                           <div className="text-center">
                             <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-4">
                               Gene
                             </div>
-                            <div className="text-xl text-slate-900 font-semibold">
+                            <div className="text-xl text-slate-900 font-semibold mb-3">
                               {example.gene}
                             </div>
+                            <p className="text-xs text-slate-600">Analizzato dal nostro test</p>
                           </div>
                         </CardContent>
                       </Card>
@@ -139,19 +139,19 @@ const DNAExplainerSection = () => {
                     <CarouselItem>
                       <Card className="border-l-4 shadow-md border-l-[#FCE8E6] relative">
                         <div className="absolute top-4 left-4">
-                          <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center mb-2">
+                          <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center">
                             <span className="text-sm font-bold text-[#1A1A31]">2</span>
                           </div>
-                          <p className="text-xs text-slate-600">Studiato dai nostri medici</p>
                         </div>
                         <CardContent className="p-8 pt-16 min-h-[200px] flex flex-col justify-center">
                           <div className="text-center">
                             <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-4">
                               Effetto
                             </div>
-                            <div className="text-lg text-slate-700">
+                            <div className="text-lg text-slate-700 mb-3">
                               {example.effect}
                             </div>
+                            <p className="text-xs text-slate-600">Studiato dai nostri medici</p>
                           </div>
                         </CardContent>
                       </Card>
@@ -161,19 +161,19 @@ const DNAExplainerSection = () => {
                     <CarouselItem>
                       <Card className="border-l-4 shadow-md border-l-[#FCE8E6] relative">
                         <div className="absolute top-4 left-4">
-                          <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center mb-2">
+                          <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center">
                             <span className="text-sm font-bold text-[#1A1A31]">3</span>
                           </div>
-                          <p className="text-xs text-slate-600">Scoperto con il nostro report</p>
                         </div>
                         <CardContent className="p-8 pt-16 min-h-[200px] flex flex-col justify-center">
                           <div className="text-center">
                             <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-4">
                               Azione
                             </div>
-                            <div className="text-lg text-slate-900 font-medium">
+                            <div className="text-lg text-slate-900 font-medium mb-3">
                               {example.action}
                             </div>
+                            <p className="text-xs text-slate-600">Scoperto con il nostro report</p>
                           </div>
                         </CardContent>
                       </Card>
