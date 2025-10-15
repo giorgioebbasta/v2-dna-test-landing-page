@@ -31,9 +31,10 @@ const ReportPreviewSection = () => {
         </div>
 
         {/* Description */}
-        <p className="text-xl text-slate-600 text-center mb-8 max-w-3xl mx-auto">
-          Non è un foglio di dati. È la guida che ti mostra come funziona davvero il tuo corpo.
-        </p>
+        <div className="text-xl text-slate-600 text-center mb-8 max-w-3xl mx-auto space-y-2">
+          <p>Non è un foglio di dati.</p>
+          <p>È la guida che ti mostra come funziona davvero il tuo corpo.</p>
+        </div>
 
         {/* Benefits List */}
         <div className="max-w-3xl mx-auto mb-10">
