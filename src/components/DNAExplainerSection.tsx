@@ -117,58 +117,54 @@ const DNAExplainerSection = () => {
             </Button>
           </div>
 
+          {/* Examples */}
           <div id="esempi-pratici" className="space-y-6">
             <h3 className="text-xl font-bold text-center text-slate-900 mb-6">
               Esempi pratici
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-[auto_auto_auto_auto_1fr] gap-4 md:gap-6 items-start">
-              {examples.map((example, index) => (
-                <React.Fragment key={index}>
-                  {index > 0 && <div className="md:col-span-5 h-6" />}
-                  <Card className="border-l-4 shadow-md border-l-[#FCE8E6] md:col-span-5">
-                    <CardContent className="p-6">
-                      <div className="grid grid-cols-1 md:grid-cols-[auto_auto_auto_auto_1fr] gap-4 md:gap-6 items-start">
-                        <div className="min-w-[100px]">
-                          <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
-                            Gene
-                          </div>
-                          <div className="text-slate-700">
-                            {example.gene}
-                          </div>
-                        </div>
-                        
-                        <div className="hidden md:flex items-start justify-center pt-6">
-                          <ArrowRight className="w-5 h-5 text-slate-400" />
-                        </div>
-                        
-                        <div>
-                          <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
-                            Effetto
-                          </div>
-                          <div className="text-slate-700">
-                            {example.effect}
-                          </div>
-                        </div>
-                        
-                        <div className="hidden md:flex items-start justify-center pt-6">
-                          <ArrowRight className="w-5 h-5 text-slate-400" />
-                        </div>
-                        
-                        <div>
-                          <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-2">
-                            Azione
-                          </div>
-                          <div className="text-slate-900 font-medium">
-                            {example.action}
-                          </div>
-                        </div>
+            {examples.map((example, index) => (
+              <Card key={index} className="border-l-4 shadow-md border-l-[#FCE8E6]">
+                <CardContent className="p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-[auto_auto_1fr_auto_1fr] gap-4 md:gap-6 items-start">
+                    <div className="min-w-[100px]">
+                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
+                        Gene
                       </div>
-                    </CardContent>
-                  </Card>
-                </React.Fragment>
-              ))}
-            </div>
+                      <div className="text-slate-700">
+                        {example.gene}
+                      </div>
+                    </div>
+                    
+                    <div className="hidden md:flex items-start justify-center pt-6">
+                      <ArrowRight className="w-5 h-5 text-slate-400" />
+                    </div>
+                    
+                    <div>
+                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
+                        Effetto
+                      </div>
+                      <div className="text-slate-700">
+                        {example.effect}
+                      </div>
+                    </div>
+                    
+                    <div className="hidden md:flex items-start justify-center pt-6">
+                      <ArrowRight className="w-5 h-5 text-slate-400" />
+                    </div>
+                    
+                    <div>
+                      <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-2">
+                        Azione
+                      </div>
+                      <div className="text-slate-900 font-medium">
+                        {example.action}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
