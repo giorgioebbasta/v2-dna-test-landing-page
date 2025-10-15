@@ -33,7 +33,7 @@ const HeroSection = ({ className }: { className?: string }) => {
           </div>
           
           {/* Feature points - Mobile & Tablet only */}
-          <div className="flex flex-row gap-4 max-w-lg mx-auto px-4 justify-center flex-wrap -mt-4">
+          <div className="flex flex-row gap-4 max-w-lg mx-auto px-4 justify-center flex-wrap -mt-8">
             <div className="flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
               <span className="text-sm text-foreground/80">Kit a casa in 48h</span>
