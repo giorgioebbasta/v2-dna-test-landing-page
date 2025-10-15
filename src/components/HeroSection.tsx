@@ -61,9 +61,7 @@ const HeroSection = ({ className }: { className?: string }) => {
 
           <BenefitsList />
           
-          <div className="mb-8">
-            <PaymentMethods />
-          </div>
+          <PaymentMethods />
         </div>
 
         {/* Desktop Layout */}
