@@ -144,7 +144,7 @@ const DNAExplainerSection = () => {
                       <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
                         Effetto
                       </div>
-                      <div className="text-slate-700">
+                      <div className="text-slate-700 font-bold">
                         {example.effect}
                       </div>
                     </div>
