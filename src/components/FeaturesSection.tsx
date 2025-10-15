@@ -1,9 +1,11 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
 import DropdownSection from '@/components/DropdownSection';
 
 const FeaturesSection = () => {
+  const [switches, setSwitches] = useState([false, false, false, false]);
+
   const bulletPoints = [
     {
       title: "⚖️ Dieta dopo dieta ma non dimagrisci?",
@@ -23,6 +25,12 @@ const FeaturesSection = () => {
     }
   ];
 
+  const handleSwitchChange = (index: number, checked: boolean) => {
+    const newSwitches = [...switches];
+    newSwitches[index] = checked;
+    setSwitches(newSwitches);
+  };
+
   return (
     <section className="py-12 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -35,8 +43,15 @@ const FeaturesSection = () => {
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           {bulletPoints.map((point, index) => (
             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <CardContent className="p-6">
-                <h3 className="font-bold text-slate-900 leading-tight text-lg">{point.title}</h3>
+              <CardContent className="p-6 flex items-center justify-between gap-4">
+                <h3 className="font-bold text-slate-900 leading-tight text-lg flex-1">{point.title}</h3>
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">❌</span>
+                  <Switch 
+                    checked={switches[index]} 
+                    onCheckedChange={(checked) => handleSwitchChange(index, checked)}
+                  />
+                </div>
               </CardContent>
             </Card>
           ))}
