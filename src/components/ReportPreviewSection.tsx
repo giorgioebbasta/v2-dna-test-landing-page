@@ -146,7 +146,7 @@ const ReportPreviewSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button size="lg" className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200">
+            <Button size="lg" className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-4 md:px-8 py-4 text-base md:text-lg font-semibold shadow-lg border border-slate-200">
               Ottieni ora la tua analisi personalizzata
             </Button>
           </a>
