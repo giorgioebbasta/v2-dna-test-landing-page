@@ -34,7 +34,7 @@ const TestimonialsSection = () => {
   return <section ref={elementRef} className="pt-0 pb-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-6">
-          <p className="text-base text-slate-500 font-semibold">Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya.</p>
+          <p className="text-base text-slate-500 font-semibold">Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya</p>
         </div>
 
         <Carousel opts={{
