@@ -68,7 +68,7 @@ const OptimizedProductCarousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto overflow-hidden">
+    <div className="relative w-full max-w-lg mx-auto px-4">
       <div className="relative overflow-hidden rounded-2xl shadow-2xl">
         <div 
           className="flex transition-transform duration-500 ease-out"
