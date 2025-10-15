@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import DropdownSection from '@/components/DropdownSection';
 
 const FeaturesSection = () => {
   const bulletPoints = [
@@ -42,13 +41,11 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        <div className="text-center mb-16">
+        <div className="text-center">
           <p className="text-xl font-semibold text-slate-600 max-w-3xl mx-auto">
             <em>La risposta potrebbe nascondersi nel tuo DNA.</em>
           </p>
         </div>
-
-        <DropdownSection />
       </div>
     </section>
   );

@@ -14,6 +14,7 @@ import Header from '@/components/Header';
 import PromoBanner from '@/components/PromoBanner';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
+import FAQsSection from '@/components/FAQsSection';
 const Index = () => {
   return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
       <Header />
@@ -35,6 +36,7 @@ const Index = () => {
       <LazyTestimonialsSection />
       <LazyCTASection />
       <LazyHowItWorksSection />
+      <FAQsSection />
       <LazyFinalCTASection />
       <LazyContactSection />
       
