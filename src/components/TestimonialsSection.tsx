@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
                     </div>
                     <div className="p-4 text-center">
                       <h3 className="font-semibold text-slate-900 mb-2">{testimonial.name}</h3>
-                      <p className="text-sm text-slate-600">{testimonial.description}</p>
+                      <p className="text-sm text-slate-600">"{testimonial.description}"</p>
                     </div>
                   </CardContent>
                 </Card>
