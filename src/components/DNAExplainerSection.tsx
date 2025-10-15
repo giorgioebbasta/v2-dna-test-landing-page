@@ -118,9 +118,9 @@ const DNAExplainerSection = () => {
                       <Card className="border-l-4 shadow-md border-l-[#FCE8E6]">
                         <CardContent className="p-8 min-h-[200px] flex flex-col justify-center">
                           <div className="text-center">
-                            <div className="flex justify-center mb-6">
-                              <div className="w-12 h-12 rounded-full bg-[#FCE8E6] flex items-center justify-center">
-                                <span className="text-xl font-bold text-[#1A1A31]">1</span>
+                            <div className="flex justify-center mb-3">
+                              <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center">
+                                <span className="text-sm font-bold text-[#1A1A31]">1</span>
                               </div>
                             </div>
                             <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-4">
@@ -139,9 +139,9 @@ const DNAExplainerSection = () => {
                       <Card className="border-l-4 shadow-md border-l-[#FCE8E6]">
                         <CardContent className="p-8 min-h-[200px] flex flex-col justify-center">
                           <div className="text-center">
-                            <div className="flex justify-center mb-6">
-                              <div className="w-12 h-12 rounded-full bg-[#FCE8E6] flex items-center justify-center">
-                                <span className="text-xl font-bold text-[#1A1A31]">2</span>
+                            <div className="flex justify-center mb-3">
+                              <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center">
+                                <span className="text-sm font-bold text-[#1A1A31]">2</span>
                               </div>
                             </div>
                             <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-4">
@@ -160,9 +160,9 @@ const DNAExplainerSection = () => {
                       <Card className="border-l-4 shadow-md border-l-[#FCE8E6]">
                         <CardContent className="p-8 min-h-[200px] flex flex-col justify-center">
                           <div className="text-center">
-                            <div className="flex justify-center mb-6">
-                              <div className="w-12 h-12 rounded-full bg-[#FCE8E6] flex items-center justify-center">
-                                <span className="text-xl font-bold text-[#1A1A31]">3</span>
+                            <div className="flex justify-center mb-3">
+                              <div className="w-8 h-8 rounded-full bg-[#FCE8E6] flex items-center justify-center">
+                                <span className="text-sm font-bold text-[#1A1A31]">3</span>
                               </div>
                             </div>
                             <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-4">
