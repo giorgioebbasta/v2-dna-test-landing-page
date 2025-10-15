@@ -53,17 +53,6 @@ const ReviewsSection = () => {
             </Card>)}
         </div>
 
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center space-x-4 bg-white rounded-full px-6 py-3 shadow-lg">
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-slate-700">Verificato da Trustpilot</span>
-            </div>
-            <div className="text-sm text-slate-500">
-              Basato su +100 recensioni
-            </div>
-          </div>
-        </div>
       </div>
     </section>;
 };
