@@ -126,7 +126,7 @@ const DNAExplainerSection = () => {
                             <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-4">
                               Gene
                             </div>
-                            <div className="text-xl text-slate-900 font-semibold mb-8">
+                            <div className="text-xl text-slate-900 font-semibold mb-3">
                               {example.gene}
                             </div>
                             <p className="text-xs text-slate-600">Analizzato dal nostro test</p>
@@ -148,7 +148,7 @@ const DNAExplainerSection = () => {
                             <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-4">
                               Effetto
                             </div>
-                            <div className="text-lg text-slate-700 mb-8">
+                            <div className="text-lg text-slate-700 mb-3">
                               {example.effect}
                             </div>
                             <p className="text-xs text-slate-600">Studiato dai nostri medici</p>
@@ -170,7 +170,7 @@ const DNAExplainerSection = () => {
                             <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-4">
                               Azione
                             </div>
-                            <div className="text-lg text-slate-900 font-medium mb-8">
+                            <div className="text-lg text-slate-900 font-medium mb-3">
                               {example.action}
                             </div>
                             <p className="text-xs text-slate-600">Scoperto con il nostro report</p>
