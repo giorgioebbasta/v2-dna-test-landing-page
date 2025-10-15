@@ -40,10 +40,10 @@ const ReviewsSection = () => {
             </div>
           </a>
           <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            Oltre 3.000 utenti soddisfatti
+            Cosa dicono di noi
           </h2>
           <p className="text-xl text-slate-600 mb-8">
-            Scopri cosa dicono di noi
+            Oltre 3.000 utenti soddisfatti
           </p>
         </div>
 
