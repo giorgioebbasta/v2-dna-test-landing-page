@@ -17,21 +17,21 @@ const TestimonialsSection = () => {
       id: 1,
       embedUrl: "https://www.youtube.com/embed/zFzfl18iKIg",
       name: "Francesco V.",
-      description: "Mangiavo bene, mi allenavo, ma la bilancia non si muoveva. Poi ho fatto il test DNA Holifya e ho scoperto che il mio metabolismo è geneticamente lento: ora so cosa funziona davvero per il mio corpo e finalmente vedo risultati.",
+      description: ""Mangiavo bene, mi allenavo, ma la bilancia non si muoveva. Poi ho fatto il test DNA Holifya e ho scoperto che il mio metabolismo è geneticamente lento: ora so cosa funziona davvero per il mio corpo e finalmente vedo risultati."",
       thumbnailUrl: "https://img.youtube.com/vi/zFzfl18iKIg/maxresdefault.jpg"
     },
     {
       id: 2,
       embedUrl: "https://www.youtube.com/embed/28IhrnDW1p4",
       name: "Luciana C.",
-      description: "Bevevo caffè per ricaricarmi, ma mi sentivo ancora più stanca e agitata. Poi ho fatto il test DNA Holifya e ho scoperto che sono ipersensibile alla caffeina: da quando l'ho ridotta, dormo meglio, ho più energia e mi sento finalmente in equilibrio.",
+      description: ""Bevevo caffè per ricaricarmi, ma mi sentivo ancora più stanca e agitata. Poi ho fatto il test DNA Holifya e ho scoperto che sono ipersensibile alla caffeina: da quando l'ho ridotta, dormo meglio, ho più energia e mi sento finalmente in equilibrio."",
       thumbnailUrl: "https://img.youtube.com/vi/28IhrnDW1p4/maxresdefault.jpg"
     },
     {
       id: 3,
       embedUrl: "https://www.youtube.com/embed/2m6h_YbsJbI",
       name: "Elisa Z.",
-      description: "Mi svegliavo stanca, andavo a dormire stanca, e nessuno capiva perché. Poi ho fatto il test DNA Holifya e ho scoperto che alcuni cibi mi infiammavano e rallentavano il mio metabolismo: ora so cosa evitare, ho più energia e mi sento finalmente leggera.",
+      description: ""Mi svegliavo stanca, andavo a dormire stanca, e nessuno capiva perché. Poi ho fatto il test DNA Holifya e ho scoperto che alcuni cibi mi infiammavano e rallentavano il mio metabolismo: ora so cosa evitare, ho più energia e mi sento finalmente leggera."",
       thumbnailUrl: "https://img.youtube.com/vi/2m6h_YbsJbI/maxresdefault.jpg"
     }
   ];
