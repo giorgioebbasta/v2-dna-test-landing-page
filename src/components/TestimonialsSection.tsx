@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import OptimizedVideo from '@/components/optimized/OptimizedVideo';
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from 'lucide-react';
 const TestimonialsSection = () => {
   const {
     elementRef,
@@ -59,6 +61,24 @@ const TestimonialsSection = () => {
           <CarouselPrevious className="lg:hidden left-2" />
           <CarouselNext className="lg:hidden right-2" />
         </Carousel>
+
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <a 
+            href="https://holifya.com/cart/43782964445448:1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button 
+              size="lg"
+              className="px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200 text-[#1A1A31]"
+              style={{ background: '#C4EDFF' }}
+            >
+              Scegli di stare bene
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </a>
+        </div>
 
       </div>
     </section>;
