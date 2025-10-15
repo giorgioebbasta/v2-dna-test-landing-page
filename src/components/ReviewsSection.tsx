@@ -27,7 +27,7 @@ const ReviewsSection = () => {
     comment: "Ho sempre avuto problemi con lo sport, ora so che il mio corpo risponde meglio agli allenamenti di resistenza. I risultati si vedono già!",
     date: "1 mese fa"
   }];
-  return <section className="px-4 bg-slate-50 py-[30px]">
+  return <section className="px-4 bg-slate-50 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <a href="https://it.trustpilot.com/review/holifya.com" target="_blank" rel="noopener" className="inline-flex flex-col items-center justify-center space-y-4 mb-4 hover:opacity-80 transition-opacity">

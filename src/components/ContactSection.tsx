@@ -4,7 +4,7 @@ import { Mail, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section className="pt-10 px-1 md:px-4 bg-slate-50 pb-24">
+    <section className="pt-16 px-1 md:px-4 bg-slate-50 pb-24">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-slate-900 mb-4">
           Hai ancora dei dubbi?

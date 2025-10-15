@@ -16,7 +16,7 @@ const FinalCTASection = () => {
     savings: 60,
     url: "https://holifya.com/cart/43782964445448:1"
   };
-  return <section className="px-4 bg-gradient-to-r from-green-500 to-emerald-600 py-[28px]">
+  return <section className="px-4 bg-gradient-to-r from-green-500 to-emerald-600 py-8">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">
           Inizia il tuo viaggio verso una vita più sana
