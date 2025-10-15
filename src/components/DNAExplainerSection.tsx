@@ -109,7 +109,7 @@ const DNAExplainerSection = () => {
               Esempi pratici
             </h3>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {examples.map((example, index) => (
                 <div key={index} className="relative">
                 <Carousel className="w-full max-w-4xl mx-auto">
