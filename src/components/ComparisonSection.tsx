@@ -35,9 +35,7 @@ const ComparisonSection = () => {
   return <section id="comparison-section" className="px-4 bg-gradient-to-b from-white to-slate-50 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">
-            *Perché pagare di più, per meno?
-          </h2>
+          <h2 className="text-4xl font-bold text-slate-900 mb-4">Perchè Holifya?</h2>
           {/* Mobile version - single paragraph */}
           <p className="md:hidden text-xl text-slate-600 max-w-3xl mx-auto">
             Altri competitor ti vendono test separati per ogni area.
