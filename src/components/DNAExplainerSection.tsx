@@ -126,9 +126,9 @@ const DNAExplainerSection = () => {
             {examples.map((example, index) => (
               <Card key={index} className="border-l-4 shadow-md border-l-[#FCE8E6]">
                 <CardContent className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-center">
-                    <div>
-                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-1">
+                  <div className="grid grid-cols-1 md:grid-cols-[auto_auto_1fr_auto_1fr] gap-4 md:gap-6 items-start">
+                    <div className="min-w-[100px]">
+                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
                         Gene
                       </div>
                       <div className="text-slate-700">
@@ -136,12 +136,12 @@ const DNAExplainerSection = () => {
                       </div>
                     </div>
                     
-                    <div className="hidden md:flex items-center justify-center">
+                    <div className="hidden md:flex items-start justify-center pt-6">
                       <ArrowRight className="w-5 h-5 text-slate-400" />
                     </div>
                     
                     <div>
-                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-1">
+                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
                         Effetto
                       </div>
                       <div className="text-slate-700">
@@ -149,12 +149,12 @@ const DNAExplainerSection = () => {
                       </div>
                     </div>
                     
-                    <div className="hidden md:flex items-center justify-center">
+                    <div className="hidden md:flex items-start justify-center pt-6">
                       <ArrowRight className="w-5 h-5 text-slate-400" />
                     </div>
                     
                     <div>
-                      <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-1">
+                      <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-2">
                         Azione
                       </div>
                       <div className="text-slate-900 font-medium">
