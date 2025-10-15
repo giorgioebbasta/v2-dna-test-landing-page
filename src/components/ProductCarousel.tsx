@@ -11,7 +11,7 @@ const ProductCarousel = () => {
     {
       id: 1,
       image: "/lovable-uploads/quadrato.webp",
-      title: "Kit DNA Professionale",
+      title: "Ricevi il Tuo Kit",
       description: "Kit di raccolta campione certificato"
     },
     {
@@ -23,7 +23,7 @@ const ProductCarousel = () => {
     {
       id: 3,
       image: "/lovable-uploads/group-45.webp",
-      title: "Ricevi il tuo Kit",
+      title: "Analisi Certificata",
       description: "Ordina e ricevi il kit a casa in 72 ore"
     }
   ];
