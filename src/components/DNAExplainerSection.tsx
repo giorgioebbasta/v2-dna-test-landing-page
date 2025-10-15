@@ -70,8 +70,8 @@ const DNAExplainerSection = () => {
               </CardContent>
             </Card>
 
-            {/* Arrow connector - hidden on mobile */}
-            <div className="hidden md:flex items-center justify-center px-2">
+            {/* Arrow connector */}
+            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0">
               <ArrowRight className="w-8 h-8 text-emerald-500" />
             </div>
 
@@ -87,8 +87,8 @@ const DNAExplainerSection = () => {
               </CardContent>
             </Card>
 
-            {/* Arrow connector - hidden on mobile */}
-            <div className="hidden md:flex items-center justify-center px-2">
+            {/* Arrow connector */}
+            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0">
               <ArrowRight className="w-8 h-8 text-emerald-500" />
             </div>
 
