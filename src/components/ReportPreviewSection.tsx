@@ -17,6 +17,7 @@ import {
 import reportPreview1 from "@/assets/report-preview-1.webp";
 import reportPreview2 from "@/assets/report-preview-2.webp";
 import reportPreview3 from "@/assets/report-preview-3.webp";
+import reportPreview4 from "@/assets/report-preview-4.webp";
 const ReportPreviewSection = () => {
   const benefits = ["Quali alimenti ti aiutano e quali ti ostacolano", "Come gestire fame, energia e sonno in base alla tua genetica", "Quali integratori o abitudini possono farti davvero la differenza"];
   
@@ -50,6 +51,17 @@ const ReportPreviewSection = () => {
             <img 
               src={reportPreview3} 
               alt="Esempio predisposizioni genetiche" 
+              className="w-full h-auto rounded-lg"
+            />
+          </CardContent>
+        </Card>
+      </CarouselItem>
+      <CarouselItem>
+        <Card className="border-slate-200">
+          <CardContent className="p-0">
+            <img 
+              src={reportPreview4} 
+              alt="Scopri di più, fai il test" 
               className="w-full h-auto rounded-lg"
             />
           </CardContent>
