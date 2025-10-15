@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
         </Carousel>
 
         <div className="text-center mt-8">
-          <p className="text-sm text-slate-500">Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya.</p>
+          <p className="text-sm text-slate-500 font-semibold">Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya.</p>
         </div>
       </div>
     </section>;
