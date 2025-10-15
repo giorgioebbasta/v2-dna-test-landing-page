@@ -96,11 +96,11 @@ const ReportPreviewSection = () => {
                     <CarouselContent>
                       {carouselContent}
                     </CarouselContent>
-                    <CarouselPrevious className="left-4" />
-                    <CarouselNext className="right-4" />
+                    <CarouselPrevious className="left-4 z-20" />
+                    <CarouselNext className="right-4 z-20" />
                   </Carousel>
-                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg pointer-events-none">
-                    <span className="text-white text-xl font-semibold">Visualizza report</span>
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg z-10">
+                    <span className="text-white text-xl font-semibold pointer-events-none">Visualizza report</span>
                   </div>
                 </div>
               </DialogTrigger>
