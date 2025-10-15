@@ -75,7 +75,6 @@ const TestimonialsSection = () => {
               style={{ background: '#C4EDFF' }}
             >
               Scegli anche tu di stare bene
-              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </a>
         </div>
