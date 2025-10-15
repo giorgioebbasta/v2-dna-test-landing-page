@@ -75,7 +75,7 @@ const OptimizedProductCarousel = () => {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((slide, index) => (
-            <div key={slide.id} className="w-full flex-shrink-0 relative">
+            <div key={slide.id} className={`w-full flex-shrink-0 relative ${index === 0 ? 'bg-[#F8FAFA]' : ''}`}>
               <ResponsiveImage
                 src={slide.image}
                 alt={slide.title}
