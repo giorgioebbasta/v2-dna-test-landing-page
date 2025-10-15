@@ -2,6 +2,13 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const DNAExplainerSection = () => {
   const examples = [
@@ -102,48 +109,56 @@ const DNAExplainerSection = () => {
               Esempi pratici
             </h3>
             
-            {examples.map((example, index) => (
-              <Card key={index} className="border-l-4 shadow-md border-l-[#FCE8E6]">
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-[auto_auto_1fr_auto_1fr] gap-4 md:gap-6 items-start">
-                    <div className="min-w-[100px]">
-                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
-                        Gene
-                      </div>
-                      <div className="text-slate-700">
-                        {example.gene}
-                      </div>
-                    </div>
-                    
-                    <div className="hidden md:flex items-start justify-center pt-6">
-                      <ArrowRight className="w-5 h-5 text-slate-400" />
-                    </div>
-                    
-                    <div className="md:ml-[20px]">
-                      <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
-                        Effetto
-                      </div>
-                      <div className="text-slate-700">
-                        {example.effect}
-                      </div>
-                    </div>
-                    
-                    <div className="hidden md:flex items-start justify-center pt-6">
-                      <ArrowRight className="w-5 h-5 text-black" />
-                    </div>
-                    
-                    <div className="md:ml-[20px]">
-                      <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-2">
-                        Azione
-                      </div>
-                      <div className="text-slate-900 font-medium">
-                        {example.action}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            <Carousel className="w-full max-w-5xl mx-auto">
+              <CarouselContent>
+                {examples.map((example, index) => (
+                  <CarouselItem key={index}>
+                    <Card className="border-l-4 shadow-md border-l-[#FCE8E6]">
+                      <CardContent className="p-6">
+                        <div className="grid grid-cols-1 md:grid-cols-[auto_auto_1fr_auto_1fr] gap-4 md:gap-6 items-start">
+                          <div className="min-w-[100px]">
+                            <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
+                              Gene
+                            </div>
+                            <div className="text-slate-700">
+                              {example.gene}
+                            </div>
+                          </div>
+                          
+                          <div className="hidden md:flex items-start justify-center pt-6">
+                            <ArrowRight className="w-5 h-5 text-slate-400" />
+                          </div>
+                          
+                          <div className="md:ml-[20px]">
+                            <div className="text-xs font-bold text-[#1A1A31] uppercase tracking-wide mb-2">
+                              Effetto
+                            </div>
+                            <div className="text-slate-700">
+                              {example.effect}
+                            </div>
+                          </div>
+                          
+                          <div className="hidden md:flex items-start justify-center pt-6">
+                            <ArrowRight className="w-5 h-5 text-black" />
+                          </div>
+                          
+                          <div className="md:ml-[20px]">
+                            <div className="text-xs font-semibold text-[#994AFF] uppercase tracking-wide mb-2">
+                              Azione
+                            </div>
+                            <div className="text-slate-900 font-medium">
+                              {example.action}
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
           </div>
 
           {/* CTA */}
