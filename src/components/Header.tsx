@@ -31,7 +31,7 @@ const Header = () => {
             </a>
 
             {/* Navigation Menu */}
-            <nav className="flex items-center gap-8">
+            <nav className="flex items-center gap-4 lg:gap-8">
               {navItems.map((item) => (
                 <button
                   key={item.sectionId}
