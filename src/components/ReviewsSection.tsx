@@ -39,7 +39,7 @@ const ReviewsSection = () => {
     </Card>
   );
 
-  return <section className="px-4 bg-white py-12 md:py-16">
+  return <section className="px-4 bg-white pt-6 pb-12 md:pt-8 md:pb-16">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <a href="https://it.trustpilot.com/review/holifya.com" target="_blank" rel="noopener" className="inline-flex flex-col items-center justify-center space-y-4 mb-4 hover:opacity-80 transition-opacity">
