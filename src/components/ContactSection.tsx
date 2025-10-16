@@ -18,7 +18,7 @@ const ContactSection = () => {
             href="mailto:support@holifya.com"
             className="block"
           >
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <Card className="border-0 border-t-4 border-t-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
               <CardContent className="p-4 md:p-8 text-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
                   <Mail className="w-6 h-6 md:w-8 md:h-8 text-white" />
@@ -37,7 +37,7 @@ const ContactSection = () => {
             rel="noopener noreferrer"
             className="block"
           >
-            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <Card className="border-0 border-t-4 border-t-green-600 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
               <CardContent className="p-4 md:p-8 text-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
                   <MessageCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
