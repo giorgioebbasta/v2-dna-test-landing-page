@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { ShieldCheck } from 'lucide-react';
 import PaymentMethods from '@/components/hero/PaymentMethods';
 
 const FinalCTASection = () => {
@@ -36,7 +37,7 @@ const FinalCTASection = () => {
           {/* Certifications Box */}
           <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 flex items-center justify-center">
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🔒</span>
+              <ShieldCheck className="w-5 h-5 text-white" />
               <span className="text-sm font-medium text-white">CE-IVD / ISO / GDPR</span>
             </div>
           </div>
