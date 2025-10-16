@@ -34,18 +34,10 @@ const FinalCTASection = () => {
           </div>
 
           {/* Certifications Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
-            <h3 className="text-white font-semibold mb-4 text-lg">Certificazioni</h3>
-            <div className="flex flex-col items-center justify-center space-y-3">
-              <div className="flex items-center space-x-2">
-                <span className="text-white text-sm">🔒 GDPR Compliant</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-white text-sm">🏥 Laboratorio CE-IVD</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span className="text-white text-sm">✓ ISO 9001 Certificato</span>
-              </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 flex items-center justify-center">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🔒</span>
+              <span className="text-sm font-medium text-white">CE-IVD / ISO / GDPR</span>
             </div>
           </div>
         </div>
