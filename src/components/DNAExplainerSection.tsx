@@ -55,7 +55,7 @@ const DNAExplainerSection = () => {
             Come funziona in 3 passaggi
           </h3>
           
-          <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-4 mb-12 items-center">
+          <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-2 md:gap-4 mb-12 items-center">
             {/* Step 1 */}
             <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
               <CardContent className="p-6">
