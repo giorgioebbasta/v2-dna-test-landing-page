@@ -6,7 +6,7 @@ const PaymentMethods = React.memo(() => {
       <div className="flex items-center justify-center">
         <div className="flex items-center space-x-2">
           {/* PayPal */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center -mr-1">
             <img 
               src="/lovable-uploads/96f9f2ef-7261-4da8-a18f-89922dae3f97.png" 
               alt="PayPal" 
