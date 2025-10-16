@@ -33,7 +33,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-8 pt-8 px-4 bg-[#F8FAFA]">
+    <section className="py-12 md:py-16 px-4 bg-[#F8FAFA]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-2">

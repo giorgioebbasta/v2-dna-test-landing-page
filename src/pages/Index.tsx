@@ -25,14 +25,14 @@ const Index = () => {
       <div className="md:hidden h-[97px]"></div>
       
       {/* Above the fold - load immediately */}
-      <HeroSection className="py-[5px]" />
+      <HeroSection className="py-8 md:py-12" />
       <FeaturesSection />
       <LazyDNAExplainerSection />
       <LazyReportPreviewSection />
       <LazyHowItWorksSection />
       
       {/* Social proof - moved after How It Works */}
-      <div className="text-center py-12 px-4 bg-white">
+      <div className="text-center py-8 md:py-12 px-4 bg-white">
         <h2 className="text-4xl font-bold text-slate-900">
           Cosa dicono di noi
         </h2>

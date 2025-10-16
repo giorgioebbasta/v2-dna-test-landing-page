@@ -32,7 +32,7 @@ const ComparisonSection = () => {
   const holifyaOriginalPrice = 349;
   const holifyaDiscountedPrice = 289;
   const totalSavings = totalCompetitorPrice - holifyaDiscountedPrice;
-  return <section id="comparison-section" className="px-4 pt-4 pb-12" style={{ backgroundColor: '#F8FAFA' }}>
+  return <section id="comparison-section" className="px-4 py-12 md:py-16" style={{ backgroundColor: '#F8FAFA' }}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-slate-900 mb-4">Perchè Holifya?</h2>

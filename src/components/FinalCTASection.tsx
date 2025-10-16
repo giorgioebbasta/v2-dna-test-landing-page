@@ -9,7 +9,7 @@ const FinalCTASection = () => {
   };
 
   return (
-    <section className="px-4 bg-gradient-to-r from-[#E8FFC9] to-[#d4f5b1] py-6">
+    <section className="px-4 bg-gradient-to-r from-[#E8FFC9] to-[#d4f5b1] py-12 md:py-16">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-[#0B4650] mb-6">
           Unisciti a 3.000+ clienti che hanno trasformato la loro routine.
