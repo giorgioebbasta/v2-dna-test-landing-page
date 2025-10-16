@@ -28,18 +28,18 @@ const FinalCTASection = () => {
         </Button>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {/* Payment Methods Box */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 border border-[#0B4650]">
+            <h3 className="text-[#0B4650] font-semibold mb-4 text-lg">Metodi di Pagamento</h3>
+            <PaymentMethods />
+          </div>
+
           {/* Certifications Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 flex items-center justify-center">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 flex items-center justify-center border border-[#0B4650]">
             <div className="flex items-center gap-3">
               <ShieldCheck className="w-5 h-5 text-[#0B4650]" />
               <span className="text-sm font-medium text-[#0B4650]">CE-IVD / ISO / GDPR</span>
             </div>
-          </div>
-
-          {/* Payment Methods Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
-            <h3 className="text-[#0B4650] font-semibold mb-4 text-lg">Metodi di Pagamento</h3>
-            <PaymentMethods />
           </div>
         </div>
       </div>
