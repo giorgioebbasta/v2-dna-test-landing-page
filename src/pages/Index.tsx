@@ -25,27 +25,58 @@ const Index = () => {
       <div className="md:hidden h-[97px]"></div>
       
       {/* Above the fold - load immediately */}
-      <HeroSection className="py-8 md:py-12" />
-      <FeaturesSection />
-      <LazyDNAExplainerSection />
-      <LazyReportPreviewSection />
-      <LazyHowItWorksSection />
+      <div id="hero">
+        <HeroSection className="py-8 md:py-12" />
+      </div>
+      
+      <div id="features">
+        <FeaturesSection />
+      </div>
+      
+      <div id="dna-explainer">
+        <LazyDNAExplainerSection />
+      </div>
+      
+      <div id="report-preview">
+        <LazyReportPreviewSection />
+      </div>
+      
+      <div id="how-it-works">
+        <LazyHowItWorksSection />
+      </div>
       
       {/* Social proof - moved after How It Works */}
-      <div className="text-center py-8 md:py-12 px-4 bg-white">
+      <div id="reviews" className="text-center py-8 md:py-12 px-4 bg-white">
         <h2 className="text-4xl font-bold text-slate-900">
           Cosa dicono di noi
         </h2>
       </div>
       <LazyReviewsSection />
-      <LazyTestimonialsSection />
+      
+      <div id="testimonials">
+        <LazyTestimonialsSection />
+      </div>
       
       {/* Below the fold - lazy loaded */}
-      <LazyComparisonSection />
-      <LazyBundleBoxes />
-      <FAQsSection />
-      <LazyFinalCTASection />
-      <LazyContactSection />
+      <div id="comparison">
+        <LazyComparisonSection />
+      </div>
+      
+      <div id="pricing">
+        <LazyBundleBoxes />
+      </div>
+      
+      <div id="faqs">
+        <FAQsSection />
+      </div>
+      
+      <div id="final-cta">
+        <LazyFinalCTASection />
+      </div>
+      
+      <div id="contact">
+        <LazyContactSection />
+      </div>
       
       <FloatingCTA />
       <DeferredScripts />
