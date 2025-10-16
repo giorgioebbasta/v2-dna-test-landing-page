@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { smoothScrollToSection } from '@/lib/utils';
 
 const HeroBanner = React.memo(() => {
-  return <div className="space-y-2 pt-2">
+  return <div className="space-y-2 pt-0">
       <Badge className="text-[#E8FFC9] text-sm font-medium mt-4 bg-[#0b4650] py-[6px] px-[14px]">
         Test Completo del DNA
       </Badge>
