@@ -92,6 +92,9 @@ const BundleBoxes = () => {
   return (
     <section className="py-8 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-center text-slate-900 mb-8">
+          Scegli il piano giusto per te
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {bundles.map((bundle, index) => (
             <BundleBox key={index} {...bundle} />
