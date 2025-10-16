@@ -50,7 +50,7 @@ const BundleBox: React.FC<BundleBoxProps> = ({
             €{originalPrice}
           </div>
           
-          <div className="text-sm font-medium text-emerald-700">
+          <div className="text-sm font-medium" style={{ color: '#994AFF' }}>
             Risparmi €{savings}
           </div>
           
