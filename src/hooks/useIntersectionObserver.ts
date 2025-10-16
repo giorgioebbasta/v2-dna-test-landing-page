@@ -5,12 +5,14 @@ interface UseIntersectionObserverProps {
   threshold?: number;
   rootMargin?: string;
   triggerOnce?: boolean;
+  delay?: number;
 }
 
 export const useIntersectionObserver = ({
   threshold = 0.1,
   rootMargin = '100px',
-  triggerOnce = true
+  triggerOnce = true,
+  delay = 0
 }: UseIntersectionObserverProps = {}) => {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
@@ -26,8 +28,15 @@ export const useIntersectionObserver = ({
         
         if (triggerOnce) {
           if (isVisible && !hasTriggered) {
-            setIsIntersecting(true);
-            setHasTriggered(true);
+            if (delay > 0) {
+              setTimeout(() => {
+                setIsIntersecting(true);
+                setHasTriggered(true);
+              }, delay);
+            } else {
+              setIsIntersecting(true);
+              setHasTriggered(true);
+            }
           }
         } else {
           setIsIntersecting(isVisible);
