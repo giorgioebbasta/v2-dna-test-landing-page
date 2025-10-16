@@ -29,8 +29,8 @@ const FinalCTASection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto">
           {/* Payment Methods Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
-            <h3 className="text-[#0B4650] font-semibold mb-4 text-lg">Metodi di Pagamento</h3>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3">
+            <h3 className="text-[#0B4650] font-semibold mb-2 text-base">Metodi di Pagamento</h3>
             <PaymentMethods />
           </div>
 
