@@ -7,124 +7,62 @@ const DropdownSection = () => {
 
   const sections = [
     {
-      title: "Cosa include il tuo test",
+      title: "In quanto tempo ricevo il kit?",
       content: [
-        {
-          title: "Kit di prelievo anonimo e sicuro",
-          items: [
-            "🧬 Ricevi un tampone sterile e un codice univoco anonimo (mai collegato al tuo nome).",
-            "🔒 Analisi eseguite in laboratori certificati, nel pieno rispetto della privacy e con i più alti standard di sicurezza."
-          ]
-        },
-        {
-          title: "Istruzioni chiare + Members' Card personale",
-          items: [
-            "📖 Bastano 60 secondi per completare il prelievo grazie alle istruzioni semplici e illustrate.",
-            "💳 All'interno trovi la tua Carta DNA personale, da conservare con il tuo codice identificativo."
-          ]
-        },
-        {
-          title: "Spedizione gratuita e tracciata",
-          items: [
-            "📦 Il campione viene sigillato in una busta biohazard (specifica per campioni biologici) per garantire la massima igiene.",
-            "🚚 Ritiro a domicilio gratuito con busta preaffrancata: pensiamo a tutto noi, entro 48 ore dalla tua richiesta."
-          ]
-        }
+        "Riceverai il tuo kit Holifya entro 72 ore lavorative dall'ordine, con spedizione gratuita e tracciata in tutta Italia.",
+        "Il pacco è anonimo e non riporta riferimenti al contenuto, per garantirti la massima riservatezza."
       ]
     },
     {
-      title: "Quali risultati ottieni",
+      title: "Chi analizza il mio DNA?",
       content: [
-        "Report nutrigenetico completo e personalizzato",
-        "Analisi completa di oltre 2000 geni",
-        "Mappa alimentare di 250+ alimenti favorevoli / sfavorevoli",
-        {
-          type: "link",
-          text: "👉 Scarica un esempio di report",
-          url: "https://cdn.shopify.com/s/files/1/0647/1909/4024/files/DNA-Complete_Facsimile_e583bb92-cf50-4a43-ac37-09ab77aee305.pdf?v=1715770533"
-        }
+        "Le analisi genetiche del tuo campione sono eseguite da BMR Genomics Srl, laboratorio specializzato con anni di esperienza nel sequenziamento e genotipizzazione del DNA.",
+        "BMR utilizza tecnologie riconosciute (sequenziamento Sanger, NGS, tecniche SNP) e dispone di un team qualificato di biologi, esperti in bioinformatica e genetica."
       ]
     },
     {
-      title: "Come funziona",
+      title: "I miei dati sono al sicuro?",
       content: [
-        "Ordina il kit online",
-        "Ricevi il test a casa in 72 ore",
-        "Raccogli il campione di saliva (2 minuti)",
-        "Spedisci gratuitamente il campione",
-        "Il laboratorio analizza il tuo DNA (15 giorni)",
-        "Ricevi i risultati nella tua area personale"
+        "Sì. Tutti i campioni e i dati genetici sono anonimizzati tramite un codice ID univoco, crittografati e conservati su server sicuri in conformità al GDPR (Regolamento Europeo sulla Protezione dei Dati).",
+        "Nessuna informazione genetica viene mai condivisa o ceduta a terzi senza il tuo consenso esplicito."
       ]
     },
     {
-      title: "Perché scegliere Holifya",
+      title: "Posso pagare a rate?",
       content: [
-        "Piattaforma web interattiva dove poter tenere traccia dei propri risultati",
-        "Assistenza clienti 24/7",
-        "Supporto da parte dei nostri esperti",
-        "Comitato scientifico esperto in nutrigenetica e salute metabolica"
+        "Sì. Puoi acquistare il test Holifya anche a rate, scegliendo tra Klarna o PayPal Pay in 3 direttamente al checkout.",
+        "Entrambe le opzioni ti permettono di suddividere l'importo in pagamenti mensili senza interessi, in modo sicuro e immediato."
+      ]
+    },
+    {
+      title: "Cosa succede ai miei dati dopo l'analisi?",
+      content: [
+        "Dopo l'elaborazione del tuo profilo genetico, il campione biologico viene distrutto in modo sicuro.",
+        "I dati digitali restano conservati in forma anonima solo per il tempo necessario all'erogazione del servizio e all'accesso al tuo report.",
+        "Puoi richiedere in qualunque momento la cancellazione definitiva dei tuoi dati dal sistema."
+      ]
+    },
+    {
+      title: "È valido per tutti (età, gravidanza, ecc.)?",
+      content: [
+        "Il test è indicato per uomini e donne dai 16 anni in su.",
+        "Può essere effettuato anche durante la gravidanza, poiché è un test non invasivo e completamente sicuro: analizza esclusivamente il tuo DNA, non quello del feto.",
+        "Per i bambini o soggetti con condizioni mediche particolari, è consigliabile eseguire il test sotto la supervisione del pediatra o del medico di fiducia."
       ]
     }
   ];
 
-  const renderContent = (section: any, index: number) => {
-    if (index === 0) {
-      // Special rendering for the first section with nested structure
-      return (
-        <div className="space-y-6 mt-4">
-          {section.content.map((group: any, groupIndex: number) => (
-            <div key={groupIndex} className="space-y-3">
-              <h4 className="font-bold text-slate-900 text-base">{group.title}</h4>
-              <ul className="space-y-2 ml-4">
-                {group.items.map((item: string, itemIndex: number) => (
-                  <li key={itemIndex} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-slate-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      );
-    } else if (index === 1) {
-      // Special rendering for the second section with link handling
-      return (
-        <div className="space-y-3 mt-4">
-          {section.content.map((item: any, itemIndex: number) => (
-            <div key={itemIndex}>
-              {item.type === 'link' ? (
-                <a 
-                  href={item.url} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-slate-700 hover:text-indigo-600 transition-colors duration-200 underline block"
-                >
-                  {item.text}
-                </a>
-              ) : (
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-slate-700">{item}</span>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      );
-    } else {
-      // Regular rendering for other sections
-      return (
-        <ul className="space-y-3 mt-4">
-          {section.content.map((item: any, itemIndex: number) => (
-            <li key={itemIndex} className="flex items-start space-x-3">
-              <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
-              <span className="text-slate-700">{item}</span>
-            </li>
-          ))}
-        </ul>
-      );
-    }
+  const renderContent = (section: any) => {
+    return (
+      <ul className="space-y-3 mt-4">
+        {section.content.map((item: any, itemIndex: number) => (
+          <li key={itemIndex} className="flex items-start space-x-3">
+            <div className="w-2 h-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+            <span className="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    );
   };
 
   return (
@@ -153,7 +91,7 @@ const DropdownSection = () => {
                 openSection === index ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
               }`}>
                 <div className="px-6 pb-6 border-t border-slate-100">
-                  {renderContent(section, index)}
+                  {renderContent(section)}
                 </div>
               </div>
             </CardContent>
