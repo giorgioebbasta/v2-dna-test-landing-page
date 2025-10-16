@@ -26,7 +26,8 @@ const BundleBox: React.FC<BundleBoxProps> = ({
 
   return (
     <Card 
-      className="border-2 border-emerald-200 hover:border-emerald-300 cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden relative"
+      className="border-2 cursor-pointer transition-all duration-300 hover:shadow-lg overflow-hidden relative"
+      style={{ borderColor: '#D0C5FB' }}
       onClick={handleClick}
     >
       {promoCode && (
