@@ -20,7 +20,7 @@ const ContactSection = () => {
           >
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
               <CardContent className="p-4 md:p-8 text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-indigo-700 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
                   <Mail className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 md:mb-3">Email</h3>
@@ -39,7 +39,7 @@ const ContactSection = () => {
           >
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer">
               <CardContent className="p-4 md:p-8 text-center">
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-600 to-green-700 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
                   <MessageCircle className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold text-slate-900 mb-2 md:mb-3">WhatsApp</h3>
