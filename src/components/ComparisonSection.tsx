@@ -120,7 +120,7 @@ const ComparisonSection = () => {
           </Card>
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-4">
           <a href="https://holifya.com/cart/43782964445448:1" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="px-8 py-4 text-lg font-semibold shadow-lg border-0" style={{ background: 'linear-gradient(to right, #D0C5FB, #A78BFA)', color: '#FFFFFFF' }}>Ordina ora (-€60)</Button>
           </a>
