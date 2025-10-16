@@ -10,7 +10,7 @@ const PaymentMethods = React.memo(() => {
             <img 
               src="/lovable-uploads/96f9f2ef-7261-4da8-a18f-89922dae3f97.png" 
               alt="PayPal" 
-              className="h-10 w-auto object-contain"
+              className="h-8 w-auto object-contain"
             />
           </div>
           
@@ -19,7 +19,7 @@ const PaymentMethods = React.memo(() => {
             <img 
               src="/klarna.svg" 
               alt="Klarna" 
-              className="h-8 w-auto object-contain"
+              className="h-6 w-auto object-contain"
             />
           </div>
           
@@ -28,7 +28,7 @@ const PaymentMethods = React.memo(() => {
             <img 
               src="/apple-pay.svg" 
               alt="Apple Pay" 
-              className="h-7 w-auto object-contain"
+              className="h-5 w-auto object-contain"
             />
           </div>
           
@@ -37,7 +37,7 @@ const PaymentMethods = React.memo(() => {
             <img 
               src="/google-pay.svg" 
               alt="Google Pay" 
-              className="h-7 w-auto object-contain"
+              className="h-5 w-auto object-contain"
             />
           </div>
           
@@ -47,7 +47,7 @@ const PaymentMethods = React.memo(() => {
               <img 
                 src="/contrassegno.svg" 
                 alt="Contrassegno" 
-                className="h-7 w-auto object-contain"
+                className="h-5 w-auto object-contain"
               />
               <span className="text-xs font-medium text-slate-700">Contrassegno</span>
             </div>
