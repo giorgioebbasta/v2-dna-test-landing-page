@@ -27,7 +27,7 @@ const FinalCTASection = () => {
           Scopri cosa dice il tuo DNA
         </Button>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-3xl mx-auto">
           {/* Payment Methods Box */}
           <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
             <h3 className="text-[#0B4650] font-semibold mb-4 text-lg">Metodi di Pagamento</h3>
