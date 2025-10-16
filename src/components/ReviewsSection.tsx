@@ -58,16 +58,16 @@ const ReviewsSection = () => {
 
         {/* Mobile Carousel */}
         <div className="md:hidden">
-          <Carousel opts={{ align: "start", loop: true }} className="w-full">
-            <CarouselContent className="-ml-4">
+          <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-sm mx-auto">
+            <CarouselContent className="-ml-2">
               {reviews.map(review => (
-                <CarouselItem key={review.id} className="pl-4">
+                <CarouselItem key={review.id} className="pl-2">
                   <ReviewCard review={review} />
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-2" />
-            <CarouselNext className="right-2" />
+            <CarouselPrevious className="-left-12" />
+            <CarouselNext className="-right-12" />
           </Carousel>
         </div>
 
