@@ -108,16 +108,12 @@ const BundleBoxes = () => {
           <div className="flex items-center gap-4 justify-center">
             <div className="flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
-              <span className="text-sm text-foreground/80">Kit a casa in 48h</span>
+              <span className="text-sm text-foreground/80">Spedizione gratuita</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
-              <span className="text-sm text-foreground/80">Supporto umano 7/7</span>
+              <span className="text-sm text-foreground/80">Kit a casa in 48h</span>
             </div>
-          </div>
-          <div className="flex items-center gap-2 justify-center">
-            <span className="w-1 h-1 rounded-full bg-primary flex-shrink-0"></span>
-            <span className="text-sm text-foreground/80">Laboratori CE-IVD / ISO 9001</span>
           </div>
         </div>
         
