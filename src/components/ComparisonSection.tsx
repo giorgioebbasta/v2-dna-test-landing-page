@@ -122,7 +122,7 @@ const ComparisonSection = () => {
 
         <div className="text-center mt-8">
           <a href="https://holifya.com/cart/43782964445448:1" target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]">Ordina ora (-€60)</Button>
+            <Button size="lg" className="px-8 py-4 text-lg font-semibold shadow-lg border-0 animate-[pulse_3s_ease-in-out_infinite]" style={{ background: 'linear-gradient(to right, #FCE8E6, #F5D4D1)', color: '#FFFFFFF' }}>Ordina ora (-€60)</Button>
           </a>
         </div>
       </div>
