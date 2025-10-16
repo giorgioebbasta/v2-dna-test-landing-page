@@ -105,12 +105,12 @@ const ComparisonSection = () => {
 
         {/* Savings Highlight */}
         <div className="text-center mt-8">
-          <Card className="inline-block border-0 shadow-xl" style={{ background: 'linear-gradient(to right, #D0C5FB, #A78BFA)', color: '#FFFFFFF' }}>
+          <Card className="inline-block border-0 shadow-xl" style={{ background: 'linear-gradient(to right, #D0C5FB, #A78BFA)', color: '#0000000' }}>
             <CardContent className="p-6">
               <div className="space-y-2">
                 <p className="text-lg font-medium">Risparmia con Holifya</p>
                 <p className="text-4xl font-bold">oltre €{totalSavings}</p>
-                <div className="leading-relaxed" style={{ color: '#FFFFFFF' }}>
+                <div className="leading-relaxed" style={{ color: '#0000000' }}>
                   <p>Un solo test. Un'analisi completa.</p>
                   
                   <div className="text-sm bg-white/20 rounded px-2 py-1 mt-2 font-semibold">Offerta valida fino a fine ottobre</div>
