@@ -69,7 +69,7 @@ const DNAExplainerSection = () => {
             </Card>
 
             {/* Arrow connector */}
-            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 absolute md:relative left-1/2 -translate-x-1/2 md:translate-x-0 top-[28%] md:top-auto z-10 md:z-auto pointer-events-none">
+            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 absolute md:relative left-1/2 -translate-x-1/2 md:translate-x-0 top-[31%] md:top-auto z-10 md:z-auto pointer-events-none">
               <ArrowRight className="w-10 h-10 md:w-8 md:h-8" style={{ color: '#0B4650' }} />
             </div>
 
@@ -86,7 +86,7 @@ const DNAExplainerSection = () => {
             </Card>
 
             {/* Arrow connector */}
-            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 absolute md:relative left-1/2 -translate-x-1/2 md:translate-x-0 top-[61%] md:top-auto z-10 md:z-auto pointer-events-none">
+            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 absolute md:relative left-1/2 -translate-x-1/2 md:translate-x-0 top-[65%] md:top-auto z-10 md:z-auto pointer-events-none">
               <ArrowRight className="w-10 h-10 md:w-8 md:h-8" style={{ color: '#0B4650' }} />
             </div>
 
