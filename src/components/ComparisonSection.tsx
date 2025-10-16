@@ -105,7 +105,7 @@ const ComparisonSection = () => {
 
         {/* Savings Highlight */}
         <div className="text-center mt-8">
-          <Card className="inline-block bg-gradient-to-r from-emerald-500 to-cyan-500 text-white border-0 shadow-xl">
+          <Card className="inline-block text-white border-0 shadow-xl" style={{ background: 'linear-gradient(to right, #D0C5FB, #A78BFA)' }}>
             <CardContent className="p-6">
               <div className="space-y-2">
                 <p className="text-lg font-medium">Risparmia con Holifya</p>
