@@ -55,7 +55,7 @@ const DNAExplainerSection = () => {
             Come funziona in 3 passaggi
           </h3>
           
-          <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-2 md:gap-4 mb-12 items-center">
+          <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-1 md:gap-4 mb-12 items-center">
             {/* Step 1 */}
             <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors z-0 md:z-auto">
               <CardContent className="p-6">
@@ -70,7 +70,7 @@ const DNAExplainerSection = () => {
 
             {/* Arrow connector */}
             <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 -my-4 md:my-0 z-10 md:z-auto">
-              <ArrowRight className="w-8 h-8" style={{ color: '#0B4650' }} />
+              <ArrowRight className="w-10 h-10" style={{ color: '#0B4650' }} />
             </div>
 
             {/* Step 2 */}
@@ -87,7 +87,7 @@ const DNAExplainerSection = () => {
 
             {/* Arrow connector */}
             <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 -my-4 md:my-0 z-10 md:z-auto">
-              <ArrowRight className="w-8 h-8" style={{ color: '#0B4650' }} />
+              <ArrowRight className="w-10 h-10" style={{ color: '#0B4650' }} />
             </div>
 
             {/* Step 3 */}
