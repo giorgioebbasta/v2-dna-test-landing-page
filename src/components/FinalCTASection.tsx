@@ -35,10 +35,10 @@ const FinalCTASection = () => {
           </div>
 
           {/* Certifications Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4 flex items-center justify-center">
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="w-5 h-5 text-[#0B4650]" />
-              <span className="text-sm font-medium text-[#0B4650]">CE-IVD / ISO / GDPR</span>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 flex items-center justify-center">
+            <div className="flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-[#0B4650]" />
+              <span className="text-xs font-medium text-[#0B4650]">CE-IVD / ISO / GDPR</span>
             </div>
           </div>
         </div>
