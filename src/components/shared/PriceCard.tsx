@@ -27,7 +27,7 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
   if (horizontal) {
     return (
       <Card 
-        className="gtm_addtocart border-2 border-[#0B4650] hover:border-[#0B4650]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden h-full"
+        className="gtm_addtocart border-2 border-[#FCE8E6] hover:border-[#FCE8E6]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden h-full"
         onClick={handleClick}
       >
         <CardContent className="p-3 h-full flex items-center justify-between gap-3">
