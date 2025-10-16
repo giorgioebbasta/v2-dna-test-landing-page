@@ -42,7 +42,7 @@ const BundleBox: React.FC<BundleBoxProps> = ({
         </h3>
         
         <div className="space-y-1">
-          <div className="text-2xl sm:text-3xl font-bold" style={{ color: '#1A1A31' }}>
+          <div className="text-2xl sm:text-3xl font-bold" style={{ color: '#994AFF' }}>
             €{currentPrice}
           </div>
           
