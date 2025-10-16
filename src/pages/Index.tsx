@@ -26,7 +26,7 @@ const Index = () => {
       
       {/* Above the fold - load immediately */}
       <div id="hero">
-        <HeroSection className="py-8 md:py-12" />
+        <HeroSection className="py-4 md:py-8" />
       </div>
       
       <div id="features">
