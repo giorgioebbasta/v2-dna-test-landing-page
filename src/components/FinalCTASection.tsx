@@ -28,13 +28,13 @@ const FinalCTASection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {/* Payment Methods Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
             <h3 className="text-white font-semibold mb-4 text-lg">Metodi di Pagamento</h3>
             <PaymentMethods />
           </div>
 
           {/* Certifications Box */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-4">
             <h3 className="text-white font-semibold mb-4 text-lg">Certificazioni</h3>
             <div className="flex flex-col items-center justify-center space-y-3">
               <div className="flex items-center space-x-2">
