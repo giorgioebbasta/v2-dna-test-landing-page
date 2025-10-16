@@ -61,7 +61,7 @@ const BundleBox: React.FC<BundleBoxProps> = ({
           )}
           
           {extraDiscount && (
-            <div className="mt-2 text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded inline-block">
+            <div className="mt-2 text-xs font-semibold px-2 py-1 rounded inline-block" style={{ backgroundColor: '#C4EDFF', color: '#0369A1' }}>
               {extraDiscount}
             </div>
           )}
