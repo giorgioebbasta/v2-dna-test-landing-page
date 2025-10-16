@@ -15,7 +15,7 @@ const PaymentMethods = React.memo(() => {
           </div>
           
           {/* Klarna */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mr-1">
             <img 
               src="/klarna.svg" 
               alt="Klarna" 
