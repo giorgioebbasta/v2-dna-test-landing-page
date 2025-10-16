@@ -71,7 +71,7 @@ const TestimonialsSection = () => {
           >
             <Button 
               size="lg"
-              className="px-8 py-4 text-lg font-semibold shadow-lg border border-slate-200 text-[#1A1A31]"
+              className="px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-slate-200 text-[#1A1A31]"
               style={{ background: '#C4EDFF' }}
             >
               Scegli anche tu di stare bene
