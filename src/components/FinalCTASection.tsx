@@ -22,7 +22,7 @@ const FinalCTASection = () => {
         <Button 
           onClick={handleOrder}
           size="lg"
-          className="bg-white text-[#0B4650] hover:bg-white/90 font-bold text-lg px-8 py-6 mb-6"
+          className="bg-[#0B4650] text-[#E8FFC9] hover:bg-[#0B4650]/90 font-bold text-lg px-8 py-6 mb-6"
         >
           Scopri cosa dice il tuo DNA
         </Button>
