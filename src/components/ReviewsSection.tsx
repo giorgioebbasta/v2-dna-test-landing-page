@@ -25,7 +25,7 @@ const ReviewsSection = () => {
   }];
 
   const ReviewCard = ({ review }: { review: typeof reviews[0] }) => (
-    <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 h-full">
+    <Card className="border shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 h-full">
       <CardContent className="p-6">
         <div className="flex items-center space-x-1 mb-4">
           {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
