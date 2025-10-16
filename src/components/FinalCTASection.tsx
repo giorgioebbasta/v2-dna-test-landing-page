@@ -14,7 +14,7 @@ const FinalCTASection = () => {
           Unisciti a 3.000+ clienti che hanno trasformato la loro routine.
         </h2>
         <p className="text-lg sm:text-xl text-white/90 mb-8">
-          Inizia senza rischi – kit a casa in 48h, risultati in 10 giorni.
+          Inizia senza rischi <br className="sm:hidden" />– kit a casa in 48h, risultati in 10 giorni.
         </p>
         
         <Button 
