@@ -76,7 +76,7 @@ const DropdownSection = () => {
           <Card key={index} className="border-2 border-slate-100 hover:border-indigo-200 transition-colors duration-300">
             <CardContent className="p-0">
               <button
-                className="w-full p-6 text-left flex items-center justify-between hover:bg-slate-50 transition-colors duration-200"
+                className="w-full py-4 px-6 text-left flex items-center justify-between hover:bg-slate-50 transition-colors duration-200"
                 onClick={() => setOpenSection(openSection === index ? -1 : index)}
               >
                 <h3 className="text-lg font-semibold text-slate-900">{section.title}</h3>
@@ -90,7 +90,7 @@ const DropdownSection = () => {
               <div className={`overflow-hidden transition-all duration-300 ${
                 openSection === index ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
               }`}>
-                <div className="px-6 pb-6 border-t border-slate-100">
+                <div className="px-6 pb-4 border-t border-slate-100">
                   {renderContent(section)}
                 </div>
               </div>
