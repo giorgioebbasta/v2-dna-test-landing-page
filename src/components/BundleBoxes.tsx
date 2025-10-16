@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from "@/components/ui/card";
+import PaymentMethods from "@/components/hero/PaymentMethods";
 
 interface BundleBoxProps {
   name: string;
@@ -100,6 +101,10 @@ const BundleBoxes = () => {
           {bundles.map((bundle, index) => (
             <BundleBox key={index} {...bundle} />
           ))}
+        </div>
+        
+        <div className="mt-8">
+          <PaymentMethods />
         </div>
       </div>
     </section>
