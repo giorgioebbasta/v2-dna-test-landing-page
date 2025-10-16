@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const FeaturesSection = () => {
   const bulletPoints = [
     {
-      title: "❌ Dieta dopo dieta ma non dimagrisci?",
+      title: "❌ Provi dieta dopo dieta ma non dimagrisci?",
       body: ""
     },
     {
