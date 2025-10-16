@@ -145,6 +145,7 @@ const ReportPreviewSection = () => {
             href="https://holifya.com/cart/43782964445448:1"
             target="_blank"
             rel="noopener noreferrer"
+            className="gtm_addtocart"
           >
             <Button size="lg" className="bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc] text-[#1A1A31] px-4 md:px-8 py-4 text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border border-slate-200">
               Ottieni ora la tua analisi personalizzata

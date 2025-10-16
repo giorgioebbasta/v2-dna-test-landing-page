@@ -67,7 +67,7 @@ const QuantitySelector = React.memo(({
       </div>
       
       <Button 
-        className={`${orderButtonClasses} flex-shrink-0`}
+        className={`gtm_addtocart ${orderButtonClasses} flex-shrink-0`}
         onClick={onOrder}
         disabled={disabled}
       >

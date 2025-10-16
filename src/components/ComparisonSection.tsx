@@ -121,7 +121,7 @@ const ComparisonSection = () => {
         </div>
 
         <div className="text-center mt-4">
-          <a href="https://holifya.com/cart/43782964445448:1" target="_blank" rel="noopener noreferrer">
+          <a href="https://holifya.com/cart/43782964445448:1" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">
             <Button size="lg" className="px-4 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-0" style={{ background: 'linear-gradient(to right, #D0C5FB, #A78BFA)', color: '#FFFFFFF' }}>Scegli una soluzione unica</Button>
           </a>
         </div>

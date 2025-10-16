@@ -16,6 +16,7 @@ const CTASection = () => {
           href="https://holifya.com/cart/43782964445448:1"
           target="_blank"
           rel="noopener noreferrer"
+          className="gtm_addtocart"
         >
           <Button 
             size="lg" 
