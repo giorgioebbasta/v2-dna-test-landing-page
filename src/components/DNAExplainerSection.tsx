@@ -57,7 +57,7 @@ const DNAExplainerSection = () => {
           
           <div className="grid md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-0 md:gap-4 mb-12 items-center">
             {/* Step 1 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors z-10 md:z-0">
               <CardContent className="p-6">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">🧬</div>
@@ -69,12 +69,12 @@ const DNAExplainerSection = () => {
             </Card>
 
             {/* Arrow connector */}
-            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 -my-4 md:my-0">
+            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 -my-4 md:my-0 z-0 md:z-auto">
               <ArrowRight className="w-8 h-8 text-emerald-500" />
             </div>
 
             {/* Step 2 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors z-10 md:z-0">
               <CardContent className="p-6">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">⚡</div>
@@ -86,12 +86,12 @@ const DNAExplainerSection = () => {
             </Card>
 
             {/* Arrow connector */}
-            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 -my-4 md:my-0">
+            <div className="flex items-center justify-center md:px-2 rotate-90 md:rotate-0 -my-4 md:my-0 z-0 md:z-auto">
               <ArrowRight className="w-8 h-8 text-emerald-500" />
             </div>
 
             {/* Step 3 */}
-            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors">
+            <Card className="relative overflow-hidden border-2 border-slate-100 hover:border-[#FCE8E6] transition-colors z-10 md:z-0">
               <CardContent className="p-6">
                 <div className="absolute top-0 right-0 w-16 h-16 bg-[#FCE8E6] opacity-50 rounded-bl-full"></div>
                 <div className="text-4xl mb-4">✅</div>
