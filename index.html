@@ -62,5 +62,105 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script src="/referral-simple.js"></script>
+    <script>
+(function() {
+    // Check if the URL has ?copy=true parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const shouldCopy = urlParams.get('copy');
+    const referralCode = urlParams.get('code');
+    
+    if (shouldCopy === 'true' && referralCode) {
+        // Build the referral message
+        const message = `Ciao! Ho fatto il test del DNA Holifya e mi ha aiutato a capire cosa funziona davvero per me su alimentazione, sonno ed energia.
+
+Con il mio codice hai €50 di sconto sul test completo.
+
+Se ti interessa, è questo: ${referralCode}
+👉 https://test-completo-del-dna.holifya.com`;
+        
+        // Wait for page to load, then copy
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                copyToClipboard(message);
+            }, 500);
+        });
+    }
+    
+    // Copy function with fallback
+    function copyToClipboard(text) {
+        // Modern Clipboard API
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    showNotification('✓ Messaggio copiato negli appunti!', 'success');
+                })
+                .catch(() => {
+                    fallbackCopy(text);
+                });
+        } else {
+            fallbackCopy(text);
+        }
+    }
+    
+    // Fallback for older browsers
+    function fallbackCopy(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        
+        try {
+            document.execCommand('copy');
+            showNotification('✓ Messaggio copiato negli appunti!', 'success');
+        } catch (err) {
+            showNotification('❌ Errore. Copia manualmente il codice: ' + referralCode, 'error');
+        }
+        
+        document.body.removeChild(textarea);
+    }
+    
+    // Show notification
+    function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.innerHTML = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: ${type === 'success' ? '#E8FFC9' : '#FCE8E6'};
+            color: ${type === 'success' ? '#0B4650' : '#8B0000'};
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 10000;
+            animation: slideDown 0.3s ease-out;
+        `;
+        
+        // Add animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideDown {
+                from { transform: translateX(-50%) translateY(-20px); opacity: 0; }
+                to { transform: translateX(-50%) translateY(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        document.body.appendChild(notification);
+        
+        // Remove after 4 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideDown 0.3s ease-out reverse';
+            setTimeout(() => notification.remove(), 300);
+        }, 4000);
+    }
+})();
+</script>
   </body>
 </html>
