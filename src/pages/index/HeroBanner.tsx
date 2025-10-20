@@ -10,7 +10,7 @@ const HeroBanner = React.memo(() => {
         Il <span className="bg-gradient-to-r from-[#0B4650] via-[#0d6875] to-[#0f8a9a] bg-clip-text text-transparent">DNA</span> ti dice cosa funziona per te.
       </h2>
       
-      <p className="text-[15px] md:text-[17px] lg:text-xl text-slate-600 leading-relaxed !pl-0">150 geni analizzati per scoprire cosa mangiare, come allenarti e dormire meglio.</p>
+      <p className="text-[15px] md:text-[17px] lg:text-xl text-slate-600 leading-relaxed !pl-0">Oltre 150 geni analizzati per scoprire cosa mangiare, come allenarti e dormire meglio.</p>
     </div>;
 });
 HeroBanner.displayName = 'HeroBanner';
