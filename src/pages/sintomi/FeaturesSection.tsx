@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const FeaturesSection = () => {
   const bulletPoints = [
     {
-      title: "❌ Provi dieta dopo dieta ma non dimagrisci?",
+      title: "❌ Senti affaticamento nonostante esami nella norma?",
       body: ""
     },
     {
@@ -13,11 +13,11 @@ const FeaturesSection = () => {
       body: ""
     },
     {
-      title: "❌ Hai fame costante o gonfiore cronico?",
+      title: "❌ Hai mal di testa o fastidi ricorrenti?",
       body: ""
     },
     {
-      title: "❌ Ti alleni ma non vedi risultati?",
+      title: "❌ Alcuni cibi/bevande ti danno fastidio?",
       body: ""
     }
   ];
