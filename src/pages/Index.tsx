@@ -13,8 +13,9 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import PromoBanner from '@/components/PromoBanner';
 import HeroSection from '@/components/HeroSection';
-import FeaturesSection from '@/components/FeaturesSection';
+import FeaturesSection from '@/pages/index/FeaturesSection';
 import FAQsSection from '@/components/FAQsSection';
+import HeroBanner from '@/pages/index/HeroBanner';
 const Index = () => {
   return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
       <Header />
@@ -26,7 +27,7 @@ const Index = () => {
       
       {/* Above the fold - load immediately */}
       <div id="hero">
-        <HeroSection className="py-4 md:py-8" />
+        <HeroSection className="py-4 md:py-8" heroBannerComponent={HeroBanner} />
       </div>
       
       <div id="features">

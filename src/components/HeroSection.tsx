@@ -1,6 +1,6 @@
 
 import React from 'react';
-import HeroBanner from '@/components/hero/HeroBanner';
+import DefaultHeroBanner from '@/components/hero/HeroBanner';
 import PriceCard from '@/components/shared/PriceCard';
 import BenefitsList from '@/components/hero/BenefitsList';
 import ProductPricing from '@/components/hero/ProductPricing';
@@ -10,8 +10,9 @@ import LazyProductCarousel from '@/components/optimized/LazyProductCarousel';
 import ImagePreloader from '@/components/optimized/ImagePreloader';
 import { useQuantity } from '@/hooks/useQuantity';
 
-const HeroSection = ({ className }: { className?: string }) => {
+const HeroSection = ({ className, heroBannerComponent }: { className?: string; heroBannerComponent?: React.ComponentType }) => {
   const { quantity, increaseQuantity, decreaseQuantity, handleOrder } = useQuantity(1);
+  const HeroBanner = heroBannerComponent || DefaultHeroBanner;
 
   // Preload critical images for faster initial load
   const priorityImages = [
