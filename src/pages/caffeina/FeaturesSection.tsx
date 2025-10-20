@@ -5,19 +5,19 @@ import { Card, CardContent } from "@/components/ui/card";
 const FeaturesSection = () => {
   const bulletPoints = [
     {
-      title: "❌ Provi dieta dopo dieta ma non dimagrisci?",
+      title: "❌ Caffè nel pomeriggio = notte in bianco",
       body: ""
     },
     {
-      title: "❌ Dormi male o ti svegli spesso di notte?",
+      title: "❌ Palpitazioni/ansia dopo il caffè",
       body: ""
     },
     {
-      title: "❌ Hai fame costante o gonfiore cronico?",
+      title: '❌ "Il caffè non fa effetto" e finisci per berne troppi',
       body: ""
     },
     {
-      title: "❌ Ti alleni ma non vedi risultati?",
+      title: "❌ Sonno leggero o risvegli notturni",
       body: ""
     }
   ];
@@ -27,7 +27,7 @@ const FeaturesSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">
-            Ti sei mai chiesto perché…
+            Succede anche a te...
           </h2>
         </div>
 
