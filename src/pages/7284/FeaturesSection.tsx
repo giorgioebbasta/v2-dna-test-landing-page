@@ -5,19 +5,19 @@ import { Card, CardContent } from "@/components/ui/card";
 const FeaturesSection = () => {
   const bulletPoints = [
     {
-      title: "❌ Provi dieta dopo dieta ma non dimagrisci?",
+      title: "❌ Diete per 2 settimane e poi ti blocchi?",
       body: ""
     },
     {
-      title: "❌ Dormi male o ti svegli spesso di notte?",
+      title: "❌ Voglia di dolce o fame poco dopo i pasti?",
       body: ""
     },
     {
-      title: "❌ Hai fame costante o gonfiore cronico?",
+      title: "❌ Gonfiore o pancia tesa la sera?",
       body: ""
     },
     {
-      title: "❌ Ti alleni ma non vedi risultati?",
+      title: "❌ Ti alleni ma la bilancia non scende?",
       body: ""
     }
   ];
