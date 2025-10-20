@@ -13,11 +13,11 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import PromoBanner from '@/components/PromoBanner';
 import HeroSection from '@/components/HeroSection';
-import FeaturesSection from '@/pages/7284/FeaturesSection';
+import FeaturesSection from '@/pages/sintomi/FeaturesSection';
 import FAQsSection from '@/components/FAQsSection';
-import HeroBanner from '@/pages/7284/HeroBanner';
+import HeroBanner from '@/pages/sintomi/HeroBanner';
 
-const Page7284 = () => {
+const PageSintomi = () => {
   return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
       <Header />
       <PromoBanner />
@@ -85,4 +85,4 @@ const Page7284 = () => {
     </div>;
 };
 
-export default Page7284;
+export default PageSintomi;

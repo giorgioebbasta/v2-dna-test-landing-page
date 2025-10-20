@@ -13,11 +13,11 @@ import FloatingCTA from '@/components/FloatingCTA';
 import Header from '@/components/Header';
 import PromoBanner from '@/components/PromoBanner';
 import HeroSection from '@/components/HeroSection';
-import FeaturesSection from '@/pages/3956/FeaturesSection';
+import FeaturesSection from '@/pages/metabolismo/FeaturesSection';
 import FAQsSection from '@/components/FAQsSection';
-import HeroBanner from '@/pages/3956/HeroBanner';
+import HeroBanner from '@/pages/metabolismo/HeroBanner';
 
-const Page3956 = () => {
+const PageMetabolismo = () => {
   return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
       <Header />
       <PromoBanner />
@@ -85,4 +85,4 @@ const Page3956 = () => {
     </div>;
 };
 
-export default Page3956;
+export default PageMetabolismo;
