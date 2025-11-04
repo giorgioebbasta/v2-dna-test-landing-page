@@ -18,7 +18,7 @@ const FloatingCTA = () => {
             animation: 'gentlePulse 3s ease-in-out infinite'
           }}
         >
-          Ordina ora - €289
+          Ordina ora - €249
         </Button>
       </a>
     </div>

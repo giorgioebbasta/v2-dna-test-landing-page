@@ -97,9 +97,9 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
             <div className="flex-1">
               <PriceCard
                 name="1 Test del DNA"
-                currentPrice={289}
+                currentPrice={249}
                 originalPrice={349}
-                savings={60}
+                savings={100}
                 url="https://holifya.com/cart/43782964445448:1"
                 horizontal
               />
@@ -109,9 +109,9 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
             <div className="flex-1">
               <PriceCard
                 name="2 Test del DNA"
-                currentPrice={499}
+                currentPrice={449}
                 originalPrice={698}
-                savings={199}
+                savings={249}
                 url="https://holifya.com/cart/43782964445448:2"
                 horizontal
               />
