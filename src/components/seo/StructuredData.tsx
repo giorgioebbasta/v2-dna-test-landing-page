@@ -85,6 +85,14 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type }) => {
         "@type": "Organization",
         "name": "Trustpilot"
       }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "IT",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
     }
   };
 
