@@ -51,6 +51,10 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type }) => {
       "itemCondition": "https://schema.org/NewCondition",
       "shippingDetails": {
         "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "IT"
+        },
         "shippingRate": {
           "@type": "MonetaryAmount",
           "value": "0",
