@@ -16,73 +16,90 @@ import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/pages/metabolismo/FeaturesSection';
 import FAQsSection from '@/components/FAQsSection';
 import HeroBanner from '@/pages/metabolismo/HeroBanner';
+import SEOHelmet from '@/components/seo/SEOHelmet';
+import StructuredData from '@/components/seo/StructuredData';
+import Breadcrumb from '@/components/seo/Breadcrumb';
 
 const PageMetabolismo = () => {
-  return <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
-      <Header />
-      <PromoBanner />
+  return (
+    <>
+      <SEOHelmet 
+        title="Test DNA Metabolismo - Scopri Come Accelerare il Tuo Metabolismo | Holifya"
+        description="Analizza i tuoi geni del metabolismo e scopri come il tuo DNA influenza il peso, il metabolismo energetico e la capacità di bruciare grassi. Test certificato CE-IVD."
+        canonical="https://test-completo-del-dna.holifya.com/metabolismo"
+        ogImage="https://test-completo-del-dna.holifya.com/lovable-uploads/quadrato.webp"
+      />
+      <StructuredData type="product" />
       
-      {/* Spacing for fixed header and promo banner */}
-      <div className="hidden md:block h-[108px]"></div>
-      <div className="md:hidden h-[97px]"></div>
-      
-      {/* Above the fold - load immediately */}
-      <div id="hero">
-        <HeroSection className="py-4 md:py-8" heroBannerComponent={HeroBanner} />
-      </div>
-      
-      <div id="features">
-        <FeaturesSection />
-      </div>
-      
-      <div id="dna-explainer">
-        <LazyDNAExplainerSection />
-      </div>
-      
-      <div id="report-preview">
-        <LazyReportPreviewSection />
-      </div>
-      
-      <div id="how-it-works">
-        <LazyHowItWorksSection />
-      </div>
-      
-      {/* Social proof - moved after How It Works */}
-      <div id="reviews" className="text-center py-8 md:py-12 px-4 bg-white">
-        <h2 className="text-4xl font-bold text-slate-900">
-          Cosa dicono di noi
-        </h2>
-      </div>
-      <LazyReviewsSection />
-      
-      <div id="testimonials">
-        <LazyTestimonialsSection />
-      </div>
-      
-      {/* Below the fold - lazy loaded */}
-      <div id="comparison">
-        <LazyComparisonSection />
-      </div>
-      
-      <div id="pricing">
-        <LazyBundleBoxes />
-      </div>
-      
-      <div id="faqs">
-        <FAQsSection />
-      </div>
-      
-      <div id="final-cta">
-        <LazyFinalCTASection />
-      </div>
-      
-      <div id="contact">
-        <LazyContactSection />
-      </div>
-      
-      <FloatingCTA />
-      <DeferredScripts />
-    </div>;
+      <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
+        <Header />
+        <PromoBanner />
+        
+        {/* Spacing for fixed header and promo banner */}
+        <div className="hidden md:block h-[108px]" aria-hidden="true"></div>
+        <div className="md:hidden h-[97px]" aria-hidden="true"></div>
+        
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumb items={[{ label: 'Metabolismo', href: '/metabolismo' }]} />
+        </div>
+        
+        {/* Above the fold - load immediately */}
+        <section id="hero" aria-label="Test DNA Metabolismo">
+          <HeroSection className="py-4 md:py-8" heroBannerComponent={HeroBanner} />
+        </section>
+        
+        <section id="features" aria-label="Problemi di metabolismo">
+          <FeaturesSection />
+        </section>
+        
+        <section id="dna-explainer" aria-label="Genetica e metabolismo">
+          <LazyDNAExplainerSection />
+        </section>
+        
+        <section id="report-preview" aria-label="Report metabolismo">
+          <LazyReportPreviewSection />
+        </section>
+        
+        <section id="how-it-works" aria-label="Come funziona">
+          <LazyHowItWorksSection />
+        </section>
+        
+        <section id="reviews" aria-label="Recensioni" className="text-center py-8 md:py-12 px-4 bg-white">
+          <h2 className="text-4xl font-bold text-slate-900">
+            Cosa dicono di noi
+          </h2>
+          <LazyReviewsSection />
+        </section>
+        
+        <section id="testimonials" aria-label="Testimonianze">
+          <LazyTestimonialsSection />
+        </section>
+        
+        <section id="comparison" aria-label="Confronto">
+          <LazyComparisonSection />
+        </section>
+        
+        <section id="pricing" aria-label="Prezzi">
+          <LazyBundleBoxes />
+        </section>
+        
+        <section id="faqs" aria-label="FAQ">
+          <FAQsSection />
+        </section>
+        
+        <section id="final-cta" aria-label="Ordina ora">
+          <LazyFinalCTASection />
+        </section>
+        
+        <section id="contact" aria-label="Contatti">
+          <LazyContactSection />
+        </section>
+        
+        <FloatingCTA />
+        <DeferredScripts />
+      </main>
+    </>
+  );
 };
 
 export default PageMetabolismo;
