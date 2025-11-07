@@ -67,6 +67,12 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type }) => {
             "minValue": 1,
             "maxValue": 2,
             "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "DAY"
           }
         }
       }
