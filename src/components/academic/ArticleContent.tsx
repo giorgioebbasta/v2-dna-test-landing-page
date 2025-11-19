@@ -32,9 +32,11 @@ export const ArticleContent = React.memo(() => {
             </div>
           </FigureCaption>
           
-          <Button size="lg" className="bg-[#768289] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200" asChild>
-            <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
-          </Button>
+          <a href="#casi" className="inline-block">
+            <Button size="lg" className="bg-[#768289] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200">
+              Scopri come funziona la nutrizione personalizzata
+            </Button>
+          </a>
         </div>
       </section>
 
