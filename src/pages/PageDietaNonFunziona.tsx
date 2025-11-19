@@ -60,7 +60,7 @@ const PageDietaNonFunziona = () => {
           {/* Main Content */}
           <div className="flex-1 lg:max-w-4xl">
             {/* 1. HERO SECTION */}
-            <section id="intro" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6 bg-[#F8FAFA]">
+            <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 px-4 md:px-6 bg-[#F8FAFA]">
               <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
                 {/* 1.1 H1 */}
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight px-2">
