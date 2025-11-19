@@ -22,7 +22,7 @@ import womanWellness from "@/assets/woman-wellness.jpg";
 const sections: ScrollSpySection[] = [
   {
     id: 'intro',
-    label: '1. Introduzione: Il paradosso delle diete'
+    label: '1. Il paradosso delle diete'
   },
   {
     id: 'inefficacia',
@@ -42,7 +42,7 @@ const sections: ScrollSpySection[] = [
   },
   {
     id: 'benefici',
-    label: '6. Benefici documentati dell\'approccio personalizzato'
+    label: '6. Benefici dell\'approccio personalizzato'
   },
   {
     id: 'casi',
@@ -51,6 +51,14 @@ const sections: ScrollSpySection[] = [
   {
     id: 'conclusioni',
     label: '8. Conclusioni e prospettive future'
+  },
+  {
+    id: 'bibliografia',
+    label: '9. Bibliografia'
+  },
+  {
+    id: 'disclaimer',
+    label: '10. Note legali e disclaimer'
   }
 ];
 const PageDietaNonFunziona = () => {
@@ -733,10 +741,10 @@ const PageDietaNonFunziona = () => {
             </section>
 
             {/* 9. FOOTER SECTION with bibliography and disclaimer */}
-            <footer className="py-12 md:py-16 px-4 md:px-6 bg-[#F8FAFA] border-t border-[#EAEAEA]">
+            <footer className="scroll-mt-32 py-12 md:py-16 px-4 md:px-6 bg-[#F8FAFA] border-t border-[#EAEAEA]">
               <div className="max-w-4xl mx-auto space-y-8">
                 {/* Bibliography */}
-                <div>
+                <div id="bibliografia">
                   <h3 className="text-xl font-bold text-[#0A121A] mb-4">Bibliografia</h3>
                   <ol className="text-sm text-[#2F3F4C] space-y-2 list-decimal pl-5">
                     <li id="ref1">Ordovas, J. M., Ferguson, L. R., Tai, E. S., & Mathers, J. C. (2018). Personalised nutrition and health. <em>BMJ</em>, 361, bmj.k2173. doi:10.1136/bmj.k2173</li>
@@ -765,7 +773,7 @@ const PageDietaNonFunziona = () => {
                 </div>
 
                 {/* Scientific Disclaimer */}
-                <div className="pt-6 border-t border-[#EAEAEA]">
+                <div id="disclaimer" className="pt-6 border-t border-[#EAEAEA]">
                   <p className="text-xs text-[#768289] leading-relaxed">
                     <strong>Disclaimer:</strong> Questo articolo ha finalità divulgative e si basa su fonti scientifiche peer-reviewed. Non costituisce consulenza medica o nutrizionale personalizzata. Per decisioni relative alla propria salute, consultare sempre un professionista qualificato. Le informazioni contenute in questo testo sono aggiornate alla data di pubblicazione e potrebbero subire modifiche alla luce di nuove evidenze scientifiche.
                   </p>
