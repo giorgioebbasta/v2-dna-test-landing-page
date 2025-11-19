@@ -23,8 +23,8 @@ export const TableOfContents = ({ sections }: TableOfContentsProps) => {
   };
 
   return (
-    <nav className="hidden lg:block sticky top-32 w-64 max-h-[calc(100vh-10rem)] overflow-y-auto">
-      <h3 className="text-sm font-semibold text-[#0A121A] mb-4 uppercase tracking-wide sticky top-0 bg-white pb-2 z-10">
+    <nav className="hidden lg:block sticky top-32 w-64 h-fit">
+      <h3 className="text-sm font-semibold text-[#0A121A] mb-4 uppercase tracking-wide">
         Indice
       </h3>
       <ul className="space-y-2">
