@@ -11,23 +11,33 @@ export const useScrollSpy = (sections: ScrollSpySection[], containerSelector?: s
   useEffect(() => {
     const container = containerSelector 
       ? document.querySelector(containerSelector) 
-      : window;
+      : null;
     
-    if (!container) return;
-
     const handleScroll = () => {
-      const scrollPosition = containerSelector
-        ? (container as Element).scrollTop + 150
-        : window.scrollY + 150;
+      if (containerSelector && container) {
+        // For custom scroll container
+        const scrollPosition = (container as Element).scrollTop + 200;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i].id);
-        if (section) {
-          const sectionTop = containerSelector
-            ? section.offsetTop - (container as Element).scrollTop + scrollPosition - 150
-            : section.offsetTop;
-          
-          if (sectionTop <= scrollPosition) {
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = document.getElementById(sections[i].id);
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            const relativeTop = rect.top - containerRect.top + (container as Element).scrollTop;
+            
+            if (relativeTop <= scrollPosition) {
+              setActiveSection(sections[i].id);
+              break;
+            }
+          }
+        }
+      } else {
+        // For window scroll
+        const scrollPosition = window.scrollY + 150;
+
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = document.getElementById(sections[i].id);
+          if (section && section.offsetTop <= scrollPosition) {
             setActiveSection(sections[i].id);
             break;
           }
@@ -35,10 +45,11 @@ export const useScrollSpy = (sections: ScrollSpySection[], containerSelector?: s
       }
     };
 
-    container.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    const scrollElement = container || window;
+    scrollElement.addEventListener('scroll', handleScroll as any);
+    handleScroll();
 
-    return () => container.removeEventListener('scroll', handleScroll);
+    return () => scrollElement.removeEventListener('scroll', handleScroll as any);
   }, [sections, containerSelector]);
 
   return activeSection;
