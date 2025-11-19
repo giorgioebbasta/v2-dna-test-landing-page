@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import SEOHelmet from "@/components/seo/SEOHelmet";
 import { TableOfContents } from "@/components/academic/TableOfContents";
-import { ScrollProgressBar } from "@/components/academic/ScrollProgressBar";
 import { CitationLink } from "@/components/academic/CitationLink";
 import { KeyFindingBox } from "@/components/academic/KeyFindingBox";
 import { FigureCaption } from "@/components/academic/FigureCaption";
@@ -52,7 +51,6 @@ const PageDietaNonFunziona = () => {
       
       {/* Header from main page */}
       <Header />
-      <ScrollProgressBar />
       
       <div className="min-h-screen bg-white">
         <div className="lg:flex lg:max-w-7xl lg:mx-auto lg:gap-8 lg:px-6">
