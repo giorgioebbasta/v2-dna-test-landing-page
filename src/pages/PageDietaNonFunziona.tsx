@@ -28,31 +28,32 @@ const PageDietaNonFunziona = () => {
       
       <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 pt-[97px] md:pt-[108px]">
         {/* 1. HERO SECTION */}
-        <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-[#E8FFC9] to-white">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+        <section className="py-8 md:py-16 lg:py-20 px-4 md:px-6 bg-gradient-to-b from-[#E8FFC9] to-white">
+          <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
             {/* 1.1 H1 */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 leading-tight px-2">
               Perché la stessa dieta non funziona per tutti: la scienza (finalmente) ci spiega il motivo
             </h1>
             
             {/* 1.2 H2 */}
-            <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-700 leading-relaxed">
+            <h2 className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-slate-700 leading-relaxed px-2">
               Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio.
             </h2>
             
             {/* 1.3 HERO IMAGE */}
-            <div className="my-8 rounded-lg overflow-hidden shadow-xl">
+            <div className="my-6 md:my-8 rounded-lg overflow-hidden shadow-xl">
               <img 
                 src={heroImage} 
                 alt="Due donne seguono lo stesso piano alimentare con risultati diversi" 
                 className="w-full h-auto"
+                loading="eager"
               />
             </div>
             
             {/* 1.4 HERO CTA */}
             <Button 
               size="lg"
-              className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-lg px-8 py-6"
+              className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-transform hover:scale-105"
               asChild
             >
               <a href="#cta-section">Scopri come funziona la nutrizione personalizzata</a>
@@ -61,10 +62,10 @@ const PageDietaNonFunziona = () => {
         </section>
 
         {/* 2. TEXT SECTION 1 */}
-        <section className="py-12 md:py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto space-y-6">
+        <section className="py-8 md:py-12 lg:py-16 px-4 md:px-6 bg-white">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
             {/* 2.1 TITLE 1 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
               Quando "fare tutto bene" non basta
             </h2>
             
@@ -73,37 +74,45 @@ const PageDietaNonFunziona = () => {
             </p>
             
             {/* 2.2 IMAGE 1 */}
-            <div className="my-6 rounded-lg overflow-hidden shadow-lg">
+            <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
                 src={womanThinking}
                 alt="Donna pensierosa davanti a un piatto sano" 
                 className="w-full h-auto"
+                loading="lazy"
               />
+              <p className="text-sm text-slate-500 text-center mt-2 italic px-2">
+                Una storia comune: impegno costante, risultati incostanti.
+              </p>
             </div>
             
           </div>
         </section>
 
         {/* 3. TEXT SECTION 2 */}
-        <section className="py-12 md:py-16 px-4 bg-slate-50">
-          <div className="max-w-4xl mx-auto space-y-6">
+        <section className="py-8 md:py-12 lg:py-16 px-4 md:px-6 bg-slate-50">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
             {/* 3.1 TITLE 2 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
               Non esiste una dieta per tutti
             </h2>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Per decenni abbiamo creduto che bastasse scegliere la "dieta giusta". Keto, mediterranea, iperproteica, vegetariana… ma nessuna funziona per tutti. Il motivo è semplice: il nostro corpo non risponde come quello di chi ci sta accanto. Il metabolismo, la sensibilità agli zuccheri, il ritmo ormonale, persino il microbiota intestinale - tutto varia da persona a persona. È per questo che due persone possono seguire lo stesso piano alimentare e ottenere risultati opposti. Non è una questione di impegno. È una questione di biologia individuale.
-            </p>
-            
             {/* 3.2 IMAGE 2 */}
-            <div className="my-6 rounded-lg overflow-hidden shadow-lg">
+            <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg bg-white p-4 md:p-6">
               <img 
                 src={dietResults}
                 alt="Infografica: stessa dieta, risultati diversi" 
                 className="w-full h-auto"
+                loading="lazy"
               />
+              <p className="text-sm text-slate-500 text-center mt-2 italic">
+                Fonte: AJCN Review, 2022
+              </p>
             </div>
+            
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+              Per decenni abbiamo creduto che bastasse scegliere la "dieta giusta". Keto, mediterranea, iperproteica, vegetariana… ma nessuna funziona per tutti. Il motivo è semplice: il nostro corpo non risponde come quello di chi ci sta accanto. Il metabolismo, la sensibilità agli zuccheri, il ritmo ormonale, persino il microbiota intestinale - tutto varia da persona a persona. È per questo che due persone possono seguire lo stesso piano alimentare e ottenere risultati opposti. Non è una questione di impegno. È una questione di biologia individuale.
+            </p>
             
           </div>
         </section>
@@ -133,10 +142,10 @@ const PageDietaNonFunziona = () => {
         </section>
 
         {/* 5. TEXT SECTION 4 */}
-        <section className="py-12 md:py-16 px-4 bg-slate-50">
-          <div className="max-w-4xl mx-auto space-y-6">
+        <section className="py-8 md:py-12 lg:py-16 px-4 md:px-6 bg-slate-50">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
             {/* 5.1 TITLE 4 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
               Lo studio che ha cambiato tutto
             </h2>
             
@@ -145,22 +154,26 @@ const PageDietaNonFunziona = () => {
             </p>
             
             {/* 5.2 IMAGE 4 */}
-            <div className="my-6 rounded-lg overflow-hidden shadow-lg">
+            <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg bg-white p-4 md:p-6">
               <img 
                 src={glycemicCurves}
                 alt="Grafico curve glicemiche opposte" 
                 className="w-full h-auto"
+                loading="lazy"
               />
+              <p className="text-sm text-slate-500 text-center mt-2 italic">
+                Fonte: Cell Metabolism, 2015 – Zeevi E. et al.
+              </p>
             </div>
             
           </div>
         </section>
 
         {/* 6. TEXT SECTION 5 + CTA */}
-        <section className="py-12 md:py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto space-y-6">
+        <section id="cta-section" className="py-8 md:py-12 lg:py-16 px-4 md:px-6 bg-white scroll-mt-24">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
             {/* 6.1 TITLE 5 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
               Perché le diete standard falliscono
             </h2>
             
@@ -168,120 +181,124 @@ const PageDietaNonFunziona = () => {
               Le diete "universali" si basano su medie statistiche, non su persone reali. Ma senza conoscere la propria biologia, ogni piano è un tentativo nel buio. Fattori genetici, sensibilità insulinica, stress, sonno, ormoni e ritmo circadiano influenzano il modo in cui elaboriamo energia. Per questo, anche rispettando regole identiche, due individui possono avere risultati completamente diversi.
             </p>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed italic border-l-4 border-[#0B4650] pl-4">
-              "La nutrizione personalizzata è la vera rivoluzione della salute: conoscere il proprio corpo permette di scegliere strategie sostenibili e non punitive." - Dott.ssa Laura Martini, biologa nutrizionista
-            </p>
+            <div className="bg-[#FCE8E6] border-l-4 border-[#0B4650] p-4 md:p-6 my-4 md:my-6 rounded-r-lg">
+              <p className="text-base md:text-lg text-slate-700 italic leading-relaxed">
+                "La nutrizione personalizzata è la vera rivoluzione della salute: conoscere il proprio corpo permette di scegliere strategie sostenibili e non punitive."
+              </p>
+              <p className="text-sm text-slate-600 mt-2 font-medium">
+                - Dott.ssa Laura Martini, biologa nutrizionista
+              </p>
+            </div>
             
             {/* 6.2 IMAGE 5 */}
-            <div className="my-6 rounded-lg overflow-hidden shadow-lg">
+            <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
                 src={activeWoman}
                 alt="Donna attiva in forma" 
                 className="w-full h-auto"
+                loading="lazy"
               />
             </div>
             
             {/* 6.3 CTA SECTION */}
-            <div id="cta-section" className="my-8 p-8 bg-gradient-to-b from-[#E8FFC9] to-[#d4f5b1] rounded-lg shadow-lg space-y-4">
+            <div className="bg-gradient-to-br from-[#E8FFC9] to-[#C4EDFF] rounded-xl p-6 md:p-8 lg:p-12 my-6 md:my-8 text-center space-y-4 md:space-y-6">
               {/* 6.3.1 CTA TITLE */}
-              <h3 className="text-2xl md:text-3xl font-bold text-[#0B4650]">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-900">
                 Ascoltare il corpo, non solo contare calorie
               </h3>
               
-              {/* 6.3.2 CTA BUTTON */}
-              <Button 
-                size="lg"
-                className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-lg px-8 py-6 w-full md:w-auto"
-                asChild
-              >
-                <a href="#final-cta">Scopri come funziona la nutrizione personalizzata</a>
-              </Button>
+              <p className="text-base md:text-lg text-slate-700">
+                Un approccio basato su scienza e dati, non su mode passeggere.
+              </p>
               
-              {/* 6.4.4 CTA IMAGE (if needed, or can be removed) */}
-              <div className="my-4 rounded-lg overflow-hidden shadow-lg">
+              {/* 6.3.2 CTA IMAGE */}
+              <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg">
                 <img 
                   src={foodData}
                   alt="Alimenti naturali con overlay dati scientifici" 
                   className="w-full h-auto"
+                  loading="lazy"
                 />
               </div>
+              
+              {/* 6.3.3 CTA BUTTON */}
+              <Button 
+                size="lg"
+                className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-transform hover:scale-105"
+                asChild
+              >
+                <a href="https://test-completo-del-dna.holifya.com" target="_blank" rel="noopener noreferrer">
+                  Scopri come funziona la nutrizione personalizzata
+                </a>
+              </Button>
             </div>
           </div>
         </section>
 
         {/* 7. TEXT SECTION 6 */}
-        <section className="py-12 md:py-16 px-4 bg-slate-50">
-          <div className="max-w-4xl mx-auto space-y-6">
+        <section className="py-8 md:py-12 lg:py-16 px-4 md:px-6 bg-slate-50">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
             {/* 7.1 TITLE 6 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
               I benefici di un percorso su misura
             </h2>
+            
+            {/* 7.2 IMAGE 6 */}
+            <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg bg-white p-4 md:p-6">
+              <img 
+                src={wellnessIcons}
+                alt="Icone benefici benessere" 
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               Quando impari a leggere le reazioni del tuo corpo, tutto cambia:
             </p>
             
-            <ul className="text-base md:text-lg text-slate-600 leading-relaxed space-y-2 list-none">
-              <li>✅ Gestione del peso più stabile e duratura</li>
-              <li>✅ Maggiore energia e concentrazione</li>
-              <li>✅ Riduzione di gonfiore e infiammazioni</li>
-              <li>✅ Miglior tono dell'umore</li>
-              <li>✅ Prevenzione dei disturbi metabolici legati all'età</li>
+            <ul className="space-y-2 md:space-y-3 text-base md:text-lg text-slate-600">
+              <li className="flex items-start"><span className="text-[#0B4650] mr-2 flex-shrink-0">✅</span><span>Gestione del peso più stabile e duratura</span></li>
+              <li className="flex items-start"><span className="text-[#0B4650] mr-2 flex-shrink-0">✅</span><span>Maggiore energia e concentrazione</span></li>
+              <li className="flex items-start"><span className="text-[#0B4650] mr-2 flex-shrink-0">✅</span><span>Riduzione di gonfiore e infiammazioni</span></li>
+              <li className="flex items-start"><span className="text-[#0B4650] mr-2 flex-shrink-0">✅</span><span>Miglior tono dell'umore</span></li>
+              <li className="flex items-start"><span className="text-[#0B4650] mr-2 flex-shrink-0">✅</span><span>Prevenzione dei disturbi metabolici legati all'età</span></li>
             </ul>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
               Non si tratta di miracoli, ma di decidere sulla base di evidenze scientifiche, non di tentativi.
             </p>
-            
-            {/* 7.2 IMAGE 6 */}
-            <div className="my-6 rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src={wellnessIcons}
-                alt="Icone benefici benessere" 
-                className="w-full h-auto"
-              />
-            </div>
-            
           </div>
         </section>
 
         {/* 8. TEXT SECTION 7 */}
-        <section className="py-12 md:py-16 px-4 bg-white">
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* 8.1 TITLE 7 */}
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+        <section className="py-8 md:py-12 lg:py-16 px-4 md:px-6 bg-white">
+          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900">
               Esperienze reali, non prove scientifiche
             </h2>
             
-            <div className="space-y-4">
-              <div className="p-4 bg-white rounded-lg shadow-md">
-                <p className="text-base md:text-lg text-slate-600 leading-relaxed italic">
+            <div className="space-y-3 md:space-y-4">
+              <div className="bg-slate-50 rounded-lg p-4 md:p-6 shadow-md">
+                <p className="text-base md:text-lg text-slate-700 italic mb-3 leading-relaxed">
                   "Dopo anni di diete yo-yo, ho capito che il mio corpo reagiva in modo diverso. Ora seguo un piano personalizzato e mi sento stabile, senza privazioni."
                 </p>
-                <p className="text-sm text-slate-500 mt-2">- Elisa, 42 anni, Milano</p>
+                <p className="text-sm text-slate-600 font-medium">- Elisa, 42 anni, Milano</p>
               </div>
               
-              <div className="p-4 bg-white rounded-lg shadow-md">
-                <p className="text-base md:text-lg text-slate-600 leading-relaxed italic">
+              <div className="bg-slate-50 rounded-lg p-4 md:p-6 shadow-md">
+                <p className="text-base md:text-lg text-slate-700 italic mb-3 leading-relaxed">
                   "Ho imparato a riconoscere i segnali del mio corpo e a scegliere in base alle mie reazioni, non alle mode."
                 </p>
-                <p className="text-sm text-slate-500 mt-2">- Giulia, 36 anni, Bologna</p>
+                <p className="text-sm text-slate-600 font-medium">- Giulia, 36 anni, Bologna</p>
               </div>
             </div>
             
-            <p className="text-sm text-slate-500 italic mt-4">
-              Nota: queste testimonianze illustrano esperienze individuali, non sostituiscono l'evidenza scientifica. Il valore reale deriva da studi clinici e protocolli di nutrizione di precisione riconosciuti a livello internazionale.
-            </p>
-            
-            {/* 8.2 IMAGE 7 - Testimonials are now in cards above */}
-            <div className="my-6 rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src={activeWoman}
-                alt="Testimonianze clienti" 
-                className="w-full h-auto"
-              />
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 md:p-6 my-4 md:my-6 rounded-r-lg">
+              <p className="text-sm text-slate-600 italic leading-relaxed">
+                <strong>Nota:</strong> queste testimonianze illustrano esperienze individuali, non sostituiscono l'evidenza scientifica. Il valore reale deriva da studi clinici e protocolli di nutrizione di precisione riconosciuti a livello internazionale.
+              </p>
             </div>
-            
           </div>
         </section>
 
