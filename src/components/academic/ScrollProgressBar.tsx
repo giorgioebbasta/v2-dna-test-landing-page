@@ -43,7 +43,7 @@ export const ScrollProgressBar = () => {
 
   return (
     <div 
-      className="fixed top-[61px] md:top-[73px] left-0 right-0 h-[3px] bg-[#EAEAEA] z-40 shadow-sm"
+      className="fixed top-[60px] md:top-[72px] left-0 right-0 h-[3px] bg-[#EAEAEA] z-40"
       role="progressbar"
       aria-valuenow={Math.round(scrollProgress)}
       aria-valuemin={0}
