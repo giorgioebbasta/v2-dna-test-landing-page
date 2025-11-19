@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import PageMetabolismo from "./pages/PageMetabolismo";
 import PageSintomi from "./pages/PageSintomi";
 import PageCaffeina from "./pages/PageCaffeina";
+import PageDietaNonFunziona from "./pages/PageDietaNonFunziona";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => {
                 <Route path="/metabolismo" element={<PageMetabolismo />} />
                 <Route path="/sintomi" element={<PageSintomi />} />
                 <Route path="/caffeina" element={<PageCaffeina />} />
+                <Route path="/dieta-non-funziona" element={<PageDietaNonFunziona />} />
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>
