@@ -18,7 +18,7 @@ import FAQsSection from '@/components/FAQsSection';
 import HeroBanner from '@/pages/caffeina/HeroBanner';
 import SEOHelmet from '@/components/seo/SEOHelmet';
 import StructuredData from '@/components/seo/StructuredData';
-import Breadcrumb from '@/components/seo/Breadcrumb';
+
 
 const PageCaffeina = () => {
   return (
@@ -39,9 +39,6 @@ const PageCaffeina = () => {
         <div className="hidden md:block h-[108px]" aria-hidden="true"></div>
         <div className="md:hidden h-[97px]" aria-hidden="true"></div>
         
-        <div className="max-w-7xl mx-auto">
-          <Breadcrumb items={[{ label: 'Caffeina', href: '/caffeina' }]} />
-        </div>
         
         {/* Above the fold - load immediately */}
         <section id="hero" aria-label="Test DNA Caffeina">
