@@ -19,48 +19,31 @@ import activeWoman from "@/assets/active-woman.jpg";
 import foodData from "@/assets/food-data-overlay.jpg";
 import wellnessIcons from "@/assets/wellness-icons.jpg";
 import womanWellness from "@/assets/woman-wellness.jpg";
-const sections: ScrollSpySection[] = [
-  {
-    id: 'intro',
-    label: '1. Il paradosso delle diete'
-  },
-  {
-    id: 'inefficacia',
-    label: '2. L\'inefficacia delle diete universali'
-  },
-  {
-    id: 'svolta',
-    label: '3. La svolta scientifica della nutrigenomica'
-  },
-  {
-    id: 'studio',
-    label: '4. Lo studio fondamentale di Zeevi et al.'
-  },
-  {
-    id: 'evidenze',
-    label: '5. Evidenze cliniche dalla letteratura'
-  },
-  {
-    id: 'benefici',
-    label: '6. Benefici dell\'approccio personalizzato'
-  },
-  {
-    id: 'casi',
-    label: '7. Casi osservativi e applicazioni pratiche'
-  },
-  {
-    id: 'conclusioni',
-    label: '8. Conclusioni e prospettive future'
-  },
-  {
-    id: 'bibliografia',
-    label: '9. Bibliografia'
-  },
-  {
-    id: 'disclaimer',
-    label: '10. Note legali e disclaimer'
-  }
-];
+const sections: ScrollSpySection[] = [{
+  id: 'intro',
+  label: 'Introduzione'
+}, {
+  id: 'inefficacia',
+  label: 'L\'inefficacia delle diete universali'
+}, {
+  id: 'svolta',
+  label: 'La svolta scientifica'
+}, {
+  id: 'studio',
+  label: 'Lo studio fondamentale'
+}, {
+  id: 'evidenze',
+  label: 'Evidenze cliniche'
+}, {
+  id: 'benefici',
+  label: 'Benefici documentati'
+}, {
+  id: 'casi',
+  label: 'Casi osservativi'
+}, {
+  id: 'conclusioni',
+  label: 'Conclusioni'
+}];
 const PageDietaNonFunziona = () => {
   return <>
       <SEOHelmet title="Perché la stessa dieta non funziona per tutti | Holifya" description="Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio." canonical="https://test-completo-del-dna.holifya.com/dieta-non-funziona" />
@@ -396,10 +379,10 @@ const PageDietaNonFunziona = () => {
         {/* Desktop Layout - Fixed Split Panel */}
         <div className="hidden lg:flex h-screen">
           <div className="w-1/4 h-full overflow-y-auto px-6 -mt-12 border-r border-[#EAEAEA]">
-            <TableOfContents sections={sections} scrollContainerSelector=".desktop-content-scroll" />
+            <TableOfContents sections={sections} />
           </div>
           
-          <div className="w-3/4 h-full overflow-y-auto desktop-content-scroll">
+          <div className="w-3/4 h-full overflow-y-auto">
             <div className="max-w-4xl mx-auto -mt-12">
                   {/* All content sections */}
                   {/* 1. HERO SECTION */}
@@ -741,10 +724,10 @@ const PageDietaNonFunziona = () => {
             </section>
 
             {/* 9. FOOTER SECTION with bibliography and disclaimer */}
-            <footer className="scroll-mt-32 py-12 md:py-16 px-4 md:px-6 bg-[#F8FAFA] border-t border-[#EAEAEA]">
+            <footer className="py-12 md:py-16 px-4 md:px-6 bg-[#F8FAFA] border-t border-[#EAEAEA]">
               <div className="max-w-4xl mx-auto space-y-8">
                 {/* Bibliography */}
-                <div id="bibliografia">
+                <div>
                   <h3 className="text-xl font-bold text-[#0A121A] mb-4">Bibliografia</h3>
                   <ol className="text-sm text-[#2F3F4C] space-y-2 list-decimal pl-5">
                     <li id="ref1">Ordovas, J. M., Ferguson, L. R., Tai, E. S., & Mathers, J. C. (2018). Personalised nutrition and health. <em>BMJ</em>, 361, bmj.k2173. doi:10.1136/bmj.k2173</li>
@@ -773,7 +756,7 @@ const PageDietaNonFunziona = () => {
                 </div>
 
                 {/* Scientific Disclaimer */}
-                <div id="disclaimer" className="pt-6 border-t border-[#EAEAEA]">
+                <div className="pt-6 border-t border-[#EAEAEA]">
                   <p className="text-xs text-[#768289] leading-relaxed">
                     <strong>Disclaimer:</strong> Questo articolo ha finalità divulgative e si basa su fonti scientifiche peer-reviewed. Non costituisce consulenza medica o nutrizionale personalizzata. Per decisioni relative alla propria salute, consultare sempre un professionista qualificato. Le informazioni contenute in questo testo sono aggiornate alla data di pubblicazione e potrebbero subire modifiche alla luce di nuove evidenze scientifiche.
                   </p>

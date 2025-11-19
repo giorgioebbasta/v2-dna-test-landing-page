@@ -3,40 +3,14 @@ import { cn } from '@/lib/utils';
 
 interface TableOfContentsProps {
   sections: ScrollSpySection[];
-  scrollContainerSelector?: string;
 }
 
-export const TableOfContents = ({ sections, scrollContainerSelector }: TableOfContentsProps) => {
-  const activeSection = useScrollSpy(sections, scrollContainerSelector);
+export const TableOfContents = ({ sections }: TableOfContentsProps) => {
+  const activeSection = useScrollSpy(sections);
 
   const scrollToSection = (id: string) => {
-    console.log('[TOC] Attempting to scroll to section:', id);
     const element = document.getElementById(id);
-    console.log('[TOC] Found element:', element);
-    
-    if (!element) {
-      console.error('[TOC] Element not found for ID:', id);
-      return;
-    }
-
-    if (scrollContainerSelector) {
-      const container = document.querySelector(scrollContainerSelector);
-      console.log('[TOC] Scroll container:', container);
-      
-      if (container) {
-        const elementRect = element.getBoundingClientRect();
-        const containerRect = container.getBoundingClientRect();
-        const relativeTop = elementRect.top - containerRect.top + container.scrollTop;
-        const offset = 100;
-        
-        console.log('[TOC] Scrolling to position:', relativeTop - offset);
-
-        container.scrollTo({
-          top: relativeTop - offset,
-          behavior: 'smooth'
-        });
-      }
-    } else {
+    if (element) {
       const offset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -59,10 +33,10 @@ export const TableOfContents = ({ sections, scrollContainerSelector }: TableOfCo
             <button
               onClick={() => scrollToSection(section.id)}
               className={cn(
-                "text-left w-full py-2 px-3 text-sm transition-all duration-200 border-l-2 rounded-r",
+                "text-left w-full py-2 px-3 text-sm transition-all duration-200 border-l-2",
                 activeSection === section.id
                   ? "border-[#0A121A] text-[#0A121A] font-semibold bg-[#F8FAFA]"
-                  : "border-[#EAEAEA] text-[#768289] hover:text-[#0A121A] hover:border-[#0A121A] hover:bg-[#F8FAFA]/50"
+                  : "border-[#EAEAEA] text-[#768289] hover:text-[#2F3F4C] hover:border-[#BAC0C4]"
               )}
             >
               {section.label}
