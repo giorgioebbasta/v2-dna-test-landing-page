@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { smoothScrollToSection } from '@/lib/utils';
 
 const Header = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const lastProgressRef = useRef(0);
 
   useEffect(() => {
     let rafId: number;
@@ -17,11 +16,7 @@ const Header = () => {
       const progress = (scrollTop / totalScroll) * 100;
       const clampedProgress = Math.min(100, Math.max(0, progress));
       
-      // Only update if changed by at least 0.001%
-      if (Math.abs(clampedProgress - lastProgressRef.current) >= 0.001) {
-        setScrollProgress(clampedProgress);
-        lastProgressRef.current = clampedProgress;
-      }
+      setScrollProgress(clampedProgress);
     };
 
     const handleScroll = () => {
@@ -101,7 +96,7 @@ const Header = () => {
         aria-label="Reading progress"
       >
         <div 
-          className="h-full bg-gradient-to-r from-[#0A121A] to-[#2F3F4C] transition-all duration-100 ease-linear rounded-r-full"
+          className="h-full bg-gradient-to-r from-[#0A121A] to-[#2F3F4C] transition-none rounded-r-full"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
