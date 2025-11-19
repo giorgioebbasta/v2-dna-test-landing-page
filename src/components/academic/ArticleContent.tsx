@@ -77,7 +77,11 @@ export const ArticleContent = React.memo(() => {
             
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Marta ha 38 anni. Negli ultimi due anni ha provato più di quattro tipi di dieta, ha seguito ogni indicazione, ha contato calorie, allenamenti, integratori. Eppure, i risultati sono lenti, instabili — basta una settimana di stress per tornare al punto di partenza. Ti suona familiare? Non è mancanza di volontà: è biologia. Ognuno di noi elabora i nutrienti, brucia energia e regola l'appetito in modo diverso. Secondo una review pubblicata sull'American Journal of Clinical Nutrition (2022), oltre il 70% delle persone non mantiene i risultati ottenuti con una dieta standard, a prescindere dal tipo di piano seguito. Lo confermano anche gli studi di Harvard (Harvard T.H. Chan School of Public Health, Nutrients & Supplementi, 2024): la chiave per una perdita di peso sostenibile è la personalizzazione del piano alimentare, non la sua "moda".
+                Marta ha 38 anni. Negli ultimi due anni ha provato più di quattro tipi di dieta, ha seguito ogni indicazione, ha contato calorie, allenamenti, integratori.
+                </br>Eppure, i risultati sono lenti, instabili — basta una settimana di stress per tornare al punto di partenza.
+                </br>Ti suona familiare? Non è mancanza di volontà: è biologia. Ognuno di noi elabora i nutrienti, brucia energia e regola l'appetito in modo diverso.
+                </br>Secondo una review pubblicata sull'American Journal of Clinical Nutrition (2022), oltre il 70% delle persone non mantiene i risultati ottenuti con una dieta standard, a prescindere dal tipo di piano seguito.
+                </br>Lo confermano anche gli studi di Harvard (Harvard T.H. Chan School of Public Health, Nutrients & Supplementi, 2024): la chiave per una perdita di peso sostenibile è la personalizzazione del piano alimentare, non la sua "moda".
               </p>
             </div>
           </div>
