@@ -378,7 +378,7 @@ const PageDietaNonFunziona = () => {
         
         {/* Desktop Layout - Fixed Split Panel */}
         <div className="hidden lg:flex h-screen">
-          <div className="w-1/4 h-full overflow-y-auto px-6 border-r border-[#EAEAEA]">
+          <div className="w-1/4 h-full overflow-y-auto px-6 -mt-8 border-r border-[#EAEAEA]">
             <TableOfContents sections={sections} />
           </div>
           
