@@ -19,31 +19,40 @@ import activeWoman from "@/assets/active-woman.jpg";
 import foodData from "@/assets/food-data-overlay.jpg";
 import wellnessIcons from "@/assets/wellness-icons.jpg";
 import womanWellness from "@/assets/woman-wellness.jpg";
-const sections: ScrollSpySection[] = [{
-  id: 'intro',
-  label: 'Introduzione'
-}, {
-  id: 'inefficacia',
-  label: 'L\'inefficacia delle diete universali'
-}, {
-  id: 'svolta',
-  label: 'La svolta scientifica'
-}, {
-  id: 'studio',
-  label: 'Lo studio fondamentale'
-}, {
-  id: 'evidenze',
-  label: 'Evidenze cliniche'
-}, {
-  id: 'benefici',
-  label: 'Benefici documentati'
-}, {
-  id: 'casi',
-  label: 'Casi osservativi'
-}, {
-  id: 'conclusioni',
-  label: 'Conclusioni'
-}];
+const sections: ScrollSpySection[] = [
+  {
+    id: 'intro',
+    label: '1. Introduzione: Il paradosso delle diete'
+  },
+  {
+    id: 'inefficacia',
+    label: '2. L\'inefficacia delle diete universali'
+  },
+  {
+    id: 'svolta',
+    label: '3. La svolta scientifica della nutrigenomica'
+  },
+  {
+    id: 'studio',
+    label: '4. Lo studio fondamentale di Zeevi et al.'
+  },
+  {
+    id: 'evidenze',
+    label: '5. Evidenze cliniche dalla letteratura'
+  },
+  {
+    id: 'benefici',
+    label: '6. Benefici documentati dell\'approccio personalizzato'
+  },
+  {
+    id: 'casi',
+    label: '7. Casi osservativi e applicazioni pratiche'
+  },
+  {
+    id: 'conclusioni',
+    label: '8. Conclusioni e prospettive future'
+  }
+];
 const PageDietaNonFunziona = () => {
   return <>
       <SEOHelmet title="Perché la stessa dieta non funziona per tutti | Holifya" description="Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio." canonical="https://test-completo-del-dna.holifya.com/dieta-non-funziona" />
