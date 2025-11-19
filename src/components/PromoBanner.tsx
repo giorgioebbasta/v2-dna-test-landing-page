@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 const PromoBanner = () => {
   const location = useLocation();
   const isAdvertorialPage = location.pathname === '/dieta-non-funziona';
-  const paddingClass = isAdvertorialPage ? 'py-2' : 'py-4';
+  const paddingClass = isAdvertorialPage ? 'py-2' : 'pt-5 pb-2';
   
   return (
     <div className={`fixed top-[42px] md:top-[49px] left-0 right-0 z-40 bg-[#E8FFC9] text-[#0B4650] ${paddingClass} px-4 shadow-lg`}>
