@@ -8,6 +8,14 @@
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
+    /* Professional Academic Colors */
+    --academic-navy: 210 48% 8%; /* #0A121A */
+    --academic-lightest: 180 11% 98%; /* #F8FAFA */
+    --academic-charcoal: 210 15% 23%; /* #2F3F4C */
+    --academic-gray: 200 8% 52%; /* #768289 */
+    --academic-light-gray: 200 8% 76%; /* #BAC0C4 */
+    --academic-border: 0 0% 92%; /* #EAEAEA */
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
 

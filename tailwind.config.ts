@@ -19,7 +19,13 @@ export default {
 			}
 		},
 		extend: {
-			colors: {
+      colors: {
+        'academic-navy': 'hsl(var(--academic-navy))',
+        'academic-lightest': 'hsl(var(--academic-lightest))',
+        'academic-charcoal': 'hsl(var(--academic-charcoal))',
+        'academic-gray': 'hsl(var(--academic-gray))',
+        'academic-light-gray': 'hsl(var(--academic-light-gray))',
+        'academic-border': 'hsl(var(--academic-border))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
