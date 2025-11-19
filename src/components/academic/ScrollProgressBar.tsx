@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export const ScrollProgressBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const lastProgressRef = useRef(0);
 
   useEffect(() => {
     let rafId: number;
@@ -13,8 +14,13 @@ export const ScrollProgressBar = () => {
       
       const totalScroll = documentHeight - windowHeight;
       const progress = (scrollTop / totalScroll) * 100;
+      const clampedProgress = Math.min(100, Math.max(0, progress));
       
-      setScrollProgress(Math.min(100, Math.max(0, progress)));
+      // Only update if changed by at least 0.001%
+      if (Math.abs(clampedProgress - lastProgressRef.current) >= 0.001) {
+        setScrollProgress(clampedProgress);
+        lastProgressRef.current = clampedProgress;
+      }
     };
 
     const handleScroll = () => {
@@ -45,7 +51,7 @@ export const ScrollProgressBar = () => {
       aria-label="Reading progress"
     >
       <div 
-        className="h-full bg-gradient-to-r from-[#0A121A] to-[#2F3F4C] transition-all duration-150 ease-out rounded-r-full"
+        className="h-full bg-gradient-to-r from-[#0A121A] to-[#2F3F4C] transition-all duration-100 ease-linear rounded-r-full"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>
