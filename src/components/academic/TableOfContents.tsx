@@ -10,16 +10,26 @@ export const TableOfContents = ({ sections, scrollContainerSelector }: TableOfCo
   const activeSection = useScrollSpy(sections, scrollContainerSelector);
 
   const scrollToSection = (id: string) => {
+    console.log('[TOC] Attempting to scroll to section:', id);
     const element = document.getElementById(id);
-    if (!element) return;
+    console.log('[TOC] Found element:', element);
+    
+    if (!element) {
+      console.error('[TOC] Element not found for ID:', id);
+      return;
+    }
 
     if (scrollContainerSelector) {
       const container = document.querySelector(scrollContainerSelector);
+      console.log('[TOC] Scroll container:', container);
+      
       if (container) {
         const elementRect = element.getBoundingClientRect();
         const containerRect = container.getBoundingClientRect();
         const relativeTop = elementRect.top - containerRect.top + container.scrollTop;
         const offset = 100;
+        
+        console.log('[TOC] Scrolling to position:', relativeTop - offset);
 
         container.scrollTo({
           top: relativeTop - offset,
