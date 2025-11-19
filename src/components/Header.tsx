@@ -1,24 +1,14 @@
 import React from 'react';
 import { smoothScrollToSection } from '@/lib/utils';
 
-interface NavItem {
-  label: string;
-  sectionId: string;
-}
-
-interface HeaderProps {
-  navItems?: NavItem[];
-}
-
-const defaultNavItems: NavItem[] = [
-  { label: 'Come Funziona', sectionId: 'how-it-works' },
-  { label: 'Perché Holifya', sectionId: 'comparison' },
-  { label: 'Recensioni', sectionId: 'reviews' },
-  { label: 'Prezzi', sectionId: 'pricing' },
-  { label: 'FAQ', sectionId: 'faqs' },
-];
-
-const Header: React.FC<HeaderProps> = ({ navItems = defaultNavItems }) => {
+const Header = () => {
+  const navItems = [
+    { label: 'Come Funziona', sectionId: 'how-it-works' },
+    { label: 'Perché Holifya', sectionId: 'comparison' },
+    { label: 'Recensioni', sectionId: 'reviews' },
+    { label: 'Prezzi', sectionId: 'pricing' },
+    { label: 'FAQ', sectionId: 'faqs' },
+  ];
 
   return <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
       {/* Mobile version - logo only */}

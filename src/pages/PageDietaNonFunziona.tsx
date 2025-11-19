@@ -52,7 +52,7 @@ const PageDietaNonFunziona = () => {
         </section>
 
         {/* 2. TEXT SECTION 1 */}
-        <section id="science-section" className="py-12 md:py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 2.1 TITLE 1 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
@@ -106,7 +106,7 @@ const PageDietaNonFunziona = () => {
         </section>
 
         {/* 4. TEXT SECTION 3 */}
-        <section id="how-it-works-section" className="py-12 md:py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 4.1 TITLE 3 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
@@ -205,7 +205,7 @@ const PageDietaNonFunziona = () => {
         </section>
 
         {/* 7. TEXT SECTION 6 */}
-        <section id="results-section" className="py-12 md:py-16 px-4 bg-slate-50">
+        <section className="py-12 md:py-16 px-4 bg-slate-50">
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 7.1 TITLE 6 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
@@ -259,7 +259,7 @@ const PageDietaNonFunziona = () => {
         </section>
 
         {/* 9. FINAL CTA SECTION */}
-        <section id="final-cta" className="py-16 md:py-20 px-4 bg-gradient-to-b from-[#E8FFC9] to-[#d4f5b1]">
+        <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-[#E8FFC9] to-[#d4f5b1]">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             {/* 9.1 FINAL CTA SECTION - TITLE */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B4650]">
