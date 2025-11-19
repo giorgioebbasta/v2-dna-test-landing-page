@@ -1,12 +1,13 @@
-import { useScrollSpy, ScrollSpySection } from '@/hooks/useScrollSpy';
+import React from 'react';
+import { useOptimizedScrollSpy, ScrollSpySection } from '@/hooks/useOptimizedScrollSpy';
 import { cn } from '@/lib/utils';
 
 interface TableOfContentsProps {
   sections: ScrollSpySection[];
 }
 
-export const TableOfContents = ({ sections }: TableOfContentsProps) => {
-  const activeSection = useScrollSpy(sections);
+export const TableOfContents = React.memo(({ sections }: TableOfContentsProps) => {
+  const activeSection = useOptimizedScrollSpy(sections);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -46,4 +47,6 @@ export const TableOfContents = ({ sections }: TableOfContentsProps) => {
       </ul>
     </nav>
   );
-};
+});
+
+TableOfContents.displayName = 'TableOfContents';
