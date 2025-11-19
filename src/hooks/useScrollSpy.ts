@@ -6,7 +6,7 @@ export interface ScrollSpySection {
 }
 
 export const useScrollSpy = (sections: ScrollSpySection[], containerSelector?: string) => {
-  const [activeSection, setActiveSection] = useState<string>('');
+  const [activeSection, setActiveSection] = useState<string>(sections[0]?.id || '');
 
   useEffect(() => {
     const container = containerSelector 
@@ -16,7 +16,13 @@ export const useScrollSpy = (sections: ScrollSpySection[], containerSelector?: s
     const handleScroll = () => {
       if (containerSelector && container) {
         // For custom scroll container
-        const scrollPosition = (container as Element).scrollTop + 200;
+        const scrollPosition = (container as Element).scrollTop + 100;
+        
+        // If near the top, always show first section
+        if ((container as Element).scrollTop < 50) {
+          setActiveSection(sections[0]?.id || '');
+          return;
+        }
 
         for (let i = sections.length - 1; i >= 0; i--) {
           const section = document.getElementById(sections[i].id);
