@@ -32,7 +32,19 @@ export const ArticleContent = React.memo(() => {
             </div>
           </FigureCaption>
           
-          <a href="#casi" className="inline-block">
+          <a 
+            href="#casi" 
+            className="inline-block"
+            onClick={(e) => {
+              console.log('CTA clicked, navigating to #casi');
+              console.log('Window width:', window.innerWidth);
+              const header = document.querySelector('header') as HTMLElement;
+              const banner = document.querySelector('[class*="top-[42px]"]') as HTMLElement;
+              console.log('Header height:', header?.offsetHeight);
+              console.log('Banner height:', banner?.offsetHeight);
+              console.log('Total sticky height:', (header?.offsetHeight || 0) + (banner?.offsetHeight || 0));
+            }}
+          >
             <Button size="lg" className="bg-[#768289] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200">
               Scopri come funziona la nutrizione personalizzata
             </Button>
