@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import SEOHelmet from "@/components/seo/SEOHelmet";
 
 const PageDietaNonFunziona = () => {
@@ -13,6 +14,24 @@ const PageDietaNonFunziona = () => {
       />
       
       <div className="min-h-screen bg-gradient-to-b from-white to-slate-50">
+        {/* HEADER */}
+        <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+          <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <img 
+                src="/lovable-uploads/logo-holifya.jpeg" 
+                alt="Holifya Logo" 
+                className="h-10 md:h-12 w-auto"
+              />
+              <img 
+                src="/lovable-uploads/payoff-nero.jpeg" 
+                alt="Holifya Payoff" 
+                className="h-6 md:h-7 w-auto hidden sm:block"
+              />
+            </Link>
+          </div>
+        </header>
+
         {/* 1. HERO SECTION */}
         <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-[#E8FFC9] to-white">
           <div className="max-w-4xl mx-auto text-center space-y-6">
