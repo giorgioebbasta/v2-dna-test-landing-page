@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import SEOHelmet from "@/components/seo/SEOHelmet";
+import heroImage from "@/assets/hero-diet-comparison.jpg";
+import womanThinking from "@/assets/woman-thinking-food.jpg";
+import dietResults from "@/assets/diet-results-infographic.jpg";
+import precisionFlow from "@/assets/precision-nutrition-flow.jpg";
+import glycemicCurves from "@/assets/glycemic-curves.jpg";
+import activeWoman from "@/assets/active-woman.jpg";
+import foodData from "@/assets/food-data-overlay.jpg";
+import wellnessIcons from "@/assets/wellness-icons.jpg";
+import womanWellness from "@/assets/woman-wellness.jpg";
 
 const PageDietaNonFunziona = () => {
   return (
@@ -34,8 +43,8 @@ const PageDietaNonFunziona = () => {
             {/* 1.3 HERO IMAGE */}
             <div className="my-8 rounded-lg overflow-hidden shadow-xl">
               <img 
-                src="/lovable-uploads/quadrato.webp" 
-                alt="Hero placeholder" 
+                src={heroImage} 
+                alt="Due donne seguono lo stesso piano alimentare con risultati diversi" 
                 className="w-full h-auto"
               />
             </div>
@@ -66,8 +75,8 @@ const PageDietaNonFunziona = () => {
             {/* 2.2 IMAGE 1 */}
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/1-1.webp" 
-                alt="Section 1 placeholder" 
+                src={womanThinking}
+                alt="Donna pensierosa davanti a un piatto sano" 
                 className="w-full h-auto"
               />
             </div>
@@ -90,8 +99,8 @@ const PageDietaNonFunziona = () => {
             {/* 3.2 IMAGE 2 */}
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/1-2.webp" 
-                alt="Section 2 placeholder" 
+                src={dietResults}
+                alt="Infografica: stessa dieta, risultati diversi" 
                 className="w-full h-auto"
               />
             </div>
@@ -114,8 +123,8 @@ const PageDietaNonFunziona = () => {
             {/* 4.2 IMAGE 3 */}
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/1-3.webp" 
-                alt="Section 3 placeholder" 
+                src={precisionFlow}
+                alt="Flowchart nutrizione di precisione" 
                 className="w-full h-auto"
               />
             </div>
@@ -138,8 +147,8 @@ const PageDietaNonFunziona = () => {
             {/* 5.2 IMAGE 4 */}
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/1-4.webp" 
-                alt="Section 4 placeholder" 
+                src={glycemicCurves}
+                alt="Grafico curve glicemiche opposte" 
                 className="w-full h-auto"
               />
             </div>
@@ -166,8 +175,8 @@ const PageDietaNonFunziona = () => {
             {/* 6.2 IMAGE 5 */}
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/blue-box-person.webp" 
-                alt="Section 5 placeholder" 
+                src={activeWoman}
+                alt="Donna attiva in forma" 
                 className="w-full h-auto"
               />
             </div>
@@ -188,10 +197,14 @@ const PageDietaNonFunziona = () => {
                 <a href="#final-cta">Scopri come funziona la nutrizione personalizzata</a>
               </Button>
               
-              {/* 6.3.3 CTA SUPPORTING TEXT */}
-              <p className="text-sm md:text-base text-slate-600">
-                Un approccio basato su scienza e dati, non su mode passeggere.
-              </p>
+              {/* 6.4.4 CTA IMAGE (if needed, or can be removed) */}
+              <div className="my-4 rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src={foodData}
+                  alt="Alimenti naturali con overlay dati scientifici" 
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -223,8 +236,8 @@ const PageDietaNonFunziona = () => {
             {/* 7.2 IMAGE 6 */}
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/group-41.webp" 
-                alt="Section 6 placeholder" 
+                src={wellnessIcons}
+                alt="Icone benefici benessere" 
                 className="w-full h-auto"
               />
             </div>
@@ -260,11 +273,11 @@ const PageDietaNonFunziona = () => {
               Nota: queste testimonianze illustrano esperienze individuali, non sostituiscono l'evidenza scientifica. Il valore reale deriva da studi clinici e protocolli di nutrizione di precisione riconosciuti a livello internazionale.
             </p>
             
-            {/* 8.2 IMAGE 7 */}
+            {/* 8.2 IMAGE 7 - Testimonials are now in cards above */}
             <div className="my-6 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/lovable-uploads/group-45.webp" 
-                alt="Section 7 placeholder" 
+                src={activeWoman}
+                alt="Testimonianze clienti" 
                 className="w-full h-auto"
               />
             </div>
@@ -310,8 +323,8 @@ const PageDietaNonFunziona = () => {
             {/* 9.5 FINAL CTA SECTION - IMAGE */}
             <div className="mt-8 rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto">
               <img 
-                src="/lovable-uploads/quadrato.webp" 
-                alt="Final CTA placeholder" 
+                src={womanWellness}
+                alt="Donna sorridente in benessere" 
                 className="w-full h-auto"
               />
             </div>
