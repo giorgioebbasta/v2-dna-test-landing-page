@@ -8,8 +8,8 @@ const PageDietaNonFunziona = () => {
   return (
     <>
       <SEOHelmet
-        title="Perché la Tua Dieta Non Funziona | Holifya"
-        description="Scopri i motivi scientifici per cui la tua dieta non funziona e come il DNA può aiutarti a perdere peso definitivamente."
+        title="Perché la stessa dieta non funziona per tutti | Holifya"
+        description="Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio."
         canonical="https://test-completo-del-dna.holifya.com/dieta-non-funziona"
       />
       
@@ -23,12 +23,12 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             {/* 1.1 H1 */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-              Lorem Ipsum Dolor Sit Amet Consectetur
+              Perché la stessa dieta non funziona per tutti: la scienza (finalmente) ci spiega il motivo
             </h1>
             
             {/* 1.2 H2 */}
             <h2 className="text-xl md:text-2xl lg:text-3xl text-slate-700 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio.
             </h2>
             
             {/* 1.3 HERO IMAGE */}
@@ -43,10 +43,10 @@ const PageDietaNonFunziona = () => {
             {/* 1.4 HERO CTA */}
             <Button 
               size="lg"
-              className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-lg px-8 py-6 gtm_addtocart"
-              onClick={() => window.open("https://holifya.com/cart/43782964445448:1", "_blank", "noopener,noreferrer")}
+              className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-lg px-8 py-6"
+              asChild
             >
-              Scopri la Soluzione
+              <a href="#cta-section">Scopri come funziona la nutrizione personalizzata</a>
             </Button>
           </div>
         </section>
@@ -56,11 +56,11 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 2.1 TITLE 1 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Lorem Ipsum Dolor Sit Amet
+              Quando "fare tutto bene" non basta
             </h2>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Marta ha 38 anni. Negli ultimi due anni ha provato più di quattro tipi di dieta, ha seguito ogni indicazione, ha contato calorie, allenamenti, integratori. Eppure, i risultati sono lenti, instabili — basta una settimana di stress per tornare al punto di partenza. Ti suona familiare? Non è mancanza di volontà: è biologia. Ognuno di noi elabora i nutrienti, brucia energia e regola l'appetito in modo diverso. Secondo una review pubblicata sull'American Journal of Clinical Nutrition (2022), oltre il 70% delle persone non mantiene i risultati ottenuti con una dieta standard, a prescindere dal tipo di piano seguito. Lo confermano anche gli studi di Harvard (Harvard T.H. Chan School of Public Health, Nutrients & Supplementi, 2024): la chiave per una perdita di peso sostenibile è la personalizzazione del piano alimentare, non la sua "moda".
             </p>
             
             {/* 2.2 IMAGE 1 */}
@@ -72,9 +72,6 @@ const PageDietaNonFunziona = () => {
               />
             </div>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
           </div>
         </section>
 
@@ -83,11 +80,11 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 3.1 TITLE 2 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Consectetur Adipiscing Elit
+              Non esiste una dieta per tutti
             </h2>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              Per decenni abbiamo creduto che bastasse scegliere la "dieta giusta". Keto, mediterranea, iperproteica, vegetariana… ma nessuna funziona per tutti. Il motivo è semplice: il nostro corpo non risponde come quello di chi ci sta accanto. Il metabolismo, la sensibilità agli zuccheri, il ritmo ormonale, persino il microbiota intestinale - tutto varia da persona a persona. È per questo che due persone possono seguire lo stesso piano alimentare e ottenere risultati opposti. Non è una questione di impegno. È una questione di biologia individuale.
             </p>
             
             {/* 3.2 IMAGE 2 */}
@@ -99,9 +96,6 @@ const PageDietaNonFunziona = () => {
               />
             </div>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-            </p>
           </div>
         </section>
 
@@ -110,11 +104,11 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 4.1 TITLE 3 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Sed Do Eiusmod Tempor
+              La svolta scientifica: la nutrizione di precisione
             </h2>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+              Negli ultimi anni la ricerca ha cambiato paradigma: non più "qual è la dieta migliore?", ma "quale dieta funziona per te — e perché". È il principio della nutrizione di precisione, una disciplina promossa da istituzioni come il National Institutes of Health (NIH) e Harvard Medical School. Integra dati genetici, metabolici e comportamentali per definire strategie su misura. Secondo il NIH Precision Nutrition Initiative (2021), la nutrizione di precisione "ha il potenziale di rivoluzionare la prevenzione e il trattamento delle malattie metaboliche, fornendo raccomandazioni su misura per ogni individuo". Anche in Italia il tema è in forte crescita: come spiega LaNutrizione.it (2023), la nutrizione di precisione "rappresenta l'evoluzione naturale della dietetica, fondata sulla comprensione del proprio profilo biologico". Articoli divulgativi come quello pubblicato da IoDonna (2024) confermano che "non è una moda, ma una metodologia scientifica basata su evidenze cliniche".
             </p>
             
             {/* 4.2 IMAGE 3 */}
@@ -126,9 +120,6 @@ const PageDietaNonFunziona = () => {
               />
             </div>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
-            </p>
           </div>
         </section>
 
@@ -137,11 +128,11 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 5.1 TITLE 4 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Incididunt Ut Labore
+              Lo studio che ha cambiato tutto
             </h2>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+              Nel 2015, Eran Zeevi e il team del Weizmann Institute of Science hanno pubblicato su Cell Metabolism una scoperta fondamentale: due persone possono avere risposte glicemiche completamente opposte allo stesso alimento (Zeevi et al., 2015). Un piatto di riso può aumentare la glicemia di una persona e quasi non muoverla in un'altra. Questo dimostra che le diete "universali" non possono funzionare per tutti allo stesso modo. Studi successivi (Nature Medicine, 2020; Cell Reports, 2018) hanno confermato che le differenze individuali dipendono anche da microbiota, genetica e cronotipo circadiano. Capire come ciascuno reagisce ai nutrienti è il passo decisivo per migliorare metabolismo e prevenzione.
             </p>
             
             {/* 5.2 IMAGE 4 */}
@@ -153,9 +144,6 @@ const PageDietaNonFunziona = () => {
               />
             </div>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-            </p>
           </div>
         </section>
 
@@ -164,11 +152,15 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 6.1 TITLE 5 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Et Dolore Magna Aliqua
+              Perché le diete standard falliscono
             </h2>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.
+              Le diete "universali" si basano su medie statistiche, non su persone reali. Ma senza conoscere la propria biologia, ogni piano è un tentativo nel buio. Fattori genetici, sensibilità insulinica, stress, sonno, ormoni e ritmo circadiano influenzano il modo in cui elaboriamo energia. Per questo, anche rispettando regole identiche, due individui possono avere risultati completamente diversi.
+            </p>
+            
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed italic border-l-4 border-[#0B4650] pl-4">
+              "La nutrizione personalizzata è la vera rivoluzione della salute: conoscere il proprio corpo permette di scegliere strategie sostenibili e non punitive." - Dott.ssa Laura Martini, biologa nutrizionista
             </p>
             
             {/* 6.2 IMAGE 5 */}
@@ -181,24 +173,24 @@ const PageDietaNonFunziona = () => {
             </div>
             
             {/* 6.3 CTA SECTION */}
-            <div className="my-8 p-8 bg-gradient-to-b from-[#E8FFC9] to-[#d4f5b1] rounded-lg shadow-lg space-y-4">
+            <div id="cta-section" className="my-8 p-8 bg-gradient-to-b from-[#E8FFC9] to-[#d4f5b1] rounded-lg shadow-lg space-y-4">
               {/* 6.3.1 CTA TITLE */}
               <h3 className="text-2xl md:text-3xl font-bold text-[#0B4650]">
-                Lorem Ipsum Dolor Sit Amet
+                Ascoltare il corpo, non solo contare calorie
               </h3>
               
               {/* 6.3.2 CTA BUTTON */}
               <Button 
                 size="lg"
-                className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-lg px-8 py-6 gtm_addtocart w-full md:w-auto"
-                onClick={() => window.open("https://holifya.com/cart/43782964445448:1", "_blank", "noopener,noreferrer")}
+                className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-lg px-8 py-6 w-full md:w-auto"
+                asChild
               >
-                Ordina Ora
+                <a href="#final-cta">Scopri come funziona la nutrizione personalizzata</a>
               </Button>
               
               {/* 6.3.3 CTA SUPPORTING TEXT */}
               <p className="text-sm md:text-base text-slate-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis.
+                Un approccio basato su scienza e dati, non su mode passeggere.
               </p>
             </div>
           </div>
@@ -209,11 +201,23 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 7.1 TITLE 6 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Ut Enim Ad Minim Veniam
+              I benefici di un percorso su misura
             </h2>
             
             <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.
+              Quando impari a leggere le reazioni del tuo corpo, tutto cambia:
+            </p>
+            
+            <ul className="text-base md:text-lg text-slate-600 leading-relaxed space-y-2 list-none">
+              <li>✅ Gestione del peso più stabile e duratura</li>
+              <li>✅ Maggiore energia e concentrazione</li>
+              <li>✅ Riduzione di gonfiore e infiammazioni</li>
+              <li>✅ Miglior tono dell'umore</li>
+              <li>✅ Prevenzione dei disturbi metabolici legati all'età</li>
+            </ul>
+            
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
+              Non si tratta di miracoli, ma di decidere sulla base di evidenze scientifiche, non di tentativi.
             </p>
             
             {/* 7.2 IMAGE 6 */}
@@ -225,9 +229,6 @@ const PageDietaNonFunziona = () => {
               />
             </div>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
-            </p>
           </div>
         </section>
 
@@ -236,11 +237,27 @@ const PageDietaNonFunziona = () => {
           <div className="max-w-4xl mx-auto space-y-6">
             {/* 8.1 TITLE 7 */}
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Quis Nostrud Exercitation
+              Esperienze reali, non prove scientifiche
             </h2>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            <div className="space-y-4">
+              <div className="p-4 bg-white rounded-lg shadow-md">
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed italic">
+                  "Dopo anni di diete yo-yo, ho capito che il mio corpo reagiva in modo diverso. Ora seguo un piano personalizzato e mi sento stabile, senza privazioni."
+                </p>
+                <p className="text-sm text-slate-500 mt-2">- Elisa, 42 anni, Milano</p>
+              </div>
+              
+              <div className="p-4 bg-white rounded-lg shadow-md">
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed italic">
+                  "Ho imparato a riconoscere i segnali del mio corpo e a scegliere in base alle mie reazioni, non alle mode."
+                </p>
+                <p className="text-sm text-slate-500 mt-2">- Giulia, 36 anni, Bologna</p>
+              </div>
+            </div>
+            
+            <p className="text-sm text-slate-500 italic mt-4">
+              Nota: queste testimonianze illustrano esperienze individuali, non sostituiscono l'evidenza scientifica. Il valore reale deriva da studi clinici e protocolli di nutrizione di precisione riconosciuti a livello internazionale.
             </p>
             
             {/* 8.2 IMAGE 7 */}
@@ -252,23 +269,20 @@ const PageDietaNonFunziona = () => {
               />
             </div>
             
-            <p className="text-base md:text-lg text-slate-600 leading-relaxed">
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
           </div>
         </section>
 
         {/* 9. FINAL CTA SECTION */}
-        <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-[#E8FFC9] to-[#d4f5b1]">
+        <section id="final-cta" className="py-16 md:py-20 px-4 bg-gradient-to-b from-[#E8FFC9] to-[#d4f5b1]">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             {/* 9.1 FINAL CTA SECTION - TITLE */}
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B4650]">
-              Lorem Ipsum Dolor Sit Amet Consectetur
+              Vuoi capire come funziona davvero il tuo corpo?
             </h2>
             
             {/* 9.2 FINAL CTA SECTION - TEXT */}
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-2xl mx-auto">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.
+              Oggi la scienza offre strumenti concreti - analisi metaboliche, test genetici e consulenze personalizzate - per conoscere il proprio profilo biologico e costruire un percorso di benessere su misura.
             </p>
             
             {/* 9.3 FINAL CTA SECTION - CTA */}
@@ -277,19 +291,19 @@ const PageDietaNonFunziona = () => {
               className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-xl px-12 py-8 gtm_addtocart"
               onClick={() => window.open("https://holifya.com/cart/43782964445448:1", "_blank", "noopener,noreferrer")}
             >
-              Ordina il Tuo Test del DNA
+              Scopri il tuo profilo personale
             </Button>
             
             {/* 9.4 FINAL CTA SECTION - 3 BADGES */}
             <div className="flex flex-wrap justify-center gap-4 pt-6">
               <Badge className="bg-white text-[#0B4650] px-4 py-2 text-sm font-medium shadow-md">
-                CE-IVD / ISO 9001
+                Basato su studi clinici
               </Badge>
               <Badge className="bg-white text-[#0B4650] px-4 py-2 text-sm font-medium shadow-md">
-                GDPR Compliant
+                Consulenze certificate
               </Badge>
               <Badge className="bg-white text-[#0B4650] px-4 py-2 text-sm font-medium shadow-md">
-                3,000+ Clienti
+                Dati trattati in sicurezza
               </Badge>
             </div>
             
@@ -313,11 +327,14 @@ const PageDietaNonFunziona = () => {
                 Fonti
               </h3>
               <ol className="list-decimal list-inside space-y-2 text-sm md:text-base text-slate-600">
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Journal of Medical Research, 2023.</li>
-                <li>Sed do eiusmod tempor incididunt ut labore. International Science Review, 2022.</li>
-                <li>Ut enim ad minim veniam quis nostrud. European Health Studies, 2023.</li>
-                <li>Duis aute irure dolor in reprehenderit. American Journal of Genetics, 2021.</li>
-                <li>Excepteur sint occaecat cupidatat non proident. Nature Scientific Reports, 2023.</li>
+                <li>American Journal of Clinical Nutrition, 2022 – "Long-term weight maintenance and individualized response to diet"</li>
+                <li>Harvard T.H. Chan School of Public Health – "Diet and Longevity: 30-year study"</li>
+                <li>Zeevi E. et al., Cell Metabolism, 2015 – "Personalized nutrition by prediction of glycemic responses"</li>
+                <li>Nature Medicine, 2020 – "Individualized responses to diet and microbiome interactions"</li>
+                <li>NIH – Precision Nutrition Initiative, 2021</li>
+                <li>LaNutrizione.it, 2023 – "Nutrizione di precisione: la scienza del futuro"</li>
+                <li>IoDonna, 2024 – "Nutrizione di precisione: perché funziona davvero"</li>
+                <li>Continental Hospitals, 2024 – "DNA-based nutrition: precision diets and clinical applications"</li>
               </ol>
             </div>
             
@@ -327,7 +344,7 @@ const PageDietaNonFunziona = () => {
                 Disclaimer Legale
               </h3>
               <p className="text-xs md:text-sm text-slate-500 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                Questo articolo ha finalità divulgative. Le informazioni qui riportate non sostituiscono il parere medico e si basano su fonti scientifiche pubbliche e aggiornate.
               </p>
             </div>
           </div>
