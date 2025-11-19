@@ -38,12 +38,12 @@ const PageDietaNonFunziona = () => {
         <div className="hidden lg:block">
           <div className="max-w-7xl mx-auto flex gap-8 px-6">
             {/* Left Sidebar - Table of Contents (25%) */}
-            <div className="w-64 flex-shrink-0 -mt-12">
+            <div className="w-64 flex-shrink-0">
               <TableOfContents sections={sections} />
             </div>
 
             {/* Right Content Area (75%) */}
-            <div className="flex-1 -mt-12">
+            <div className="flex-1">
               <ArticleContent />
             </div>
           </div>
