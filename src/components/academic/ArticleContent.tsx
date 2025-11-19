@@ -188,7 +188,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 7. TEXT SECTION 6 - I benefici di un percorso su misura */}
-      <section id="casi" className="scroll-mt-40 md:scroll-mt-40 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+      <section id="casi" className="scroll-mt-52 md:scroll-mt-40 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
