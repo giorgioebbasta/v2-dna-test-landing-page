@@ -20,7 +20,7 @@ export const ArticleContent = React.memo(() => {
   return (
     <>
       {/* 1. HERO SECTION */}
-      <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 px-4 md:px-6 bg-[#F8FAFA]">
+      <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight px-2">
             Perché la stessa dieta non funziona per tutti: la scienza (finalmente) ci spiega il motivo
@@ -43,7 +43,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 2. L'inefficacia delle diete universali */}
-      <section id="inefficacia" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6">
+      <section id="inefficacia" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -78,7 +78,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 3. La svolta scientifica */}
-      <section id="svolta" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6 bg-[#F8FAFA]">
+      <section id="svolta" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -113,7 +113,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 4. Lo studio fondamentale */}
-      <section id="studio" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6">
+      <section id="studio" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -149,7 +149,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 5. Evidenze cliniche */}
-      <section id="evidenze" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6 bg-[#F8FAFA]">
+      <section id="evidenze" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -190,7 +190,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 6. Benefici documentati */}
-      <section id="benefici" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6">
+      <section id="benefici" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -237,7 +237,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 7. Casi osservativi */}
-      <section id="casi" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6 bg-[#F8FAFA]">
+      <section id="casi" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -296,7 +296,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* 8. Conclusioni */}
-      <section id="conclusioni" className="scroll-mt-32 py-8 md:py-16 lg:py-20 px-4 md:px-6">
+      <section id="conclusioni" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl mx-auto space-y-6 md:space-y-8">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -339,7 +339,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* CTA SECTION */}
-      <section id="cta-section" className="scroll-mt-32 py-12 md:py-16 lg:py-20 px-4 md:px-6 bg-[#0A121A] text-white">
+      <section id="cta-section" className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-[#0A121A] text-white">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
             Scopri come la nutrizione personalizzata può trasformare il tuo benessere
@@ -374,7 +374,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* BIBLIOGRAPHY */}
-      <section className="py-12 md:py-16 px-4 md:px-6 bg-[#F8FAFA]">
+      <section className="py-12 md:py-16 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-[#0A121A] mb-6">
             Bibliografia
@@ -441,7 +441,7 @@ export const ArticleContent = React.memo(() => {
       </section>
 
       {/* DISCLAIMER */}
-      <section className="py-8 px-4 md:px-6 bg-white border-t border-[#EAEAEA]">
+      <section className="py-8 md:px-6 bg-white border-t border-[#EAEAEA]">
         <div className="max-w-4xl mx-auto">
           <p className="text-xs text-[#768289] leading-relaxed">
             <strong>Disclaimer:</strong> Questo articolo ha finalità esclusivamente informative e divulgative. Le informazioni qui contenute non sostituiscono il parere di un medico o di un nutrizionista professionista. Prima di apportare modifiche significative alla propria alimentazione, si consiglia di consultare un professionista sanitario qualificato. Le citazioni scientifiche riportate sono riferimenti a studi pubblicati su riviste peer-reviewed; i risultati possono variare da individuo a individuo.
