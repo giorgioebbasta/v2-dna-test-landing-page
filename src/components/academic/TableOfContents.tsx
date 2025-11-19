@@ -3,10 +3,11 @@ import { cn } from '@/lib/utils';
 
 interface TableOfContentsProps {
   sections: ScrollSpySection[];
+  scrollContainerSelector?: string;
 }
 
-export const TableOfContents = ({ sections }: TableOfContentsProps) => {
-  const activeSection = useScrollSpy(sections);
+export const TableOfContents = ({ sections, scrollContainerSelector }: TableOfContentsProps) => {
+  const activeSection = useScrollSpy(sections, scrollContainerSelector);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -33,10 +34,10 @@ export const TableOfContents = ({ sections }: TableOfContentsProps) => {
             <button
               onClick={() => scrollToSection(section.id)}
               className={cn(
-                "text-left w-full py-2 px-3 text-sm transition-all duration-200 border-l-2",
+                "text-left w-full py-2 px-3 text-sm transition-all duration-200 border-l-2 rounded-r",
                 activeSection === section.id
                   ? "border-[#0A121A] text-[#0A121A] font-semibold bg-[#F8FAFA]"
-                  : "border-[#EAEAEA] text-[#768289] hover:text-[#2F3F4C] hover:border-[#BAC0C4]"
+                  : "border-[#EAEAEA] text-[#768289] hover:text-[#0A121A] hover:border-[#0A121A] hover:bg-[#F8FAFA]/50"
               )}
             >
               {section.label}

@@ -379,10 +379,10 @@ const PageDietaNonFunziona = () => {
         {/* Desktop Layout - Fixed Split Panel */}
         <div className="hidden lg:flex h-screen">
           <div className="w-1/4 h-full overflow-y-auto px-6 -mt-12 border-r border-[#EAEAEA]">
-            <TableOfContents sections={sections} />
+            <TableOfContents sections={sections} scrollContainerSelector=".desktop-content-scroll" />
           </div>
           
-          <div className="w-3/4 h-full overflow-y-auto">
+          <div className="w-3/4 h-full overflow-y-auto desktop-content-scroll">
             <div className="max-w-4xl mx-auto -mt-12">
                   {/* All content sections */}
                   {/* 1. HERO SECTION */}
