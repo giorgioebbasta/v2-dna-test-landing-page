@@ -11,7 +11,22 @@ export const TableOfContents = ({ sections, scrollContainerSelector }: TableOfCo
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
+    if (!element) return;
+
+    if (scrollContainerSelector) {
+      const container = document.querySelector(scrollContainerSelector);
+      if (container) {
+        const elementRect = element.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+        const relativeTop = elementRect.top - containerRect.top + container.scrollTop;
+        const offset = 100;
+
+        container.scrollTo({
+          top: relativeTop - offset,
+          behavior: 'smooth'
+        });
+      }
+    } else {
       const offset = 120;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
