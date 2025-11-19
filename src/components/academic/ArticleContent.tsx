@@ -32,7 +32,7 @@ export const ArticleContent = React.memo(() => {
             </div>
           </FigureCaption>
           
-          <Button size="lg" className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200" asChild>
+          <Button size="lg" className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200" asChild>
             <a href="#cta-section">Scopri come funziona la nutrizione personalizzata</a>
           </Button>
         </div>
@@ -171,7 +171,7 @@ export const ArticleContent = React.memo(() => {
             </p>
             
             <div className="flex justify-center pt-2">
-              <Button size="lg" className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-base md:text-lg px-8 py-6 w-full md:w-auto transition-all duration-200" asChild>
+              <Button size="lg" className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-8 py-6 w-full md:w-auto transition-all duration-200" asChild>
                 <a href="#cta-section">Scopri come funziona la nutrizione personalizzata</a>
               </Button>
             </div>
@@ -284,7 +284,7 @@ export const ArticleContent = React.memo(() => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button size="lg" className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-base md:text-lg px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" asChild>
+            <Button size="lg" className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" asChild>
               <a href="/#pricing">Scopri il tuo profilo personale</a>
             </Button>
           </div>
