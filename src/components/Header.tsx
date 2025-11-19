@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { smoothScrollToSection } from '@/lib/utils';
 
 const Header = () => {
+  const location = useLocation();
+  const isAdvertorialPage = location.pathname === '/dieta-non-funziona';
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -66,17 +69,19 @@ const Header = () => {
             </a>
 
             {/* Navigation Menu */}
-            <nav className="flex items-center gap-4 lg:gap-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.sectionId}
-                  onClick={() => smoothScrollToSection(item.sectionId)}
-                  className="text-sm font-medium text-slate-700 hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
+            {!isAdvertorialPage && (
+              <nav className="flex items-center gap-4 lg:gap-8">
+                {navItems.map((item) => (
+                  <button
+                    key={item.sectionId}
+                    onClick={() => smoothScrollToSection(item.sectionId)}
+                    className="text-sm font-medium text-slate-700 hover:text-primary transition-colors duration-200 whitespace-nowrap"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </nav>
+            )}
 
             {/* Payoff */}
             <div className="flex-shrink-0">
