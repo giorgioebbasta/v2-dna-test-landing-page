@@ -71,19 +71,6 @@ const Header = ({ navItems: customNavItems }: HeaderProps = {}) => {
               <img src="/lovable-uploads/logo-holifya.jpeg" alt="Holifya Logo" className="h-12 hover:opacity-80 transition-opacity cursor-pointer" />
             </a>
 
-            {/* Navigation Menu */}
-            <nav className="flex items-center gap-4 lg:gap-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.sectionId}
-                  onClick={() => smoothScrollToSection(item.sectionId)}
-                  className="text-sm font-medium text-slate-700 hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-
             {/* Payoff */}
             <div className="flex-shrink-0">
               <img src="/lovable-uploads/payoff-nero.jpeg" alt="Care at its core" className="h-4 mt-4" />
