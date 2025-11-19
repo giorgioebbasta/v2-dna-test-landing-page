@@ -45,12 +45,21 @@ const sections: ScrollSpySection[] = [{
   label: 'Conclusioni'
 }];
 const PageDietaNonFunziona = () => {
+  const articleNavItems = [
+    { label: 'Introduzione', sectionId: 'intro' },
+    { label: 'Diete Universali', sectionId: 'inefficacia' },
+    { label: 'Svolta Scientifica', sectionId: 'svolta' },
+    { label: 'Studio', sectionId: 'studio' },
+    { label: 'Benefici', sectionId: 'benefici' },
+    { label: 'Conclusioni', sectionId: 'conclusioni' },
+  ];
+
   return <>
       <SEOHelmet title="Perché la stessa dieta non funziona per tutti | Holifya" description="Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio." canonical="https://test-completo-del-dna.holifya.com/dieta-non-funziona" />
       
       
       {/* Header from main page */}
-      <Header />
+      <Header navItems={articleNavItems} />
       
       <div className="min-h-screen bg-white">
         <div className="lg:flex lg:max-w-7xl lg:mx-auto lg:gap-8 lg:px-6">

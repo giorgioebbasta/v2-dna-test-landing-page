@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { smoothScrollToSection } from '@/lib/utils';
 
-const Header = () => {
+interface HeaderProps {
+  navItems?: Array<{ label: string; sectionId: string }>;
+}
+
+const Header = ({ navItems: customNavItems }: HeaderProps = {}) => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
@@ -37,13 +41,15 @@ const Header = () => {
     };
   }, []);
 
-  const navItems = [
+  const defaultNavItems = [
     { label: 'Come Funziona', sectionId: 'how-it-works' },
     { label: 'Perché Holifya', sectionId: 'comparison' },
     { label: 'Recensioni', sectionId: 'reviews' },
     { label: 'Prezzi', sectionId: 'pricing' },
     { label: 'FAQ', sectionId: 'faqs' },
   ];
+
+  const navItems = customNavItems || defaultNavItems;
 
   return <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-200">
       {/* Mobile version - logo only */}
