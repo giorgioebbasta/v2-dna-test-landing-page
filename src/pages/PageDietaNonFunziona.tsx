@@ -19,26 +19,34 @@ import activeWoman from "@/assets/active-woman.jpg";
 import foodData from "@/assets/food-data-overlay.jpg";
 import wellnessIcons from "@/assets/wellness-icons.jpg";
 import womanWellness from "@/assets/woman-wellness.jpg";
-
-const sections: ScrollSpySection[] = [
-  { id: 'intro', label: 'Introduzione' },
-  { id: 'inefficacia', label: 'L\'inefficacia delle diete universali' },
-  { id: 'svolta', label: 'La svolta scientifica' },
-  { id: 'studio', label: 'Lo studio fondamentale' },
-  { id: 'evidenze', label: 'Evidenze cliniche' },
-  { id: 'benefici', label: 'Benefici documentati' },
-  { id: 'casi', label: 'Casi osservativi' },
-  { id: 'conclusioni', label: 'Conclusioni' },
-];
-
+const sections: ScrollSpySection[] = [{
+  id: 'intro',
+  label: 'Introduzione'
+}, {
+  id: 'inefficacia',
+  label: 'L\'inefficacia delle diete universali'
+}, {
+  id: 'svolta',
+  label: 'La svolta scientifica'
+}, {
+  id: 'studio',
+  label: 'Lo studio fondamentale'
+}, {
+  id: 'evidenze',
+  label: 'Evidenze cliniche'
+}, {
+  id: 'benefici',
+  label: 'Benefici documentati'
+}, {
+  id: 'casi',
+  label: 'Casi osservativi'
+}, {
+  id: 'conclusioni',
+  label: 'Conclusioni'
+}];
 const PageDietaNonFunziona = () => {
-  return (
-    <>
-      <SEOHelmet
-        title="Perché la stessa dieta non funziona per tutti | Holifya"
-        description="Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio."
-        canonical="https://test-completo-del-dna.holifya.com/dieta-non-funziona"
-      />
+  return <>
+      <SEOHelmet title="Perché la stessa dieta non funziona per tutti | Holifya" description="Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio." canonical="https://test-completo-del-dna.holifya.com/dieta-non-funziona" />
       
       
       {/* Header from main page */}
@@ -65,26 +73,14 @@ const PageDietaNonFunziona = () => {
                 </h2>
                 
                 {/* 1.3 HERO IMAGE */}
-                <FigureCaption 
-                  number={1} 
-                  source="Variabilità della risposta metabolica a uno stesso regime alimentare (Fonte: elaborazione da Zeevi et al., 2015)"
-                >
+                <FigureCaption number={1} source="Variabilità della risposta metabolica a uno stesso regime alimentare (Fonte: elaborazione da Zeevi et al., 2015)">
                   <div className="rounded-lg overflow-hidden shadow-xl">
-                    <img 
-                      src={heroImage} 
-                      alt="Due donne seguono lo stesso piano alimentare con risultati diversi" 
-                      className="w-full h-auto"
-                      loading="eager"
-                    />
+                    <img src={heroImage} alt="Due donne seguono lo stesso piano alimentare con risultati diversi" className="w-full h-auto" loading="eager" />
                   </div>
                 </FigureCaption>
                 
                 {/* 1.4 HERO CTA */}
-                <Button 
-                  size="lg"
-                  className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200"
-                  asChild
-                >
+                <Button size="lg" className="bg-[#0A121A] hover:bg-[#2F3F4C] text-white text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200" asChild>
                   <a href="#cta-section">Approfondisci i fondamenti scientifici</a>
                 </Button>
               </div>
@@ -108,17 +104,9 @@ const PageDietaNonFunziona = () => {
                 </KeyFindingBox>
                 
                 {/* 2.2 IMAGE 1 */}
-                <FigureCaption 
-                  number={2} 
-                  source="Difficoltà comuni nell'aderenza ai protocolli dietetici standardizzati"
-                >
+                <FigureCaption number={2} source="Difficoltà comuni nell'aderenza ai protocolli dietetici standardizzati">
                   <div className="rounded-lg overflow-hidden shadow-lg">
-                    <img 
-                      src={womanThinking}
-                      alt="Donna pensierosa davanti a un piatto sano" 
-                      className="w-full h-auto"
-                      loading="lazy"
-                    />
+                    <img src={womanThinking} alt="Donna pensierosa davanti a un piatto sano" className="w-full h-auto" loading="lazy" />
                   </div>
                 </FigureCaption>
               </div>
@@ -134,17 +122,9 @@ const PageDietaNonFunziona = () => {
                 </h2>
                 
                 {/* 3.2 IMAGE 2 */}
-                <FigureCaption 
-                  number={3} 
-                  source="Distribuzione dei risultati nella popolazione studiata (Fonte: AJCN Review, 2022)"
-                >
+                <FigureCaption number={3} source="Distribuzione dei risultati nella popolazione studiata (Fonte: AJCN Review, 2022)">
                   <div className="rounded-lg overflow-hidden shadow-lg bg-white p-4 md:p-6">
-                    <img 
-                      src={dietResults}
-                      alt="Infografica: stessa dieta, risultati diversi" 
-                      className="w-full h-auto"
-                      loading="lazy"
-                    />
+                    <img src={dietResults} alt="Infografica: stessa dieta, risultati diversi" className="w-full h-auto" loading="lazy" />
                   </div>
                 </FigureCaption>
                 
@@ -176,16 +156,9 @@ const PageDietaNonFunziona = () => {
                 </p>
                 
                 {/* 4.2 IMAGE 3 */}
-                <FigureCaption 
-                  number={4} 
-                  source="Schema del processo di nutrizione di precisione"
-                >
+                <FigureCaption number={4} source="Schema del processo di nutrizione di precisione">
                   <div className="my-6 rounded-lg overflow-hidden shadow-lg">
-                    <img 
-                      src={precisionFlow}
-                      alt="Flowchart nutrizione di precisione" 
-                      className="w-full h-auto"
-                    />
+                    <img src={precisionFlow} alt="Flowchart nutrizione di precisione" className="w-full h-auto" />
                   </div>
                 </FigureCaption>
               </div>
@@ -213,17 +186,9 @@ const PageDietaNonFunziona = () => {
                 </KeyFindingBox>
                 
                 {/* 5.2 IMAGE 4 */}
-                <FigureCaption 
-                  number={5} 
-                  source="Curve glicemiche individuali post-prandiali (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)"
-                >
+                <FigureCaption number={5} source="Curve glicemiche individuali post-prandiali (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)">
                   <div className="rounded-lg overflow-hidden shadow-lg bg-white p-4 md:p-6">
-                    <img 
-                      src={glycemicCurves}
-                      alt="Grafico curve glicemiche opposte" 
-                      className="w-full h-auto"
-                      loading="lazy"
-                    />
+                    <img src={glycemicCurves} alt="Grafico curve glicemiche opposte" className="w-full h-auto" loading="lazy" />
                   </div>
                 </FigureCaption>
               </div>
@@ -252,12 +217,7 @@ const PageDietaNonFunziona = () => {
             
             {/* 6.2 IMAGE 5 */}
             <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src={activeWoman}
-                alt="Donna attiva in forma" 
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={activeWoman} alt="Donna attiva in forma" className="w-full h-auto" loading="lazy" />
             </div>
             
             {/* 6.3 CTA SECTION */}
@@ -273,20 +233,11 @@ const PageDietaNonFunziona = () => {
               
               {/* 6.3.2 CTA IMAGE */}
               <div className="my-4 md:my-6 rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src={foodData}
-                  alt="Alimenti naturali con overlay dati scientifici" 
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
+                <img src={foodData} alt="Alimenti naturali con overlay dati scientifici" className="w-full h-auto" loading="lazy" />
               </div>
               
               {/* 6.3.3 CTA BUTTON */}
-              <Button 
-                size="lg"
-                className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-transform hover:scale-105"
-                asChild
-              >
+              <Button size="lg" className="bg-[#0B4650] hover:bg-[#0d6875] text-[#E8FFC9] text-base md:text-lg px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-transform hover:scale-105" asChild>
                 <a href="https://test-completo-del-dna.holifya.com" target="_blank" rel="noopener noreferrer">
                   Scopri come funziona la nutrizione personalizzata
                 </a>
@@ -420,11 +371,7 @@ const PageDietaNonFunziona = () => {
                     <p>
                       Le testimonianze riportate illustrano esperienze individuali e non costituiscono evidenza scientifica. I risultati possono variare in base a molteplici fattori individuali.
                     </p>
-                    <p className="text-[#2F3F4C] font-medium">
-                      Ultima revisione: 19 novembre 2024<br />
-                      Autore: Holifya Health Editorial Team<br />
-                      Supervisione scientifica: In collaborazione con biologi nutrizionisti certificati
-                    </p>
+                    
                   </div>
                 </div>
               </div>
@@ -432,8 +379,6 @@ const PageDietaNonFunziona = () => {
           </div>
         </div>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default PageDietaNonFunziona;
