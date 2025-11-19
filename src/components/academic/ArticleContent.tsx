@@ -137,11 +137,18 @@ export const ArticleContent = React.memo(() => {
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
                 Per decenni abbiamo creduto che bastasse scegliere la "dieta giusta". Keto, mediterranea, iperproteica,
-                vegetariana… ma nessuna funziona per tutti. Il motivo è semplice: il nostro corpo non risponde come
-                quello di chi ci sta accanto. Il metabolismo, la sensibilità agli zuccheri, il ritmo ormonale, persino
-                il microbiota intestinale - tutto varia da persona a persona. È per questo che due persone possono
-                seguire lo stesso piano alimentare e ottenere risultati opposti. Non è una questione di impegno. È una
-                questione di biologia individuale.
+                vegetariana… ma nessuna funziona per tutti.
+                <br />
+                <br />
+                Il motivo è semplice: il nostro corpo non risponde come quello di chi ci sta accanto. Il metabolismo, la
+                sensibilità agli zuccheri, il ritmo ormonale, persino il microbiota intestinale - tutto varia da persona
+                a persona.
+                <br />
+                <br />È per questo che due persone possono seguire lo stesso piano alimentare e ottenere risultati
+                opposti.
+                <br />
+                <br />
+                Non è una questione di impegno. È una questione di biologia individuale.
               </p>
             </div>
           </div>
