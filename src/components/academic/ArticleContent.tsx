@@ -33,20 +33,32 @@ export const ArticleContent = React.memo(() => {
           </FigureCaption>
           
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
+              console.log('Button clicked - attempting scroll to #casi');
+              
               const element = document.getElementById('casi');
+              console.log('Found element:', element);
+              
               if (element) {
-                const headerHeight = 96; // Mobile header + banner height
+                const isMobile = window.innerWidth < 768;
+                const headerHeight = isMobile ? 96 : 120;
+                console.log('Is mobile:', isMobile, 'Header height:', headerHeight);
+                
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
                 const offsetPosition = elementPosition - headerHeight;
+                
+                console.log('Element position:', elementPosition, 'Offset position:', offsetPosition);
                 
                 window.scrollTo({
                   top: offsetPosition,
                   behavior: 'smooth'
                 });
+              } else {
+                console.error('Element with id="casi" not found!');
               }
             }}
-            className="inline-block w-full md:w-auto"
+            className="inline-block w-full md:w-auto cursor-pointer"
           >
             <Button size="lg" className="bg-[#768289] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200">
               Scopri come funziona la nutrizione personalizzata
