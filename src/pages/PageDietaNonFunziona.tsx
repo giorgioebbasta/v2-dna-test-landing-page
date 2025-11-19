@@ -52,7 +52,7 @@ const PageDietaNonFunziona = () => {
       {/* Header from main page */}
       <Header />
       
-      <div className="min-h-screen bg-white pt-[97px] md:pt-[108px]">
+      <div className="min-h-screen bg-white">
         <div className="lg:flex lg:max-w-7xl lg:mx-auto lg:gap-8 lg:px-6">
           {/* Table of Contents - Desktop Only */}
           <TableOfContents sections={sections} />
