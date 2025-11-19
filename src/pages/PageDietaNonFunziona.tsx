@@ -9,7 +9,6 @@ import { KeyFindingBox } from "@/components/academic/KeyFindingBox";
 import { FigureCaption } from "@/components/academic/FigureCaption";
 import { Blockquote } from "@/components/academic/Blockquote";
 import { PullQuote } from "@/components/academic/PullQuote";
-import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
 import type { ScrollSpySection } from "@/hooks/useScrollSpy";
 import heroImage from "@/assets/hero-diet-comparison.jpg";
 import womanThinking from "@/assets/woman-thinking-food.jpg";
@@ -377,20 +376,14 @@ const PageDietaNonFunziona = () => {
           </div>
         </div>
         
-        {/* Desktop Layout - Split Panel */}
-        <div className="hidden lg:block h-screen">
-          <ResizablePanelGroup direction="horizontal">
-            <ResizablePanel defaultSize={25} minSize={20} maxSize={35}>
-              <div className="h-full overflow-y-auto px-6 pt-32">
-                <TableOfContents sections={sections} />
-              </div>
-            </ResizablePanel>
-            
-            <ResizableHandle withHandle />
-            
-            <ResizablePanel defaultSize={75}>
-              <div className="h-full overflow-y-auto">
-                <div className="max-w-4xl mx-auto px-6">
+        {/* Desktop Layout - Fixed Split Panel */}
+        <div className="hidden lg:flex h-screen">
+          <div className="w-1/4 h-full overflow-y-auto px-6 pt-32 border-r border-[#EAEAEA]">
+            <TableOfContents sections={sections} />
+          </div>
+          
+          <div className="w-3/4 h-full overflow-y-auto">
+            <div className="max-w-4xl mx-auto px-6">
                   {/* All content sections */}
                   {/* 1. HERO SECTION */}
             <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 px-4 md:px-6 bg-[#F8FAFA]">
@@ -776,10 +769,8 @@ const PageDietaNonFunziona = () => {
                 </FigureCaption>
               </div>
             </footer>
-                </div>
-              </div>
-            </ResizablePanel>
-          </ResizablePanelGroup>
+            </div>
+          </div>
         </div>
       </div>
     </>;
