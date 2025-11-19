@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import heroImage from "@/assets/hero-diet-comparison.jpg";
+import heroImage from "@/assets/hero-diet-comparison.webp";
 import womanThinking from "@/assets/woman-thinking-food.jpg";
 import dietResults from "@/assets/diet-results-infographic.jpg";
 import precisionFlow from "@/assets/precision-nutrition-flow.jpg";
