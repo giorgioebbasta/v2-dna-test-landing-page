@@ -42,7 +42,7 @@ const PageSintomi = () => {
         
         {/* Above the fold - load immediately */}
         <section id="hero" aria-label="Test DNA Sintomi">
-          <HeroSection className="py-4 md:py-8" heroBannerComponent={HeroBanner} />
+          <HeroSection className="pt-12 pb-4 md:py-8" heroBannerComponent={HeroBanner} />
         </section>
         
         <section id="features" aria-label="Sintomi analizzati">
