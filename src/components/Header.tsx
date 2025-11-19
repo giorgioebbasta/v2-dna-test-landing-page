@@ -14,7 +14,7 @@ const Header = () => {
       {/* Mobile version - logo only */}
       <div className="md:hidden">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between py-[2px]">
-          <a href="https://www.holifya.com/" target="_blank" rel="noopener noreferrer" className="block">
+          <a href="https://test-completo-del-dna.holifya.com" target="_blank" rel="noopener noreferrer" className="block">
             <img src="/lovable-uploads/logo-holifya.jpeg" alt="Holifya Logo" className="h-10 hover:opacity-80 transition-opacity cursor-pointer" />
           </a>
           <img src="/lovable-uploads/payoff-nero.jpeg" alt="Care at its core" className="h-3 mt-4" />
@@ -26,7 +26,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4 py-0.5">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="https://www.holifya.com/" target="_blank" rel="noopener noreferrer" className="block flex-shrink-0">
+            <a href="https://test-completo-del-dna.holifya.com" target="_blank" rel="noopener noreferrer" className="block flex-shrink-0">
               <img src="/lovable-uploads/logo-holifya.jpeg" alt="Holifya Logo" className="h-12 hover:opacity-80 transition-opacity cursor-pointer" />
             </a>
 
