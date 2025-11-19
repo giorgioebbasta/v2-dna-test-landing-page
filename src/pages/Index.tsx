@@ -40,7 +40,7 @@ const Index = () => {
         
         {/* Above the fold - load immediately */}
         <section id="hero" aria-label="Sezione principale prodotto">
-          <HeroSection className="pt-8 pb-4 md:py-8" heroBannerComponent={HeroBanner} />
+          <HeroSection className="pt-12 pb-4 md:py-8" heroBannerComponent={HeroBanner} />
         </section>
         
         <section id="features" aria-label="Caratteristiche del test DNA">
