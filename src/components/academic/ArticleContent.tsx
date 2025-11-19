@@ -26,7 +26,7 @@ export const ArticleContent = React.memo(() => {
             Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio.
           </h2>
           
-          <FigureCaption number={1} source="Illustrazione concettuale: due donne seguono lo stesso piano alimentare con risultati diversi (Fonte: elaborazione da Zeevi et al., 2015)">
+          <FigureCaption number={1} source="Rappresentazione grafica della variabilità metabolica interindividuale in risposta a un identico regime alimentare. Elaborazione basata su dati empirici (Zeevi et al., 2015).">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img src={heroImage} alt="Due donne seguono lo stesso piano alimentare con risultati diversi" className="w-full h-auto" loading="eager" />
             </div>
