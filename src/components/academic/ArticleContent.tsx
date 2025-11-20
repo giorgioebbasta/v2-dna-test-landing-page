@@ -468,14 +468,6 @@ export const ArticleContent = React.memo(() => {
             </Badge>
           </div>
 
-          <div className="pt-6">
-            <img
-              src={womanWellness}
-              alt="Donna sorridente che rappresenta equilibrio e benessere"
-              className="w-full max-w-2xl mx-auto rounded-lg shadow-xl"
-              loading="lazy"
-            />
-          </div>
         </div>
       </section>
 
