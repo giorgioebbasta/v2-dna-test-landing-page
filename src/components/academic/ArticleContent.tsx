@@ -283,7 +283,7 @@ export const ArticleContent = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption number={6} source="Foto donna attiva con citazione esperta">
+          <FigureCaption number={6} source="Un approccio sano alla nutrizione significa vivere con consapevolezza">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
                 src={activeWoman}
