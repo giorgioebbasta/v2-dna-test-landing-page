@@ -10,7 +10,6 @@ import activeWoman from "@/assets/active-woman.jpg";
 import foodData from "@/assets/food-data-overlay.jpg";
 import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import womanWellness from "@/assets/woman-wellness.jpg";
-import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
 
 export const ArticleContent = React.memo(() => {
@@ -417,10 +416,10 @@ export const ArticleContent = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption number={9} source="Una vita più sana è possibile.">
+          <FigureCaption number={9} source="Esperienze illustrative di percorsi personalizzati">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
-                src={coupleCooking}
+                src={womanWellness}
                 alt="Rappresentazione di esperienze positive con la nutrizione personalizzata"
                 className="w-full h-auto"
                 loading="lazy"
