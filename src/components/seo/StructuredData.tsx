@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface StructuredDataProps {
-  type: 'homepage' | 'product' | 'page';
+  type: 'homepage' | 'product' | 'page' | 'article';
 }
 
 const StructuredData: React.FC<StructuredDataProps> = ({ type }) => {
@@ -176,11 +176,45 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type }) => {
     ]
   };
 
+  // Article Schema for advertorial pages
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Perché la stessa dieta non funziona per tutti: la scienza (finalmente) ci spiega il motivo",
+    "description": "Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio.",
+    "image": "https://test-completo-del-dna.holifya.com/lovable-uploads/logo-holifya.jpeg",
+    "author": {
+      "@type": "Organization",
+      "name": "Holifya",
+      "url": "https://test-completo-del-dna.holifya.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Holifya",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://test-completo-del-dna.holifya.com/lovable-uploads/logo-holifya.jpeg"
+      }
+    },
+    "datePublished": "2025-11-20",
+    "dateModified": "2025-11-20",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://test-completo-del-dna.holifya.com/dieta-non-funziona"
+    },
+    "articleSection": "Nutrizione e Salute",
+    "keywords": ["nutrizione di precisione", "dieta personalizzata", "metabolismo", "DNA", "salute"]
+  };
+
   const getSchemas = () => {
     const schemas: any[] = [organizationSchema];
     
     if (type === 'homepage' || type === 'product') {
       schemas.push(productSchema, faqSchema, breadcrumbSchema);
+    }
+    
+    if (type === 'article') {
+      schemas.push(articleSchema, breadcrumbSchema);
     }
     
     return schemas;
