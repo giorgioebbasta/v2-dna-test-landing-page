@@ -71,7 +71,8 @@ export const ArticleContent = React.memo(() => {
           >
             <Button
               size="lg"
-              className="bg-[#768289] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200"
+              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200"
+              style={{ fontSize: 'clamp(0.875rem, 2vw + 0.5rem, 1.25rem)' }}
             >
               Scopri come funziona la nutrizione personalizzata
             </Button>
@@ -305,13 +306,14 @@ export const ArticleContent = React.memo(() => {
             </p>
 
             <div className="flex justify-center pt-2">
-              <Button
-                size="lg"
-                className="bg-[#768289] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-8 py-6 w-full md:w-auto transition-all duration-200"
-                asChild
-              >
-                <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
-              </Button>
+            <Button
+              size="lg"
+              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-6 w-full md:w-auto transition-all duration-200"
+              style={{ fontSize: 'clamp(0.875rem, 2vw + 0.5rem, 1.25rem)' }}
+              asChild
+            >
+              <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
+            </Button>
             </div>
 
             <FigureCaption
@@ -448,7 +450,8 @@ export const ArticleContent = React.memo(() => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button
               size="lg"
-              className="bg-[#768289] hover:bg-[#2F3F4C] text-white text-sm sm:text-base md:text-lg lg:text-xl px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
+              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
+              style={{ fontSize: 'clamp(0.875rem, 2vw + 0.5rem, 1.25rem)' }}
               asChild
             >
               <a href="/#pricing">Scopri il tuo profilo personale</a>
