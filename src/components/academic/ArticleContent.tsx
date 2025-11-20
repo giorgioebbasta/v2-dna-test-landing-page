@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/hero-diet-comparison.webp";
 import womanThinking from "@/assets/woman-thinking-food-new.webp";
 import dietResults from "@/assets/diet-results-comparison.webp";
-import precisionFlow from "@/assets/precision-nutrition-flow.jpg";
+import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import activeWoman from "@/assets/active-woman.jpg";
 import foodData from "@/assets/food-data-overlay.jpg";
