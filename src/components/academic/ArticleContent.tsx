@@ -408,7 +408,7 @@ export const ArticleContent = React.memo(() => {
                 <p className="text-sm text-[#768289]">— Giulia, 36 anni, Bologna</p>
               </div>
 
-              <p className="text-sm text-[#768289] italic bg-[#F8FAFA] p-4 rounded">
+              <p className="text-xs text-[#768289] italic bg-[#F8FAFA] p-4 rounded">
                 <strong>Nota:</strong> queste testimonianze illustrano esperienze individuali, non sostituiscono
                 l'evidenza scientifica. Il valore reale deriva da studi clinici e protocolli di nutrizione di precisione
                 riconosciuti a livello internazionale.
