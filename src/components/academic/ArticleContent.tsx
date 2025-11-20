@@ -238,7 +238,7 @@ export const ArticleContent = React.memo(() => {
 
           <FigureCaption
             number={5}
-            source="Grafico glicemico: due curve con andamento opposto (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)"
+            source="Andamento della glicemia su due persone diverse, a parità di nutrienti assimilati (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)"
           >
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
