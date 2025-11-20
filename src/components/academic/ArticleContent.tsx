@@ -72,7 +72,7 @@ export const ArticleContent = React.memo(() => {
             <Button
               size="lg"
               className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-6 md:px-8 py-4 md:py-6 w-full md:w-auto transition-all duration-200"
-              style={{ fontSize: 'clamp(0.875rem, 2vw + 0.5rem, 1.25rem)' }}
+              style={{ fontSize: 'clamp(0.8125rem, 2vw + 0.5rem, 1.1875rem)' }}
             >
               Scopri come funziona la nutrizione personalizzata
             </Button>
