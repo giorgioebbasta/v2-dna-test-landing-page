@@ -177,15 +177,22 @@ export const ArticleContent = React.memo(() => {
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
                 Negli ultimi anni la ricerca ha cambiato paradigma: non più "qual è la dieta migliore?", ma "quale dieta
-                funziona per te — e perché". È il principio della nutrizione di precisione, una disciplina promossa da
-                istituzioni come il National Institutes of Health (NIH) e Harvard Medical School. Integra dati genetici,
-                metabolici e comportamentali per definire strategie su misura. Secondo il NIH Precision Nutrition
-                Initiative (2021), la nutrizione di precisione "ha il potenziale di rivoluzionare la prevenzione e il
-                trattamento delle malattie metaboliche, fornendo raccomandazioni su misura per ogni individuo". Anche in
-                Italia il tema è in forte crescita: come spiega LaNutrizione.it (2023), la nutrizione di precisione
-                "rappresenta l'evoluzione naturale della dietetica, fondata sulla comprensione del proprio profilo
-                biologico". Articoli divulgativi come quello pubblicato da IoDonna (2024) confermano che "non è una
-                moda, ma una metodologia scientifica basata su evidenze cliniche".
+                funziona per te — e perché".
+                <br />
+                <br />È il principio della nutrizione di precisione, una disciplina promossa da istituzioni come il
+                National Institutes of Health (NIH) e Harvard Medical School. Integra dati genetici, metabolici e
+                comportamentali per definire strategie su misura.
+                <br />
+                <br />
+                Secondo il NIH Precision Nutrition Initiative (2021), la nutrizione di precisione "ha il potenziale di
+                rivoluzionare la prevenzione e il trattamento delle malattie metaboliche, fornendo raccomandazioni su
+                misura per ogni individuo".
+                <br />
+                <br />
+                Anche in Italia il tema è in forte crescita: come spiega LaNutrizione.it (2023), la nutrizione di
+                precisione "rappresenta l'evoluzione naturale della dietetica, fondata sulla comprensione del proprio
+                profilo biologico". Articoli divulgativi come quello pubblicato da IoDonna (2024) confermano che "non è
+                una moda, ma una metodologia scientifica basata su evidenze cliniche".
               </p>
             </div>
           </div>
