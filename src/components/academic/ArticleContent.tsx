@@ -417,7 +417,7 @@ export const ArticleContent = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption number={9} source="Esperienze illustrative di percorsi personalizzati">
+          <FigureCaption number={9} source="Una vita più sana è possibile.">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
                 src={coupleCooking}
