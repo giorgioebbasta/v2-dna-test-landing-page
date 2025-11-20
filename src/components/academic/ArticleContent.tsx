@@ -308,8 +308,8 @@ export const ArticleContent = React.memo(() => {
             <div className="flex justify-center pt-2">
             <Button
               size="lg"
-              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-6 w-full md:w-auto transition-all duration-200"
-              style={{ fontSize: '13px' }}
+              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
+              style={{ fontSize: '13px', width: '320px', lineHeight: '1.3' }}
               asChild
             >
               <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
