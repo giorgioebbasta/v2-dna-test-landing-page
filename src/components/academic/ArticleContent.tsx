@@ -371,7 +371,7 @@ export const ArticleContent = React.memo(() => {
           </div>
 
           <FigureCaption number={8} source="Con azioni mirate i risultati sono concreti e i benefici immediati.">
-            <div className="rounded-lg overflow-hidden shadow-lg">
+            <div className="rounded-lg overflow-hidden shadow-lg -mt-4">
               <img
                 src={wellnessIcons}
                 alt="Icone che rappresentano i benefici della nutrizione personalizzata"
