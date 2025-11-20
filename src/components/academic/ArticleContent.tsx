@@ -263,9 +263,12 @@ export const ArticleContent = React.memo(() => {
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
                 Le diete "universali" si basano su medie statistiche, non su persone reali. Ma senza conoscere la
-                propria biologia, ogni piano è un tentativo nel buio. Fattori genetici, sensibilità insulinica, stress,
-                sonno, ormoni e ritmo circadiano influenzano il modo in cui elaboriamo energia. Per questo, anche
-                rispettando regole identiche, due individui possono avere risultati completamente diversi.
+                propria biologia, ogni piano è un tentativo nel buio.
+                <br />
+                <br />
+                Fattori genetici, sensibilità insulinica, stress, sonno, ormoni e ritmo circadiano influenzano il modo
+                in cui elaboriamo energia. Per questo, anche rispettando regole identiche, due individui possono avere
+                risultati completamente diversi.
               </p>
 
               <blockquote className="my-8 p-6 bg-[#F8FAFA] border-l-4 border-[#0A121A] italic">
