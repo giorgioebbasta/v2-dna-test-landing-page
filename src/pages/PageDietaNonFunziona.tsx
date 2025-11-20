@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "@/components/Header";
 import SEOHelmet from "@/components/seo/SEOHelmet";
+import StructuredData from "@/components/seo/StructuredData";
 import { TableOfContents } from "@/components/academic/TableOfContents";
 import { ArticleContent } from "@/components/academic/ArticleContent";
 import type { ScrollSpySection } from "@/hooks/useOptimizedScrollSpy";
@@ -25,30 +26,31 @@ const PageDietaNonFunziona = () => {
         description="Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio." 
         canonical="https://test-completo-del-dna.holifya.com/dieta-non-funziona" 
       />
+      <StructuredData type="article" />
       
       <Header />
       
-      <div className="min-h-screen bg-white">
+      <main className="min-h-screen bg-white">
         {/* Mobile Layout - Single Column */}
-        <div className="lg:hidden">
+        <article className="lg:hidden">
           <ArticleContent />
-        </div>
+        </article>
 
         {/* Desktop Layout - Two Column with Sticky TOC */}
         <div className="hidden lg:block">
           <div className="max-w-7xl mx-auto flex gap-8 px-6">
             {/* Left Sidebar - Table of Contents (25%) */}
-            <div className="w-64 flex-shrink-0">
+            <aside className="w-64 flex-shrink-0">
               <TableOfContents sections={sections} />
-            </div>
+            </aside>
 
             {/* Right Content Area (75%) */}
-            <div className="flex-1">
+            <article className="flex-1">
               <ArticleContent />
-            </div>
+            </article>
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 };
