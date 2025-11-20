@@ -12,10 +12,8 @@ import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import womanWellness from "@/assets/woman-wellness.jpg";
 import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
-
 export const ArticleContent = React.memo(() => {
-  return (
-    <>
+  return <>
       {/* 1. HERO SECTION */}
       <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto text-center space-y-4 md:space-y-6 px-4 md:px-0">
@@ -28,53 +26,36 @@ export const ArticleContent = React.memo(() => {
             il tuo equilibrio.
           </h2>
 
-          <FigureCaption
-            number={1}
-            source="Rappresentazione grafica della variabilità metabolica interindividuale in risposta a un identico regime alimentare (Fonte: Zeevi et al., 2015)."
-          >
+          <FigureCaption number={1} source="Rappresentazione grafica della variabilità metabolica interindividuale in risposta a un identico regime alimentare (Fonte: Zeevi et al., 2015).">
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <img
-                src={heroImage}
-                alt="Due donne seguono lo stesso piano alimentare con risultati diversi"
-                className="w-full h-auto"
-                loading="eager"
-              />
+              <img src={heroImage} alt="Due donne seguono lo stesso piano alimentare con risultati diversi" className="w-full h-auto" loading="eager" />
             </div>
           </FigureCaption>
 
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              console.log("Button clicked - attempting scroll to #casi");
-
-              const element = document.getElementById("casi");
-              console.log("Found element:", element);
-
-              if (element) {
-                const isMobile = window.innerWidth < 768;
-                const headerHeight = isMobile ? 96 : 120;
-                console.log("Is mobile:", isMobile, "Header height:", headerHeight);
-
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerHeight;
-
-                console.log("Element position:", elementPosition, "Offset position:", offsetPosition);
-
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              } else {
-                console.error('Element with id="casi" not found!');
-              }
-            }}
-            className="inline-block w-full md:w-auto cursor-pointer"
-          >
-            <Button
-              size="lg"
-              className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200"
-              style={{ fontSize: "13px", width: "320px" }}
-            >
+          <button onClick={e => {
+          e.preventDefault();
+          console.log("Button clicked - attempting scroll to #casi");
+          const element = document.getElementById("casi");
+          console.log("Found element:", element);
+          if (element) {
+            const isMobile = window.innerWidth < 768;
+            const headerHeight = isMobile ? 96 : 120;
+            console.log("Is mobile:", isMobile, "Header height:", headerHeight);
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight;
+            console.log("Element position:", elementPosition, "Offset position:", offsetPosition);
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          } else {
+            console.error('Element with id="casi" not found!');
+          }
+        }} className="inline-block w-full md:w-auto cursor-pointer">
+            <Button size="lg" className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+            fontSize: "13px",
+            width: "320px"
+          }}>
               Scopri come funziona la nutrizione personalizzata
             </Button>
           </button>
@@ -117,12 +98,7 @@ export const ArticleContent = React.memo(() => {
 
           <FigureCaption number={2} source="Una storia comune: impegno costante, risultati incostanti.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={womanThinking}
-                alt="Foto realistica di una donna pensierosa davanti a un piatto sano"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={womanThinking} alt="Foto realistica di una donna pensierosa davanti a un piatto sano" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -157,12 +133,7 @@ export const ArticleContent = React.memo(() => {
 
           <FigureCaption number={3} source="Stessa dieta → Risultati diversi (Fonte: AJCN Review, 2022)">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={dietResults}
-                alt="Infografica: Stessa dieta produce risultati diversi nelle persone"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={dietResults} alt="Infografica: Stessa dieta produce risultati diversi nelle persone" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -201,12 +172,7 @@ export const ArticleContent = React.memo(() => {
 
           <FigureCaption number={4} source="Approccio universale → Analisi biologiche → Strategia personalizzata">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={precisionFlow}
-                alt="Flowchart del percorso della nutrizione di precisione"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={precisionFlow} alt="Flowchart del percorso della nutrizione di precisione" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -238,17 +204,9 @@ export const ArticleContent = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={5}
-            source="Andamento della glicemia su due persone diverse, a parità di nutrienti assimilati (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)"
-          >
+          <FigureCaption number={5} source="Andamento della glicemia su due persone diverse, a parità di nutrienti assimilati (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={glycemicCurves}
-                alt="Grafico delle curve glicemiche opposte per lo stesso alimento"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={glycemicCurves} alt="Grafico delle curve glicemiche opposte per lo stesso alimento" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -287,12 +245,7 @@ export const ArticleContent = React.memo(() => {
 
           <FigureCaption number={6} source="Un approccio sano alla nutrizione significa vivere con consapevolezza">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={activeWoman}
-                alt="Donna attiva che rappresenta un approccio sano alla nutrizione"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={activeWoman} alt="Donna attiva che rappresenta un approccio sano alla nutrizione" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
 
@@ -307,24 +260,18 @@ export const ArticleContent = React.memo(() => {
             </p>
 
             <div className="flex justify-center pt-2">
-              <Button
-                size="lg"
-                className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
-                style={{ fontSize: "13px", width: "320px", lineHeight: "1.3" }}
-                asChild
-              >
+              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200" style={{
+              fontSize: "13px",
+              width: "320px",
+              lineHeight: "1.3"
+            }} asChild>
                 <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
               </Button>
             </div>
 
             <FigureCaption number={7} source="Una dieta varia ed equilibrata ma soprattutto basa su di te.">
               <div className="rounded-lg overflow-hidden shadow-lg mt-4">
-                <img
-                  src={foodData}
-                  alt="Foto macro alimenti naturali con overlay di dati"
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
+                <img src={foodData} alt="Foto macro alimenti naturali con overlay di dati" className="w-full h-auto" loading="lazy" />
               </div>
             </FigureCaption>
           </div>
@@ -373,12 +320,7 @@ export const ArticleContent = React.memo(() => {
 
           <FigureCaption number={8} source="Con azioni mirate i risultati sono concreti e i benefici immediati.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={wellnessIcons}
-                alt="Icone che rappresentano i benefici della nutrizione personalizzata"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={wellnessIcons} alt="Icone che rappresentano i benefici della nutrizione personalizzata" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -419,22 +361,14 @@ export const ArticleContent = React.memo(() => {
 
           <FigureCaption number={9} source="Una vita più sana è possibile.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={coupleCooking}
-                alt="Rappresentazione di esperienze positive con la nutrizione personalizzata"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={coupleCooking} alt="Rappresentazione di esperienze positive con la nutrizione personalizzata" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
       </section>
 
       {/* 9. FINAL CTA SECTION */}
-      <section
-        id="cta-section"
-        className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]"
-      >
+      <section id="cta-section" className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]">
         <div className="max-w-4xl md:mx-auto text-center space-y-6 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
             Vuoi capire come funziona davvero il tuo corpo?
@@ -446,12 +380,9 @@ export const ArticleContent = React.memo(() => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button
-              size="lg"
-              className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
-              style={{ fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)" }}
-              asChild
-            >
+            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" style={{
+            fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)"
+          }} asChild>
               <a href="/#pricing">Scopri il tuo profilo personale</a>
             </Button>
           </div>
@@ -468,14 +399,7 @@ export const ArticleContent = React.memo(() => {
             </Badge>
           </div>
 
-          <div className="pt-6">
-            <img
-              src={womanWellness}
-              alt="Donna sorridente che rappresenta equilibrio e benessere"
-              className="w-full max-w-2xl mx-auto rounded-lg shadow-xl"
-              loading="lazy"
-            />
-          </div>
+          
         </div>
       </section>
 
@@ -510,8 +434,6 @@ export const ArticleContent = React.memo(() => {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>;
 });
-
 ArticleContent.displayName = "ArticleContent";
