@@ -71,7 +71,7 @@ export const ArticleContent = React.memo(() => {
           >
             <Button
               size="lg"
-              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200"
+              className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200"
               style={{ fontSize: "13px", width: "320px" }}
             >
               Scopri come funziona la nutrizione personalizzata
@@ -308,7 +308,7 @@ export const ArticleContent = React.memo(() => {
             <div className="flex justify-center pt-2">
               <Button
                 size="lg"
-                className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
+                className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
                 style={{ fontSize: "13px", width: "320px", lineHeight: "1.3" }}
                 asChild
               >
@@ -447,7 +447,7 @@ export const ArticleContent = React.memo(() => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button
               size="lg"
-              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
+              className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
               style={{ fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)" }}
               asChild
             >
