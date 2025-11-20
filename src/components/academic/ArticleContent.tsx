@@ -370,7 +370,7 @@ export const ArticleContent = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption number={8} source="5 icone minimal: bilancia, cuore, cervello, piatto, sole">
+          <FigureCaption number={8} source="Con azioni mirate i risultati sono concreti, e i benefici immediati.">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
                 src={wellnessIcons}
