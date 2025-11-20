@@ -8,7 +8,7 @@ import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import activeWoman from "@/assets/active-woman.jpg";
 import foodData from "@/assets/food-data-overlay.jpg";
-import wellnessIcons from "@/assets/wellness-icons.jpg";
+import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import womanWellness from "@/assets/woman-wellness.jpg";
 import { FigureCaption } from "./FigureCaption";
 
