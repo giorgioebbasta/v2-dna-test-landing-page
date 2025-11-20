@@ -72,7 +72,7 @@ export const ArticleContent = React.memo(() => {
             <Button
               size="lg"
               className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200"
-              style={{ fontSize: '13px', width: '320px' }}
+              style={{ fontSize: "13px", width: "320px" }}
             >
               Scopri come funziona la nutrizione personalizzata
             </Button>
@@ -306,20 +306,17 @@ export const ArticleContent = React.memo(() => {
             </p>
 
             <div className="flex justify-center pt-2">
-            <Button
-              size="lg"
-              className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
-              style={{ fontSize: '13px', width: '320px', lineHeight: '1.3' }}
-              asChild
-            >
-              <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
-            </Button>
+              <Button
+                size="lg"
+                className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
+                style={{ fontSize: "13px", width: "320px", lineHeight: "1.3" }}
+                asChild
+              >
+                <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
+              </Button>
             </div>
 
-            <FigureCaption
-              number={7}
-              source="Alimenti naturali con overlay di data points per evocare rigore scientifico"
-            >
+            <FigureCaption number={7} source="Una dieta varia ed equilibrata ma soprattutto basa su di te.">
               <div className="rounded-lg overflow-hidden shadow-lg mt-4">
                 <img
                   src={foodData}
@@ -451,7 +448,7 @@ export const ArticleContent = React.memo(() => {
             <Button
               size="lg"
               className="bg-[#768289] hover:bg-[#2F3F4C] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
-              style={{ fontSize: 'clamp(0.875rem, 2vw + 0.5rem, 1.25rem)' }}
+              style={{ fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)" }}
               asChild
             >
               <a href="/#pricing">Scopri il tuo profilo personale</a>
