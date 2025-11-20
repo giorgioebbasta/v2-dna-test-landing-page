@@ -222,11 +222,16 @@ export const ArticleContent = React.memo(() => {
               <p className="leading-relaxed">
                 Nel 2015, Eran Zeevi e il team del Weizmann Institute of Science hanno pubblicato su Cell Metabolism una
                 scoperta fondamentale: due persone possono avere risposte glicemiche completamente opposte allo stesso
-                alimento (Zeevi et al., 2015). Un piatto di riso può aumentare la glicemia di una persona e quasi non
-                muoverla in un'altra. Questo dimostra che le diete "universali" non possono funzionare per tutti allo
-                stesso modo. Studi successivi (Nature Medicine, 2020; Cell Reports, 2018) hanno confermato che le
-                differenze individuali dipendono anche da microbiota, genetica e cronotipo circadiano. Capire come
-                ciascuno reagisce ai nutrienti è il passo decisivo per migliorare metabolismo e prevenzione.
+                alimento (Zeevi et al., 2015).
+                <br />
+                <br />
+                Un piatto di riso può aumentare la glicemia di una persona e quasi non muoverla in un'altra. Questo
+                dimostra che le diete "universali" non possono funzionare per tutti allo stesso modo.
+                <br />
+                <br />
+                Studi successivi (Nature Medicine, 2020; Cell Reports, 2018) hanno confermato che le differenze
+                individuali dipendono anche da microbiota, genetica e cronotipo circadiano. Capire come ciascuno
+                reagisce ai nutrienti è il passo decisivo per migliorare metabolismo e prevenzione.
               </p>
             </div>
           </div>
