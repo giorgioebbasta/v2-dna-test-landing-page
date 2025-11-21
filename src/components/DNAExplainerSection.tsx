@@ -30,7 +30,7 @@ const DNAExplainerSection = () => {
   ];
 
   return (
-    <section className="px-4 bg-[#F8FAFA] py-12 md:py-16">
+    <section id="dna-explainer" className="px-4 bg-[#F8FAFA] py-12 md:py-16">
       <div className="max-w-6xl mx-auto">
         {/* Title */}
         <div ref={titleRef} className="text-center mb-12">
