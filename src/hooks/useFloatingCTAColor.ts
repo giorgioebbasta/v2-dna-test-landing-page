@@ -8,12 +8,14 @@ export interface ColorScheme {
 
 const colorSchemes: Record<string, ColorScheme> = {
   default: {
-    className: "bg-gradient-to-r from-[#E8FFC9] to-[#d4f5b1] hover:from-[#d4f5b1] hover:to-[#E8FFC9]",
-    textColor: "text-[#0B4650]"
+    className: "",
+    textColor: "text-[#0B4650]",
+    style: { background: 'linear-gradient(to right, #E8FFC9, #d4f5b1)' }
   },
   pinkPeach: {
-    className: "bg-gradient-to-r from-[#FCE8E6] to-[#fbd5d1] hover:from-[#fbd5d1] hover:to-[#f9c2bc]",
-    textColor: "text-[#1A1A31]"
+    className: "",
+    textColor: "text-[#1A1A31]",
+    style: { background: 'linear-gradient(to right, #FCE8E6, #fbd5d1)' }
   },
   lightBlue: {
     className: "",
@@ -21,13 +23,14 @@ const colorSchemes: Record<string, ColorScheme> = {
     style: { background: '#C4EDFF' }
   },
   purple: {
-    className: "border-0",
+    className: "",
     textColor: "text-white",
     style: { background: 'linear-gradient(to right, #D0C5FB, #A78BFA)' }
   },
   darkTeal: {
-    className: "bg-[#0B4650] hover:bg-[#0B4650]/90",
-    textColor: "text-[#E8FFC9]"
+    className: "",
+    textColor: "text-[#E8FFC9]",
+    style: { background: '#0B4650' }
   }
 };
 
