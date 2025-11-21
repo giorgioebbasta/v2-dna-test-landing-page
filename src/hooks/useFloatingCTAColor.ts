@@ -20,6 +20,11 @@ const colorSchemes: Record<string, ColorScheme> = {
     textColor: "text-[#1A1A31]",
     style: { background: '#C4EDFF' }
   },
+  purple: {
+    className: "border-0",
+    textColor: "text-white",
+    style: { background: 'linear-gradient(to right, #D0C5FB, #A78BFA)' }
+  },
   darkTeal: {
     className: "bg-[#0B4650] hover:bg-[#0B4650]/90",
     textColor: "text-[#E8FFC9]"
@@ -45,6 +50,7 @@ export const useFloatingCTAColor = () => {
       'report-preview',
       'how-it-works',
       'testimonials',
+      'comparison',
       'final-cta'
     ];
 
@@ -69,6 +75,8 @@ export const useFloatingCTAColor = () => {
               newColorScheme = colorSchemes.pinkPeach;
             } else if (sectionId === 'how-it-works' || sectionId === 'testimonials') {
               newColorScheme = colorSchemes.lightBlue;
+            } else if (sectionId === 'comparison') {
+              newColorScheme = colorSchemes.purple;
             } else if (sectionId === 'final-cta') {
               newColorScheme = colorSchemes.darkTeal;
             }
