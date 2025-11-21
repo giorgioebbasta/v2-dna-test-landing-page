@@ -24,6 +24,7 @@ const FloatingCTA = () => {
           )}
           style={{
             animation: 'gentlePulse 3s ease-in-out infinite',
+            transition: 'background 300ms ease-in-out, transform 300ms ease-in-out',
             ...colorScheme.style
           }}
         >
