@@ -51,6 +51,7 @@ export const useFloatingCTAColor = () => {
       'how-it-works',
       'testimonials',
       'comparison',
+      'faqs',
       'final-cta'
     ];
 
@@ -75,7 +76,7 @@ export const useFloatingCTAColor = () => {
               newColorScheme = colorSchemes.pinkPeach;
             } else if (sectionId === 'how-it-works' || sectionId === 'testimonials') {
               newColorScheme = colorSchemes.lightBlue;
-            } else if (sectionId === 'comparison') {
+            } else if (sectionId === 'comparison' || sectionId === 'faqs') {
               newColorScheme = colorSchemes.purple;
             } else if (sectionId === 'final-cta') {
               newColorScheme = colorSchemes.darkTeal;
