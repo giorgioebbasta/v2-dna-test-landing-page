@@ -81,9 +81,9 @@ export const useFloatingCTAColor = () => {
               newColorScheme = colorSchemes.pinkPeach;
             } else if (sectionId === 'how-it-works' || sectionId === 'reviews' || sectionId === 'testimonials') {
               newColorScheme = colorSchemes.lightBlue;
-            } else if (sectionId === 'comparison' || sectionId === 'pricing' || sectionId === 'faqs') {
+            } else if (sectionId === 'comparison' || sectionId === 'pricing') {
               newColorScheme = colorSchemes.purple;
-            } else if (sectionId === 'final-cta') {
+            } else if (sectionId === 'faqs' || sectionId === 'final-cta') {
               newColorScheme = colorSchemes.darkTeal;
             }
             break; // Use the first (topmost) visible section
@@ -93,8 +93,8 @@ export const useFloatingCTAColor = () => {
         setActiveColor(newColorScheme);
       },
       {
-        // Trigger when section is 20% visible from top of viewport
-        rootMargin: '-20% 0px -60% 0px',
+        // Trigger when section crosses below the promo banner (~80px from top)
+        rootMargin: '-80px 0px -60% 0px',
         threshold: [0, 0.25, 0.5, 0.75, 1]
       }
     );
