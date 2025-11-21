@@ -33,7 +33,7 @@ const TestimonialsSection = () => {
     description: "Mi svegliavo stanca, andavo a dormire stanca, e nessuno capiva perché. Poi ho fatto il test DNA Holifya e ho scoperto che alcuni cibi mi infiammavano e rallentavano il mio metabolismo: ora so cosa evitare, ho più energia e mi sento finalmente leggera.",
     thumbnailUrl: "https://img.youtube.com/vi/2m6h_YbsJbI/maxresdefault.jpg"
   }];
-  return <section ref={elementRef} className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 bg-white">
+  return <section id="testimonials" ref={elementRef} className="pt-6 pb-12 md:pt-8 md:pb-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-6">
           <p className="text-base text-slate-500 font-semibold">Storie vere di persone che hanno trasformato la loro salute con il test del DNA Holifya</p>

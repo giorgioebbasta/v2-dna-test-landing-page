@@ -1,8 +1,12 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { useFloatingCTAColor } from "@/hooks/useFloatingCTAColor";
+import { cn } from "@/lib/utils";
 
 const FloatingCTA = () => {
+  const colorScheme = useFloatingCTAColor();
+
   return (
     <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
       <a 
@@ -13,9 +17,14 @@ const FloatingCTA = () => {
       >
         <Button 
           size="lg" 
-          className="bg-gradient-to-r from-[#E8FFC9] to-[#d4f5b1] hover:from-[#d4f5b1] hover:to-[#E8FFC9] text-[#0B4650] font-semibold text-lg px-8 py-4 rounded-full shadow-md shadow-[#0B4650]/20 lg:shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          className={cn(
+            colorScheme.className,
+            colorScheme.textColor,
+            "font-semibold text-lg px-8 py-4 rounded-full shadow-md shadow-[#0B4650]/20 lg:shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          )}
           style={{
-            animation: 'gentlePulse 3s ease-in-out infinite'
+            animation: 'gentlePulse 3s ease-in-out infinite',
+            ...colorScheme.style
           }}
         >
           Ordina ora - €249
