@@ -49,8 +49,10 @@ export const useFloatingCTAColor = () => {
       'dna-explainer',
       'report-preview',
       'how-it-works',
+      'reviews',
       'testimonials',
       'comparison',
+      'pricing',
       'faqs',
       'final-cta'
     ];
@@ -74,9 +76,9 @@ export const useFloatingCTAColor = () => {
             // Map section to color scheme
             if (sectionId === 'dna-explainer' || sectionId === 'report-preview') {
               newColorScheme = colorSchemes.pinkPeach;
-            } else if (sectionId === 'how-it-works' || sectionId === 'testimonials') {
+            } else if (sectionId === 'how-it-works' || sectionId === 'reviews' || sectionId === 'testimonials') {
               newColorScheme = colorSchemes.lightBlue;
-            } else if (sectionId === 'comparison' || sectionId === 'faqs') {
+            } else if (sectionId === 'comparison' || sectionId === 'pricing' || sectionId === 'faqs') {
               newColorScheme = colorSchemes.purple;
             } else if (sectionId === 'final-cta') {
               newColorScheme = colorSchemes.darkTeal;
