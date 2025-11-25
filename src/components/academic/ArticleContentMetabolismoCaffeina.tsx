@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import coffeeSplitScreen from "@/assets/coffee-split-screen.png";
 import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
 import performanceGenetics from "@/assets/performance-genetics.png";
+import dietResults from "@/assets/diet-results-comparison.webp";
 import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import activeWoman from "@/assets/active-woman.jpg";
@@ -141,7 +142,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={3} source="Livello di caffeina nel sangue dopo una tazza di caffè: risposta individuale (Nature Genetics, 2016).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={glycemicCurves} alt="Grafico con due curve di concentrazione della caffeina nel sangue" className="w-full h-auto" loading="lazy" />
+              <img src={performanceGenetics} alt="Grafico con due curve di concentrazione della caffeina nel sangue" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -215,7 +216,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={5} source="La caffeina può migliorare o ostacolare la performance, a seconda del tuo profilo genetico.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={performanceGenetics} alt="Split visivo: atleta energico vs atleta stanco" className="w-full h-auto" loading="lazy" />
+              <img src={dietResults} alt="Split visivo: atleta energico vs atleta stanco" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
