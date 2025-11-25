@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import coffeeSplitScreen from "@/assets/coffee-split-screen.png";
-import womanThinking from "@/assets/woman-thinking-food-new.webp";
+import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
 import dietResults from "@/assets/diet-results-comparison.webp";
 import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
@@ -88,7 +88,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={2} source="La velocità di metabolizzazione può variare fino a 5x tra individui (Nutrients, 2023).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={womanThinking} alt="Infografica con tre orologi metabolici a velocità diversa" className="w-full h-auto" loading="lazy" />
+              <img src={metabolicResponseCurves} alt="Infografica con tre orologi metabolici a velocità diversa" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
