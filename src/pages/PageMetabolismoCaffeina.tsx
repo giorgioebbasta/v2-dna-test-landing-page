@@ -8,13 +8,13 @@ import type { ScrollSpySection } from "@/hooks/useOptimizedScrollSpy";
 
 // Memoize sections array - it never changes
 const sections: ScrollSpySection[] = [
-  { id: 'section-1', label: 'Quando "fare tutto bene" non basta' },
-  { id: 'section-2', label: 'Non esiste una dieta per tutti' },
-  { id: 'section-3', label: 'La svolta scientifica: la nutrizione di precisione' },
-  { id: 'section-4', label: 'Lo studio che ha cambiato tutto' },
-  { id: 'section-5', label: 'Perché le diete standard falliscono' },
-  { id: 'section-6', label: 'I benefici di un percorso su misura' },
-  { id: 'section-7', label: 'Esperienze reali, non prove scientifiche' },
+  { id: 'intro', label: 'Quando "fare tutto bene" non basta' },
+  { id: 'inefficacia', label: 'Non esiste una dieta per tutti' },
+  { id: 'svolta', label: 'La svolta scientifica: la nutrizione di precisione' },
+  { id: 'studio', label: 'Lo studio che ha cambiato tutto' },
+  { id: 'evidenze', label: 'Perché le diete standard falliscono' },
+  { id: 'benefici', label: 'I benefici di un percorso su misura' },
+  { id: 'casi', label: 'Esperienze reali, non prove scientifiche' },
   { id: 'cta-section', label: 'Vuoi capire come funziona davvero il tuo corpo?' }
 ];
 

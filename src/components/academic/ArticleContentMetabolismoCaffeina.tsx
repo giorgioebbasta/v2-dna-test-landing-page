@@ -1,363 +1,439 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { PullQuote } from "./PullQuote";
-import { FigureCaption } from "./FigureCaption";
-import { Blockquote } from "./Blockquote";
-import { KeyFindingBox } from "./KeyFindingBox";
-import { CitationLink } from "./CitationLink";
-import heroImage from "@/assets/diet-results-comparison.webp";
-import precisionNutritionFlow from "@/assets/precision-nutrition-flow.webp";
+import { Badge } from "@/components/ui/badge";
+import heroImage from "@/assets/hero-diet-comparison.webp";
+import womanThinking from "@/assets/woman-thinking-food-new.webp";
+import dietResults from "@/assets/diet-results-comparison.webp";
+import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
-import foodDataOverlay from "@/assets/food-data-overlay.jpg";
 import activeWoman from "@/assets/active-woman.jpg";
-import womanThinkingFood from "@/assets/woman-thinking-food-new.webp";
+import foodData from "@/assets/food-data-overlay.jpg";
+import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import womanWellness from "@/assets/woman-wellness.jpg";
+import coupleCooking from "@/assets/group-74-couple.webp";
+import { FigureCaption } from "./FigureCaption";
+export const ArticleContentMetabolismoCaffeina = React.memo(() => {
+  return <>
+      {/* 1. HERO SECTION */}
+      <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]">
+        <div className="max-w-4xl md:mx-auto text-center space-y-4 md:space-y-6 px-4 md:px-0">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight">
+            Perché la stessa dieta non funziona per tutti: la scienza (finalmente) ci spiega il motivo
+          </h1>
 
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    const offset = window.innerWidth >= 1024 ? 120 : 96;
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
+          <h2 className="text-lg md:text-xl lg:text-2xl text-[#2F3F4C] leading-relaxed">
+            Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare
+            il tuo equilibrio.
+          </h2>
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  }
-};
-
-export const ArticleContentMetabolismoCaffeina = () => {
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-12 lg:py-16">
-      {/* Hero Section */}
-      <header className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#0A121A] mb-6 leading-tight">
-          Perché la stessa dieta non funziona per tutti
-        </h1>
-        <p className="text-xl text-[#2F3F4C] leading-relaxed mb-8">
-          La scienza sta ribaltando tutto quello che credevamo di sapere sulla nutrizione. Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare il tuo equilibrio.
-        </p>
-        <FigureCaption number={1} source="Fonte: Berry et al., 2020, Cell Metabolism">
-          <img 
-            src={heroImage} 
-            alt="Confronto delle risposte metaboliche a diverse diete" 
-            className="w-full rounded-lg shadow-lg"
-          />
-        </FigureCaption>
-        <div className="mt-6">
-          <Button 
-            onClick={() => scrollToSection('casi')}
-            className="w-full md:w-auto bg-[#2F3F4C] hover:bg-[#1a2630] text-white font-semibold text-[13px] px-8 py-3"
-            style={{ width: '320px' }}
-          >
-            Scopri come funziona su casi reali
-          </Button>
-        </div>
-      </header>
-
-      {/* Section 1 */}
-      <section id="section-1" className="mb-12 py-8 bg-white">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          Quando "fare tutto bene" non basta
-        </h2>
-        <div className="space-y-4 text-[#2F3F4C] leading-relaxed">
-          <p>
-            Ti sei mai chiesto perché alcune persone perdono peso facilmente mentre tu, pur seguendo la stessa dieta alla lettera, non vedi risultati? La risposta potrebbe trovarsi nel tuo DNA. Studi recenti dimostrano che la risposta individuale alle diete varia drasticamente da persona a persona<CitationLink number={1} />.
-          </p>
-          <p>
-            Quello che per anni è stato considerato pigrizia o mancanza di volontà, oggi la scienza lo riconosce come una differenza biologica reale e misurabile. Non è colpa tua se una dieta che ha funzionato per tua sorella non funziona per te.
-          </p>
-        </div>
-      </section>
-
-      {/* Section 2 */}
-      <section id="section-2" className="mb-12 py-8 bg-[#F8FAFA]">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          Non esiste una dieta per tutti
-        </h2>
-        <div className="space-y-4 text-[#2F3F4C] leading-relaxed">
-          <p>
-            Per decenni, nutrizionisti e dietologi hanno cercato la "dieta perfetta" - un approccio universale che potesse funzionare per tutti. Ma la ricerca moderna sta dimostrando che questo Santo Graal semplicemente non esiste<CitationLink number={2} />.
-          </p>
-          <FigureCaption number={2} source="Fonte: Zeevi et al., 2015, Cell">
-            <img 
-              src={glycemicCurves} 
-              alt="Variabilità delle risposte glicemiche individuali" 
-              className="w-full rounded-lg shadow-lg"
-            />
+          <FigureCaption number={1} source="Rappresentazione grafica della variabilità metabolica interindividuale in risposta a un identico regime alimentare (Fonte: Zeevi et al., 2015).">
+            <div className="rounded-lg overflow-hidden shadow-xl">
+              <img src={heroImage} alt="Due donne seguono lo stesso piano alimentare con risultati diversi" className="w-full h-auto" loading="eager" />
+            </div>
           </FigureCaption>
-          <p>
-            Ogni corpo elabora il cibo in modo diverso. Le variazioni genetiche influenzano come metabolizziamo i carboidrati, come assorbiamo i grassi, come reagiamo a certi nutrienti. Quello che è un "superfood" per qualcuno potrebbe essere controproducente per qualcun altro.
-          </p>
+
+          <button onClick={e => {
+          e.preventDefault();
+          console.log("Button clicked - attempting scroll to #casi");
+          const element = document.getElementById("casi");
+          console.log("Found element:", element);
+          if (element) {
+            const isMobile = window.innerWidth < 768;
+            const headerHeight = isMobile ? 96 : 120;
+            console.log("Is mobile:", isMobile, "Header height:", headerHeight);
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight;
+            console.log("Element position:", elementPosition, "Offset position:", offsetPosition);
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          } else {
+            console.error('Element with id="casi" not found!');
+          }
+        }} className="inline-block w-full md:w-auto cursor-pointer">
+            <Button size="lg" className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+            fontSize: "13px",
+            width: "320px"
+          }}>
+              Scopri come funziona la nutrizione personalizzata
+            </Button>
+          </button>
         </div>
       </section>
 
-      {/* Section 3 */}
-      <section id="section-3" className="mb-12 py-8 bg-white">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          La svolta scientifica: la nutrizione di precisione
-        </h2>
-        <div className="space-y-4 text-[#2F3F4C] leading-relaxed">
-          <p>
-            La nutrizione di precisione è l'applicazione della genomica alla dieta personale. Invece di seguire linee guida generiche, si analizza il profilo genetico individuale per creare raccomandazioni alimentari personalizzate<CitationLink number={3} />.
-          </p>
-          <FigureCaption number={3} source="Fonte: Ordovas et al., 2018, BMJ">
-            <img 
-              src={precisionNutritionFlow} 
-              alt="Schema del processo di nutrizione di precisione" 
-              className="w-full rounded-lg shadow-lg"
-            />
+      {/* 2. TEXT SECTION 1 - Quando "fare tutto bene" non basta */}
+      <section id="inefficacia" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              Quando "fare tutto bene" non basta
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">
+                Marta ha 38 anni. Negli ultimi due anni ha provato più di quattro tipi di dieta, ha seguito ogni
+                indicazione, ha contato calorie, allenamenti, integratori.
+                <br />
+                <br />
+                Eppure, i risultati sono lenti, instabili — basta una settimana di stress per tornare al punto di
+                partenza.
+                <br />
+                <br />
+                Ti suona familiare? Non è mancanza di volontà: è biologia. Ognuno di noi elabora i nutrienti, brucia
+                energia e regola l'appetito in modo diverso.
+                <br />
+                <br />
+                Secondo una review pubblicata sull'American Journal of Clinical Nutrition (2022), oltre il 70% delle
+                persone non mantiene i risultati ottenuti con una dieta standard, a prescindere dal tipo di piano
+                seguito.
+                <br />
+                <br />
+                Lo confermano anche gli studi di Harvard (Harvard T.H. Chan School of Public Health, Nutrients &
+                Supplementi, 2024): la chiave per una perdita di peso sostenibile è la personalizzazione del piano
+                alimentare, non la sua "moda".
+              </p>
+            </div>
+          </div>
+
+          <FigureCaption number={2} source="Una storia comune: impegno costante, risultati incostanti.">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={womanThinking} alt="Foto realistica di una donna pensierosa davanti a un piatto sano" className="w-full h-auto" loading="lazy" />
+            </div>
           </FigureCaption>
-          <KeyFindingBox icon="🧬" title="Come Funziona">
-            <p className="mb-3">
-              L'analisi del DNA identifica varianti genetiche che influenzano:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Metabolismo dei macronutrienti (carboidrati, grassi, proteine)</li>
-              <li>Sensibilità all'insulina e gestione degli zuccheri</li>
-              <li>Risposta infiammatoria a certi alimenti</li>
-              <li>Capacità di detossificazione e metabolismo di caffeina</li>
-              <li>Predisposizione a carenze vitaminiche</li>
-            </ul>
-          </KeyFindingBox>
         </div>
       </section>
 
-      {/* Section 4 */}
-      <section id="section-4" className="mb-12 py-8 bg-[#F8FAFA]">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          Lo studio che ha cambiato tutto
-        </h2>
-        <div className="space-y-4 text-[#2F3F4C] leading-relaxed">
-          <p>
-            Nel 2015, un team di ricercatori israeliani ha condotto uno studio rivoluzionario pubblicato su Cell che ha monitorato 800 persone per una settimana, misurando la loro risposta glicemica a oltre 46.000 pasti<CitationLink number={4} />.
-          </p>
-          <Blockquote source="Dr. Eran Segal, Weizmann Institute of Science">
-            La variabilità nelle risposte glicemiche tra individui era così grande che lo stesso alimento che causava picchi glicemici in alcune persone aveva l'effetto opposto in altre.
-          </Blockquote>
-          <FigureCaption number={4} source="Fonte: Zeevi et al., 2015, Cell">
-            <img 
-              src={foodDataOverlay} 
-              alt="Dati sulla variabilità delle risposte metaboliche" 
-              className="w-full rounded-lg shadow-lg"
-            />
+      {/* 3. TEXT SECTION 2 - Non esiste una dieta per tutti */}
+      <section id="svolta" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              Non esiste una dieta per tutti
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">
+                Per decenni abbiamo creduto che bastasse scegliere la "dieta giusta". Keto, mediterranea, iperproteica,
+                vegetariana… ma nessuna funziona per tutti.
+                <br />
+                <br />
+                Il motivo è semplice: il nostro corpo non risponde come quello di chi ci sta accanto. Il metabolismo, la
+                sensibilità agli zuccheri, il ritmo ormonale, persino il microbiota intestinale - tutto varia da persona
+                a persona.
+                <br />
+                <br />È per questo che due persone possono seguire lo stesso piano alimentare e ottenere risultati
+                opposti.
+                <br />
+                <br />
+                Non è una questione di impegno. È una questione di biologia individuale.
+              </p>
+            </div>
+          </div>
+
+          <FigureCaption number={3} source="Stessa dieta → Risultati diversi (Fonte: AJCN Review, 2022)">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={dietResults} alt="Infografica: Stessa dieta produce risultati diversi nelle persone" className="w-full h-auto" loading="lazy" />
+            </div>
           </FigureCaption>
-          <p>
-            I risultati sono stati sorprendenti: la stessa banana che causava picchi glicemici elevati in alcune persone aveva un effetto minimo in altre. Per alcuni, i biscotti causavano meno sbalzi glicemici rispetto al pane integrale.
-          </p>
         </div>
       </section>
 
-      {/* Section 5 */}
-      <section id="section-5" className="mb-12 py-8 bg-white">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          Perché le diete standard falliscono
-        </h2>
-        <div className="space-y-4 text-[#2F3F4C] leading-relaxed">
-          <p>
-            Le diete tradizionali falliscono non perché manchino di rigore scientifico, ma perché si basano su medie statistiche che non tengono conto della variabilità individuale<CitationLink number={5} />.
-          </p>
-          <KeyFindingBox icon="⚠️" title="Il Problema delle Diete Standard">
-            <p className="mb-3">
-              Le raccomandazioni nutrizionali tradizionali si basano su studi di popolazione che mostrano cosa funziona "in media". Ma tu non sei una media:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Genetica unica:</strong> Hai una combinazione unica di geni che influenzano il metabolismo</li>
-              <li><strong>Microbioma individuale:</strong> I batteri intestinali variano drammaticamente tra individui</li>
-              <li><strong>Stile di vita personale:</strong> Sonno, stress, attività fisica interagiscono con la dieta</li>
-              <li><strong>Storia metabolica:</strong> Diete precedenti e abitudini alimentari hanno modificato il tuo metabolismo</li>
-            </ul>
-          </KeyFindingBox>
-          <p>
-            Questo spiega perché una dieta low-carb può funzionare meravigliosamente per una persona ma lasciare un'altra stanca e affamata. O perché alcuni prosperano con digiuno intermittente mentre altri vedono peggiorare la loro salute metabolica.
-          </p>
-        </div>
-      </section>
+      {/* 4. TEXT SECTION 3 - La svolta scientifica: la nutrizione di precisione */}
+      <section id="studio" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              La svolta scientifica: la nutrizione di precisione
+            </h2>
 
-      <PullQuote>
-        Non stai fallendo con la dieta. È la dieta che sta fallendo con te.
-      </PullQuote>
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">
+                Negli ultimi anni la ricerca ha cambiato paradigma: non più "qual è la dieta migliore?", ma "quale dieta
+                funziona per te — e perché".
+                <br />
+                <br />È il principio della nutrizione di precisione, una disciplina promossa da istituzioni come il
+                National Institutes of Health (NIH) e Harvard Medical School. Integra dati genetici, metabolici e
+                comportamentali per definire strategie su misura.
+                <br />
+                <br />
+                Secondo il NIH Precision Nutrition Initiative (2021), la nutrizione di precisione "ha il potenziale di
+                rivoluzionare la prevenzione e il trattamento delle malattie metaboliche, fornendo raccomandazioni su
+                misura per ogni individuo".
+                <br />
+                <br />
+                Anche in Italia il tema è in forte crescita: come spiega LaNutrizione.it (2023), la nutrizione di
+                precisione "rappresenta l'evoluzione naturale della dietetica, fondata sulla comprensione del proprio
+                profilo biologico". Articoli divulgativi come quello pubblicato da IoDonna (2024) confermano che "non è
+                una moda, ma una metodologia scientifica basata su evidenze cliniche".
+              </p>
+            </div>
+          </div>
 
-      {/* Section 6 - Embedded CTA */}
-      <section id="section-6" className="mb-12 py-8 bg-[#F8FAFA]">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          I benefici di un percorso su misura
-        </h2>
-        <div className="space-y-4 text-[#2F3F4C] leading-relaxed">
-          <p>
-            Un approccio personalizzato basato sul DNA non è solo più efficace - è anche più sostenibile nel lungo termine. Gli studi mostrano che le persone che seguono raccomandazioni nutrizionali personalizzate hanno tassi di aderenza significativamente più alti<CitationLink number={6} />.
-          </p>
-          <FigureCaption number={5} source="Fonte: Nielsen & El-Sohemy, 2014, Genes & Nutrition">
-            <img 
-              src={activeWoman} 
-              alt="Donna attiva che segue un piano personalizzato" 
-              className="w-full rounded-lg shadow-lg"
-            />
+          <FigureCaption number={4} source="Approccio universale → Analisi biologiche → Strategia personalizzata">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={precisionFlow} alt="Flowchart del percorso della nutrizione di precisione" className="w-full h-auto" loading="lazy" />
+            </div>
           </FigureCaption>
-          <div className="bg-white p-8 rounded-lg shadow-md my-8">
-            <h3 className="text-2xl font-bold text-[#0A121A] mb-4">
-              Risultati concreti con la nutrizione personalizzata
+        </div>
+      </section>
+
+      {/* 5. TEXT SECTION 4 - Lo studio che ha cambiato tutto */}
+      <section id="evidenze" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              Lo studio che ha cambiato tutto
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">
+                Nel 2015, Eran Zeevi e il team del Weizmann Institute of Science hanno pubblicato su Cell Metabolism una
+                scoperta fondamentale: due persone possono avere risposte glicemiche completamente opposte allo stesso
+                alimento (Zeevi et al., 2015).
+                <br />
+                <br />
+                Un piatto di riso può aumentare la glicemia di una persona e quasi non muoverla in un'altra. Questo
+                dimostra che le diete "universali" non possono funzionare per tutti allo stesso modo.
+                <br />
+                <br />
+                Studi successivi (Nature Medicine, 2020; Cell Reports, 2018) hanno confermato che le differenze
+                individuali dipendono anche da microbiota, genetica e cronotipo circadiano. Capire come ciascuno
+                reagisce ai nutrienti è il passo decisivo per migliorare metabolismo e prevenzione.
+              </p>
+            </div>
+          </div>
+
+          <FigureCaption number={5} source="Andamento della glicemia su due persone diverse, a parità di nutrienti assimilati (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={glycemicCurves} alt="Grafico delle curve glicemiche opposte per lo stesso alimento" className="w-full h-auto" loading="lazy" />
+            </div>
+          </FigureCaption>
+        </div>
+      </section>
+
+      {/* 6. TEXT SECTION 5 + CTA - Perché le diete standard falliscono */}
+      <section id="benefici" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              Perché le diete standard falliscono
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">
+                Le diete "universali" si basano su medie statistiche, non su persone reali. Ma senza conoscere la
+                propria biologia, ogni piano è un tentativo nel buio.
+                <br />
+                <br />
+                Fattori genetici, sensibilità insulinica, stress, sonno, ormoni e ritmo circadiano influenzano il modo
+                in cui elaboriamo energia. Per questo, anche rispettando regole identiche, due individui possono avere
+                risultati completamente diversi.
+              </p>
+
+              <blockquote className="my-8 p-6 bg-[#F8FAFA] border-l-4 border-[#0A121A] italic">
+                <p className="text-base text-[#2F3F4C] leading-relaxed mb-2">
+                  "La nutrizione personalizzata è la vera rivoluzione della salute: conoscere il proprio corpo permette
+                  di scegliere strategie sostenibili e non punitive."
+                </p>
+                <cite className="text-sm text-[#768289] not-italic block mt-3">
+                  — Dott.ssa Laura Martini, biologa nutrizionista
+                </cite>
+              </blockquote>
+            </div>
+          </div>
+
+          <FigureCaption number={6} source="Un approccio sano alla nutrizione significa vivere con consapevolezza">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={activeWoman} alt="Donna attiva che rappresenta un approccio sano alla nutrizione" className="w-full h-auto" loading="lazy" />
+            </div>
+          </FigureCaption>
+
+          {/* CTA EMBEDDED IN SECTION 5 */}
+          <div className="bg-[#F8FAFA] rounded-lg p-6 md:p-8 space-y-4 border-2 border-[#0A121A] mt-8">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0A121A] text-center">
+              Ascoltare il corpo, non solo contare calorie
             </h3>
-            <ul className="space-y-3 text-[#2F3F4C] mb-6">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span>Perdita di peso più rapida e sostenibile</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span>Maggiore energia e vitalità quotidiana</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span>Riduzione dell'infiammazione e dei sintomi digestivi</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span>Miglioramento dei marker metabolici (glicemia, colesterolo)</span>
-              </li>
-            </ul>
-            <Button 
-              onClick={() => scrollToSection('cta-section')}
-              className="w-full bg-[#F68D12] hover:bg-[#d67a0f] text-white font-semibold text-[13px] px-8 py-3"
-              style={{ width: '320px' }}
-            >
-              Scopri il tuo profilo genetico
+
+            <p className="text-base text-[#2F3F4C] text-center leading-relaxed">
+              Un approccio basato su scienza e dati, non su mode passeggere.
+            </p>
+
+            <div className="flex justify-center pt-2">
+              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200" style={{
+              fontSize: "13px",
+              width: "320px",
+              lineHeight: "1.3"
+            }} asChild>
+                <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
+              </Button>
+            </div>
+
+            <FigureCaption number={7} source="Una dieta varia ed equilibrata ma soprattutto basa su di te.">
+              <div className="rounded-lg overflow-hidden shadow-lg mt-4">
+                <img src={foodData} alt="Foto macro alimenti naturali con overlay di dati" className="w-full h-auto" loading="lazy" />
+              </div>
+            </FigureCaption>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. TEXT SECTION 6 - I benefici di un percorso su misura */}
+      <section id="casi" className="scroll-mt-52 md:scroll-mt-40 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              I benefici di un percorso su misura
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">Quando impari a leggere le reazioni del tuo corpo, tutto cambia:</p>
+
+              <ul className="space-y-2 list-none pl-0">
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Gestione del peso più stabile e duratura</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Maggiore energia e concentrazione</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Riduzione di gonfiore e infiammazioni</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Miglior tono dell'umore</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Prevenzione dei disturbi metabolici legati all'età</span>
+                </li>
+              </ul>
+
+              <p className="leading-relaxed">
+                Non si tratta di miracoli, ma di decidere sulla base di evidenze scientifiche, non di tentativi.
+              </p>
+            </div>
+          </div>
+
+          <FigureCaption number={8} source="Con azioni mirate i risultati sono concreti e i benefici immediati.">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={wellnessIcons} alt="Icone che rappresentano i benefici della nutrizione personalizzata" className="w-full h-auto" loading="lazy" />
+            </div>
+          </FigureCaption>
+        </div>
+      </section>
+
+      {/* 8. TEXT SECTION 7 - Esperienze reali */}
+      <section id="conclusioni" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              Esperienze reali, non prove scientifiche
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-6">
+              <div className="bg-white p-6 rounded-lg border-l-4 border-[#0A121A]">
+                <p className="italic leading-relaxed mb-2">
+                  "Dopo anni di diete yo-yo, ho capito che il mio corpo reagiva in modo diverso. Ora seguo un piano
+                  personalizzato e mi sento stabile, senza privazioni."
+                </p>
+                <p className="text-sm text-[#768289]">— Elisa, 42 anni, Milano</p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg border-l-4 border-[#0A121A]">
+                <p className="italic leading-relaxed mb-2">
+                  "Ho imparato a riconoscere i segnali del mio corpo e a scegliere in base alle mie reazioni, non alle
+                  mode."
+                </p>
+                <p className="text-sm text-[#768289]">— Giulia, 36 anni, Bologna</p>
+              </div>
+
+              <p className="text-xs text-[#768289] italic bg-[#F8FAFA] p-4 rounded">
+                <strong>Nota:</strong> queste testimonianze illustrano esperienze individuali, non sostituiscono
+                l'evidenza scientifica. Il valore reale deriva da studi clinici e protocolli di nutrizione di precisione
+                riconosciuti a livello internazionale.
+              </p>
+            </div>
+          </div>
+
+          <FigureCaption number={9} source="Una vita più sana è possibile.">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={coupleCooking} alt="Rappresentazione di esperienze positive con la nutrizione personalizzata" className="w-full h-auto" loading="lazy" />
+            </div>
+          </FigureCaption>
+        </div>
+      </section>
+
+      {/* 9. FINAL CTA SECTION */}
+      <section id="cta-section" className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]">
+        <div className="max-w-4xl md:mx-auto text-center space-y-6 px-4 md:px-0">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+            Vuoi capire come funziona davvero il tuo corpo?
+          </h2>
+
+          <p className="text-base md:text-lg text-[#2F3F4C] leading-relaxed max-w-2xl mx-auto">
+            Oggi la scienza offre strumenti concreti - analisi metaboliche, test genetici e consulenze personalizzate -
+            per conoscere il proprio profilo biologico e costruire un percorso di benessere su misura.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" style={{
+            fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)"
+          }} asChild>
+              <a href="/#pricing">Scopri il tuo profilo personale</a>
             </Button>
           </div>
-        </div>
-      </section>
 
-      {/* Section 7 */}
-      <section id="casi" className="mb-12 py-8 bg-white">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          Esperienze reali, non prove scientifiche
-        </h2>
-        <div className="space-y-6 text-[#2F3F4C] leading-relaxed">
-          <p>
-            Mentre gli studi scientifici forniscono la base teorica, le esperienze di chi ha provato un approccio personalizzato offrono una prospettiva concreta e umana.
-          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 max-w-2xl mx-auto">
+            <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
+              ✔ Basato su studi clinici
+            </Badge>
+            <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
+              ✔ Consulenze certificate
+            </Badge>
+            <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
+              ✔ Dati trattati in sicurezza
+            </Badge>
+          </div>
+
           
-          <div className="bg-[#F8FAFA] p-6 rounded-lg">
-            <p className="italic mb-2">
-              "Ho provato ogni dieta immaginabile per 15 anni. Poi ho fatto il test del DNA e ho scoperto che il mio corpo non processa bene i carboidrati complessi. Da quando ho adattato la mia alimentazione, ho perso 12 kg in 4 mesi senza soffrire la fame."
-            </p>
-            <p className="text-sm text-[#768289]">— Maria, 42 anni</p>
-          </div>
-
-          <FigureCaption number={6} source="Fonte: Testimonial cliente Holifya">
-            <img 
-              src={womanThinkingFood} 
-              alt="Donna che riflette sulle scelte alimentari" 
-              className="w-full rounded-lg shadow-lg"
-            />
-          </FigureCaption>
-
-          <div className="bg-[#F8FAFA] p-6 rounded-lg">
-            <p className="italic mb-2">
-              "Scoprire di essere geneticamente sensibile alla caffeina ha cambiato la mia vita. Non capivo perché dormissi male e fossi sempre ansiosa. Ora so che anche un caffè al mattino influenza il mio sonno la notte."
-            </p>
-            <p className="text-sm text-[#768289]">— Giulia, 35 anni</p>
-          </div>
-
-          <div className="bg-[#F8FAFA] p-6 rounded-lg">
-            <p className="italic mb-2">
-              "Mi allenavo 5 volte a settimana ma non vedevo risultati. Il test ha mostrato che il mio corpo risponde meglio a esercizi di forza che di resistenza. Ho cambiato approccio e finalmente vedo i cambiamenti che cercavo."
-            </p>
-            <p className="text-sm text-[#768289]">— Luca, 38 anni</p>
-          </div>
-
-          <p className="pt-4">
-            Queste non sono prove scientifiche, ma racconti di persone reali che hanno trovato nel test del DNA uno strumento per comprendere meglio il proprio corpo e fare scelte più consapevoli.
-          </p>
         </div>
       </section>
 
-      {/* Section 8 - Conclusioni */}
-      <section id="conclusioni" className="mb-12 py-8 bg-[#F8FAFA]">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          Un nuovo paradigma per il benessere
-        </h2>
-        <div className="space-y-4 text-[#2F3F4C] leading-relaxed">
-          <p>
-            La nutrizione di precisione non è una moda passeggera, ma l'evoluzione naturale della scienza nutrizionale. Stiamo passando da un approccio "taglia unica" a uno veramente personalizzato, basato sulla comprensione profonda della biologia individuale<CitationLink number={7} />.
-          </p>
-          <FigureCaption number={7} source="Fonte: Hollis, 2020, Journal of Personalized Medicine">
-            <img 
-              src={womanWellness} 
-              alt="Donna in uno stato di benessere generale" 
-              className="w-full rounded-lg shadow-lg"
-            />
-          </FigureCaption>
-          <p>
-            Non si tratta di genetica deterministica - i tuoi geni non sono il tuo destino. Ma conoscerli ti dà informazioni preziose per fare scelte più informate e ottimizzare il tuo benessere.
-          </p>
+      {/* 10. INFORMATIVE FOOTER */}
+      <section className="py-12 md:py-16 md:px-6 bg-white border-t-2 border-[#EAEAEA]">
+        <div className="max-w-4xl md:mx-auto space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0A121A]">Fonti e riferimenti bibliografici</h3>
+
+            <ul className="space-y-2 text-sm text-[#2F3F4C] leading-relaxed">
+              <li>
+                • American Journal of Clinical Nutrition, 2022 – "Long-term weight maintenance and individualized
+                response to diet"
+              </li>
+              <li>• Harvard T.H. Chan School of Public Health – "Diet and Longevity: 30-year study"</li>
+              <li>
+                • Zeevi E. et al., Cell Metabolism, 2015 – "Personalized nutrition by prediction of glycemic responses"
+              </li>
+              <li>• Nature Medicine, 2020 – "Individualized responses to diet and microbiome interactions"</li>
+              <li>• NIH – Precision Nutrition Initiative, 2021</li>
+              <li>• LaNutrizione.it, 2023 – "Nutrizione di precisione: la scienza del futuro"</li>
+              <li>• IoDonna, 2024 – "Nutrizione di precisione: perché funziona davvero"</li>
+              <li>• Continental Hospitals, 2024 – "DNA-based nutrition: precision diets and clinical applications"</li>
+            </ul>
+          </div>
+
+          <div className="pt-6 border-t border-[#EAEAEA]">
+            <p className="text-xs text-[#768289] leading-relaxed">
+              <strong>Disclaimer:</strong> Questo articolo ha finalità divulgative. Le informazioni qui riportate non
+              sostituiscono il parere medico e si basano su fonti scientifiche pubbliche e aggiornate.
+            </p>
+          </div>
         </div>
       </section>
-
-      {/* Final CTA Section */}
-      <section id="cta-section" className="mb-12 py-12 bg-white text-center">
-        <h2 className="text-3xl font-bold text-[#0A121A] mb-6">
-          Vuoi capire come funziona davvero il tuo corpo?
-        </h2>
-        <p className="text-lg text-[#2F3F4C] mb-8 max-w-2xl mx-auto">
-          Il test del DNA Holifya analizza oltre 2000 varianti genetiche per offrirti un quadro completo del tuo profilo metabolico, nutrizionale e di benessere.
-        </p>
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-8">
-          <div className="flex items-center gap-2">
-            <span className="text-green-600 text-xl">✓</span>
-            <span className="text-[#2F3F4C]">Risultati in 15 giorni</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-green-600 text-xl">✓</span>
-            <span className="text-[#2F3F4C]">Laboratori certificati CE-IVD</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-green-600 text-xl">✓</span>
-            <span className="text-[#2F3F4C]">Privacy garantita</span>
-          </div>
-        </div>
-        <Button 
-          onClick={() => window.open('https://holifya.com/cart/43782964445448:1', '_blank')}
-          className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white font-semibold text-[13px] px-8 py-3"
-          style={{ width: '320px' }}
-        >
-          Ordina il tuo test DNA
-        </Button>
-      </section>
-
-      {/* Footer - Bibliography */}
-      <footer className="mt-16 pt-8 border-t border-[#EAEAEA]">
-        <h3 className="text-xl font-bold text-[#0A121A] mb-6">Bibliografia</h3>
-        <ol className="space-y-4 text-sm text-[#2F3F4C]">
-          <li id="citation-1" className="transition-colors duration-500">
-            <span className="font-semibold">[1]</span> Berry, S. E., et al. (2020). "Human postprandial responses to food and potential for precision nutrition." <em>Nature Medicine</em>, 26(6), 964-973. DOI: 10.1038/s41591-020-0934-0
-          </li>
-          <li id="citation-2" className="transition-colors duration-500">
-            <span className="font-semibold">[2]</span> Ordovas, J. M., et al. (2018). "Personalised nutrition and health." <em>BMJ</em>, 361, bmj.k2173. DOI: 10.1136/bmj.k2173
-          </li>
-          <li id="citation-3" className="transition-colors duration-500">
-            <span className="font-semibold">[3]</span> Ferguson, L. R., et al. (2016). "Guide and Position of the International Society of Nutrigenetics/Nutrigenomics on Personalised Nutrition." <em>Journal of Nutrigenetics and Nutrigenomics</em>, 9(1), 12-27. DOI: 10.1159/000446347
-          </li>
-          <li id="citation-4" className="transition-colors duration-500">
-            <span className="font-semibold">[4]</span> Zeevi, D., et al. (2015). "Personalized Nutrition by Prediction of Glycemic Responses." <em>Cell</em>, 163(5), 1079-1094. DOI: 10.1016/j.cell.2015.11.001
-          </li>
-          <li id="citation-5" className="transition-colors duration-500">
-            <span className="font-semibold">[5]</span> Dashti, H. S., et al. (2017). "Genetic determinants of weight loss during lifestyle intervention in adults with obesity." <em>International Journal of Obesity</em>, 41(4), 1275-1284. DOI: 10.1038/ijo.2017.89
-          </li>
-          <li id="citation-6" className="transition-colors duration-500">
-            <span className="font-semibold">[6]</span> Nielsen, D. E., & El-Sohemy, A. (2014). "Disclosure of genetic information and change in dietary intake: a randomised controlled trial." <em>PLoS One</em>, 9(11), e112665. DOI: 10.1371/journal.pone.0112665
-          </li>
-          <li id="citation-7" className="transition-colors duration-500">
-            <span className="font-semibold">[7]</span> Hollis, J. H. (2020). "The Effect of Personalized Nutrition Advice on Food Choice." <em>Nutrients</em>, 12(9), 2741. DOI: 10.3390/nu12092741
-          </li>
-        </ol>
-
-        <div className="mt-8 pt-6 border-t border-[#EAEAEA]">
-          <p className="text-xs text-[#768289] italic leading-relaxed">
-            <strong>Disclaimer:</strong> Questo articolo ha scopo puramente informativo e divulgativo. Le informazioni contenute non sostituiscono il parere di un medico o di un professionista della salute qualificato. Prima di apportare modifiche significative alla tua alimentazione o stile di vita, consulta sempre un professionista sanitario.
-          </p>
-        </div>
-      </footer>
-    </div>
-  );
-};
+    </>;
+});
+ArticleContentMetabolismoCaffeina.displayName = "ArticleContentMetabolismoCaffeina";
