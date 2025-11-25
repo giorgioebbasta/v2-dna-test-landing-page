@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import heroImage from "@/assets/hero-diet-comparison.webp";
+import coffeeSplitScreen from "@/assets/coffee-split-screen.png";
 import womanThinking from "@/assets/woman-thinking-food-new.webp";
 import dietResults from "@/assets/diet-results-comparison.webp";
 import precisionFlow from "@/assets/precision-nutrition-flow.webp";
@@ -39,7 +39,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
           >
             <div className="rounded-lg overflow-hidden shadow-xl">
               <img
-                src={heroImage}
+                src={coffeeSplitScreen}
                 alt="Split-screen: persona produttiva dopo caffè vs persona insonne"
                 className="w-full h-auto"
                 loading="eager"
