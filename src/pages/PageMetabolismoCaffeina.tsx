@@ -8,14 +8,15 @@ import type { ScrollSpySection } from "@/hooks/useOptimizedScrollSpy";
 
 // Memoize sections array - it never changes
 const sections: ScrollSpySection[] = [
-  { id: 'intro', label: 'Quando "fare tutto bene" non basta' },
-  { id: 'inefficacia', label: 'Non esiste una dieta per tutti' },
-  { id: 'svolta', label: 'La svolta scientifica: la nutrizione di precisione' },
-  { id: 'studio', label: 'Lo studio che ha cambiato tutto' },
-  { id: 'evidenze', label: 'Perché le diete standard falliscono' },
-  { id: 'benefici', label: 'I benefici di un percorso su misura' },
-  { id: 'casi', label: 'Esperienze reali, non prove scientifiche' },
-  { id: 'cta-section', label: 'Vuoi capire come funziona davvero il tuo corpo?' }
+  { id: 'intro', label: 'Perché il caffè ti dà energia...' },
+  { id: 'reazioni', label: 'Una tazza, mille reazioni diverse' },
+  { id: 'scienza', label: 'La scienza dietro al metabolismo della caffeina' },
+  { id: 'rischi', label: 'Rischi e benefici: non è quanto bevi, ma quanto resta' },
+  { id: 'performance', label: 'Caffeina e performance: energia o ostacolo?' },
+  { id: 'futuro', label: 'Il futuro: personalizzare anche l\'energia' },
+  { id: 'sensibilita', label: 'Come conoscere la tua sensibilità alla caffeina' },
+  { id: 'esperienze', label: 'Esperienze reali, non prove scientifiche' },
+  { id: 'cta-section', label: 'Vuoi scoprire come il tuo corpo reagisce alla caffeina?' }
 ];
 
 const PageMetabolismoCaffeina = () => {

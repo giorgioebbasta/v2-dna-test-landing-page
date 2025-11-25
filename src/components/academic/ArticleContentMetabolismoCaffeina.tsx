@@ -12,247 +12,343 @@ import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import womanWellness from "@/assets/woman-wellness.jpg";
 import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
+import { Blockquote } from "./Blockquote";
+
 export const ArticleContentMetabolismoCaffeina = React.memo(() => {
-  return <>
+  return (
+    <>
       {/* 1. HERO SECTION */}
-      <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]">
+      <section
+        id="intro"
+        className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]"
+      >
         <div className="max-w-4xl md:mx-auto text-center space-y-4 md:space-y-6 px-4 md:px-0">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight">
-            Perché la stessa dieta non funziona per tutti: la scienza (finalmente) ci spiega il motivo
+            Perché il caffè ti dà energia, ma a qualcun altro toglie il sonno
+            (per giorni)
           </h1>
 
           <h2 className="text-lg md:text-xl lg:text-2xl text-[#2F3F4C] leading-relaxed">
-            Scopri perché il tuo corpo reagisce in modo unico e come la nutrizione di precisione può aiutarti a trovare
-            il tuo equilibrio.
+            La risposta è nel modo in cui il tuo corpo metabolizza la caffeina —
+            e non è uguale per tutti.
           </h2>
 
-          <FigureCaption number={1} source="Rappresentazione grafica della variabilità metabolica interindividuale in risposta a un identico regime alimentare (Fonte: Zeevi et al., 2015).">
+          <FigureCaption
+            number={1}
+            source="Basato su ricerche pubblicate su Nature Genetics (2016) e Nutrients (2023)."
+          >
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <img src={heroImage} alt="Due donne seguono lo stesso piano alimentare con risultati diversi" className="w-full h-auto" loading="eager" />
+              <img
+                src={heroImage}
+                alt="Split-screen: persona produttiva dopo caffè vs persona insonne"
+                className="w-full h-auto"
+                loading="eager"
+              />
             </div>
           </FigureCaption>
 
-          <button onClick={e => {
-          e.preventDefault();
-          console.log("Button clicked - attempting scroll to #casi");
-          const element = document.getElementById("casi");
-          console.log("Found element:", element);
-          if (element) {
-            const isMobile = window.innerWidth < 768;
-            const headerHeight = isMobile ? 96 : 120;
-            console.log("Is mobile:", isMobile, "Header height:", headerHeight);
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerHeight;
-            console.log("Element position:", elementPosition, "Offset position:", offsetPosition);
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            });
-          } else {
-            console.error('Element with id="casi" not found!');
-          }
-        }} className="inline-block w-full md:w-auto cursor-pointer">
-            <Button size="lg" className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
-            fontSize: "13px",
-            width: "320px"
-          }}>
-              Scopri come funziona la nutrizione personalizzata
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById("esperienze");
+              if (element) {
+                const isMobile = window.innerWidth < 768;
+                const headerHeight = isMobile ? 96 : 120;
+                const elementPosition =
+                  element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                });
+              }
+            }}
+            className="inline-block w-full md:w-auto cursor-pointer"
+          >
+            <Button
+              size="lg"
+              className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200"
+              style={{
+                fontSize: "13px",
+                width: "320px",
+              }}
+            >
+              Scopri come funziona la tua energia interna
             </Button>
           </button>
         </div>
       </section>
 
-      {/* 2. TEXT SECTION 1 - Quando "fare tutto bene" non basta */}
-      <section id="inefficacia" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+      {/* 2. TEXT SECTION 1 - Una tazza, mille reazioni diverse */}
+      <section id="reazioni" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Quando "fare tutto bene" non basta
+              Una tazza, mille reazioni diverse
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Marta ha 38 anni. Negli ultimi due anni ha provato più di quattro tipi di dieta, ha seguito ogni
-                indicazione, ha contato calorie, allenamenti, integratori.
+                Ti capita di bere un espresso e sentirti subito più attivo,
+                mentre un tuo amico, con lo stesso caffè, resta sveglio fino
+                alle tre del mattino?
                 <br />
                 <br />
-                Eppure, i risultati sono lenti, instabili — basta una settimana di stress per tornare al punto di
-                partenza.
+                Non è un effetto placebo. È scienza.
                 <br />
                 <br />
-                Ti suona familiare? Non è mancanza di volontà: è biologia. Ognuno di noi elabora i nutrienti, brucia
-                energia e regola l'appetito in modo diverso.
+                La caffeina agisce sul sistema nervoso centrale come
+                stimolante, ma ognuno di noi la metabolizza a velocità diversa.
                 <br />
                 <br />
-                Secondo una review pubblicata sull'American Journal of Clinical Nutrition (2022), oltre il 70% delle
-                persone non mantiene i risultati ottenuti con una dieta standard, a prescindere dal tipo di piano
-                seguito.
-                <br />
-                <br />
-                Lo confermano anche gli studi di Harvard (Harvard T.H. Chan School of Public Health, Nutrients &
-                Supplementi, 2024): la chiave per una perdita di peso sostenibile è la personalizzazione del piano
-                alimentare, non la sua "moda".
+                Secondo una review pubblicata su Nutrients (2023), la capacità
+                di smaltire la caffeina può variare fino a cinque volte da un
+                individuo all'altro, influenzando energia, sonno e stress.
               </p>
             </div>
           </div>
 
-          <FigureCaption number={2} source="Una storia comune: impegno costante, risultati incostanti.">
+          <FigureCaption
+            number={2}
+            source="La velocità di metabolizzazione può variare fino a 5x tra individui (Nutrients, 2023)."
+          >
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={womanThinking} alt="Foto realistica di una donna pensierosa davanti a un piatto sano" className="w-full h-auto" loading="lazy" />
+              <img
+                src={womanThinking}
+                alt="Infografica con tre orologi metabolici a velocità diversa"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </FigureCaption>
         </div>
       </section>
 
-      {/* 3. TEXT SECTION 2 - Non esiste una dieta per tutti */}
-      <section id="svolta" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+      {/* 3. TEXT SECTION 2 - La scienza dietro al metabolismo della caffeina */}
+      <section
+        id="scienza"
+        className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]"
+      >
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Non esiste una dieta per tutti
+              La scienza dietro al metabolismo della caffeina
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Per decenni abbiamo creduto che bastasse scegliere la "dieta giusta". Keto, mediterranea, iperproteica,
-                vegetariana… ma nessuna funziona per tutti.
+                Il protagonista si chiama CYP1A2: un enzima epatico che regola
+                quanto rapidamente il corpo smaltisce la caffeina. Alcune
+                persone producono molto di questo enzima (metabolizzatori
+                rapidi), altre meno (metabolizzatori lenti).
                 <br />
                 <br />
-                Il motivo è semplice: il nostro corpo non risponde come quello di chi ci sta accanto. Il metabolismo, la
-                sensibilità agli zuccheri, il ritmo ormonale, persino il microbiota intestinale - tutto varia da persona
-                a persona.
+                Uno studio pubblicato su Nature Genetics (Cornelis et al., 2016)
+                ha identificato specifiche varianti genetiche che determinano la
+                velocità con cui il fegato processa la caffeina. Chi ha la
+                versione "lenta" mantiene alti livelli nel sangue per molte ore
+                — con effetti che vanno dall'insonnia alla tachicardia.
                 <br />
-                <br />È per questo che due persone possono seguire lo stesso piano alimentare e ottenere risultati
-                opposti.
                 <br />
-                <br />
-                Non è una questione di impegno. È una questione di biologia individuale.
+                <strong>Effetti diretti della velocità di metabolizzazione:</strong>
               </p>
+
+              <ul className="space-y-2 list-none pl-0">
+                <li className="flex items-start">
+                  <span className="text-[#0A121A] mr-2 font-semibold">•</span>
+                  <span>
+                    <strong>Rapida:</strong> energia immediata, minore impatto
+                    sul sonno.
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#0A121A] mr-2 font-semibold">•</span>
+                  <span>
+                    <strong>Lenta:</strong> nervosismo, insonnia, aumento
+                    temporaneo della pressione.
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <FigureCaption number={3} source="Stessa dieta → Risultati diversi (Fonte: AJCN Review, 2022)">
+          <FigureCaption
+            number={3}
+            source="Livello di caffeina nel sangue dopo una tazza di caffè: risposta individuale (Nature Genetics, 2016)."
+          >
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={dietResults} alt="Infografica: Stessa dieta produce risultati diversi nelle persone" className="w-full h-auto" loading="lazy" />
+              <img
+                src={glycemicCurves}
+                alt="Grafico con due curve di concentrazione della caffeina nel sangue"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </FigureCaption>
         </div>
       </section>
 
-      {/* 4. TEXT SECTION 3 - La svolta scientifica: la nutrizione di precisione */}
-      <section id="studio" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+      {/* 4. TEXT SECTION 3 - Rischi e benefici: non è quanto bevi, ma quanto resta */}
+      <section id="rischi" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              La svolta scientifica: la nutrizione di precisione
+              Rischi e benefici: non è quanto bevi, ma quanto resta
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Negli ultimi anni la ricerca ha cambiato paradigma: non più "qual è la dieta migliore?", ma "quale dieta
-                funziona per te — e perché".
-                <br />
-                <br />È il principio della nutrizione di precisione, una disciplina promossa da istituzioni come il
-                National Institutes of Health (NIH) e Harvard Medical School. Integra dati genetici, metabolici e
-                comportamentali per definire strategie su misura.
+                Bere molto caffè non è pericoloso per tutti — ma per alcuni sì.
                 <br />
                 <br />
-                Secondo il NIH Precision Nutrition Initiative (2021), la nutrizione di precisione "ha il potenziale di
-                rivoluzionare la prevenzione e il trattamento delle malattie metaboliche, fornendo raccomandazioni su
-                misura per ogni individuo".
+                Uno studio pubblicato su JAMA (Agarwal et al., 2021) ha mostrato
+                che i metabolizzatori lenti che consumano più di 3 caffè al
+                giorno hanno un rischio cardiovascolare superiore rispetto a chi
+                lo metabolizza velocemente.
                 <br />
                 <br />
-                Anche in Italia il tema è in forte crescita: come spiega LaNutrizione.it (2023), la nutrizione di
-                precisione "rappresenta l'evoluzione naturale della dietetica, fondata sulla comprensione del proprio
-                profilo biologico". Articoli divulgativi come quello pubblicato da IoDonna (2024) confermano che "non è
-                una moda, ma una metodologia scientifica basata su evidenze cliniche".
+                Al contrario, per i metabolizzatori rapidi la caffeina può
+                persino avere effetti protettivi, migliorando la vigilanza e
+                riducendo il rischio di depressione.
               </p>
+
+              <Blockquote source="Dott. Luca Carli, medico nutrizionista">
+                Il problema non è la quantità, ma la durata dell'effetto nel
+                corpo.
+              </Blockquote>
             </div>
           </div>
 
-          <FigureCaption number={4} source="Approccio universale → Analisi biologiche → Strategia personalizzata">
+          <FigureCaption
+            number={4}
+            source="Gli effetti della caffeina dipendono da quanto resta nel tuo sistema."
+          >
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={precisionFlow} alt="Flowchart del percorso della nutrizione di precisione" className="w-full h-auto" loading="lazy" />
+              <img
+                src={activeWoman}
+                alt="Persona agitata di notte davanti al computer"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </FigureCaption>
         </div>
       </section>
 
-      {/* 5. TEXT SECTION 4 - Lo studio che ha cambiato tutto */}
-      <section id="evidenze" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+      {/* 5. TEXT SECTION 4 - Caffeina e performance: energia o ostacolo? */}
+      <section
+        id="performance"
+        className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]"
+      >
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Lo studio che ha cambiato tutto
+              Caffeina e performance: energia o ostacolo?
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Nel 2015, Eran Zeevi e il team del Weizmann Institute of Science hanno pubblicato su Cell Metabolism una
-                scoperta fondamentale: due persone possono avere risposte glicemiche completamente opposte allo stesso
-                alimento (Zeevi et al., 2015).
+                La caffeina è considerata un "booster" per sportivi e studenti,
+                ma non sempre funziona allo stesso modo.
                 <br />
                 <br />
-                Un piatto di riso può aumentare la glicemia di una persona e quasi non muoverla in un'altra. Questo
-                dimostra che le diete "universali" non possono funzionare per tutti allo stesso modo.
-                <br />
-                <br />
-                Studi successivi (Nature Medicine, 2020; Cell Reports, 2018) hanno confermato che le differenze
-                individuali dipendono anche da microbiota, genetica e cronotipo circadiano. Capire come ciascuno
-                reagisce ai nutrienti è il passo decisivo per migliorare metabolismo e prevenzione.
+                Nel 2022, una review su Sports Medicine ha evidenziato che gli
+                atleti con metabolismo rapido migliorano resistenza e focus,
+                mentre i metabolizzatori lenti non ottengono vantaggi, anzi
+                possono sperimentare ansia o peggior recupero.
               </p>
+
+              <Blockquote source="Dr. Marco Esposito, nutrizionista sportivo">
+                Conoscere la propria risposta alla caffeina permette di usarla
+                come alleata, non come ostacolo.
+              </Blockquote>
             </div>
           </div>
 
-          <FigureCaption number={5} source="Andamento della glicemia su due persone diverse, a parità di nutrienti assimilati (Fonte: Cell Metabolism, 2015 – Zeevi E. et al.)">
+          <FigureCaption
+            number={5}
+            source="La caffeina può migliorare o ostacolare la performance, a seconda del tuo profilo genetico."
+          >
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={glycemicCurves} alt="Grafico delle curve glicemiche opposte per lo stesso alimento" className="w-full h-auto" loading="lazy" />
+              <img
+                src={dietResults}
+                alt="Split visivo: atleta energico vs atleta stanco"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </FigureCaption>
         </div>
       </section>
 
-      {/* 6. TEXT SECTION 5 + CTA - Perché le diete standard falliscono */}
-      <section id="benefici" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+      {/* 6. TEXT SECTION 5 + CTA - Il futuro: personalizzare anche l'energia */}
+      <section id="futuro" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Perché le diete standard falliscono
+              Il futuro: personalizzare anche l'energia
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Le diete "universali" si basano su medie statistiche, non su persone reali. Ma senza conoscere la
-                propria biologia, ogni piano è un tentativo nel buio.
+                Benvenuti nell'era della nutrizione di precisione.
                 <br />
                 <br />
-                Fattori genetici, sensibilità insulinica, stress, sonno, ormoni e ritmo circadiano influenzano il modo
-                in cui elaboriamo energia. Per questo, anche rispettando regole identiche, due individui possono avere
-                risultati completamente diversi.
+                Secondo la NIH Precision Nutrition Initiative (2021) e la
+                Harvard T.H. Chan School of Public Health, conoscere il proprio
+                profilo biologico — inclusa la risposta alla caffeina — è la
+                base per ottimizzare salute e benessere nel lungo periodo.
+                <br />
+                <br />
+                In Italia, siti come LaNutrizione.it e IoDonna spiegano come la
+                nutrizione di precisione integri test genetici e analisi
+                metaboliche per costruire strategie personalizzate: non più
+                "quanto caffè bere", ma quando e come assumerlo per il massimo
+                beneficio.
+                <br />
+                <br />
+                <strong>Benefici di conoscere la propria sensibilità:</strong>
               </p>
 
-              <blockquote className="my-8 p-6 bg-[#F8FAFA] border-l-4 border-[#0A121A] italic">
-                <p className="text-base text-[#2F3F4C] leading-relaxed mb-2">
-                  "La nutrizione personalizzata è la vera rivoluzione della salute: conoscere il proprio corpo permette
-                  di scegliere strategie sostenibili e non punitive."
-                </p>
-                <cite className="text-sm text-[#768289] not-italic block mt-3">
-                  — Dott.ssa Laura Martini, biologa nutrizionista
-                </cite>
-              </blockquote>
+              <ul className="space-y-2 list-none pl-0">
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Migliore qualità del sonno</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Energia calibrata e costante</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Riduzione di stress e irritabilità</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Miglior concentrazione e performance</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          <FigureCaption number={6} source="Un approccio sano alla nutrizione significa vivere con consapevolezza">
+          <FigureCaption
+            number={6}
+            source="I benefici di conoscere la propria sensibilità alla caffeina."
+          >
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={activeWoman} alt="Donna attiva che rappresenta un approccio sano alla nutrizione" className="w-full h-auto" loading="lazy" />
+              <img
+                src={wellnessIcons}
+                alt="Grafico o icone 4 benefici"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </FigureCaption>
 
           {/* CTA EMBEDDED IN SECTION 5 */}
           <div className="bg-[#F8FAFA] rounded-lg p-6 md:p-8 space-y-4 border-2 border-[#0A121A] mt-8">
             <h3 className="text-xl md:text-2xl font-bold text-[#0A121A] text-center">
-              Ascoltare il corpo, non solo contare calorie
+              Ascolta il tuo corpo, non le abitudini
             </h3>
 
             <p className="text-base text-[#2F3F4C] text-center leading-relaxed">
@@ -260,74 +356,103 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </p>
 
             <div className="flex justify-center pt-2">
-              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200" style={{
-              fontSize: "13px",
-              width: "320px",
-              lineHeight: "1.3"
-            }} asChild>
-                <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
+              <Button
+                size="lg"
+                className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
+                style={{
+                  fontSize: "13px",
+                  width: "320px",
+                  lineHeight: "1.3",
+                }}
+                asChild
+              >
+                <a href="#esperienze">
+                  Scopri come conoscere la tua sensibilità alla caffeina
+                </a>
               </Button>
             </div>
 
-            <FigureCaption number={7} source="Una dieta varia ed equilibrata ma soprattutto basa su di te.">
+            <FigureCaption
+              number={7}
+              source="Conoscere il proprio metabolismo per scegliere meglio."
+            >
               <div className="rounded-lg overflow-hidden shadow-lg mt-4">
-                <img src={foodData} alt="Foto macro alimenti naturali con overlay di dati" className="w-full h-auto" loading="lazy" />
+                <img
+                  src={foodData}
+                  alt="Immagine rilassata, tazza di caffè su scrivania"
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
               </div>
             </FigureCaption>
           </div>
         </div>
       </section>
 
-      {/* 7. TEXT SECTION 6 - I benefici di un percorso su misura */}
-      <section id="casi" className="scroll-mt-52 md:scroll-mt-40 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+      {/* 7. TEXT SECTION 6 - Come conoscere la tua sensibilità alla caffeina */}
+      <section
+        id="sensibilita"
+        className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]"
+      >
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              I benefici di un percorso su misura
+              Come conoscere la tua sensibilità alla caffeina
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
-              <p className="leading-relaxed">Quando impari a leggere le reazioni del tuo corpo, tutto cambia:</p>
+              <p className="leading-relaxed">
+                Capire la propria risposta alla caffeina è oggi possibile grazie
+                a analisi metaboliche e genetiche che identificano il livello di
+                attività dell'enzima CYP1A2 e di altri fattori legati al
+                metabolismo energetico.
+                <br />
+                <br />
+                Questi strumenti, utilizzati in centri di ricerca e cliniche di
+                nutrizione avanzata, permettono di:
+              </p>
 
-              <ul className="space-y-2 list-none pl-0">
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Gestione del peso più stabile e duratura</span>
+              <ul className="space-y-2 list-disc pl-6">
+                <li>
+                  stabilire il profilo di metabolizzazione (rapido, medio,
+                  lento);
                 </li>
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Maggiore energia e concentrazione</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Riduzione di gonfiore e infiammazioni</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Miglior tono dell'umore</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Prevenzione dei disturbi metabolici legati all'età</span>
-                </li>
+                <li>costruire un piano di consumo personalizzato;</li>
+                <li>ottimizzare energia e benessere quotidiano.</li>
               </ul>
 
               <p className="leading-relaxed">
-                Non si tratta di miracoli, ma di decidere sulla base di evidenze scientifiche, non di tentativi.
+                Non è una moda, ma un approccio clinico validato da ricerche
+                internazionali.
+                <br />
+                <br />
+                (Fonte: Continental Hospitals, 2024 – "DNA-based nutrition:
+                precision diets and clinical applications")
               </p>
             </div>
           </div>
 
-          <FigureCaption number={8} source="Con azioni mirate i risultati sono concreti e i benefici immediati.">
+          <FigureCaption
+            number={8}
+            source="Un approccio clinico validato per ottimizzare il consumo di caffeina."
+          >
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={wellnessIcons} alt="Icone che rappresentano i benefici della nutrizione personalizzata" className="w-full h-auto" loading="lazy" />
+              <img
+                src={precisionFlow}
+                alt="Icone che rappresentano i benefici della nutrizione personalizzata sulla caffeina"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </FigureCaption>
         </div>
       </section>
 
       {/* 8. TEXT SECTION 7 - Esperienze reali */}
-      <section id="conclusioni" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+      <section
+        id="esperienze"
+        className="scroll-mt-52 md:scroll-mt-40 py-8 md:py-16 lg:py-20 md:px-6"
+      >
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -337,69 +462,92 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-6">
               <div className="bg-white p-6 rounded-lg border-l-4 border-[#0A121A]">
                 <p className="italic leading-relaxed mb-2">
-                  "Dopo anni di diete yo-yo, ho capito che il mio corpo reagiva in modo diverso. Ora seguo un piano
-                  personalizzato e mi sento stabile, senza privazioni."
+                  "Pensavo che il mio nervosismo fosse stress. Poi ho scoperto
+                  che metabolizzo la caffeina lentamente: bastava un caffè al
+                  pomeriggio per rovinarmi il sonno. Ora dormo meglio e rendo di
+                  più."
                 </p>
-                <p className="text-sm text-[#768289]">— Elisa, 42 anni, Milano</p>
+                <p className="text-sm text-[#768289]">
+                  — Francesca, 40 anni, Roma
+                </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg border-l-4 border-[#0A121A]">
                 <p className="italic leading-relaxed mb-2">
-                  "Ho imparato a riconoscere i segnali del mio corpo e a scegliere in base alle mie reazioni, non alle
-                  mode."
+                  "Bevevo quattro caffè al giorno per concentrarmi, ma mi sentivo
+                  sempre agitato. Capire come reagisce il mio corpo mi ha aiutato
+                  a trovare l'equilibrio."
                 </p>
-                <p className="text-sm text-[#768289]">— Giulia, 36 anni, Bologna</p>
+                <p className="text-sm text-[#768289]">
+                  — Andrea, 33 anni, Milano
+                </p>
               </div>
 
               <p className="text-xs text-[#768289] italic bg-[#F8FAFA] p-4 rounded">
-                <strong>Nota:</strong> queste testimonianze illustrano esperienze individuali, non sostituiscono
-                l'evidenza scientifica. Il valore reale deriva da studi clinici e protocolli di nutrizione di precisione
-                riconosciuti a livello internazionale.
+                <strong>Nota:</strong> le testimonianze hanno finalità
+                illustrative e non sostituiscono le evidenze cliniche. Il valore
+                scientifico deriva da studi pubblicati e protocolli di nutrizione
+                di precisione.
               </p>
             </div>
           </div>
 
-          <FigureCaption number={9} source="Una vita più sana è possibile.">
+          <FigureCaption
+            number={9}
+            source="Esperienze di chi ha scoperto il proprio profilo metabolico."
+          >
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={coupleCooking} alt="Rappresentazione di esperienze positive con la nutrizione personalizzata" className="w-full h-auto" loading="lazy" />
+              <img
+                src={coupleCooking}
+                alt="Slider con card di testimonianze"
+                className="w-full h-auto"
+                loading="lazy"
+              />
             </div>
           </FigureCaption>
         </div>
       </section>
 
       {/* 9. FINAL CTA SECTION */}
-      <section id="cta-section" className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]">
+      <section
+        id="cta-section"
+        className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]"
+      >
         <div className="max-w-4xl md:mx-auto text-center space-y-6 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-            Vuoi capire come funziona davvero il tuo corpo?
+            Vuoi scoprire come il tuo corpo reagisce alla caffeina?
           </h2>
 
           <p className="text-base md:text-lg text-[#2F3F4C] leading-relaxed max-w-2xl mx-auto">
-            Oggi la scienza offre strumenti concreti - analisi metaboliche, test genetici e consulenze personalizzate -
-            per conoscere il proprio profilo biologico e costruire un percorso di benessere su misura.
+            Oggi la scienza offre strumenti affidabili — test genetici e analisi
+            metaboliche — per conoscere la tua sensibilità alla caffeina e
+            migliorare concentrazione, energia e sonno.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" style={{
-            fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)"
-          }} asChild>
-              <a href="/#pricing">Scopri il tuo profilo personale</a>
+            <Button
+              size="lg"
+              className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
+              style={{
+                fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)",
+              }}
+              asChild
+            >
+              <a href="/#pricing">Scopri il tuo profilo metabolico personale</a>
             </Button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 max-w-2xl mx-auto">
             <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
-              ✔ Basato su studi clinici
+              ✔ Studi clinici riconosciuti (Nature Genetics, JAMA, Nutrients)
             </Badge>
             <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
               ✔ Consulenze certificate
             </Badge>
             <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
-              ✔ Dati trattati in sicurezza
+              ✔ Approccio scientifico e non commerciale
             </Badge>
           </div>
-
-          
         </div>
       </section>
 
@@ -407,33 +555,60 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
       <section className="py-12 md:py-16 md:px-6 bg-white border-t-2 border-[#EAEAEA]">
         <div className="max-w-4xl md:mx-auto space-y-8 px-4 md:px-0">
           <div className="space-y-4">
-            <h3 className="text-xl md:text-2xl font-bold text-[#0A121A]">Fonti e riferimenti bibliografici</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-[#0A121A]">
+              Fonti e riferimenti bibliografici
+            </h3>
 
             <ul className="space-y-2 text-sm text-[#2F3F4C] leading-relaxed">
               <li>
-                • American Journal of Clinical Nutrition, 2022 – "Long-term weight maintenance and individualized
-                response to diet"
+                • Cornelis MC et al., Nature Genetics, 2016 – "Genome-wide
+                association study identifies genetic variants influencing coffee
+                metabolism"
               </li>
-              <li>• Harvard T.H. Chan School of Public Health – "Diet and Longevity: 30-year study"</li>
               <li>
-                • Zeevi E. et al., Cell Metabolism, 2015 – "Personalized nutrition by prediction of glycemic responses"
+                • Agarwal D. et al., JAMA, 2021 – "Caffeine Metabolism and
+                Cardiovascular Risk"
               </li>
-              <li>• Nature Medicine, 2020 – "Individualized responses to diet and microbiome interactions"</li>
-              <li>• NIH – Precision Nutrition Initiative, 2021</li>
-              <li>• LaNutrizione.it, 2023 – "Nutrizione di precisione: la scienza del futuro"</li>
-              <li>• IoDonna, 2024 – "Nutrizione di precisione: perché funziona davvero"</li>
-              <li>• Continental Hospitals, 2024 – "DNA-based nutrition: precision diets and clinical applications"</li>
+              <li>
+                • Nutrients, 2023 – "Individual variability in caffeine
+                metabolism and response"
+              </li>
+              <li>
+                • Sports Medicine, 2022 – "Caffeine and athletic performance:
+                role of genetic variation"
+              </li>
+              <li>• NIH Precision Nutrition Initiative, 2021</li>
+              <li>
+                • Harvard Health Publishing, 2023 – "Why caffeine affects people
+                differently"
+              </li>
+              <li>
+                • LaNutrizione.it, 2023 – "Nutrizione di precisione e
+                metabolismo"
+              </li>
+              <li>
+                • IoDonna, 2024 – "Caffeina e nutrizione di precisione: perché
+                funziona davvero"
+              </li>
+              <li>
+                • Continental Hospitals, 2024 – "DNA-based nutrition: precision
+                diets and clinical applications"
+              </li>
             </ul>
           </div>
 
           <div className="pt-6 border-t border-[#EAEAEA]">
             <p className="text-xs text-[#768289] leading-relaxed">
-              <strong>Disclaimer:</strong> Questo articolo ha finalità divulgative. Le informazioni qui riportate non
-              sostituiscono il parere medico e si basano su fonti scientifiche pubbliche e aggiornate.
+              <strong>Disclaimer:</strong> Questo articolo ha finalità
+              divulgative. Le informazioni riportate non sostituiscono il parere
+              medico e derivano da fonti scientifiche aggiornate.
             </p>
           </div>
         </div>
       </section>
-    </>;
+    </>
+  );
 });
-ArticleContentMetabolismoCaffeina.displayName = "ArticleContentMetabolismoCaffeina";
+
+ArticleContentMetabolismoCaffeina.displayName =
+  "ArticleContentMetabolismoCaffeina";
