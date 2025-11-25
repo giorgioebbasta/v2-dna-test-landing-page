@@ -13,15 +13,10 @@ import womanWellness from "@/assets/woman-wellness.jpg";
 import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
 import { Blockquote } from "./Blockquote";
-
 export const ArticleContentMetabolismoCaffeina = React.memo(() => {
-  return (
-    <>
+  return <>
       {/* 1. HERO SECTION */}
-      <section
-        id="intro"
-        className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]"
-      >
+      <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto text-center space-y-4 md:space-y-6 px-4 md:px-0">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight">
             Perché il caffè ti dà energia, ma a qualcun altro toglie il sonno
@@ -29,50 +24,33 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
           </h1>
 
           <h2 className="text-lg md:text-xl lg:text-2xl text-[#2F3F4C] leading-relaxed">
-            La risposta è nel modo in cui il tuo corpo metabolizza la caffeina —
-            e non è uguale per tutti.
+            La risposta è nel modo in cui il tuo corpo metabolizza la caffeina — e non è uguale per tutti
           </h2>
 
-          <FigureCaption
-            number={1}
-            source="Basato su ricerche pubblicate su Nature Genetics (2016) e Nutrients (2023)."
-          >
+          <FigureCaption number={1} source="Basato su ricerche pubblicate su Nature Genetics (2016) e Nutrients (2023).">
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <img
-                src={coffeeSplitScreen}
-                alt="Split-screen: persona produttiva dopo caffè vs persona insonne"
-                className="w-full h-auto"
-                loading="eager"
-              />
+              <img src={coffeeSplitScreen} alt="Split-screen: persona produttiva dopo caffè vs persona insonne" className="w-full h-auto" loading="eager" />
             </div>
           </FigureCaption>
 
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              const element = document.getElementById("esperienze");
-              if (element) {
-                const isMobile = window.innerWidth < 768;
-                const headerHeight = isMobile ? 96 : 120;
-                const elementPosition =
-                  element.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerHeight;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth",
-                });
-              }
-            }}
-            className="inline-block w-full md:w-auto cursor-pointer"
-          >
-            <Button
-              size="lg"
-              className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200"
-              style={{
-                fontSize: "13px",
-                width: "320px",
-              }}
-            >
+          <button onClick={e => {
+          e.preventDefault();
+          const element = document.getElementById("esperienze");
+          if (element) {
+            const isMobile = window.innerWidth < 768;
+            const headerHeight = isMobile ? 96 : 120;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }} className="inline-block w-full md:w-auto cursor-pointer">
+            <Button size="lg" className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+            fontSize: "13px",
+            width: "320px"
+          }}>
               Scopri come funziona la tua energia interna
             </Button>
           </button>
@@ -108,27 +86,16 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={2}
-            source="La velocità di metabolizzazione può variare fino a 5x tra individui (Nutrients, 2023)."
-          >
+          <FigureCaption number={2} source="La velocità di metabolizzazione può variare fino a 5x tra individui (Nutrients, 2023).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={womanThinking}
-                alt="Infografica con tre orologi metabolici a velocità diversa"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={womanThinking} alt="Infografica con tre orologi metabolici a velocità diversa" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
       </section>
 
       {/* 3. TEXT SECTION 2 - La scienza dietro al metabolismo della caffeina */}
-      <section
-        id="scienza"
-        className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]"
-      >
+      <section id="scienza" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -172,17 +139,9 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={3}
-            source="Livello di caffeina nel sangue dopo una tazza di caffè: risposta individuale (Nature Genetics, 2016)."
-          >
+          <FigureCaption number={3} source="Livello di caffeina nel sangue dopo una tazza di caffè: risposta individuale (Nature Genetics, 2016).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={glycemicCurves}
-                alt="Grafico con due curve di concentrazione della caffeina nel sangue"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={glycemicCurves} alt="Grafico con due curve di concentrazione della caffeina nel sangue" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -219,27 +178,16 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={4}
-            source="Gli effetti della caffeina dipendono da quanto resta nel tuo sistema."
-          >
+          <FigureCaption number={4} source="Gli effetti della caffeina dipendono da quanto resta nel tuo sistema.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={activeWoman}
-                alt="Persona agitata di notte davanti al computer"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={activeWoman} alt="Persona agitata di notte davanti al computer" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
       </section>
 
       {/* 5. TEXT SECTION 4 - Caffeina e performance: energia o ostacolo? */}
-      <section
-        id="performance"
-        className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]"
-      >
+      <section id="performance" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -265,17 +213,9 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={5}
-            source="La caffeina può migliorare o ostacolare la performance, a seconda del tuo profilo genetico."
-          >
+          <FigureCaption number={5} source="La caffeina può migliorare o ostacolare la performance, a seconda del tuo profilo genetico.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={dietResults}
-                alt="Split visivo: atleta energico vs atleta stanco"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={dietResults} alt="Split visivo: atleta energico vs atleta stanco" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -331,17 +271,9 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={6}
-            source="I benefici di conoscere la propria sensibilità alla caffeina."
-          >
+          <FigureCaption number={6} source="I benefici di conoscere la propria sensibilità alla caffeina.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={wellnessIcons}
-                alt="Grafico o icone 4 benefici"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={wellnessIcons} alt="Grafico o icone 4 benefici" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
 
@@ -356,33 +288,20 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </p>
 
             <div className="flex justify-center pt-2">
-              <Button
-                size="lg"
-                className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200"
-                style={{
-                  fontSize: "13px",
-                  width: "320px",
-                  lineHeight: "1.3",
-                }}
-                asChild
-              >
+              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200" style={{
+              fontSize: "13px",
+              width: "320px",
+              lineHeight: "1.3"
+            }} asChild>
                 <a href="#esperienze">
                   Scopri come conoscere la tua sensibilità alla caffeina
                 </a>
               </Button>
             </div>
 
-            <FigureCaption
-              number={7}
-              source="Conoscere il proprio metabolismo per scegliere meglio."
-            >
+            <FigureCaption number={7} source="Conoscere il proprio metabolismo per scegliere meglio.">
               <div className="rounded-lg overflow-hidden shadow-lg mt-4">
-                <img
-                  src={foodData}
-                  alt="Immagine rilassata, tazza di caffè su scrivania"
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
+                <img src={foodData} alt="Immagine rilassata, tazza di caffè su scrivania" className="w-full h-auto" loading="lazy" />
               </div>
             </FigureCaption>
           </div>
@@ -390,10 +309,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
       </section>
 
       {/* 7. TEXT SECTION 6 - Come conoscere la tua sensibilità alla caffeina */}
-      <section
-        id="sensibilita"
-        className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]"
-      >
+      <section id="sensibilita" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -432,27 +348,16 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={8}
-            source="Un approccio clinico validato per ottimizzare il consumo di caffeina."
-          >
+          <FigureCaption number={8} source="Un approccio clinico validato per ottimizzare il consumo di caffeina.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={precisionFlow}
-                alt="Icone che rappresentano i benefici della nutrizione personalizzata sulla caffeina"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={precisionFlow} alt="Icone che rappresentano i benefici della nutrizione personalizzata sulla caffeina" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
       </section>
 
       {/* 8. TEXT SECTION 7 - Esperienze reali */}
-      <section
-        id="esperienze"
-        className="scroll-mt-52 md:scroll-mt-40 py-8 md:py-16 lg:py-20 md:px-6"
-      >
+      <section id="esperienze" className="scroll-mt-52 md:scroll-mt-40 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
@@ -492,27 +397,16 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption
-            number={9}
-            source="Esperienze di chi ha scoperto il proprio profilo metabolico."
-          >
+          <FigureCaption number={9} source="Esperienze di chi ha scoperto il proprio profilo metabolico.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={coupleCooking}
-                alt="Slider con card di testimonianze"
-                className="w-full h-auto"
-                loading="lazy"
-              />
+              <img src={coupleCooking} alt="Slider con card di testimonianze" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
       </section>
 
       {/* 9. FINAL CTA SECTION */}
-      <section
-        id="cta-section"
-        className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]"
-      >
+      <section id="cta-section" className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]">
         <div className="max-w-4xl md:mx-auto text-center space-y-6 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
             Vuoi scoprire come il tuo corpo reagisce alla caffeina?
@@ -525,14 +419,9 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button
-              size="lg"
-              className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200"
-              style={{
-                fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)",
-              }}
-              asChild
-            >
+            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" style={{
+            fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)"
+          }} asChild>
               <a href="/#pricing">Scopri il tuo profilo metabolico personale</a>
             </Button>
           </div>
@@ -606,9 +495,6 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
           </div>
         </div>
       </section>
-    </>
-  );
+    </>;
 });
-
-ArticleContentMetabolismoCaffeina.displayName =
-  "ArticleContentMetabolismoCaffeina";
+ArticleContentMetabolismoCaffeina.displayName = "ArticleContentMetabolismoCaffeina";
