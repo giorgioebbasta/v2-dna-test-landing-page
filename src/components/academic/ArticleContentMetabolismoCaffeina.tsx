@@ -8,6 +8,7 @@ import dietResults from "@/assets/diet-results-comparison.webp";
 import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import activeWoman from "@/assets/active-woman.jpg";
+import energySourcesTraining from "@/assets/energy-sources-training.png";
 import foodData from "@/assets/food-data-overlay.jpg";
 import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import womanWellness from "@/assets/woman-wellness.jpg";
@@ -181,7 +182,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={4} source="Gli effetti della caffeina dipendono da quanto resta nel tuo sistema.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={activeWoman} alt="Persona agitata di notte davanti al computer" className="w-full h-auto" loading="lazy" />
+              <img src={energySourcesTraining} alt="Fonti energetiche durante l'allenamento: carboidrati, grassi, proteine" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
