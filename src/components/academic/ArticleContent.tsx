@@ -291,7 +291,7 @@ export const ArticleContent = React.memo(() => {
               width: "320px",
               lineHeight: "1.3"
             }} asChild>
-                <a href="#casi">Scopri come funziona la nutrizione personalizzata</a>
+                <a href="https://test-completo-del-dna.holifya.com/" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">Scopri come funziona la nutrizione personalizzata</a>
               </Button>
             </div>
 
