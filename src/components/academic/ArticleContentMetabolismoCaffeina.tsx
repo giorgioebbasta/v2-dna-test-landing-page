@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import coffeeSplitScreen from "@/assets/coffee-split-screen.png";
 import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
-import performanceGenetics from "@/assets/performance-genetics.png";
+import performanceGenetics from "@/assets/genetica-performance.png";
 import dietResults from "@/assets/diet-results-comparison.webp";
 import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
@@ -156,7 +156,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={3} source="Livello di caffeina nel sangue dopo una tazza di caffè: risposta individuale (Nature Genetics, 2016).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={performanceGenetics} alt="Grafico con due curve di concentrazione della caffeina nel sangue" className="w-full h-auto" loading="lazy" />
+              <img src={performanceGenetics} alt="Infografica genetica della performance: resistenza, forza, recupero e rischio infortunio" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
