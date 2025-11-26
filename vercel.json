@@ -6,10 +6,14 @@
         {
           "type": "header",
           "key": "User-Agent",
-          "value": ".*(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|redditbot|applebot|telegrambot).*"
+          "value": ".*(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|redditbot|applebot|telegrambot|Prerender).*"
         }
       ],
       "destination": "https://service.prerender.io/https://test-completo-del-dna.holifya.com/$1"
+    },
+    {
+      "source": "/((?!assets|lovable-uploads|favicon\\.svg|robots\\.txt|sitemap\\.xml).*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
