@@ -305,34 +305,6 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </FigureCaption>
 
-          {/* CTA EMBEDDED IN SECTION 5 */}
-          <div className="bg-[#F8FAFA] rounded-lg p-6 md:p-8 space-y-4 border-2 border-[#0A121A] mt-8">
-            <h3 className="text-xl md:text-2xl font-bold text-[#0A121A] text-center">
-              Ascolta il tuo corpo, non le abitudini
-            </h3>
-
-            <p className="text-base text-[#2F3F4C] text-center leading-relaxed">
-              Un approccio basato su scienza e dati, non su mode passeggere.
-            </p>
-
-            <div className="flex justify-center pt-2">
-              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white px-8 py-3 w-full md:w-auto transition-all duration-200" style={{
-              fontSize: "13px",
-              width: "320px",
-              lineHeight: "1.3"
-            }} asChild>
-                <a href="#esperienze">
-                  Scopri come conoscere la tua sensibilità alla caffeina
-                </a>
-              </Button>
-            </div>
-
-            <FigureCaption number={7} source="Conoscere il proprio metabolismo per scegliere meglio.">
-              <div className="rounded-lg overflow-hidden shadow-lg mt-4">
-                <img src={foodData} alt="Immagine rilassata, tazza di caffè su scrivania" className="w-full h-auto" loading="lazy" />
-              </div>
-            </FigureCaption>
-          </div>
         </div>
       </section>
 
