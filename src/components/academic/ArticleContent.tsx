@@ -104,28 +104,15 @@ export const ArticleContent = React.memo(() => {
 
           {/* CTA AFTER SECTION 1 */}
           <div className="flex justify-center pt-6">
-            <button onClick={e => {
-              e.preventDefault();
-              const element = document.getElementById("casi");
-              if (element) {
-                const isMobile = window.innerWidth < 768;
-                const headerHeight = isMobile ? 96 : 120;
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerHeight;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth"
-                });
-              }
-            }} className="inline-block w-full md:w-auto cursor-pointer">
-              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white transition-all duration-200" style={{
-                fontSize: "13px",
-                width: "320px",
-                padding: "12px 24px"
-              }}>
+            <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white transition-all duration-200" style={{
+              fontSize: "13px",
+              width: "320px",
+              padding: "12px 24px"
+            }} asChild>
+              <a href="https://test-completo-del-dna.holifya.com/" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">
                 Scopri come funziona la nutrizione personalizzata
-              </Button>
-            </button>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
@@ -204,28 +191,15 @@ export const ArticleContent = React.memo(() => {
 
           {/* CTA AFTER SECTION 3 */}
           <div className="flex justify-center pt-6">
-            <button onClick={e => {
-              e.preventDefault();
-              const element = document.getElementById("casi");
-              if (element) {
-                const isMobile = window.innerWidth < 768;
-                const headerHeight = isMobile ? 96 : 120;
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerHeight;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth"
-                });
-              }
-            }} className="inline-block w-full md:w-auto cursor-pointer">
-              <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white transition-all duration-200" style={{
-                fontSize: "13px",
-                width: "320px",
-                padding: "12px 24px"
-              }}>
+            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white transition-all duration-200" style={{
+              fontSize: "13px",
+              width: "320px",
+              padding: "12px 24px"
+            }} asChild>
+              <a href="https://test-completo-del-dna.holifya.com/" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">
                 Scopri come funziona la nutrizione personalizzata
-              </Button>
-            </button>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
