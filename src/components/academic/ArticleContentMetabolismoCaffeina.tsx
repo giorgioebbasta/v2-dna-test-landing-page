@@ -97,27 +97,15 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           {/* CTA AFTER SECTION 1 */}
           <div className="flex justify-center pt-6">
-            <button onClick={() => {
-              const targetSection = document.getElementById('cta-section');
-              if (targetSection) {
-                const headerOffset = window.innerWidth >= 1024 ? 120 : 96;
-                const elementPosition = targetSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: 'smooth'
-                });
-              }
-            }} className="inline-block w-full md:w-auto cursor-pointer">
-              <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white transition-all duration-200" style={{
-                fontSize: "13px",
-                width: "320px",
-                padding: "12px 24px"
-              }}>
+            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white transition-all duration-200" style={{
+              fontSize: "13px",
+              width: "320px",
+              padding: "12px 24px"
+            }} asChild>
+              <a href="https://test-completo-del-dna.holifya.com/caffeina" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">
                 Scopri come funziona la tua energia interna
-              </Button>
-            </button>
+              </a>
+            </Button>
           </div>
         </div>
       </section>
