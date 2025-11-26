@@ -349,7 +349,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption number={8} source="Un approccio clinico validato per ottimizzare il consumo di caffeina.">
+          <FigureCaption number={7} source="Un approccio clinico validato per ottimizzare il consumo di caffeina.">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img src={womanRelaxingCoffee} alt="Donna rilassata che beve una bevanda calda, rappresenta il benessere attraverso scelte personalizzate sulla caffeina" className="w-full h-auto" loading="lazy" />
             </div>
@@ -398,7 +398,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption number={9} source="Esperienze di chi ha scoperto il proprio profilo metabolico.">
+          <FigureCaption number={8} source="Esperienze di chi ha scoperto il proprio profilo metabolico.">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img src={coupleCooking} alt="Slider con card di testimonianze" className="w-full h-auto" loading="lazy" />
             </div>
