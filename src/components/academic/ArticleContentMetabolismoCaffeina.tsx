@@ -5,7 +5,7 @@ import coffeeSplitScreen from "@/assets/coffee-split-screen.png";
 import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
 import performanceGenetics from "@/assets/genetica-performance.png";
 import dietResults from "@/assets/diet-results-comparison.webp";
-import precisionFlow from "@/assets/performance-stress-comparison.png";
+import precisionFlow from "@/assets/woman-relaxing-coffee.png";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import activeWoman from "@/assets/active-woman.jpg";
 import energySourcesTraining from "@/assets/energy-sources-training.png";
@@ -350,7 +350,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={8} source="Un approccio clinico validato per ottimizzare il consumo di caffeina.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={precisionFlow} alt="Icone che rappresentano i benefici della nutrizione personalizzata sulla caffeina" className="w-full h-auto" loading="lazy" />
+              <img src={precisionFlow} alt="Donna rilassata che beve una bevanda calda, rappresenta il benessere attraverso scelte personalizzate sulla caffeina" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
