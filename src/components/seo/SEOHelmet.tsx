@@ -1,5 +1,5 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import { Helmet } from "react-helmet-async";
 
 interface SEOHelmetProps {
   title?: string;
@@ -10,18 +10,18 @@ interface SEOHelmetProps {
 }
 
 const SEOHelmet: React.FC<SEOHelmetProps> = ({
-  title = "Test del DNA Online Professionale | Holifya",
-  description = "Fai il tuo test del DNA da casa e scopri tutto su nutrizione, salute, sport e benessere. Holifya ti svela i segreti del tuo corpo in 15 giorni.",
+  title = "Test DNA Online Italia | Metabolismo e Intolleranze | Holifya",
+  description = "Test del DNA da casa in 48h. Analisi di 150+ geni per scoprire intolleranze, metabolismo e predisposizioni genetiche. Oltre 3.000 clienti soddisfatti. Spedizione gratuita.",
   canonical = "https://test-completo-del-dna.holifya.com/",
-  ogImage = "https://test-completo-del-dna.holifya.com/lovable-uploads/logo-holifya.jpeg",
-  ogType = "website"
+  ogImage = "https://test-completo-del-dna.holifya.com/lovable-uploads/quadrato.webp",
+  ogType = "website",
 }) => {
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
-      
+
       {/* Open Graph */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonical} />
@@ -30,7 +30,7 @@ const SEOHelmet: React.FC<SEOHelmetProps> = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:alt" content="Test del DNA Holifya" />
       <meta property="og:site_name" content="Holifya" />
-      
+
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:url" content={canonical} />
