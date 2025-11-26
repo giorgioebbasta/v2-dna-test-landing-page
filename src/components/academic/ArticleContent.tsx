@@ -197,7 +197,7 @@ export const ArticleContent = React.memo(() => {
             padding: "12px 24px"
           }} asChild>
               <a href="https://test-completo-del-dna.holifya.com/" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">
-                Scopri come funziona la nutrizione personalizzata
+                Scopri come funziona la nutrizione di precisione 
               </a>
             </Button>
           </div>
