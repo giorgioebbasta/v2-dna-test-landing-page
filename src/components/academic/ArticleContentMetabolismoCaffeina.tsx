@@ -38,7 +38,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <button onClick={e => {
           e.preventDefault();
-          const element = document.getElementById("esperienze");
+          const element = document.getElementById("cta-section");
           if (element) {
             const isMobile = window.innerWidth < 768;
             const headerHeight = isMobile ? 96 : 120;
