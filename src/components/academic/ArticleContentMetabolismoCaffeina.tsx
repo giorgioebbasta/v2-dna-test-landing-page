@@ -97,7 +97,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           {/* CTA AFTER SECTION 1 */}
           <div className="flex justify-center pt-6">
-            <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white transition-all duration-200" style={{
+            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white transition-all duration-200" style={{
               fontSize: "13px",
               width: "320px",
               padding: "12px 24px"
