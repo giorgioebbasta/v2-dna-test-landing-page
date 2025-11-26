@@ -409,7 +409,7 @@ export const ArticleContent = React.memo(() => {
             <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" style={{
             fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)"
           }} asChild>
-              <a href="/#pricing">Scopri il tuo profilo personale</a>
+              <a href="https://test-completo-del-dna.holifya.com/" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">Scopri il tuo profilo personale</a>
             </Button>
           </div>
 
