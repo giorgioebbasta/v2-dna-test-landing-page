@@ -9,22 +9,11 @@
           "value": ".*(googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|redditbot|applebot|telegrambot).*"
         }
       ],
-      "destination": "https://service.prerender.io/https://test-completo-del-dna.holifya.com/$1"
+      "destination": "https://service.prerender.io/IGTumYGB2AeT5gcvbyL5/https://test-completo-del-dna.holifya.com/$1"
     },
     {
       "source": "/(.*)",
       "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Prerender-Token",
-          "value": "IGTumYGB2AeT5gcvbyL5"
-        }
-      ]
     }
   ]
 }
