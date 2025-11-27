@@ -23,8 +23,8 @@ const PromoBanner = () => {
     >
       <div className="max-w-7xl mx-auto text-center">
         <p className="font-bold text-base md:text-lg">
-          <span className="hidden md:inline">Novembre Mese della Prevenzione - €100 di sconto</span>
-          <span className="md:hidden">Novembre Mese della Prevenzione<br />€100 di sconto</span>
+          <span className="hidden md:inline">Black Friday - €150 di Sconto</span>
+          <span className="md:hidden">Black Friday - €150 di Sconto</span>
         </p>
       </div>
     </div>
