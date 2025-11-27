@@ -9,7 +9,6 @@ import foodReactionsDiverse from "@/assets/food-reactions-diverse.png";
 import gutMicrobiotaBalance from "@/assets/gut-microbiota-balance.png";
 import womanWellness from "@/assets/woman-wellness.jpg";
 import wellnessIcons from "@/assets/wellness-icons-new.webp";
-
 import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
 import { Blockquote } from "./Blockquote";
@@ -345,7 +344,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
             <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" style={{
             fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)"
           }} asChild>
-              <a href="/#pricing">Scopri il tuo profilo digestivo e metabolico personale</a>
+              <a href="/metabolismo">Scopri il tuo profilo digestivo e metabolico</a>
             </Button>
           </div>
 
