@@ -23,11 +23,11 @@ const Index = () => {
   return (
     <>
       <SEOHelmet 
-        title="Test del DNA Online Professionale | Holifya"
-        description="Fai il tuo test del DNA da casa e scopri tutto su nutrizione, salute, sport e benessere. Holifya ti svela i segreti del tuo corpo in 15 giorni."
-        canonical="https://test-completo-del-dna.holifya.com/"
-        ogImage="https://test-completo-del-dna.holifya.com/lovable-uploads/quadrato.webp"
-      />
+  title="Test DNA Online Italia | Metabolismo e Intolleranze | Holifya"
+  description="Test del DNA da casa in 48h. Analisi di 150+ geni per scoprire intolleranze, metabolismo e predisposizioni genetiche. Oltre 3.000 clienti soddisfatti. Spedizione gratuita."
+  canonical="https://test-completo-del-dna.holifya.com/"
+  ogImage="https://test-completo-del-dna.holifya.com/lovable-uploads/quadrato.webp"
+/>
       <StructuredData type="homepage" />
       
       <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-x-hidden">
