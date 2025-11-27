@@ -1,18 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import coffeeSplitScreen from "@/assets/coffee-split-screen.png";
-import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
-import performanceGenetics from "@/assets/genetica-performance.png";
 import dietResults from "@/assets/diet-results-comparison.webp";
-import precisionFlow from "@/assets/performance-stress-comparison.png";
-import womanRelaxingCoffee from "@/assets/woman-relaxing-coffee.png";
+import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
-import activeWoman from "@/assets/active-woman.jpg";
-import energySourcesTraining from "@/assets/energy-sources-training.png";
 import foodData from "@/assets/food-data-overlay.jpg";
-import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import womanWellness from "@/assets/woman-wellness.jpg";
+import wellnessIcons from "@/assets/wellness-icons-new.webp";
+import precisionFlow from "@/assets/precision-nutrition-flow.webp";
 import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
 import { Blockquote } from "./Blockquote";
@@ -22,17 +17,16 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
       <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto text-center space-y-4 md:space-y-6 px-4 md:px-0">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight">
-            Perché il caffè ti dà energia, ma a qualcun altro toglie il sonno
-            (per giorni)
+            E se non fossi davvero intollerante? Forse è solo il tuo corpo che parla in un linguaggio diverso.
           </h1>
 
           <h2 className="text-lg md:text-xl lg:text-2xl text-[#2F3F4C] leading-relaxed">
-            La risposta è nel modo in cui il tuo corpo metabolizza la caffeina — e non è uguale per tutti
+            Scopri perché due persone possono reagire in modo opposto agli stessi alimenti e come capire davvero cosa ti fa stare bene.
           </h2>
 
-          <FigureCaption number={1} source="Basato su ricerche pubblicate su Nature Genetics (2016) e Nutrients (2023).">
+          <FigureCaption number={1} source="Basato su studi pubblicati su Nutrients (2023), American Journal of Clinical Nutrition (2022) e Harvard T.H. Chan School of Public Health.">
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <img src={coffeeSplitScreen} alt="Split-screen: persona produttiva dopo caffè vs persona insonne" className="w-full h-auto" loading="eager" />
+              <img src={dietResults} alt="Split-screen: donna che si sente appesantita dopo un pasto vs la stessa persona sorridente e leggera dopo aver capito come reagisce il suo corpo" className="w-full h-auto" loading="eager" />
             </div>
           </FigureCaption>
 
@@ -50,308 +44,287 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
             });
           }
         }} className="inline-block w-full md:w-auto cursor-pointer">
-            <Button size="lg" className="bg-[#C6873D] hover:bg-[#a86f31] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
             fontSize: "13px",
             width: "320px"
           }}>
-              Scopri come funziona la tua energia interna
+              Scopri come funziona davvero il tuo corpo
             </Button>
           </button>
         </div>
       </section>
 
-      {/* 2. TEXT SECTION 1 - Una tazza, mille reazioni diverse */}
-      <section id="reazioni" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+      {/* 2. TEXT SECTION 1 - La confusione delle "intolleranze moderne" */}
+      <section id="confusione" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Una tazza, mille reazioni diverse
+              La confusione delle "intolleranze moderne"
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Ti capita di bere un espresso e sentirti subito più attivo,
-                mentre un tuo amico, con lo stesso caffè, resta sveglio fino
-                alle tre del mattino?
+                Oggi sembra che tutti siano "intolleranti" a qualcosa: lattosio, glutine, lieviti, nichel. Ma cosa succede quando elimini tutto… e i disturbi restano?
                 <br />
                 <br />
-                Non è un effetto placebo. È scienza.
+                Secondo una review pubblicata su <strong>Nutrients (2023)</strong>, oltre il 60% delle persone che si ritiene intollerante non presenta vere reazioni immunologiche o allergiche, ma risposte individuali del metabolismo digestivo.
                 <br />
                 <br />
-                La caffeina agisce sul sistema nervoso centrale come
-                stimolante, ma ognuno di noi la metabolizza a velocità diversa.
-                <br />
-                <br />
-                Secondo una review pubblicata su Nutrients (2023), la capacità
-                di smaltire la caffeina può variare fino a cinque volte da un
-                individuo all'altro, influenzando energia, sonno e stress.
+                In altre parole: il problema non è sempre l'alimento in sé, ma come il corpo lo elabora.
               </p>
             </div>
           </div>
 
-          <FigureCaption number={2} source="La velocità di metabolizzazione può variare fino a 5x tra individui (Nutrients, 2023).">
+          <FigureCaption number={2} source="Le differenze metaboliche spiegano perché gli stessi alimenti generano effetti diversi.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={metabolicResponseCurves} alt="Infografica con tre orologi metabolici a velocità diversa" className="w-full h-auto" loading="lazy" />
+              <img src={foodData} alt="Illustrazione con diversi piatti (pasta, latte, frutta) con icone di reazioni diverse per ogni persona" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
-
-          {/* CTA AFTER SECTION 1 */}
-          <div className="flex justify-center pt-6">
-            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white transition-all duration-200" style={{
-              fontSize: "13px",
-              width: "320px",
-              padding: "12px 24px"
-            }} asChild>
-              <a href="https://test-completo-del-dna.holifya.com/caffeina" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">
-                Scopri come funziona la tua energia interna
-              </a>
-            </Button>
-          </div>
         </div>
       </section>
 
-      {/* 3. TEXT SECTION 2 - La scienza dietro al metabolismo della caffeina */}
-      <section id="scienza" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+      {/* 3. TEXT SECTION 2 - Perché "test intolleranze" spesso confondono */}
+      <section id="test" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              La scienza dietro al metabolismo della caffeina
+              Perché "test intolleranze" spesso confondono
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Il protagonista si chiama CYP1A2: un enzima epatico che regola
-                quanto rapidamente il corpo smaltisce la caffeina. Alcune
-                persone producono molto di questo enzima (metabolizzatori
-                rapidi), altre meno (metabolizzatori lenti).
+                Molti test commerciali promettono di scoprire tutto con una goccia di sangue, ma la maggior parte non è riconosciuta dalla comunità scientifica (European Academy of Allergy and Clinical Immunology, EAACI).
                 <br />
                 <br />
-                Uno studio pubblicato su Nature Genetics (Cornelis et al., 2016)
-                ha identificato specifiche varianti genetiche che determinano la
-                velocità con cui il fegato processa la caffeina. Chi ha la
-                versione "lenta" mantiene alti livelli nel sangue per molte ore
-                — con effetti che vanno dall'insonnia alla tachicardia.
+                Come spiegano <strong>Harvard Health Publishing (2022)</strong> e l'<strong>Istituto Superiore di Sanità</strong>, le intolleranze reali sono rare, mentre le reazioni individuali derivano da fattori enzimatici, genetici e metabolici.
+              </p>
+
+              <Blockquote source="Dott.ssa Laura Martini, biologa nutrizionista">
+                Quando parliamo di gonfiore o pesantezza, spesso non è intolleranza, ma una digestione rallentata o una risposta metabolica diversa.
+              </Blockquote>
+            </div>
+          </div>
+
+          <FigureCaption number={3} source="La distinzione tra allergia, intolleranza e sensibilità metabolica.">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={metabolicResponseCurves} alt="Mini-grafico: Allergia ≠ Intolleranza ≠ Sensibilità metabolica" className="w-full h-auto" loading="lazy" />
+            </div>
+          </FigureCaption>
+        </div>
+      </section>
+
+      {/* 4. TEXT SECTION 3 - Il ruolo della genetica e del metabolismo digestivo */}
+      <section id="genetica" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              Il ruolo della genetica e del metabolismo digestivo
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">
+                Ogni persona possiede enzimi che scompongono zuccheri, grassi e proteine a velocità differenti. Chi ha minore attività di lattasi, per esempio, digerisce il lattosio più lentamente; altri metabolizzano i FODMAP (zuccheri complessi) con più difficoltà.
                 <br />
                 <br />
-                <strong>Effetti diretti della velocità di metabolizzazione:</strong>
+                Studi pubblicati su <strong>The American Journal of Clinical Nutrition (2022)</strong> mostrano che la diversità enzimatica e genetica spiega fino al 70% delle variazioni individuali nella digestione dei nutrienti.
+                <br />
+                <br />
+                Questo significa che due persone possono mangiare lo stesso pasto:
               </p>
 
               <ul className="space-y-2 list-none pl-0">
                 <li className="flex items-start">
                   <span className="text-[#0A121A] mr-2 font-semibold">•</span>
-                  <span>
-                    <strong>Rapida:</strong> energia immediata, minore impatto
-                    sul sonno.
-                  </span>
+                  <span>Una si sente sazia e leggera.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#0A121A] mr-2 font-semibold">•</span>
-                  <span>
-                    <strong>Lenta:</strong> nervosismo, insonnia, aumento
-                    temporaneo della pressione.
-                  </span>
+                  <span>L'altra gonfia o stanca.</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <FigureCaption number={3} source="Livello di caffeina nel sangue dopo una tazza di caffè: risposta individuale (Nature Genetics, 2016).">
+          <FigureCaption number={4} source="La diversità enzimatica spiega fino al 70% delle variazioni individuali nella digestione (AJCN, 2022).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={performanceGenetics} alt="Infografica genetica della performance: resistenza, forza, recupero e rischio infortunio" className="w-full h-auto" loading="lazy" />
+              <img src={glycemicCurves} alt="Infografica con due profili digestivi diversi (metabolismo A e metabolismo B)" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
       </section>
 
-      {/* 4. TEXT SECTION 3 - Rischi e benefici: non è quanto bevi, ma quanto resta */}
-      <section id="rischi" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+      {/* 5. TEXT SECTION 4 - Il microbiota: un mondo che cambia tutto */}
+      <section id="microbiota" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Rischi e benefici: non è quanto bevi, ma quanto resta
+              Il microbiota: un mondo che cambia tutto
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Bere molto caffè non è pericoloso per tutti — ma per alcuni sì.
+                Nel nostro intestino vivono trilioni di batteri che influenzano digestione, infiammazione e persino umore. Ricerche su <strong>Nature Medicine (2020)</strong> e <strong>Cell Reports (2018)</strong> hanno dimostrato che la composizione del microbiota è uno dei fattori chiave per spiegare le diverse reazioni alimentari.
                 <br />
                 <br />
-                Uno studio pubblicato su JAMA (Agarwal et al., 2021) ha mostrato
-                che i metabolizzatori lenti che consumano più di 3 caffè al
-                giorno hanno un rischio cardiovascolare superiore rispetto a chi
-                lo metabolizza velocemente.
-                <br />
-                <br />
-                Al contrario, per i metabolizzatori rapidi la caffeina può
-                persino avere effetti protettivi, migliorando la vigilanza e
-                riducendo il rischio di depressione.
+                Una flora intestinale sbilanciata può accentuare gonfiore, stanchezza e difficoltà digestive anche in assenza di vere intolleranze.
               </p>
 
-              <Blockquote source="Dott. Luca Carli, medico nutrizionista">
-                Il problema non è la quantità, ma la durata dell'effetto nel
-                corpo.
+              <Blockquote source="Prof. Eran Zeevi, Weizmann Institute of Science">
+                Conoscere il proprio microbiota è come leggere il manuale d'uso del proprio corpo.
               </Blockquote>
             </div>
           </div>
 
-          <FigureCaption number={4} source="Gli effetti della caffeina dipendono da quanto resta nel tuo sistema.">
+          <FigureCaption number={5} source="Il microbiota intestinale influenza digestione, infiammazione e benessere generale.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={energySourcesTraining} alt="Fonti energetiche durante l'allenamento: carboidrati, grassi, proteine" className="w-full h-auto" loading="lazy" />
-            </div>
-          </FigureCaption>
-
-          {/* CTA AFTER SECTION 3 */}
-          <div className="flex justify-center pt-6">
-            <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white transition-all duration-200" style={{
-              fontSize: "13px",
-              width: "320px",
-              padding: "12px 24px"
-            }} asChild>
-              <a href="https://test-completo-del-dna.holifya.com/caffeina" target="_blank" rel="noopener noreferrer" className="gtm_addtocart">
-                Scopri come funziona la tua energia interna
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. TEXT SECTION 4 - Caffeina e performance: energia o ostacolo? */}
-      <section id="performance" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
-        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Caffeina e performance: energia o ostacolo?
-            </h2>
-
-            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
-              <p className="leading-relaxed">
-                La caffeina è considerata un "booster" per sportivi e studenti,
-                ma non sempre funziona allo stesso modo.
-                <br />
-                <br />
-                Nel 2022, una review su Sports Medicine ha evidenziato che gli
-                atleti con metabolismo rapido migliorano resistenza e focus,
-                mentre i metabolizzatori lenti non ottengono vantaggi, anzi
-                possono sperimentare ansia o peggior recupero.
-              </p>
-
-              <Blockquote source="Dr. Marco Esposito, nutrizionista sportivo">
-                Conoscere la propria risposta alla caffeina permette di usarla
-                come alleata, non come ostacolo.
-              </Blockquote>
-            </div>
-          </div>
-
-          <FigureCaption number={5} source="La caffeina può migliorare o ostacolare la performance, a seconda del tuo profilo genetico.">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={precisionFlow} alt="Confronto tra performance e stress: impatto della caffeina sulle prestazioni atletiche e sui livelli di stress" className="w-full h-auto" loading="lazy" />
+              <img src={womanWellness} alt="Illustrazione semplice di intestino con batteri buoni e cattivi bilanciati" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
       </section>
 
-      {/* 6. TEXT SECTION 5 + CTA - Il futuro: personalizzare anche l'energia */}
-      <section id="futuro" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
+      {/* 6. TEXT SECTION 5 + CTA - La nuova frontiera: la nutrizione di precisione */}
+      <section id="precisione" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Il futuro: personalizzare anche l'energia
+              La nuova frontiera: la nutrizione di precisione
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Benvenuti nell'era della nutrizione di precisione.
+                La <strong>NIH Precision Nutrition Initiative (2021)</strong> e <strong>Harvard Medical School</strong> riconoscono che il futuro della nutrizione passa dalla personalizzazione biologica: conoscere come reagiamo ai nutrienti per adattare dieta e stile di vita.
                 <br />
                 <br />
-                Secondo la NIH Precision Nutrition Initiative (2021) e la
-                Harvard T.H. Chan School of Public Health, conoscere il proprio
-                profilo biologico — inclusa la risposta alla caffeina — è la
-                base per ottimizzare salute e benessere nel lungo periodo.
+                In Italia, portali come <strong>LaNutrizione.it</strong> e <strong>IoDonna (2024)</strong> spiegano che la nutrizione di precisione permette di prevenire disturbi digestivi e migliorare il benessere generale attraverso analisi metaboliche e genetiche.
                 <br />
                 <br />
-                In Italia, siti come LaNutrizione.it e IoDonna spiegano come la
-                nutrizione di precisione integri test genetici e analisi
-                metaboliche per costruire strategie personalizzate: non più
-                "quanto caffè bere", ma quando e come assumerlo per il massimo
-                beneficio.
-                <br />
-                <br />
-                <strong>Benefici di conoscere la propria sensibilità:</strong>
+                <strong>Vantaggi concreti:</strong>
               </p>
 
               <ul className="space-y-2 list-none pl-0">
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✅</span>
-                  <span>Migliore qualità del sonno</span>
+                  <span>Capire come digerisci davvero i principali nutrienti</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✅</span>
-                  <span>Energia calibrata e costante</span>
+                  <span>Ridurre gonfiore e stanchezza post-pasto</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✅</span>
-                  <span>Riduzione di stress e irritabilità</span>
+                  <span>Migliorare energia e concentrazione</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-600 mr-2">✅</span>
-                  <span>Miglior concentrazione e performance</span>
+                  <span>Ritrovare equilibrio e serenità alimentare</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <FigureCaption number={6} source="I benefici di conoscere la propria sensibilità alla caffeina.">
+          <FigureCaption number={6} source="I vantaggi della nutrizione di precisione rispetto alle diete standard.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={wellnessIcons} alt="Grafico o icone 4 benefici" className="w-full h-auto" loading="lazy" />
+              <img src={wellnessIcons} alt="Griglia: Dieta standard vs nutrizione personalizzata con vantaggi concreti" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
 
+          {/* CTA EMBEDDED IN SECTION 5 */}
+          <div className="bg-white border-2 border-[#0A121A] rounded-lg p-6 md:p-8 space-y-4 mt-8">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0A121A]">
+              Ascolta il tuo corpo, non le mode
+            </h3>
+            
+            <p className="text-base text-[#2F3F4C] leading-relaxed">
+              Senza eliminazioni drastiche, ma partendo da ciò che il tuo corpo ti comunica.
+            </p>
+
+            <button onClick={e => {
+              e.preventDefault();
+              const element = document.getElementById("cta-section");
+              if (element) {
+                const isMobile = window.innerWidth < 768;
+                const headerHeight = isMobile ? 96 : 120;
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+                });
+              }
+            }} className="inline-block w-full md:w-auto cursor-pointer">
+              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white transition-all duration-200 w-full md:w-auto" style={{
+                fontSize: "13px",
+                width: "320px",
+                padding: "12px 24px"
+              }}>
+                Scopri come funziona la nutrizione personalizzata
+              </Button>
+            </button>
+
+            <FigureCaption number={7} source="Conoscere il proprio metabolismo per scegliere meglio.">
+              <div className="rounded-lg overflow-hidden shadow-lg mt-4">
+                <img src={precisionFlow} alt="Persona serena a tavola, luce naturale, colori chiari. Overlay: Conoscere → scegliere meglio" className="w-full h-auto" loading="lazy" />
+              </div>
+            </FigureCaption>
+          </div>
         </div>
       </section>
 
-      {/* 7. TEXT SECTION 6 - Come conoscere la tua sensibilità alla caffeina */}
-      <section id="sensibilita" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+      {/* 7. TEXT SECTION 6 - Quando il corpo parla: sintomi comuni da interpretare */}
+      <section id="sintomi" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              Come conoscere la tua sensibilità alla caffeina
+              Quando il corpo parla: sintomi comuni da interpretare
             </h2>
 
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
               <p className="leading-relaxed">
-                Capire la propria risposta alla caffeina è oggi possibile grazie
-                a analisi metaboliche e genetiche che identificano il livello di
-                attività dell'enzima CYP1A2 e di altri fattori legati al
-                metabolismo energetico.
+                Capire la propria risposta agli alimenti è oggi possibile grazie ad analisi metaboliche e genetiche che identificano il profilo digestivo individuale.
                 <br />
                 <br />
-                Questi strumenti, utilizzati in centri di ricerca e cliniche di
-                nutrizione avanzata, permettono di:
+                Questi strumenti, utilizzati in centri di ricerca e cliniche di nutrizione avanzata, permettono di:
               </p>
 
               <ul className="space-y-2 list-disc pl-6">
-                <li>
-                  stabilire il profilo di metabolizzazione (rapido, medio,
-                  lento);
-                </li>
-                <li>costruire un piano di consumo personalizzato;</li>
-                <li>ottimizzare energia e benessere quotidiano.</li>
+                <li>stabilire il profilo di metabolizzazione per nutrienti chiave;</li>
+                <li>costruire un piano alimentare personalizzato;</li>
+                <li>ottimizzare digestione e benessere quotidiano.</li>
               </ul>
 
               <p className="leading-relaxed">
-                Non è una moda, ma un approccio clinico validato da ricerche
-                internazionali.
-                <br />
-                <br />
-                (Fonte: Continental Hospitals, 2024 – "DNA-based nutrition:
-                precision diets and clinical applications")
+                <strong>I sintomi da non sottovalutare:</strong>
+              </p>
+
+              <ul className="space-y-2 list-none pl-0">
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-2">❗</span>
+                  <span>Gonfiore addominale</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-2">❗</span>
+                  <span>Pesantezza o sonnolenza dopo i pasti</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-2">❗</span>
+                  <span>Calo di concentrazione o energia</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-red-600 mr-2">❗</span>
+                  <span>Mal di testa ricorrenti</span>
+                </li>
+              </ul>
+
+              <p className="leading-relaxed">
+                Questi sintomi non indicano necessariamente un'allergia, ma una mancata corrispondenza tra cibo e metabolismo personale. Capirlo permette di evitare eliminazioni inutili e di ricostruire un rapporto sereno con l'alimentazione.
               </p>
             </div>
           </div>
 
-          <FigureCaption number={7} source="Un approccio clinico validato per ottimizzare il consumo di caffeina.">
+          <FigureCaption number={8} source="Un approccio clinico validato per interpretare i segnali del corpo.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={womanRelaxingCoffee} alt="Donna rilassata che beve una bevanda calda, rappresenta il benessere attraverso scelte personalizzate sulla caffeina" className="w-full h-auto" loading="lazy" />
+              <img src={glycemicCurves} alt="Tabella visiva: Sintomo → Possibile causa metabolica (es. gonfiore → fermentazione lenta / digestione lenta dei carboidrati)" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -368,39 +341,31 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
             <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-6">
               <div className="bg-white p-6 rounded-lg border-l-4 border-[#0A121A]">
                 <p className="italic leading-relaxed mb-2">
-                  "Pensavo che il mio nervosismo fosse stress. Poi ho scoperto
-                  che metabolizzo la caffeina lentamente: bastava un caffè al
-                  pomeriggio per rovinarmi il sonno. Ora dormo meglio e rendo di
-                  più."
+                  "Pensavo di essere intollerante al lattosio. Poi ho scoperto che semplicemente lo metabolizzo più lentamente: ho imparato quando e quanto consumarlo, e ora sto benissimo."
                 </p>
                 <p className="text-sm text-[#768289]">
-                  — Francesca, 40 anni, Roma
+                  — Chiara, 37 anni, Milano
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg border-l-4 border-[#0A121A]">
                 <p className="italic leading-relaxed mb-2">
-                  "Bevevo quattro caffè al giorno per concentrarmi, ma mi sentivo
-                  sempre agitato. Capire come reagisce il mio corpo mi ha aiutato
-                  a trovare l'equilibrio."
+                  "Avevo eliminato di tutto, ma non stavo meglio. Capire il mio metabolismo mi ha aiutato a mangiare in modo più equilibrato."
                 </p>
                 <p className="text-sm text-[#768289]">
-                  — Andrea, 33 anni, Milano
+                  — Marco, 42 anni, Bologna
                 </p>
               </div>
 
               <p className="text-xs text-[#768289] italic bg-[#F8FAFA] p-4 rounded">
-                <strong>Nota:</strong> le testimonianze hanno finalità
-                illustrative e non sostituiscono le evidenze cliniche. Il valore
-                scientifico deriva da studi pubblicati e protocolli di nutrizione
-                di precisione.
+                <strong>Nota:</strong> le testimonianze hanno finalità illustrative e non sostituiscono le evidenze cliniche. I risultati derivano da percorsi di nutrizione di precisione basati su evidenze cliniche.
               </p>
             </div>
           </div>
 
-          <FigureCaption number={8} source="Esperienze di chi ha scoperto il proprio profilo metabolico.">
+          <FigureCaption number={9} source="Esperienze di chi ha scoperto il proprio profilo metabolico digestivo.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={coupleCooking} alt="Slider con card di testimonianze" className="w-full h-auto" loading="lazy" />
+              <img src={coupleCooking} alt="Slider con foto naturali e box Prima/Dopo la consapevolezza" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -410,32 +375,30 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
       <section id="cta-section" className="scroll-mt-32 py-12 md:py-16 lg:py-20 md:px-6 bg-gradient-to-br from-[#E8FFC9] to-[#d4f5b1]">
         <div className="max-w-4xl md:mx-auto text-center space-y-6 px-4 md:px-0">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-            Vuoi scoprire come il tuo corpo reagisce alla caffeina?
+            Vuoi capire se il problema è davvero un'intolleranza?
           </h2>
 
           <p className="text-base md:text-lg text-[#2F3F4C] leading-relaxed max-w-2xl mx-auto">
-            Oggi la scienza offre strumenti affidabili — test genetici e analisi
-            metaboliche — per conoscere la tua sensibilità alla caffeina e
-            migliorare concentrazione, energia e sonno.
+            Oggi la scienza offre strumenti affidabili — test metabolici e consulenze personalizzate — per conoscere come reagisci agli alimenti e ritrovare equilibrio digestivo e benessere.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-8 py-6 w-full sm:w-auto font-semibold transition-all duration-200" style={{
             fontSize: "clamp(0.875rem, 2vw + 0.5rem, 1.25rem)"
           }} asChild>
-              <a href="/#pricing">Scopri il tuo profilo metabolico personale</a>
+              <a href="/#pricing">Scopri il tuo profilo digestivo e metabolico personale</a>
             </Button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 max-w-2xl mx-auto">
             <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
-              ✔ Studi clinici riconosciuti (Nature Genetics, JAMA, Nutrients)
+              ✔ Basato su studi clinici (AJCN 2022, Nutrients 2023, Nature Medicine 2020)
             </Badge>
             <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
-              ✔ Consulenze certificate
+              ✔ Approccio scientifico, non commerciale
             </Badge>
             <Badge className="bg-white text-[#0A121A] p-3 text-sm font-medium justify-center border border-[#0A121A]">
-              ✔ Approccio scientifico e non commerciale
+              ✔ Consulenze certificate e dati trattati in sicurezza
             </Badge>
           </div>
         </div>
@@ -451,47 +414,38 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
 
             <ul className="space-y-2 text-sm text-[#2F3F4C] leading-relaxed">
               <li>
-                • Cornelis MC et al., Nature Genetics, 2016 – "Genome-wide
-                association study identifies genetic variants influencing coffee
-                metabolism"
+                • Nutrients, 2023 – "Individual variability in food metabolism and intolerance perception"
               </li>
               <li>
-                • Agarwal D. et al., JAMA, 2021 – "Caffeine Metabolism and
-                Cardiovascular Risk"
+                • The American Journal of Clinical Nutrition, 2022 – "Enzymatic diversity and nutrient digestion"
               </li>
               <li>
-                • Nutrients, 2023 – "Individual variability in caffeine
-                metabolism and response"
+                • Nature Medicine, 2020 – "Microbiome diversity and dietary responses"
               </li>
               <li>
-                • Sports Medicine, 2022 – "Caffeine and athletic performance:
-                role of genetic variation"
-              </li>
-              <li>• NIH Precision Nutrition Initiative, 2021</li>
-              <li>
-                • Harvard Health Publishing, 2023 – "Why caffeine affects people
-                differently"
+                • Cell Reports, 2018 – "Gut microbiota and metabolic individuality"
               </li>
               <li>
-                • LaNutrizione.it, 2023 – "Nutrizione di precisione e
-                metabolismo"
+                • NIH Precision Nutrition Initiative, 2021
               </li>
               <li>
-                • IoDonna, 2024 – "Caffeina e nutrizione di precisione: perché
-                funziona davvero"
+                • Harvard Health Publishing, 2022 – "Food sensitivities and personalized nutrition"
               </li>
               <li>
-                • Continental Hospitals, 2024 – "DNA-based nutrition: precision
-                diets and clinical applications"
+                • LaNutrizione.it, 2023 – "Nutrizione di precisione e digestione"
+              </li>
+              <li>
+                • IoDonna, 2024 – "Intolleranze o sensibilità? Il futuro è la personalizzazione"
+              </li>
+              <li>
+                • European Academy of Allergy and Clinical Immunology (EAACI) – Guidelines on food intolerance testing
               </li>
             </ul>
           </div>
 
           <div className="pt-6 border-t border-[#EAEAEA]">
             <p className="text-xs text-[#768289] leading-relaxed">
-              <strong>Disclaimer:</strong> Questo articolo ha finalità
-              divulgative. Le informazioni riportate non sostituiscono il parere
-              medico e derivano da fonti scientifiche aggiornate.
+              <strong>Disclaimer:</strong> Questo articolo ha finalità divulgative. Le informazioni riportate non sostituiscono il parere medico e derivano da fonti scientifiche aggiornate.
             </p>
           </div>
         </div>

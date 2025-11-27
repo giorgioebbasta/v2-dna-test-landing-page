@@ -8,15 +8,15 @@ import type { ScrollSpySection } from "@/hooks/useOptimizedScrollSpy";
 
 // Memoize sections array - it never changes
 const sections: ScrollSpySection[] = [
-  { id: 'intro', label: 'Perché il caffè ti dà energia...' },
-  { id: 'reazioni', label: 'Una tazza, mille reazioni diverse' },
-  { id: 'scienza', label: 'La scienza dietro al metabolismo della caffeina' },
-  { id: 'rischi', label: 'Rischi e benefici: non è quanto bevi, ma quanto resta' },
-  { id: 'performance', label: 'Caffeina e performance: energia o ostacolo?' },
-  { id: 'futuro', label: 'Il futuro: personalizzare anche l\'energia' },
-  { id: 'sensibilita', label: 'Come conoscere la tua sensibilità alla caffeina' },
+  { id: 'intro', label: 'E se non fossi davvero intollerante?' },
+  { id: 'confusione', label: 'La confusione delle "intolleranze moderne"' },
+  { id: 'test', label: 'Perché "test intolleranze" spesso confondono' },
+  { id: 'genetica', label: 'Il ruolo della genetica e del metabolismo digestivo' },
+  { id: 'microbiota', label: 'Il microbiota: un mondo che cambia tutto' },
+  { id: 'precisione', label: 'La nuova frontiera: la nutrizione di precisione' },
+  { id: 'sintomi', label: 'Quando il corpo parla: sintomi comuni da interpretare' },
   { id: 'esperienze', label: 'Esperienze reali, non prove scientifiche' },
-  { id: 'cta-section', label: 'Vuoi scoprire come il tuo corpo reagisce alla caffeina?' }
+  { id: 'cta-section', label: 'Vuoi capire se il problema è davvero un\'intolleranza?' }
 ];
 
 const PageMetabolismoIntolleranze = () => {
