@@ -93,7 +93,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
                 });
               }
             }} className="inline-block w-full md:w-auto cursor-pointer">
-              <Button size="lg" className="bg-[#CFDB9B] hover:bg-[#b8c589] text-[#0A121A] px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+              <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
                 fontSize: "15px",
                 width: "320px"
               }}>
@@ -187,7 +187,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
                 });
               }
             }} className="inline-block w-full md:w-auto cursor-pointer">
-              <Button size="lg" className="bg-[#CFDB9B] hover:bg-[#b8c589] text-[#0A121A] px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+              <Button size="lg" className="bg-[#2F3F4C] hover:bg-[#1a2630] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
                 fontSize: "15px",
                 width: "320px"
               }}>
