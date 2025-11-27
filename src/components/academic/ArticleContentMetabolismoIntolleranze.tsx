@@ -6,6 +6,7 @@ import intoleranceComparisonChart from "@/assets/intolerance-comparison-chart.pn
 import metabolicProfilesComparison from "@/assets/metabolic-profiles-comparison.png";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import foodReactionsDiverse from "@/assets/food-reactions-diverse.png";
+import gutMicrobiotaBalance from "@/assets/gut-microbiota-balance.png";
 import womanWellness from "@/assets/woman-wellness.jpg";
 import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import precisionFlow from "@/assets/precision-nutrition-flow.webp";
@@ -174,7 +175,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
 
           <FigureCaption number={5} source="Il microbiota intestinale influenza digestione, infiammazione e benessere generale.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={womanWellness} alt="Illustrazione semplice di intestino con batteri buoni e cattivi bilanciati" className="w-full h-auto" loading="lazy" />
+              <img src={gutMicrobiotaBalance} alt="Illustrazione semplice di intestino con batteri buoni e cattivi bilanciati" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
