@@ -9,7 +9,7 @@ import foodReactionsDiverse from "@/assets/food-reactions-diverse.png";
 import gutMicrobiotaBalance from "@/assets/gut-microbiota-balance.png";
 import womanWellness from "@/assets/woman-wellness.jpg";
 import wellnessIcons from "@/assets/wellness-icons-new.webp";
-import precisionFlow from "@/assets/precision-nutrition-flow.webp";
+
 import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
 import { Blockquote } from "./Blockquote";
@@ -227,45 +227,6 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
             </div>
           </FigureCaption>
 
-          {/* CTA EMBEDDED IN SECTION 5 */}
-          <div className="bg-white border-2 border-[#0A121A] rounded-lg p-6 md:p-8 space-y-4 mt-8">
-            <h3 className="text-xl md:text-2xl font-bold text-[#0A121A]">
-              Ascolta il tuo corpo, non le mode
-            </h3>
-            
-            <p className="text-base text-[#2F3F4C] leading-relaxed">
-              Senza eliminazioni drastiche, ma partendo da ciò che il tuo corpo ti comunica.
-            </p>
-
-            <button onClick={e => {
-            e.preventDefault();
-            const element = document.getElementById("cta-section");
-            if (element) {
-              const isMobile = window.innerWidth < 768;
-              const headerHeight = isMobile ? 96 : 120;
-              const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-              const offsetPosition = elementPosition - headerHeight;
-              window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-              });
-            }
-          }} className="inline-block w-full md:w-auto cursor-pointer">
-              <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white transition-all duration-200 w-full md:w-auto" style={{
-              fontSize: "13px",
-              width: "320px",
-              padding: "12px 24px"
-            }}>
-                Scopri come funziona la nutrizione personalizzata
-              </Button>
-            </button>
-
-            <FigureCaption number={7} source="Conoscere il proprio metabolismo per scegliere meglio.">
-              <div className="rounded-lg overflow-hidden shadow-lg mt-4">
-                <img src={precisionFlow} alt="Persona serena a tavola, luce naturale, colori chiari. Overlay: Conoscere → scegliere meglio" className="w-full h-auto" loading="lazy" />
-              </div>
-            </FigureCaption>
-          </div>
         </div>
       </section>
 
