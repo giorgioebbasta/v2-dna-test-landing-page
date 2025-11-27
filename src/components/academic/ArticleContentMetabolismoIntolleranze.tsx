@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import intoleranceSplitScreen from "@/assets/intolerance-split-screen.png";
 import intoleranceComparisonChart from "@/assets/intolerance-comparison-chart.png";
 import metabolicProfilesComparison from "@/assets/metabolic-profiles-comparison.png";
-import glycemicCurves from "@/assets/glycemic-curves.jpg";
+import symptomCorrelationTable from "@/assets/symptom-metabolic-correlation-table.png";
 import foodReactionsDiverse from "@/assets/food-reactions-diverse.png";
 import gutMicrobiotaBalance from "@/assets/gut-microbiota-balance.png";
 import womanWellness from "@/assets/woman-wellness.jpg";
@@ -234,7 +234,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
 
           <FigureCaption number={6} source="Un approccio clinico validato per interpretare i segnali del corpo.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={glycemicCurves} alt="Tabella visiva: Sintomo → Possibile causa metabolica (es. gonfiore → fermentazione lenta / digestione lenta dei carboidrati)" className="w-full h-auto" loading="lazy" />
+              <img src={symptomCorrelationTable} alt="Tabella di correlazione: Sintomo → Possibile causa metabolica (gonfiore, stanchezza post-prandiale, fame costante)" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
 
