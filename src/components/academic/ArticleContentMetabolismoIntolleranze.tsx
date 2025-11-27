@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import intoleranceSplitScreen from "@/assets/intolerance-split-screen.png";
 import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
-import foodData from "@/assets/food-data-overlay.jpg";
+import foodReactionsDiverse from "@/assets/food-reactions-diverse.png";
 import womanWellness from "@/assets/woman-wellness.jpg";
 import wellnessIcons from "@/assets/wellness-icons-new.webp";
 import precisionFlow from "@/assets/precision-nutrition-flow.webp";
@@ -73,7 +73,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
 
           <FigureCaption number={2} source="Le differenze metaboliche spiegano perché gli stessi alimenti generano effetti diversi.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={foodData} alt="Illustrazione con diversi piatti (pasta, latte, frutta) con icone di reazioni diverse per ogni persona" className="w-full h-auto" loading="lazy" />
+              <img src={foodReactionsDiverse} alt="Illustrazione con diversi piatti (pasta, latte, frutta) con icone di reazioni diverse per ogni persona" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
