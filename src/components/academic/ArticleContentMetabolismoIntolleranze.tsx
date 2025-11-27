@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import intoleranceSplitScreen from "@/assets/intolerance-split-screen.png";
 import intoleranceComparisonChart from "@/assets/intolerance-comparison-chart.png";
+import metabolicProfilesComparison from "@/assets/metabolic-profiles-comparison.png";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import foodReactionsDiverse from "@/assets/food-reactions-diverse.png";
 import womanWellness from "@/assets/woman-wellness.jpg";
@@ -143,7 +144,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
 
           <FigureCaption number={4} source="La diversità enzimatica spiega fino al 70% delle variazioni individuali nella digestione (AJCN, 2022).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={glycemicCurves} alt="Infografica con due profili digestivi diversi (metabolismo A e metabolismo B)" className="w-full h-auto" loading="lazy" />
+              <img src={metabolicProfilesComparison} alt="Infografica con due profili digestivi diversi (metabolismo A e metabolismo B)" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
