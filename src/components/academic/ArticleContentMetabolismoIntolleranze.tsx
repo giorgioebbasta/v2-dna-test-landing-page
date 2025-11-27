@@ -186,55 +186,6 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
           <div className="space-y-4">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
-              La nuova frontiera: la nutrizione di precisione
-            </h2>
-
-            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
-              <p className="leading-relaxed">
-                La <strong>NIH Precision Nutrition Initiative (2021)</strong> e <strong>Harvard Medical School</strong> riconoscono che il futuro della nutrizione passa dalla personalizzazione biologica: conoscere come reagiamo ai nutrienti per adattare dieta e stile di vita.
-                <br />
-                <br />
-                In Italia, portali come <strong>LaNutrizione.it</strong> e <strong>IoDonna (2024)</strong> spiegano che la nutrizione di precisione permette di prevenire disturbi digestivi e migliorare il benessere generale attraverso analisi metaboliche e genetiche.
-                <br />
-                <br />
-                <strong>Vantaggi concreti:</strong>
-              </p>
-
-              <ul className="space-y-2 list-none pl-0">
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Capire come digerisci davvero i principali nutrienti</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Ridurre gonfiore e stanchezza post-pasto</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Migliorare energia e concentrazione</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-600 mr-2">✅</span>
-                  <span>Ritrovare equilibrio e serenità alimentare</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <FigureCaption number={6} source="I vantaggi della nutrizione di precisione rispetto alle diete standard.">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={wellnessIcons} alt="Griglia: Dieta standard vs nutrizione personalizzata con vantaggi concreti" className="w-full h-auto" loading="lazy" />
-            </div>
-          </FigureCaption>
-
-        </div>
-      </section>
-
-      {/* 7. TEXT SECTION 6 - Quando il corpo parla: sintomi comuni da interpretare */}
-      <section id="sintomi" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
-        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
               Quando il corpo parla: sintomi comuni da interpretare
             </h2>
 
@@ -281,9 +232,58 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
             </div>
           </div>
 
-          <FigureCaption number={8} source="Un approccio clinico validato per interpretare i segnali del corpo.">
+          <FigureCaption number={6} source="Un approccio clinico validato per interpretare i segnali del corpo.">
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img src={glycemicCurves} alt="Tabella visiva: Sintomo → Possibile causa metabolica (es. gonfiore → fermentazione lenta / digestione lenta dei carboidrati)" className="w-full h-auto" loading="lazy" />
+            </div>
+          </FigureCaption>
+
+        </div>
+      </section>
+
+      {/* 7. TEXT SECTION 6 - Quando il corpo parla: sintomi comuni da interpretare */}
+      <section id="sintomi" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6 bg-[#F8FAFA]">
+        <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
+          <div className="space-y-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0A121A] leading-tight">
+              La nuova frontiera: la nutrizione di precisione
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-[#2F3F4C] space-y-4">
+              <p className="leading-relaxed">
+                La <strong>NIH Precision Nutrition Initiative (2021)</strong> e <strong>Harvard Medical School</strong> riconoscono che il futuro della nutrizione passa dalla personalizzazione biologica: conoscere come reagiamo ai nutrienti per adattare dieta e stile di vita.
+                <br />
+                <br />
+                In Italia, portali come <strong>LaNutrizione.it</strong> e <strong>IoDonna (2024)</strong> spiegano che la nutrizione di precisione permette di prevenire disturbi digestivi e migliorare il benessere generale attraverso analisi metaboliche e genetiche.
+                <br />
+                <br />
+                <strong>Vantaggi concreti:</strong>
+              </p>
+
+              <ul className="space-y-2 list-none pl-0">
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Capire come digerisci davvero i principali nutrienti</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Ridurre gonfiore e stanchezza post-pasto</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Migliorare energia e concentrazione</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-600 mr-2">✅</span>
+                  <span>Ritrovare equilibrio e serenità alimentare</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <FigureCaption number={7} source="I vantaggi della nutrizione di precisione rispetto alle diete standard.">
+            <div className="rounded-lg overflow-hidden shadow-lg">
+              <img src={wellnessIcons} alt="Griglia: Dieta standard vs nutrizione personalizzata con vantaggi concreti" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>

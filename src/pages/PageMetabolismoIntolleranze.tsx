@@ -13,8 +13,8 @@ const sections: ScrollSpySection[] = [
   { id: 'test', label: 'Perché "test intolleranze" spesso confondono' },
   { id: 'genetica', label: 'Il ruolo della genetica e del metabolismo digestivo' },
   { id: 'microbiota', label: 'Il microbiota: un mondo che cambia tutto' },
-  { id: 'precisione', label: 'La nuova frontiera: la nutrizione di precisione' },
-  { id: 'sintomi', label: 'Quando il corpo parla: sintomi comuni da interpretare' },
+  { id: 'precisione', label: 'Quando il corpo parla: sintomi comuni da interpretare' },
+  { id: 'sintomi', label: 'La nuova frontiera: la nutrizione di precisione' },
   { id: 'esperienze', label: 'Esperienze reali, non prove scientifiche' },
   { id: 'cta-section', label: 'Vuoi capire se il problema è davvero un\'intolleranza?' }
 ];
