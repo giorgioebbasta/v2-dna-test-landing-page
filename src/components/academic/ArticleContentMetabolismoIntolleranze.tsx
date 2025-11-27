@@ -16,13 +16,9 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
       {/* 1. HERO SECTION */}
       <section id="intro" className="scroll-mt-32 pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-16 lg:pb-20 md:px-6 bg-[#F8FAFA]">
         <div className="max-w-4xl md:mx-auto text-center space-y-4 md:space-y-6 px-4 md:px-0">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight">
-            E se non fossi davvero intollerante? Forse è solo il tuo corpo che parla in un linguaggio diverso.
-          </h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A121A] leading-tight">E se non fossi davvero intollerante? Forse è solo il tuo corpo che parla in un linguaggio diverso</h1>
 
-          <h2 className="text-lg md:text-xl lg:text-2xl text-[#2F3F4C] leading-relaxed">
-            Scopri perché due persone possono reagire in modo opposto agli stessi alimenti e come capire davvero cosa ti fa stare bene.
-          </h2>
+          <h2 className="text-lg md:text-xl lg:text-2xl text-[#2F3F4C] leading-relaxed">Scopri perché due persone possono reagire in modo opposto agli stessi alimenti e come capire davvero cosa ti fa stare bene</h2>
 
           <FigureCaption number={1} source="Basato su studi pubblicati su Nutrients (2023), American Journal of Clinical Nutrition (2022) e Harvard T.H. Chan School of Public Health.">
             <div className="rounded-lg overflow-hidden shadow-xl">
@@ -240,24 +236,24 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
             </p>
 
             <button onClick={e => {
-              e.preventDefault();
-              const element = document.getElementById("cta-section");
-              if (element) {
-                const isMobile = window.innerWidth < 768;
-                const headerHeight = isMobile ? 96 : 120;
-                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - headerHeight;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth"
-                });
-              }
-            }} className="inline-block w-full md:w-auto cursor-pointer">
+            e.preventDefault();
+            const element = document.getElementById("cta-section");
+            if (element) {
+              const isMobile = window.innerWidth < 768;
+              const headerHeight = isMobile ? 96 : 120;
+              const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+              const offsetPosition = elementPosition - headerHeight;
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+              });
+            }
+          }} className="inline-block w-full md:w-auto cursor-pointer">
               <Button size="lg" className="bg-[#F68D12] hover:bg-[#d67a0f] text-white transition-all duration-200 w-full md:w-auto" style={{
-                fontSize: "13px",
-                width: "320px",
-                padding: "12px 24px"
-              }}>
+              fontSize: "13px",
+              width: "320px",
+              padding: "12px 24px"
+            }}>
                 Scopri come funziona la nutrizione personalizzata
               </Button>
             </button>
