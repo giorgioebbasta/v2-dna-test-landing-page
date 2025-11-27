@@ -77,6 +77,30 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
               <img src={foodReactionsDiverse} alt="Illustrazione con diversi piatti (pasta, latte, frutta) con icone di reazioni diverse per ogni persona" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
+
+          <div className="flex justify-center pt-6">
+            <button onClick={e => {
+              e.preventDefault();
+              const element = document.getElementById("cta-section");
+              if (element) {
+                const isMobile = window.innerWidth < 768;
+                const headerHeight = isMobile ? 96 : 120;
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+                });
+              }
+            }} className="inline-block w-full md:w-auto cursor-pointer">
+              <Button size="lg" className="bg-[#CFDB9B] hover:bg-[#b8c589] text-[#0A121A] px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+                fontSize: "15px",
+                width: "320px"
+              }}>
+                Scopri come funziona davvero il tuo corpo
+              </Button>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -147,6 +171,30 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
               <img src={metabolicProfilesComparison} alt="Infografica con due profili digestivi diversi (metabolismo A e metabolismo B)" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
+
+          <div className="flex justify-center pt-6">
+            <button onClick={e => {
+              e.preventDefault();
+              const element = document.getElementById("cta-section");
+              if (element) {
+                const isMobile = window.innerWidth < 768;
+                const headerHeight = isMobile ? 96 : 120;
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerHeight;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+                });
+              }
+            }} className="inline-block w-full md:w-auto cursor-pointer">
+              <Button size="lg" className="bg-[#CFDB9B] hover:bg-[#b8c589] text-[#0A121A] px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+                fontSize: "15px",
+                width: "320px"
+              }}>
+                Scopri come funziona davvero il tuo corpo
+              </Button>
+            </button>
+          </div>
         </div>
       </section>
 
