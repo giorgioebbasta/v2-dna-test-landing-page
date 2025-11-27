@@ -7,9 +7,9 @@ const HeroBanner = React.memo(() => {
       <Badge className="text-[#E8FFC9] text-sm font-medium mt-4 bg-[#0b4650] py-[6px] px-[14px]">
         Test Completo del DNA
       </Badge>
-      <h2 className="text-[41px] md:text-[47px] lg:text-6xl font-bold text-slate-900 leading-tight py-[2px]">
+      <h1 className="text-[41px] md:text-[47px] lg:text-6xl font-bold text-slate-900 leading-tight py-[2px]">
         Caffeina: quanto sei sensibile lo dice il tuo DNA
-      </h2>
+      </h1>
 
       <p className="text-[15px] md:text-[17px] lg:text-xl text-slate-600 leading-relaxed !pl-0">
         Conosci la tua predisposizione per gestire sonno, ansia e performance
