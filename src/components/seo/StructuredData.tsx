@@ -41,8 +41,8 @@ const StructuredData: React.FC<StructuredDataProps> = ({ type }) => {
       "@type": "Offer",
       "url": "https://test-completo-del-dna.holifya.com",
       "priceCurrency": "EUR",
-      "price": "289",
-      "priceValidUntil": "2025-11-30",
+      "price": "249",
+      "priceValidUntil": "2025-12-31",
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
