@@ -51,33 +51,6 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
         </div>
       </section>
 
-      {/* CTA AFTER SECTION 1 */}
-      <section className="py-8 md:py-12 md:px-6 bg-[#F8FAFA]">
-        <div className="max-w-4xl md:mx-auto text-center space-y-4 px-4 md:px-0">
-          <button onClick={e => {
-          e.preventDefault();
-          const element = document.getElementById("cta-section");
-          if (element) {
-            const isMobile = window.innerWidth < 768;
-            const headerHeight = isMobile ? 96 : 120;
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerHeight;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            });
-          }
-        }} className="inline-block w-full md:w-auto cursor-pointer">
-            <Button size="lg" className="bg-[#01649F] hover:bg-[#014e7f] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
-            fontSize: "15px",
-            width: "320px"
-          }}>
-              Analizza ora i tuoi geni
-            </Button>
-          </button>
-        </div>
-      </section>
-
       {/* 2. TEXT SECTION 1 - La confusione delle "intolleranze moderne" */}
       <section id="confusione" className="scroll-mt-32 py-8 md:py-16 lg:py-20 md:px-6">
         <div className="max-w-4xl md:mx-auto space-y-6 md:space-y-8 px-4 md:px-0">
@@ -134,33 +107,6 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
               <img src={intoleranceComparisonChart} alt="Mini-grafico: Allergia ≠ Intolleranza ≠ Sensibilità metabolica" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
-        </div>
-      </section>
-
-      {/* CTA AFTER SECTION 3 */}
-      <section className="py-8 md:py-12 md:px-6">
-        <div className="max-w-4xl md:mx-auto text-center space-y-4 px-4 md:px-0">
-          <button onClick={e => {
-          e.preventDefault();
-          const element = document.getElementById("cta-section");
-          if (element) {
-            const isMobile = window.innerWidth < 768;
-            const headerHeight = isMobile ? 96 : 120;
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerHeight;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-            });
-          }
-        }} className="inline-block w-full md:w-auto cursor-pointer">
-            <Button size="lg" className="bg-[#CFDB9B] hover:bg-[#b8c589] text-[#0A121A] px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
-            fontSize: "15px",
-            width: "320px"
-          }}>
-              Scopri il tuo profilo metabolico
-            </Button>
-          </button>
         </div>
       </section>
 
