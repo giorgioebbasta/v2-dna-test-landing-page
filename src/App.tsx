@@ -15,7 +15,6 @@ import PageCaffeina from "./pages/PageCaffeina";
 const PageDietaNonFunziona = React.lazy(() => import("./pages/PageDietaNonFunziona"));
 const PageMetabolismoCaffeina = React.lazy(() => import("./pages/PageMetabolismoCaffeina"));
 const PageMetabolismoIntolleranze = React.lazy(() => import("./pages/PageMetabolismoIntolleranze"));
-const PageMigliorareSport = React.lazy(() => import("./pages/PageMigliorareSport"));
 
 const queryClient = new QueryClient();
 
@@ -75,21 +74,6 @@ const App = () => {
                       </div>
                     }>
                       <PageMetabolismoIntolleranze />
-                    </Suspense>
-                  } 
-                />
-                <Route 
-                  path="/migliorare-sport" 
-                  element={
-                    <Suspense fallback={
-                      <div className="min-h-screen bg-white flex items-center justify-center">
-                        <div className="text-center space-y-4">
-                          <div className="w-12 h-12 border-4 border-[#0A121A] border-t-transparent rounded-full animate-spin mx-auto"></div>
-                          <p className="text-[#768289]">Caricamento...</p>
-                        </div>
-                      </div>
-                    }>
-                      <PageMigliorareSport />
                     </Suspense>
                   } 
                 />
