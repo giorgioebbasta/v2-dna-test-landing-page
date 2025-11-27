@@ -52,7 +52,7 @@ export const ArticleContent = React.memo(() => {
             console.error('Element with id="casi" not found!');
           }
         }} className="inline-block w-full md:w-auto cursor-pointer">
-            <Button size="lg" className="bg-[#768289] hover:bg-[#5f6970] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
+            <Button size="lg" className="bg-[#01649F] hover:bg-[#014e7f] text-white px-6 md:px-8 py-4 md:py-6 transition-all duration-200" style={{
             fontSize: "13px",
             width: "320px"
           }}>
