@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import intoleranceSplitScreen from "@/assets/intolerance-split-screen.png";
-import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
+import intoleranceComparisonChart from "@/assets/intolerance-comparison-chart.png";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import foodReactionsDiverse from "@/assets/food-reactions-diverse.png";
 import womanWellness from "@/assets/woman-wellness.jpg";
@@ -103,7 +103,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
 
           <FigureCaption number={3} source="La distinzione tra allergia, intolleranza e sensibilità metabolica.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={metabolicResponseCurves} alt="Mini-grafico: Allergia ≠ Intolleranza ≠ Sensibilità metabolica" className="w-full h-auto" loading="lazy" />
+              <img src={intoleranceComparisonChart} alt="Mini-grafico: Allergia ≠ Intolleranza ≠ Sensibilità metabolica" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
