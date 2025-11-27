@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import dietResults from "@/assets/diet-results-comparison.webp";
+import intoleranceSplitScreen from "@/assets/intolerance-split-screen.png";
 import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
 import glycemicCurves from "@/assets/glycemic-curves.jpg";
 import foodData from "@/assets/food-data-overlay.jpg";
@@ -26,7 +26,7 @@ export const ArticleContentMetabolismoIntolleranze = React.memo(() => {
 
           <FigureCaption number={1} source="Basato su studi pubblicati su Nutrients (2023), American Journal of Clinical Nutrition (2022) e Harvard T.H. Chan School of Public Health.">
             <div className="rounded-lg overflow-hidden shadow-xl">
-              <img src={dietResults} alt="Split-screen: donna che si sente appesantita dopo un pasto vs la stessa persona sorridente e leggera dopo aver capito come reagisce il suo corpo" className="w-full h-auto" loading="eager" />
+              <img src={intoleranceSplitScreen} alt="Split-screen: donna che si sente appesantita dopo un pasto vs la stessa persona sorridente e leggera dopo aver capito come reagisce il suo corpo" className="w-full h-auto" loading="eager" />
             </div>
           </FigureCaption>
 
