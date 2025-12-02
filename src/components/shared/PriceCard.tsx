@@ -32,17 +32,17 @@ const PriceCard = React.memo(({ name, currentPrice, originalPrice, savings, prom
       >
         <CardContent className="p-3 h-full flex items-center justify-between gap-3">
           {/* Left side - Test name */}
-          <div className="flex-1 flex items-center">
+          <div className="flex-1">
             <h3 className="text-sm font-semibold text-slate-900">{name}</h3>
           </div>
           
           {/* Right side - Price info */}
-          <div className="text-right flex flex-col justify-center">
-            <div className="flex items-baseline gap-2 justify-end">
+          <div className="text-right">
+            <div className="flex items-center gap-2 justify-end">
               <div className="text-xs text-slate-500 line-through">€{originalPrice}</div>
-              <div className="text-xl font-bold text-[#0B4650]">€{currentPrice}</div>
+              <div className="text-lg font-bold text-[#0B4650]">€{currentPrice}</div>
             </div>
-            <div className="text-xs font-medium text-[#0B4650] mt-0.5">Risparmi €{savings}</div>
+            <div className="text-xs font-medium text-[#0B4650] mt-1">Risparmi €{savings}</div>
           </div>
         </CardContent>
       </Card>
