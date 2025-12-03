@@ -79,13 +79,13 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
               className="gtm_addtocart flex-1 border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden"
               onClick={() => window.open('https://holifya.com/cart/43782964445448:2', '_blank', 'noopener,noreferrer')}
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-500 to-orange-500 text-white px-1.5 py-0.5 text-[10px] font-bold rounded-b-md whitespace-nowrap">
-                Promo Natale
-              </div>
-              <CardContent className="p-2 pt-5 flex flex-col items-center justify-center text-center">
+              <CardContent className="p-2 pb-5 flex flex-col items-center justify-center text-center">
                 <span className="font-semibold text-slate-900 text-sm">2 Test</span>
                 <span className="text-lg font-bold text-[#0B4650]">€399</span>
               </CardContent>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-500 to-orange-500 text-white px-1.5 py-0.5 text-[10px] font-bold rounded-t-md whitespace-nowrap">
+                Promo Natale
+              </div>
             </Card>
 
             {/* Box 3: 3 Test */}
