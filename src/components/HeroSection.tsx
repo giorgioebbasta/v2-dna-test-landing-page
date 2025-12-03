@@ -83,7 +83,7 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
                 <span className="font-semibold text-slate-900 text-sm">2 Test</span>
                 <span className="text-lg font-bold text-[#0B4650]">€399</span>
               </CardContent>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#1E792C] text-white px-1.5 py-0.5 text-[10px] font-bold rounded-t-md whitespace-nowrap">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#C30F16] text-[#1E792C] px-1.5 py-0.5 text-[10px] font-bold rounded-t-md whitespace-nowrap">
                 Promo Natale
               </div>
             </Card>
