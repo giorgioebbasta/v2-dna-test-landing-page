@@ -80,7 +80,7 @@ const HeroSection = ({
                 <span className="font-semibold text-sm text-[#1e792c]">2 Test</span>
                 <span className="text-lg font-bold text-[#1e792c]">€399</span>
               </CardContent>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#C30F16] text-[#1E792C] px-1.5 py-0.5 text-[10px] font-bold rounded-t-md whitespace-nowrap">
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#C30F16] px-1.5 py-0.5 text-[10px] font-bold rounded-t-md whitespace-nowrap text-primary">
                 Promo Natale
               </div>
             </Card>
