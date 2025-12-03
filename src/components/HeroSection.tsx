@@ -121,10 +121,10 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
             </div>
           </div>
 
-          {/* Bottom section - Full width container with 3 boxes - all same height */}
+          {/* Bottom section - Full width container with 4 boxes */}
           <div className="flex gap-4 animate-fade-in items-stretch">
-            {/* Box 1: Quantity Selector - takes more space */}
-            <div className="flex-[2]">
+            {/* Quantity Selector - reduced width */}
+            <div className="flex-[1.2]">
               <QuantitySelector
                 quantity={quantity}
                 onIncrease={increaseQuantity}
@@ -133,29 +133,41 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
               />
             </div>
 
-            {/* Box 2: 1 Test Package - narrower */}
-            <div className="flex-1">
-              <PriceCard
-                name="1 Test del DNA"
-                currentPrice={249}
-                originalPrice={349}
-                savings={100}
-                url="https://holifya.com/cart/43782964445448:1"
-                horizontal
-              />
-            </div>
+            {/* Box 1: 1 Test */}
+            <Card 
+              className="gtm_addtocart flex-1 border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer"
+              onClick={() => window.open('https://holifya.com/cart/43782964445448:1', '_blank', 'noopener,noreferrer')}
+            >
+              <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
+                <span className="font-semibold text-slate-900 text-base">1 Test</span>
+                <span className="text-2xl font-bold text-[#0B4650]">€249</span>
+              </CardContent>
+            </Card>
 
-            {/* Box 3: 2 Tests Package - narrower */}
-            <div className="flex-1">
-              <PriceCard
-                name="2 Test del DNA"
-                currentPrice={449}
-                originalPrice={698}
-                savings={249}
-                url="https://holifya.com/cart/43782964445448:2"
-                horizontal
-              />
-            </div>
+            {/* Box 2: 2 Test - Promo Natale */}
+            <Card 
+              className="gtm_addtocart flex-1 border-2 border-[#C41E3A] hover:border-[#C41E3A]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden bg-gradient-to-b from-white to-red-50"
+              onClick={() => window.open('https://holifya.com/cart/43782964445448:2', '_blank', 'noopener,noreferrer')}
+            >
+              <CardContent className="p-4 pb-6 flex flex-col items-center justify-center text-center h-full">
+                <span className="font-semibold text-slate-900 text-base">2 Test 🎁</span>
+                <span className="text-2xl font-bold text-[#C41E3A]">€399</span>
+              </CardContent>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-[#C41E3A] text-white px-2 py-0.5 text-xs font-bold rounded-t-md whitespace-nowrap">
+                🎄 Promo Natale
+              </div>
+            </Card>
+
+            {/* Box 3: 3 Test */}
+            <Card 
+              className="gtm_addtocart flex-1 border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer"
+              onClick={() => window.open('https://holifya.com/cart/43782964445448:3', '_blank', 'noopener,noreferrer')}
+            >
+              <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
+                <span className="font-semibold text-slate-900 text-base">3 Test</span>
+                <span className="text-2xl font-bold text-[#0B4650]">€649</span>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
