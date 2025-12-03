@@ -2,17 +2,12 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import coffeeSplitScreen from "@/assets/coffee-split-screen.png";
-import metabolicResponseCurves from "@/assets/metabolic-response-curves.png";
-import performanceGenetics from "@/assets/genetica-performance.png";
-import dietResults from "@/assets/diet-results-comparison.webp";
+import caffeinaMetabolismoVelocita from "@/assets/caffeina-metabolismo-velocita.png";
+import caffeinaConcentrazioneSangue from "@/assets/caffeina-concentrazione-sangue.png";
+import caffeinaDonnaNotte from "@/assets/caffeina-donna-notte.png";
 import precisionFlow from "@/assets/performance-stress-comparison.png";
 import womanRelaxingCoffee from "@/assets/woman-relaxing-coffee.png";
-import glycemicCurves from "@/assets/glycemic-curves.jpg";
-import activeWoman from "@/assets/active-woman.jpg";
-import energySourcesTraining from "@/assets/energy-sources-training.png";
-import foodData from "@/assets/food-data-overlay.jpg";
 import wellnessIcons from "@/assets/wellness-icons-new.webp";
-import womanWellness from "@/assets/woman-wellness.jpg";
 import coupleCooking from "@/assets/group-74-couple.webp";
 import { FigureCaption } from "./FigureCaption";
 import { Blockquote } from "./Blockquote";
@@ -91,7 +86,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={2} source="La velocità di metabolizzazione può variare fino a 5x tra individui (Nutrients, 2023).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={metabolicResponseCurves} alt="Infografica con tre orologi metabolici a velocità diversa" className="w-full h-auto" loading="lazy" />
+              <img src={caffeinaMetabolismoVelocita} alt="Infografica con tre orologi metabolici a velocità diversa: rapido, medio, lento" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
 
@@ -157,7 +152,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={3} source="Livello di caffeina nel sangue dopo una tazza di caffè: risposta individuale (Nature Genetics, 2016).">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={performanceGenetics} alt="Infografica genetica della performance: resistenza, forza, recupero e rischio infortunio" className="w-full h-auto" loading="lazy" />
+              <img src={caffeinaConcentrazioneSangue} alt="Grafico concentrazione di caffeina nel sangue: metabolizzatore rapido vs lento" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
         </div>
@@ -196,7 +191,7 @@ export const ArticleContentMetabolismoCaffeina = React.memo(() => {
 
           <FigureCaption number={4} source="Gli effetti della caffeina dipendono da quanto resta nel tuo sistema.">
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img src={energySourcesTraining} alt="Fonti energetiche durante l'allenamento: carboidrati, grassi, proteine" className="w-full h-auto" loading="lazy" />
+              <img src={caffeinaDonnaNotte} alt="Donna sveglia di notte al computer con caffè, rappresenta gli effetti della caffeina sul sonno" className="w-full h-auto" loading="lazy" />
             </div>
           </FigureCaption>
 
