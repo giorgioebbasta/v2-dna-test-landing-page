@@ -62,40 +62,40 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
           </div>
 
           {/* Mobile Pricing Boxes */}
-          <div className="max-w-md md:mx-auto space-y-3">
+          <div className="max-w-md md:mx-auto flex gap-2">
             {/* Box 1: 1 Test */}
             <Card 
-              className="gtm_addtocart border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer"
+              className="gtm_addtocart flex-1 border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer"
               onClick={() => window.open('https://holifya.com/cart/43782964445448:1', '_blank', 'noopener,noreferrer')}
             >
-              <CardContent className="p-3 flex items-center justify-between">
-                <span className="font-semibold text-slate-900">1 Test</span>
-                <span className="text-xl font-bold text-[#0B4650]">€249</span>
+              <CardContent className="p-2 flex flex-col items-center justify-center text-center">
+                <span className="font-semibold text-slate-900 text-sm">1 Test</span>
+                <span className="text-lg font-bold text-[#0B4650]">€249</span>
               </CardContent>
             </Card>
 
             {/* Box 2: 2 Test - Promo Natale */}
             <Card 
-              className="gtm_addtocart border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden"
+              className="gtm_addtocart flex-1 border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer relative overflow-hidden"
               onClick={() => window.open('https://holifya.com/cart/43782964445448:2', '_blank', 'noopener,noreferrer')}
             >
-              <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 to-orange-500 text-white px-2 py-1 text-xs font-bold rounded-bl-lg">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-500 to-orange-500 text-white px-1.5 py-0.5 text-[10px] font-bold rounded-b-md whitespace-nowrap">
                 Promo Natale
               </div>
-              <CardContent className="p-3 flex items-center justify-between">
-                <span className="font-semibold text-slate-900">2 Test</span>
-                <span className="text-xl font-bold text-[#0B4650]">€399</span>
+              <CardContent className="p-2 pt-5 flex flex-col items-center justify-center text-center">
+                <span className="font-semibold text-slate-900 text-sm">2 Test</span>
+                <span className="text-lg font-bold text-[#0B4650]">€399</span>
               </CardContent>
             </Card>
 
             {/* Box 3: 3 Test */}
             <Card 
-              className="gtm_addtocart border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer"
+              className="gtm_addtocart flex-1 border-2 border-[#1A1A31] hover:border-[#1A1A31]/80 transition-all duration-300 hover:shadow-lg cursor-pointer"
               onClick={() => window.open('https://holifya.com/cart/43782964445448:3', '_blank', 'noopener,noreferrer')}
             >
-              <CardContent className="p-3 flex items-center justify-between">
-                <span className="font-semibold text-slate-900">3 Test</span>
-                <span className="text-xl font-bold text-[#0B4650]">€649</span>
+              <CardContent className="p-2 flex flex-col items-center justify-center text-center">
+                <span className="font-semibold text-slate-900 text-sm">3 Test</span>
+                <span className="text-lg font-bold text-[#0B4650]">€649</span>
               </CardContent>
             </Card>
           </div>
