@@ -102,7 +102,7 @@ const HeroSection = ({
           </div>
 
           {/* Christmas promotional tagline */}
-          <p className="text-center text-xs text-slate-600 italic px-4 -mt-2">A Natale, regalati prevenzione. Per te e chi ami.
+          <p className="text-center text-xs text-slate-600 italic px-4 -mt-4">A Natale, regalati prevenzione. Per te e chi ami.
 2 Test del DNA al prezzo più basso di sempre.</p>
 
           <BenefitsList />
