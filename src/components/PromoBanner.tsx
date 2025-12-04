@@ -13,8 +13,7 @@ const PromoBanner = () => {
   }}>
       <div className="max-w-7xl mx-auto text-center">
         <p className="font-bold text-base md:text-lg">
-          <span className="hidden md:inline">Dicembre - Regala il Test del DNA - €300 di sconto per te e per chi ami</span>
-          <span className="md:hidden">Dicembre - Regala il Test del DNA<br />€300 di sconto</span>
+          Dicembre - Regala il Test del DNA €300 di sconto
         </p>
       </div>
     </div>;
