@@ -12,7 +12,7 @@ const PromoBanner = () => {
   return (
     <div 
       className={cn(
-        "fixed top-[42px] md:top-[49px] left-0 right-0 z-40 px-2 md:px-4 shadow-lg",
+        "fixed top-[42px] md:top-[49px] left-0 right-0 z-40 px-4 shadow-lg",
         paddingClass,
         colorScheme.textColor
       )}
@@ -23,8 +23,8 @@ const PromoBanner = () => {
     >
       <div className="max-w-7xl mx-auto text-center">
         <p className="font-bold text-base md:text-lg">
-          <span className="hidden md:inline">A Natale, regala la prevenzione - 2 Test del DNA al prezzo più basso di sempre</span>
-          <span className="md:hidden">A Natale, regala la prevenzione<br />2 Test del DNA al prezzo più basso di sempre</span>
+          <span className="hidden md:inline">Dicembre - Regala il Test del DNA - €300 di sconto per te e per chi ami</span>
+          <span className="md:hidden">Dicembre - Regala il Test del DNA<br />€300 di sconto per te e per chi ami</span>
         </p>
       </div>
     </div>
