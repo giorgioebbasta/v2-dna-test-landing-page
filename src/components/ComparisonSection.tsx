@@ -30,7 +30,7 @@ const ComparisonSection = () => {
   }];
   const totalCompetitorPrice = 1244;
   const holifyaOriginalPrice = 349;
-  const holifyaDiscountedPrice = 249;
+  const holifyaDiscountedPrice = 229;
   const totalSavings = totalCompetitorPrice - holifyaDiscountedPrice;
   return <section id="comparison" className="px-4 py-12 md:py-16" style={{ backgroundColor: '#F8FAFA' }}>
       <div className="max-w-6xl mx-auto">

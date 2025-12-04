@@ -28,7 +28,7 @@ const FloatingCTA = () => {
             ...colorScheme.style
           }}
         >
-          Ordina ora - €249
+          Ordina ora - €229
         </Button>
       </a>
     </div>
