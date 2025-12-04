@@ -90,7 +90,6 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
                 <span className="text-[10px] text-green-600 flex items-center gap-0.5">
                   <Check className="w-2.5 h-2.5" /> €199,50/test
                 </span>
-                <span className="text-[9px] text-slate-600 italic">"Per te e chi ami"</span>
               </CardContent>
             </Card>
 
@@ -167,7 +166,6 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
                 <span className="text-xs text-green-600 flex items-center gap-1">
                   <Check className="w-3 h-3" /> €199,50/test
                 </span>
-                <span className="text-xs text-slate-600 italic">"Per te e chi ami"</span>
               </CardContent>
             </Card>
 
