@@ -82,9 +82,9 @@ const HeroSection = ({ className, heroBannerComponent }: { className?: string; h
               className="gtm_addtocart flex-1 border-2 border-[#C41E3A] hover:border-[#C41E3A]/80 transition-all duration-300 hover:shadow-lg cursor-pointer bg-gradient-to-b from-white to-red-50"
               onClick={() => window.open('https://holifya.com/cart/43782964445448:2', '_blank', 'noopener,noreferrer')}
             >
-              <CardContent className="p-2 flex flex-col items-center justify-center text-center gap-0.5">
+              <CardContent className="px-1 py-2 flex flex-col items-center justify-center text-center gap-0.5">
                 <span className="font-semibold text-slate-900 text-sm">2 Test 🎁</span>
-                <span className="text-[9px] font-bold text-amber-600">⭐ MIGLIOR PREZZO</span>
+                <span className="text-[9px] font-bold text-amber-600 whitespace-nowrap">⭐ MIGLIOR PREZZO</span>
                 <span className="text-xs text-slate-400 line-through">€698</span>
                 <span className="text-lg font-bold text-[#C41E3A]">€399</span>
                 <span className="text-[10px] text-green-600 flex items-center gap-0.5">
