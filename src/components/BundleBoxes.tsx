@@ -83,11 +83,11 @@ const BundleBoxes = () => {
     },
     {
       name: "2 Test del DNA",
-      currentPrice: 449,
+      currentPrice: 399,
       originalPrice: 698,
-      savings: 249,
+      savings: 299,
       url: "https://holifya.com/cart/43782964445448:2",
-      extraDiscount: "Per te e per chi ami (-€80)"
+      extraDiscount: "Per te e per chi ami 🎁"
     }
   ];
 
