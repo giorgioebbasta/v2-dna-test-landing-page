@@ -37,18 +37,18 @@ const BundleBox: React.FC<BundleBoxProps> = ({
         </div>
       )}
       
-      <div className="p-3 sm:p-4 text-center flex flex-col h-full">
+      <div className="p-3 sm:p-4 text-center">
         <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-3">
           {name}
         </h3>
         
-        <div className="space-y-1 flex-1 flex flex-col justify-center">
-          <div className="text-base sm:text-lg text-slate-500 line-through">
-            €{originalPrice}
-          </div>
-          
+        <div className="space-y-1">
           <div className="text-2xl sm:text-3xl font-bold" style={{ color: '#994AFF' }}>
             €{currentPrice}
+          </div>
+          
+          <div className="text-base sm:text-lg text-slate-500 line-through">
+            €{originalPrice}
           </div>
           
           <div className="text-sm font-medium" style={{ color: '#994AFF' }}>
@@ -60,13 +60,11 @@ const BundleBox: React.FC<BundleBoxProps> = ({
               Codice: {promoCode} (-40%)
             </div>
           )}
-        </div>
-        
-        <div className="mt-2 min-h-[24px]">
+          
           {extraDiscount && (
-            <span className="text-xs font-semibold px-2 py-1 rounded inline-block" style={{ backgroundColor: '#DCFE54', color: '#1E293B' }}>
+            <div className="mt-2 text-xs font-semibold px-2 py-1 rounded inline-block" style={{ backgroundColor: '#DCFE54', color: '#1E293B' }}>
               {extraDiscount}
-            </span>
+            </div>
           )}
         </div>
       </div>
