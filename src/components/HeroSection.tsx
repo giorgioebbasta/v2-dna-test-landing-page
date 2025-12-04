@@ -102,8 +102,10 @@ const HeroSection = ({
           </div>
 
           {/* Christmas promotional tagline */}
-          <p className="text-center text-xs text-slate-600 italic px-4 -mt-6">A Natale, regalati prevenzione. Per te e chi ami.
-2 Test del DNA al prezzo più basso di sempre.</p>
+          <p className="text-center text-xs text-slate-600 italic px-4 -mt-4">
+            A Natale, regalati prevenzione. Per te e per chi ami.<br />
+            2 Test del DNA al prezzo più basso di sempre.
+          </p>
 
           <BenefitsList />
           
@@ -169,7 +171,8 @@ const HeroSection = ({
 
           {/* Christmas promotional tagline */}
           <p className="text-center text-sm text-slate-600 italic">
-            A Natale, regalati prevenzione. Per te e chi ami. 2 Test del DNA al prezzo più basso di sempre.
+            A Natale, regalati prevenzione. Per te e per chi ami.<br />
+            2 Test del DNA al prezzo più basso di sempre.
           </p>
         </div>
       </div>
