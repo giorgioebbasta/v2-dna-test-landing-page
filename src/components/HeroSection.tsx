@@ -147,7 +147,7 @@ const HeroSection = ({
             <Card className="gtm_addtocart flex-1 border-2 border-[#C41E3A] hover:border-[#C41E3A]/80 transition-all duration-300 hover:shadow-lg cursor-pointer bg-gradient-to-b from-white to-red-50" onClick={() => window.open('https://holifya.com/cart/43782964445448:2', '_blank', 'noopener,noreferrer')}>
               <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full gap-1">
                 <span className="font-semibold text-slate-900 text-base">2 Test 🎁</span>
-                <span className="text-xs font-bold text-amber-600">⭐ MIGLIOR PREZZO</span>
+                <span className="text-xs font-bold text-amber-600">⭐ MIGLIOR VALORE</span>
                 <span className="text-sm text-slate-400 line-through">€698</span>
                 <span className="text-2xl font-bold text-[#C41E3A]">€399</span>
                 <span className="text-xs text-green-600 flex items-center gap-1">
