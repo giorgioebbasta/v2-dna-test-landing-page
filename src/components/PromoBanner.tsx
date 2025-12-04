@@ -12,7 +12,7 @@ const PromoBanner = () => {
   return (
     <div 
       className={cn(
-        "fixed top-[42px] md:top-[49px] left-0 right-0 z-40 px-4 shadow-lg",
+        "fixed top-[42px] md:top-[49px] left-0 right-0 z-40 px-2 md:px-4 shadow-lg",
         paddingClass,
         colorScheme.textColor
       )}
