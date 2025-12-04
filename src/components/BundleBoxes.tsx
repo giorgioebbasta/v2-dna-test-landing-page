@@ -87,7 +87,7 @@ const BundleBoxes = () => {
       originalPrice: 698,
       savings: 299,
       url: "https://holifya.com/cart/43782964445448:2",
-      extraDiscount: "Per te e per chi ami 🎁"
+      extraDiscount: "Per te e per chi ami"
     }
   ];
 
